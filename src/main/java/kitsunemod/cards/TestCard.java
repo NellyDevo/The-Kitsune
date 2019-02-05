@@ -1,0 +1,37 @@
+package kitsunemod.cards;
+
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kitsunemod.patches.AbstractCardEnum;
+
+public class TestCard extends AbstractKitsuneCard {
+    public static final String ID = "kitsunemod:TestCard";
+    public static final String NAME = "Test Card";
+    public static final String DESCRIPTION = "For testing things";
+    public static final String UPGRADE_DESCRIPTION = "Still for Testing Things";
+    public static final String IMG_PATH = "kitsunemod/images/cards/defend.png";
+    private static final int COST = 1;
+
+    public TestCard() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+                CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
+                CardRarity.BASIC, CardTarget.SELF);
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new TestCard();
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+        }
+    }
+}

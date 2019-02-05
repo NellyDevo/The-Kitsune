@@ -1,0 +1,12 @@
+{
+  "kitsunemod:Defend_Kitsune": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL [E] [E] [E]",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:Strike_Kitsune": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage. NL kitsunemod:ExampleKeyword",
+    "UPGRADE_DESCRIPTION": ""
+  }
+}

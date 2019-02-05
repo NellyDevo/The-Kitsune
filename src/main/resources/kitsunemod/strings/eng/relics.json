@@ -1,0 +1,7 @@
+{
+  "kitsunemod:StarterRelic": {
+    "NAME": "Starter Relic",
+    "FLAVOR": "This isn't your average everyday placeholder, this is... ADVANCED PLACEHOLDER.",
+    "DESCRIPTIONS": ["At the start of each combat, wonder to yourself why this relic doesn't do anything."]
+  }
+}
