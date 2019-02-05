@@ -15,7 +15,6 @@
         <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.8.3</ModTheSpire.version>
         <BaseMod.version>5.10.0</BaseMod.version>
-        <FriendlyMinions.version>0.1.2</FriendlyMinions.version>
         <StSLib.version>1.13.2</StSLib.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -44,13 +43,6 @@
             <version>${BaseMod.version}</version>
             <scope>system</scope>
             <systemPath>${basedir}/../../lib/BaseMod.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>friendlyminions</groupId>
-            <artifactId>FriendlyMinions</artifactId>
-            <version>${FriendlyMinions.version}</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/../../lib/FriendlyMinions.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>

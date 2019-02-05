@@ -86,13 +86,6 @@
       <systemPath>${basedir}/../../lib/BaseMod.jar</systemPath>
     </dependency>
     <dependency>
-      <groupId>friendlyminions</groupId>
-      <artifactId>FriendlyMinions</artifactId>
-      <version>${FriendlyMinions.version}</version>
-      <scope>system</scope>
-      <systemPath>${basedir}/../../lib/FriendlyMinions.jar</systemPath>
-    </dependency>
-    <dependency>
       <groupId>com.evacipated.cardcrawl</groupId>
       <artifactId>stslib</artifactId>
       <version>${StSLib.version}</version>
@@ -101,7 +94,6 @@
     </dependency>
   </dependencies>
   <properties>
-    <FriendlyMinions.version>0.1.2</FriendlyMinions.version>
     <ModTheSpire.version>3.8.3</ModTheSpire.version>
     <BaseMod.version>5.10.0</BaseMod.version>
     <StSLib.version>1.13.2</StSLib.version>
