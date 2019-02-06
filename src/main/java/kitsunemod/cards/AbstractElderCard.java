@@ -1,29 +1,13 @@
 package kitsunemod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 
 public abstract class AbstractElderCard extends AbstractKitsuneCard {
-    public static String ID;
-    public static CardStrings cardStrings;
-    public static String NAME;
-    public static String DESCRIPTION;
-    public static String[] EXTRA_DESCRIPTIONS;
-
-
     public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
                              CardType type, CardColor color,
                              CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
-    }
-
-    private static void initializeStrings() {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
-        EXTRA_DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     }
 
     @Override
@@ -106,40 +90,44 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         upgradeName();
     }
 
+    protected boolean allCondition() {
+        return false;
+    }
+
     protected boolean firstCondition() {
-        return timesUpgraded > 0;
+        return allCondition();
     }
 
     protected boolean secondCondition() {
-        return timesUpgraded > 1;
+        return allCondition();
     }
 
     protected boolean thirdCondition() {
-        return timesUpgraded > 2;
+        return allCondition();
     }
 
     protected boolean fourthCondition() {
-        return timesUpgraded > 3;
+        return allCondition();
     }
 
     protected boolean fifthCondition() {
-        return timesUpgraded > 4;
+        return allCondition();
     }
 
     protected boolean sixthCondition() {
-        return timesUpgraded > 5;
+        return allCondition();
     }
 
     protected boolean seventhCondition() {
-        return timesUpgraded > 6;
+        return allCondition();
     }
 
     protected boolean eighthCondition() {
-        return timesUpgraded > 7;
+        return allCondition();
     }
 
     protected boolean ninthCondition() {
-        return timesUpgraded > 8;
+        return allCondition();
     }
 
     private AbstractElderCard getMasterDeckEquivalent(AbstractCard card) {
@@ -171,55 +159,62 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgrade() {
-        switch (timesUpgraded) {
-            case 0:
-                if (firstCondition()) {
-                    upgrade1();
-                }
-                break;
-            case 1:
-                if (secondCondition()) {
-                    upgrade2();
-                }
-                break;
-            case 2:
-                if (thirdCondition()) {
-                    upgrade3();
-                }
-                break;
-            case 3:
-                if (fourthCondition()) {
-                    upgrade4();
-                }
-                break;
-            case 4:
-                if (fifthCondition()) {
-                    upgrade5();
-                }
-                break;
-            case 5:
-                if (sixthCondition()) {
-                    upgrade6();
-                }
-                break;
-            case 6:
-                if (seventhCondition()) {
-                    upgrade7();
-                }
-                break;
-            case 7:
-                if (eighthCondition()) {
-                    upgrade8();
-                }
-                break;
-            case 8:
-                if (ninthCondition()) {
-                    upgrade9();
-                }
-                break;
-            default:
-                System.out.println("AbstractElderCard: Warning: card is already upgraded 9 times, how did we get here?");
-                break;
+        if (firstCondition() && timesUpgraded == 0) {
+            upgrade1();
+        }
+        if (secondCondition() && timesUpgraded == 1) {
+            upgrade2();
+        }
+        if (thirdCondition() && timesUpgraded == 2) {
+            upgrade3();
+        }
+        if (fourthCondition() && timesUpgraded == 3) {
+            upgrade4();
+        }
+        if (fifthCondition() && timesUpgraded == 4) {
+            upgrade5();
+        }
+        if (sixthCondition() && timesUpgraded == 5) {
+            upgrade6();
+        }
+        if (seventhCondition() && timesUpgraded == 6) {
+            upgrade7();
+        }
+        if (eighthCondition() && timesUpgraded == 7) {
+            upgrade8();
+        }
+        if (ninthCondition() && timesUpgraded == 8) {
+            upgrade9();
+        }
+    }
+
+    private void initializeWithUpgrades(int amount) {
+        if (amount >= 1) {
+            upgrade1();
+        }
+        if (amount >= 2) {
+            upgrade2();
+        }
+        if (amount >= 3) {
+            upgrade3();
+        }
+        if (amount >= 4) {
+            upgrade4();
+        }
+        if (amount >= 5) {
+            upgrade5();
+        }
+        if (amount >= 6) {
+            upgrade6();
+        }
+        if (amount >= 7) {
+            upgrade7();
+        }
+        if (amount >= 8) {
+            upgrade8();
+        }
+        if (amount >= 9) {
+            upgrade9();
         }
     }
 }
