@@ -1,6 +1,4 @@
 {
-
-
   "kitsunemod:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block.",
@@ -15,7 +13,10 @@
     "NAME": "Wink",
     "DESCRIPTION": "Gain !B! Block. Apply !M! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:DancingLights": {
+    "NAME": "Dancing Lights",
+    "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",
+    "UPGRADE_DESCRIPTION": ""
   }
-
-
 }

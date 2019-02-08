@@ -16,7 +16,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractKitsuneCard;
+import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
@@ -91,6 +93,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Wink());
+        BaseMod.addCard(new DancingLights());
 
         //Special
 

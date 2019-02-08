@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.KitsuneMod;
+import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.basic.Wink;
@@ -165,6 +166,7 @@ public class KitsuneCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Wink.ID);
+        retVal.add(DancingLights.ID);
         return retVal;
     }
 

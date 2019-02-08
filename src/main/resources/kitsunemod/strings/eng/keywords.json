@@ -15,5 +15,15 @@
       "Soulsteal:"
     ],
     "DESCRIPTION": "When attacked, grants you a buff for each stack. NL Human: 2 #yLight. NL Kitsune: 1 #yWill-o-Wisp (static). NL Fox: 2 #yDark."
+  },
+  "WILL-O-WISP": {
+    "NAMES": [
+      "will-o-wisp",
+      "will-o-wisps",
+      "Will-o-Wisp",
+      "Will-o-Wisps",
+      "Will-o-Wisp:"
+    ],
+    "DESCRIPTION": "Consumes itself at the end of your turn to deal damage equal to the number of wisps."
   }
 }
