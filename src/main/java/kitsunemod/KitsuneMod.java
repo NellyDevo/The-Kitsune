@@ -103,6 +103,12 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
 
         //Rares.
 
+        //Register cards that should be visible by default
+        UnlockTracker.addCard(Defend.ID);
+        UnlockTracker.addCard(Strike.ID);
+        UnlockTracker.addCard(Wink.ID);
+        UnlockTracker.addCard(DancingLights.ID);
+
         //testing purposes only, comment out for releases
         BaseMod.addCard(new TestCard());
     }
