@@ -1,4 +1,6 @@
 {
+
+
   "kitsunemod:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block. NL [E] [E] [E]",
@@ -8,5 +10,12 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage. NL kitsunemod:ExampleKeyword",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:Wink": {
+    "NAME": "Wink",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": ""
   }
+
+
 }

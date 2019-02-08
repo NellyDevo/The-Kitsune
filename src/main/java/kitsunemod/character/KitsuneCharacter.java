@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
+import kitsunemod.cards.basic.Wink;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.StarterRelic;
@@ -163,6 +164,7 @@ public class KitsuneCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
+        retVal.add(Wink.ID);
         return retVal;
     }
 

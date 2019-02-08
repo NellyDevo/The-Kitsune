@@ -20,6 +20,7 @@ import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
+import kitsunemod.cards.basic.Wink;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.StarterRelic;
@@ -89,6 +90,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Basic
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Strike());
+        BaseMod.addCard(new Wink());
 
         //Special
 
