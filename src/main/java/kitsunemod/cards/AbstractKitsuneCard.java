@@ -3,6 +3,8 @@ package kitsunemod.cards;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 
 public abstract class AbstractKitsuneCard extends CustomCard {
     //A card abstract is not required, but I like having one. Very convenient to set up things, such as custom dynamic variables.
@@ -11,11 +13,23 @@ public abstract class AbstractKitsuneCard extends CustomCard {
     public int secondMagicNumber;
     public boolean isSecondMagicNumberModified;
     public boolean upgradedSecondMagicNumber;
+    public static String ID;
+    public static CardStrings cardStrings;
+    public static String NAME;
+    public static String DESCRIPTION;
+    public static String[] EXTRA_DESCRIPTIONS;
 
     public AbstractKitsuneCard(String id, String name, String img, int cost, String rawDescription,
                                AbstractCard.CardType type, AbstractCard.CardColor color,
                                AbstractCard.CardRarity rarity, AbstractCard.CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
+    }
+
+    private static void initializeStrings() {
+        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+        NAME = cardStrings.NAME;
+        DESCRIPTION = cardStrings.DESCRIPTION;
+        EXTRA_DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
     }
 
     public void upgradeSecondMagicNumber(int amount) {
