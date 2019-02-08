@@ -21,8 +21,8 @@ public class Wink extends AbstractKitsuneCard {
 
     private static final int COST = 0;
 
-    private static final int BLOCK_AMT = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int BLOCK_AMT = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     private static final int SOULSTEAL_AMT = 1;
 
