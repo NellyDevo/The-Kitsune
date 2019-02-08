@@ -17,8 +17,8 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.KitsuneMod;
-import kitsunemod.cards.DefendKitsune;
-import kitsunemod.cards.StrikeKitsune;
+import kitsunemod.cards.Defend;
+import kitsunemod.cards.Strike;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.StarterRelic;
@@ -31,7 +31,7 @@ public class KitsuneCharacter extends CustomPlayer {
     public static final String MY_CHARACTER_SHOULDER_1 = "kitsunemod/images/char/shoulder.png";
     public static final String MY_CHARACTER_CORPSE = "kitsunemod/images/char/corpse.png";
     public static final String MY_CHARACTER_ANIMATION = "kitsunemod/images/char/idle/Animation.scml";
-    private static final String ID = "kitsunemod:KitsuneCharacter";
+    private static final String ID = KitsuneMod.makeID("KitsuneCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -110,7 +110,7 @@ public class KitsuneCharacter extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new StrikeKitsune();
+        return new Strike();
     }
 
     @Override
@@ -153,16 +153,16 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(StrikeKitsune.ID);
-        retVal.add(StrikeKitsune.ID);
-        retVal.add(StrikeKitsune.ID);
-        retVal.add(StrikeKitsune.ID);
-        retVal.add(StrikeKitsune.ID);
-        retVal.add(DefendKitsune.ID);
-        retVal.add(DefendKitsune.ID);
-        retVal.add(DefendKitsune.ID);
-        retVal.add(DefendKitsune.ID);
-        retVal.add(DefendKitsune.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         return retVal;
     }
 

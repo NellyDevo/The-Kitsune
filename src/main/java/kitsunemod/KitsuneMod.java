@@ -17,8 +17,8 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import kitsunemod.cards.AbstractKitsuneCard;
-import kitsunemod.cards.DefendKitsune;
-import kitsunemod.cards.StrikeKitsune;
+import kitsunemod.cards.Defend;
+import kitsunemod.cards.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.patches.KitsuneEnum;
@@ -87,8 +87,8 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         BaseMod.addDynamicVariable(new AbstractKitsuneCard.SecondMagicNumber()); //dynamic variable registered here
 
         //Basic
-        BaseMod.addCard(new DefendKitsune());
-        BaseMod.addCard(new StrikeKitsune());
+        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new Strike());
 
         //Special
 
@@ -171,5 +171,8 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Shop
 
         //Boss
+    }
+    public static String makeID(String id) {
+        return "kitsunemod:" + id;
     }
 }
