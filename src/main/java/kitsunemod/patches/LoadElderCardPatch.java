@@ -7,7 +7,8 @@ import kitsunemod.cards.AbstractElderCard;
 
 @SpirePatch(
         clz = CardLibrary.class,
-        method = "getCopy"
+        method = "getCopy",
+        paramtypez = {String.class, int.class, int.class}
 )
 public class LoadElderCardPatch {
     public static AbstractCard Postfix(AbstractCard __result, String key, final int upgradeTime, final int misc) {
