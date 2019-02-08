@@ -5,5 +5,15 @@
       "examplekeywords"
     ],
     "DESCRIPTION": "Why is an example keyword on an actual card"
+  },
+  "SOULSTEAL": {
+    "NAMES": [
+      "soulsteal",
+      "soulsteals",
+      "Soulsteal",
+      "Soulsteals",
+      "Soulsteal:"
+    ],
+    "DESCRIPTION": "When attacked, grants you a buff for each stack. NL Human: 2 #yLight. NL Kitsune: 1 #yWill-o-Wisp (static). NL Fox: 2 #yDark."
   }
 }

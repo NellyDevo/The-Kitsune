@@ -3,10 +3,11 @@ package kitsunemod.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kitsunemod.KitsuneMod;
 import kitsunemod.patches.AbstractCardEnum;
 
 public class TestCard extends AbstractKitsuneCard {
-    public static final String ID = "kitsunemod:TestCard";
+    public static final String ID = KitsuneMod.makeID("test_card");
     public static final String NAME = "Test Card";
     public static final String DESCRIPTION = "For testing things";
     public static final String UPGRADE_DESCRIPTION = "Still for Testing Things";

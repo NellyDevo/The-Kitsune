@@ -1,4 +1,4 @@
-package kitsunemod.cards;
+package kitsunemod.cards.basic;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -8,10 +8,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kitsunemod.KitsuneMod;
+import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 
-public class DefendKitsune extends AbstractKitsuneCard {
-    public static final String ID = "kitsunemod:Defend_Kitsune";
+public class Defend extends AbstractKitsuneCard {
+    public static final String ID = KitsuneMod.makeID("Defend");
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -20,7 +22,7 @@ public class DefendKitsune extends AbstractKitsuneCard {
     private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    public DefendKitsune() {
+    public Defend() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
@@ -35,7 +37,7 @@ public class DefendKitsune extends AbstractKitsuneCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new DefendKitsune();
+        return new Defend();
     }
 
     @Override
