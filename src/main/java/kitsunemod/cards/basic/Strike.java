@@ -1,4 +1,4 @@
-package kitsunemod.cards;
+package kitsunemod.cards.basic;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -10,10 +10,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kitsunemod.KitsuneMod;
+import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 
-public class StrikeKitsune extends AbstractKitsuneCard {
-    public static final String ID = "kitsunemod:Strike_Kitsune";
+public class Strike extends AbstractKitsuneCard {
+    public static final String ID = KitsuneMod.makeID("Strike");
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -22,7 +24,7 @@ public class StrikeKitsune extends AbstractKitsuneCard {
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public StrikeKitsune() {
+    public Strike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
@@ -38,7 +40,7 @@ public class StrikeKitsune extends AbstractKitsuneCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new StrikeKitsune();
+        return new Strike();
     }
 
     @Override
