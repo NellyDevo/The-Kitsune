@@ -14,5 +14,12 @@
       "At the start of your turn, consume this to get ",
       "x your Light in block if you're over ",
       " stacks."]
+  },
+  "kitsunemod:DarkPower": {
+    "NAME": "Dark",
+    "DESCRIPTIONS": [
+      "At the start of your turn, consume this to deal ",
+      "x your Dark in damage to a random enemy if you're over ",
+      " stacks."]
   }
 }
