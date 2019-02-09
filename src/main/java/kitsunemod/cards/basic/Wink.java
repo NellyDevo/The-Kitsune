@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
+import kitsunemod.actions.ApplySoulstealAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 
@@ -29,7 +30,7 @@ public class Wink extends AbstractKitsuneCard {
     public Wink() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.BASIC, CardTarget.SELF);
+                CardRarity.BASIC, CardTarget.ENEMY);
 
         block = baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = SOULSTEAL_AMT;
@@ -38,7 +39,7 @@ public class Wink extends AbstractKitsuneCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        //todo: need soulsteal power implemented to add this
+        AbstractDungeon.actionManager.addToBottom(new ApplySoulstealAction(p, m, this.magicNumber));
     }
 
     @Override

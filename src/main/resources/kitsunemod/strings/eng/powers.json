@@ -1,3 +1,11 @@
 {
-
+  "kitsunemod:SoulstealPower": {
+    "NAME": "Soulsteal",
+    "DESCRIPTIONS": [
+      "Currently giving you ",
+      " Light/Dark, or ",
+      " Will-o-Wisp",
+      " Will-o-Wisps",
+      " when this monster attacks you."]
+  }
 }
