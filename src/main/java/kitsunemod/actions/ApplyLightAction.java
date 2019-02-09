@@ -8,7 +8,6 @@ import kitsunemod.powers.LightPower;
 import kitsunemod.powers.SoulstealPower;
 
 public class ApplyLightAction extends AbstractGameAction {
-    private int stacks;
     private AbstractCreature target;
 
 
@@ -20,13 +19,13 @@ public class ApplyLightAction extends AbstractGameAction {
     {
         this.source = source;
         this.target = target;
-        this.stacks = stacks;
+        this.amount = stacks;
         actionType = ActionType.SPECIAL;
     }
 
     @Override
     public void update() {
-        target.addPower(new LightPower(target, source,this.stacks));
+        target.addPower(new LightPower(target, source,this.amount));
         isDone = true;
     }
 }
