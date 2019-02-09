@@ -36,6 +36,8 @@ import static kitsunemod.patches.AbstractCardEnum.KITSUNE_COLOR;
 public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber {
 
     public static final Color kitsuneColor = CardHelper.getColor(152.0f, 34.0f, 171.0f); //change this to our class's decided color; currently leftover from mystic purple
+
+    private static final String MOD_ID_PREFIX = "kitsunemod:";
     private static final String attackCard = "kitsunemod/images/512/bg_attack_kitsune.png";
     private static final String skillCard = "kitsunemod/images/512/bg_skill_kitsune.png";
     private static final String powerCard = "kitsunemod/images/512/bg_power_kitsune.png";
@@ -138,7 +140,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
             // Keyword word = (Keyword)v;
             logger.info("Adding Keyword - " + v.NAMES[0]);
             String proper = v.NAMES[0].substring(0,1).toUpperCase() + v.NAMES[0].substring(1);
-            BaseMod.addKeyword("kitsunemod:", proper, v.NAMES, v.DESCRIPTION);
+            BaseMod.addKeyword(MOD_ID_PREFIX, proper, v.NAMES, v.DESCRIPTION);
         });
     }
 
@@ -181,6 +183,6 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Boss
     }
     public static String makeID(String id) {
-        return "kitsunemod:" + id;
+        return MOD_ID_PREFIX + id;
     }
 }

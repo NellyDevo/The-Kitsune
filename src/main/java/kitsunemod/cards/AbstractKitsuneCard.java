@@ -5,6 +5,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import kitsunemod.KitsuneMod;
 
 public abstract class AbstractKitsuneCard extends CustomCard {
     //A card abstract is not required, but I like having one. Very convenient to set up things, such as custom dynamic variables.
@@ -67,7 +68,7 @@ public abstract class AbstractKitsuneCard extends CustomCard {
 
         @Override
         public String key() { //controls what card text will be recognized as the magic number
-            return "kitsunemod:M2";
+            return KitsuneMod.makeID("M2");
         }
 
         @Override

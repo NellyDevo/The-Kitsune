@@ -3,9 +3,10 @@ package kitsunemod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import kitsunemod.KitsuneMod;
 
 public class StarterRelic extends CustomRelic {
-    public static final String ID = "kitsunemod:StarterRelic";
+    public static final String ID = KitsuneMod.makeID("StarterRelic");
     public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
     public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
 
