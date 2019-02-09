@@ -6,12 +6,14 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractKitsuneCard;
@@ -21,6 +23,7 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.character.KitsuneCharacter;
+import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.StarterRelic;
 import org.apache.logging.log4j.LogManager;
@@ -75,6 +78,18 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         Texture badgeImg = new Texture("kitsunemod/images/badge.png");
         ModPanel settingsPanel = new ModPanel(); //we can add UI elements to this settings panel as desired
         BaseMod.registerModBadge(badgeImg, "The Kitsune Mod", "Jin the Fox, Johnny Devo", "Adds a new character to the game: The Kitsune.", settingsPanel);
+
+        //load large sprite sheet for Will-O-Wisp
+        if (WillOWisp.img == null) {
+            WillOWisp.img = new TextureAtlas.AtlasRegion[72];
+            int i = 0;
+            for (int r = 0; r < 6; ++r) {
+                for (int c = 0; c < 12; ++c) {
+                    WillOWisp.img[i] = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/orbs/flame.png"), c * 85, r * 85, 85, 85);
+                    ++i;
+                }
+            }
+        }
 
         //add sounds
 //        HashMap<String, Sfx> reflectedMap = (HashMap<String, Sfx>)ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
@@ -165,6 +180,8 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
 //        BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
 //        String eventStrings = Gdx.files.internal(languageString + "/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
 //        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        String orbStrings = Gdx.files.internal(languageString + "/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
     }
 
     @Override
