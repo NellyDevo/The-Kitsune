@@ -1,8 +1,12 @@
 package kitsunemod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
 import kitsunemod.powers.DarkPower;
@@ -34,20 +38,19 @@ public class ApplyLightAction extends AbstractGameAction {
 
             //currently prioritizing semantics of behavior over not repeating a couple lines, can rewrite if needed
             if (currentDarkPowerStacks == amount) {
-                target.powers.remove(currentDarkPower);
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
             }
             else if (currentDarkPowerStacks > amount) {
-                currentDarkPower.amount -= amount;
-                currentDarkPower.flash();
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, DarkPower.POWER_ID, amount));
             }
             else { //if (currentDarkPowerStacks < amount)
-                target.powers.remove(currentDarkPower);
-                target.addPower(new LightPower(target, source, amount - currentDarkPowerStacks));
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
             }
 
         }
         else {
-            target.addPower(new LightPower(target, source,this.amount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount), amount));
         }
         isDone = true;
     }

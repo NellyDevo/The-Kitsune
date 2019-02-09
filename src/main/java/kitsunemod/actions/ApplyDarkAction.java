@@ -1,7 +1,11 @@
 package kitsunemod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import javafx.scene.effect.Light;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
@@ -31,20 +35,19 @@ public class ApplyDarkAction extends AbstractGameAction {
 
             //currently prioritizing semantics of behavior over not repeating a couple lines, can rewrite if needed
             if (currentLightPowerStacks == amount) {
-                target.powers.remove(currentLightPower);
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentLightPower));
             }
             else if (currentLightPowerStacks > amount) {
-                currentLightPower.amount -= amount;
-                currentLightPower.flash();
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, LightPower.POWER_ID, amount));
             }
             else { //if (currentDarkPowerStacks < amount)
-                target.powers.remove(currentLightPower);
-                target.addPower(new DarkPower(target, source, amount - currentLightPowerStacks));
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentLightPower));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DarkPower(target, source, amount - currentLightPowerStacks), amount - currentLightPowerStacks));
             }
 
         }
         else {
-            target.addPower(new DarkPower(target, source,this.amount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DarkPower(target, source, amount), amount));
         }
         isDone = true;
     }
