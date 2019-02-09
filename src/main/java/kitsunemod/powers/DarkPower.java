@@ -34,7 +34,7 @@ public class DarkPower extends AbstractPower {
         isTurnBased = false;
         name = NAME;
         ID = POWER_ID;
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         amount = stacks;
 
         //temporary until I start making power art too
