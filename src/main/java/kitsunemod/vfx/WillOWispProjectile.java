@@ -81,7 +81,6 @@ public class WillOWispProjectile extends AbstractGameEffect {
             targetDirection -= 360.0f;
         }
         rotation = Interpolation.linear.apply(0.0f, targetDirection, duration / endDuration);
-        System.out.println(rotation);
 
         //update duration
         if (duration >= endDuration) {
