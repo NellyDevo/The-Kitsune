@@ -16,10 +16,11 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import kitsunemod.KitsuneMod;
 import kitsunemod.actions.WillOWispAction;
 
 public class WillOWisp extends AbstractOrb {
-    public static final String ORB_ID = "kitsunemod:Will-O-Wisp";
+    public static final String ORB_ID = KitsuneMod.makeID("Will-O-Wisp");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
     public static final String NAME = orbString.NAME;
