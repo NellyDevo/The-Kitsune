@@ -7,5 +7,12 @@
       " Will-o-Wisp",
       " Will-o-Wisps",
       " when this monster attacks you."]
+  },
+  "kitsunemod:LightPower": {
+    "NAME": "Light",
+    "DESCRIPTIONS": [
+      "At the start of your turn, consume this to get ",
+      "x your Light in block if you're over ",
+      " stacks."]
   }
 }

@@ -21,7 +21,7 @@ public class ApplySoulstealAction extends AbstractGameAction {
         this.player = player;
         this.target = target;
         this.stacks = stacks;
-        actionType = ActionType.SPECIAL;
+        actionType = ActionType.DEBUFF;
     }
 
     @Override
