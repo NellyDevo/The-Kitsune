@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import javafx.scene.effect.Light;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
 

@@ -3,15 +3,12 @@ package kitsunemod.powers;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.powers.*;
 
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyLightAction;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class SoulstealPower extends AbstractPower {
     public AbstractCreature source;
