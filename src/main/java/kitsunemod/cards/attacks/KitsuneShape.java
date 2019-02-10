@@ -16,6 +16,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 
 public class KitsuneShape extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("KitsuneShape");
@@ -38,8 +39,7 @@ public class KitsuneShape extends AbstractKitsuneCard {
         magicNumber = baseMagicNumber = WEAK_AMT;
         exhaustOnUseOnce = true;
 
-        tags.add(CardTags.STRIKE);
-        tags.add(BaseModCardTags.BASIC_STRIKE);
+        tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 
     @Override

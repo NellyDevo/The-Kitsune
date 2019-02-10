@@ -17,6 +17,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 
 public class HumanShape extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("HumanShape");
@@ -39,8 +40,7 @@ public class HumanShape extends AbstractKitsuneCard {
         block = baseBlock = BLOCK_AMT;
         exhaustOnUseOnce = true;
 
-        tags.add(CardTags.STRIKE);
-        tags.add(BaseModCardTags.BASIC_STRIKE);
+        tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 
     @Override

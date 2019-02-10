@@ -1,6 +1,7 @@
 package kitsunemod.cards.attacks;
 
 import basemod.helpers.BaseModCardTags;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +15,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.KitsuneShapePower;
 
 public class FoxShape extends AbstractKitsuneCard {
@@ -34,8 +36,7 @@ public class FoxShape extends AbstractKitsuneCard {
         damage = baseDamage = ATTACK_DMG;
         exhaustOnUseOnce = true;
 
-        tags.add(CardTags.STRIKE);
-        tags.add(BaseModCardTags.BASIC_STRIKE);
+        tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 
     @Override
