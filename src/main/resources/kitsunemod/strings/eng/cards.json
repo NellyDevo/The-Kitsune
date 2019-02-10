@@ -42,5 +42,13 @@
     "NAME": "Thick Fur",
     "DESCRIPTION": "Gain !M! Dark and !B! Block. ",
     "UPGRADE_DESCRIPTION": ""
+  },
+
+
+
+  "kitsunemod:MemorizeSpell": {
+    "NAME": "Memorize Spell",
+    "DESCRIPTION": "Choose a card in your hand. Retain it until next turn.",
+    "UPGRADE_DESCRIPTION": "Choose a card in your hand. Retain it until next turn. Retain."
   }
 }
