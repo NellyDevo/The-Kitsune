@@ -1,5 +1,6 @@
 package kitsunemod.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.powers.KitsuneShapePower;
 
 public class TestCard extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("test_card");
@@ -24,7 +26,7 @@ public class TestCard extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(p, p, 5));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KitsuneShapePower(p, p)));
     }
 
     @Override

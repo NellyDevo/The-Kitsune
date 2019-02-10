@@ -21,5 +21,12 @@
       "At the start of your turn, consume this to deal ",
       "x your Dark in damage to a random enemy if you're over ",
       " stacks."]
+  },
+
+  "kitsunemod:KitsuneShapePower": {
+    "NAME": "Kitsune Shape",
+    "DESCRIPTIONS": [
+      "Currently in the form of a Kitsune. Kitsune Aspect will trigger, and you have minor stat bonuses."
+    ]
   }
 }
