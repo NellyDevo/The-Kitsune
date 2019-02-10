@@ -27,5 +27,15 @@
     "NAME": "Fox Shape",
     "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. Exhaust.",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:KitsuneShape": {
+    "NAME": "Kitsune Shape",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. kitsunemod:Shapeshift into a Kitsune. Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:HumanShape": {
+    "NAME": "Human Shape",
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
   }
 }
