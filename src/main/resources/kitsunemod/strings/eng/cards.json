@@ -37,5 +37,10 @@
     "NAME": "Human Shape",
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. Exhaust.",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:ThickFur": {
+    "NAME": "Thick Fur",
+    "DESCRIPTION": "Gain !M! Dark and !B! Block. ",
+    "UPGRADE_DESCRIPTION": ""
   }
 }

@@ -25,6 +25,7 @@ import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
+import kitsunemod.cards.skills.ThickFur;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
@@ -117,7 +118,8 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Commons
         BaseMod.addCard(new FoxShape());
         BaseMod.addCard(new KitsuneShape());
-        BaseMod.addCard(new HumanShape());
+        BaseMod.addCard(new HumanShape());;
+        BaseMod.addCard(new ThickFur());
 
         //Uncommons
 
