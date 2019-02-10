@@ -26,6 +26,7 @@ import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
+import kitsunemod.cards.skills.EssenceTheft;
 import kitsunemod.cards.skills.MemorizeSpell;
 import kitsunemod.cards.skills.ThickFur;
 import kitsunemod.character.KitsuneCharacter;
@@ -126,8 +127,9 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
         BaseMod.addCard(new IgniteSilhouette());
+        BaseMod.addCard(new EssenceTheft());
 
-        //Rares.
+        //Rares
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

@@ -53,7 +53,12 @@
   },
   "kitsunemod:IgniteSilhouette": {
     "NAME": "Ignite Silhouette",
-    "DESCRIPTION": "Deal !D! damage. Gain Dark equal to unblocked damage.",
+    "DESCRIPTION": "Deal !D! damage. Gain kitsunemod:Dark equal to unblocked damage.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:EssenceTheft": {
+    "NAME": "Essence Theft",
+    "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
     "UPGRADE_DESCRIPTION": ""
   }
 }
