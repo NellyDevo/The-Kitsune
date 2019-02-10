@@ -202,4 +202,11 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
     public static String makeID(String id) {
         return MOD_ID_PREFIX + id;
     }
+
+    public enum KitsuneShapes {
+        FOX,
+        KITSUNE,
+        HUMAN,
+        NINETAILED
+    }
 }

@@ -28,5 +28,25 @@
     "DESCRIPTIONS": [
       "Currently in the form of a Kitsune. Kitsune Aspect will trigger, and you have minor stat bonuses."
     ]
+  },
+
+  "kitsunemod:FoxShapePower": {
+    "NAME": "Fox Shape",
+    "DESCRIPTIONS": [
+      "Currently in the form of a Fox. Fox Aspect will trigger, and you have less Strength but more Dexterity."
+    ]
+  },
+
+  "kitsunemod:HumanShapePower": {
+    "NAME": "Human Shape",
+    "DESCRIPTIONS": [
+      "Currently in the form of a Human. Human Aspect will trigger, and you have less Dexterity but more Strength."
+    ]
+  },
+  "kitsunemod:NinetailedShapePower": {
+    "NAME": "Ninetailed Shape",
+    "DESCRIPTIONS": [
+      "Currently in a Kitsune's true form. All Aspects will trigger, and you have significant increased Strength/Dex."
+    ]
   }
 }
