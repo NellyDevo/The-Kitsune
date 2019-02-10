@@ -55,13 +55,13 @@ public class SoulstealPower extends AbstractPower {
             //TODO: Implement this. Need to wire up light and dark as dummy powers at least
             AbstractPlayer targetPlayer = (AbstractPlayer)target;
             if (target.hasPower(FoxShapePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer,targetPlayer, this.amount * LIGHT_DARK_PER_STACK));
+                AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(owner, targetPlayer, this.amount * LIGHT_DARK_PER_STACK));
             }
             else if (target.hasPower(KitsuneShapePower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILL_O_WISPS));
             }
             else if (target.hasPower(HumanShapePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer,targetPlayer, this.amount * LIGHT_DARK_PER_STACK));
+                AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(owner, targetPlayer, this.amount * LIGHT_DARK_PER_STACK));
             }
             else if (target.hasPower(NinetailedShapePower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(NINETAILED_WILL_O_WISPS));

@@ -40,9 +40,9 @@ public class IgniteSilhouetteAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.clearPostCombatActions();
             }
         }
-
-        isDone = true;
+        tickDuration();
     }
+
     private void applyDark() {
         int tempDamage = this.damageInfo.base;
 
