@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.cards.attacks.FoxShape;
 import kitsunemod.cards.attacks.HumanShape;
+import kitsunemod.cards.attacks.IgniteSilhouette;
 import kitsunemod.cards.attacks.KitsuneShape;
 import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
@@ -124,6 +125,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
+        BaseMod.addCard(new IgniteSilhouette());
 
         //Rares.
 
