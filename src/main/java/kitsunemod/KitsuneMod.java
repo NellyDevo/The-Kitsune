@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractKitsuneCard;
+import kitsunemod.cards.attacks.FoxShape;
 import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
@@ -112,6 +113,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Special
 
         //Commons
+        BaseMod.addCard(new FoxShape());
 
         //Uncommons
 

@@ -18,5 +18,14 @@
     "NAME": "Dancing Lights",
     "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",
     "UPGRADE_DESCRIPTION": ""
+  },
+
+
+
+
+  "kitsunemod:FoxShape": {
+    "NAME": "Fox Shape",
+    "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
   }
 }
