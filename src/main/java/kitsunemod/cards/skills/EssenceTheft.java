@@ -28,7 +28,7 @@ public class EssenceTheft extends AbstractKitsuneCard {
     private static final int COST = 1;
 
     private static final int UPGRADED_COST = 0;
-    private static final int SOULSTEAL_AMT = 4;
+    private static final int SOULSTEAL_AMT = 2;
 
     public EssenceTheft() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
