@@ -26,8 +26,8 @@ public abstract class AbstractKitsuneCard extends CustomCard {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
     }
 
-    private static void initializeStrings() {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    protected static void initializeStrings(String cardID) {
+        cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
         EXTRA_DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;

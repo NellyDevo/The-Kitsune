@@ -1,18 +1,32 @@
 package kitsunemod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public abstract class AbstractElderCard extends AbstractKitsuneCard {
     public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
                              CardType type, CardColor color,
                              CardRarity rarity, CardTarget target) {
+        this(id, name, img, cost, rawDescription, type, color, rarity, target, 0);
+    }
+    public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
+                             CardType type, CardColor color,
+                             CardRarity rarity, CardTarget target, int timesUpgraded) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        this.timesUpgraded = timesUpgraded;
+        initializeWithUpgrades(timesUpgraded);
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
+        AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
+        }
         if (timesUpgraded < 9) {
             upgrade();
         }
@@ -20,73 +34,86 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     protected void upgrade1() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade1();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade2() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade2();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade3() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade3();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade4() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade4();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade5() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade5();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade6() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade6();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade7() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade7();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade8() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade8();
         }
-        upgradeName();
+        upgradeAll();
     }
 
     protected void upgrade9() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
-        if (masterDeckCopy != null) {
+        if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
+            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade9();
         }
+        upgradeAll();
+    }
+
+    protected void upgradeAll() {
         upgradeName();
     }
 
@@ -144,6 +171,16 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         return null;
     }
 
+    public void onCardDrawn(AbstractCard card) { }
+
+    public void onBlockedDamage(int amount) { }
+
+    public void onLoseHp(DamageInfo info) { }
+
+    public void onEnterRoom(AbstractRoom room) {
+
+    }
+
     @Override
     public boolean canUpgrade() {
         return false;
@@ -151,6 +188,11 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgradeName() {
+        cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
+        NAME = cardStrings.NAME;
+        DESCRIPTION = cardStrings.DESCRIPTION;
+        EXTRA_DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
+
         ++timesUpgraded;
         upgraded = true;
         name = NAME + "+" + timesUpgraded;
@@ -159,13 +201,13 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgrade() {
-        if (firstCondition() && timesUpgraded == 0) {
+        if (firstCondition() && timesUpgraded >= 0) {
             upgrade1();
         }
-        if (secondCondition() && timesUpgraded == 1) {
+        if (secondCondition() && timesUpgraded >= 1) {
             upgrade2();
         }
-        if (thirdCondition() && timesUpgraded == 2) {
+        if (thirdCondition() && timesUpgraded >= 2) {
             upgrade3();
         }
         if (fourthCondition() && timesUpgraded == 3) {

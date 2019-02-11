@@ -10,13 +10,17 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.cards.attacks.*;
 import kitsunemod.cards.basic.DancingLights;
@@ -47,7 +51,8 @@ public class KitsuneMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         PostInitializeSubscriber,
-        PostBattleSubscriber {
+        PostBattleSubscriber,
+        PostDrawSubscriber {
 
     public static final Color kitsuneColor = CardHelper.getColor(152.0f, 34.0f, 171.0f); //change this to our class's decided color; currently leftover from mystic purple
 
@@ -67,6 +72,7 @@ public class KitsuneMod implements
     private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
     public static int shapeshiftsThisCombat = 0;
+    public static int cardDrawsThisCombat = 0;
 
     public KitsuneMod(){
         BaseMod.subscribe(this);
@@ -131,6 +137,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new Ingenuity());
         BaseMod.addCard(new NipAtHeels());
         BaseMod.addCard(new TestTheirTactics());
+        BaseMod.addCard(new SplitSoul());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
@@ -151,6 +158,29 @@ public class KitsuneMod implements
 
         //testing purposes only, comment out for releases
         BaseMod.addCard(new TestCard());
+    }
+
+    public void receivePostDraw(AbstractCard card) {
+        cardDrawsThisCombat++;
+        //TODO: test and verify whether this counts draws for turn. If so we can either code around that or jack up the amount of draws you get
+        //or change the condition as relevant.
+        //triggerElderInGroupForCard(card, AbstractDungeon.player.masterDeck);
+        triggerElderInGroupForCard(card, AbstractDungeon.player.drawPile);
+        triggerElderInGroupForCard(card, AbstractDungeon.player.hand);
+        triggerElderInGroupForCard(card, AbstractDungeon.player.discardPile);
+        triggerElderInGroupForCard(card, AbstractDungeon.player.exhaustPile);
+        triggerElderInGroupForCard(card, AbstractDungeon.player.limbo);
+    }
+
+    private void triggerElderInGroupForCard(AbstractCard card, CardGroup group) {
+        for (int i = 0; i < group.size(); i++) {
+            AbstractCard currentCard = group.getNCardFromTop(i);
+            if (currentCard instanceof AbstractElderCard) {
+                AbstractElderCard currentElderCard = (AbstractElderCard) currentCard;
+                currentElderCard.onCardDrawn(card);
+            }
+        }
+
     }
 
     @Override

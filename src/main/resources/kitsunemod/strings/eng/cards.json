@@ -58,6 +58,11 @@
     "DESCRIPTION": "Deal !D! Damage. Fox kitsunemod:Aspect: Draw a card.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:SplitSoul": {
+    "NAME": "Split Soul",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. kitsunemod:Elder: Draw 5 cards.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 

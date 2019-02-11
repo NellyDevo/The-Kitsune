@@ -82,5 +82,13 @@
       "Shade:"
     ],
     "DESCRIPTION": "Negates up to that many instances of unblocked damage until next turn and heals you a small amount instead."
+  },
+  "Elder": {
+    "NAMES": [
+      "elder",
+      "Elder",
+      "Elder:"
+    ],
+    "DESCRIPTION": "Special cards that can't be smithed but automatically upgrade through 9 tiers based on performing actions."
   }
 }
