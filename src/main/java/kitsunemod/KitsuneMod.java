@@ -132,7 +132,6 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         BaseMod.addCard(new NinetailedForm());
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new VanishIntoShadows());
-        BaseMod.addCard(new CleansingNova());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);
