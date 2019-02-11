@@ -53,6 +53,11 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:NipAtHeels": {
+    "NAME": "Test Their Tactics",
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 

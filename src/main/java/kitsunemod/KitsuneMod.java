@@ -130,6 +130,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new ThickFur());
         BaseMod.addCard(new Ingenuity());
         BaseMod.addCard(new NipAtHeels());
+        BaseMod.addCard(new TestTheirTactics());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
