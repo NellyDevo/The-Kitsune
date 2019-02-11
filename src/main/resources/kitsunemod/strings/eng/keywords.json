@@ -56,5 +56,21 @@
       "Aspect:"
     ],
     "DESCRIPTION": "Aspect effects only trigger when you are in the listed Shape."
+  },
+  "LIGHT": {
+    "NAMES": [
+      "light",
+      "Light",
+      "Light:"
+    ],
+    "DESCRIPTION": "Persistent buff. Converted to Block at the start of your turn when over 9 stacks."
+  },
+  "DARK": {
+    "NAMES": [
+      "dark",
+      "Dark",
+      "Dark:"
+    ],
+    "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks"
   }
 }
