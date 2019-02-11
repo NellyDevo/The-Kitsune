@@ -44,6 +44,7 @@ public class LashOut extends AbstractKitsuneCard {
         damage = baseDamage = ATTACK_DMG;
         block = baseBlock = HUMAN_ASPECT_BLOCK;
         magicNumber = baseMagicNumber = KITSUNE_ASPECT_INTANGIBLE;
+        exhaustOnUseOnce = true;
     }
 
     @Override

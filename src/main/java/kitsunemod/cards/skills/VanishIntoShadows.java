@@ -35,6 +35,7 @@ public class VanishIntoShadows extends AbstractKitsuneCard {
                 CardRarity.RARE, CardTarget.SELF);
         magicNumber = baseMagicNumber = HEAL_AMOUNT;
         secondMagicNumber = baseSecondMagicNumber = POWER_STACKS;
+        this.exhaustOnUseOnce = true;
     }
 
     @Override

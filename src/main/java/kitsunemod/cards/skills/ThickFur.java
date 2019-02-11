@@ -29,7 +29,7 @@ public class ThickFur extends AbstractKitsuneCard {
     public ThickFur() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.BASIC, CardTarget.SELF);
+                CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
         magicNumber = baseMagicNumber = DARK_AMT;
     }
