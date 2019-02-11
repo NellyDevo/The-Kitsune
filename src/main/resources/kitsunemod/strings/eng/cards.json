@@ -60,5 +60,12 @@
     "NAME": "Essence Theft",
     "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
     "UPGRADE_DESCRIPTION": ""
+  },
+
+
+  "kitsunemod:NinetailedForm": {
+    "NAME": "Ninetailed Form",
+    "DESCRIPTION": "Ethereal. NL You count as in all three kitsunemod:Shapes at once, Soulsteal gives you 3 Will-o-Wisps, and you gain base 2 Strength and Dexterity.",
+    "UPGRADE_DESCRIPTION": ""
   }
 }

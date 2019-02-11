@@ -26,6 +26,7 @@ import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
+import kitsunemod.cards.powers.NinetailedForm;
 import kitsunemod.cards.skills.EssenceTheft;
 import kitsunemod.cards.skills.MemorizeSpell;
 import kitsunemod.cards.skills.ThickFur;
@@ -130,6 +131,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         BaseMod.addCard(new EssenceTheft());
 
         //Rares
+        BaseMod.addCard(new NinetailedForm());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

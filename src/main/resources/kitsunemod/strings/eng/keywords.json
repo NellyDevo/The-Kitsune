@@ -36,5 +36,15 @@
       "Shapeshift:"
     ],
     "DESCRIPTION": "Aspect effects of that #yShape will trigger and you gain minor persistent effects."
+  },
+  "SHAPE": {
+    "NAMES": [
+      "shape",
+      "shapes",
+      "Shape",
+      "Shapes",
+      "Shape:"
+    ],
+    "DESCRIPTION": "Aspect effects of that #yShape will trigger and you gain minor persistent effects."
   }
 }
