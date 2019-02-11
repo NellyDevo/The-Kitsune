@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.cards.attacks.*;
@@ -24,10 +25,7 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.cards.powers.NinetailedForm;
-import kitsunemod.cards.skills.EssenceTheft;
-import kitsunemod.cards.skills.MemorizeSpell;
-import kitsunemod.cards.skills.ThickFur;
-import kitsunemod.cards.skills.VanishIntoShadows;
+import kitsunemod.cards.skills.*;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
@@ -42,7 +40,14 @@ import java.util.Map;
 import static kitsunemod.patches.AbstractCardEnum.KITSUNE_COLOR;
 
 @SpireInitializer
-public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber {
+public class KitsuneMod implements
+        EditCardsSubscriber,
+        EditCharactersSubscriber,
+        EditKeywordsSubscriber,
+        EditRelicsSubscriber,
+        EditStringsSubscriber,
+        PostInitializeSubscriber,
+        PostBattleSubscriber {
 
     public static final Color kitsuneColor = CardHelper.getColor(152.0f, 34.0f, 171.0f); //change this to our class's decided color; currently leftover from mystic purple
 
@@ -61,6 +66,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
 
     private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
+    public static int shapeshiftsThisCombat = 0;
 
     public KitsuneMod(){
         BaseMod.subscribe(this);
@@ -122,6 +128,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         BaseMod.addCard(new KitsuneShape());
         BaseMod.addCard(new HumanShape());
         BaseMod.addCard(new ThickFur());
+        BaseMod.addCard(new Ingenuity());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
@@ -216,6 +223,12 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
 
         //Boss
     }
+
+    @Override
+    public void receivePostBattle(AbstractRoom room) {
+        KitsuneMod.shapeshiftsThisCombat = 0;
+    }
+
     public static String makeID(String id) {
         return MOD_ID_PREFIX + id;
     }
