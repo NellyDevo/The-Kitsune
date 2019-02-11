@@ -20,8 +20,9 @@ public class InTheShadowsPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
+    public static final int DEFAULT_HEAL_AMOUNT = 2;
+    //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
     public InTheShadowsPower(
             final AbstractCreature owner,

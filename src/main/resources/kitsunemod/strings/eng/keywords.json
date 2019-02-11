@@ -74,5 +74,13 @@
       "Dark:"
     ],
     "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks"
+  },
+  "SHADE": {
+    "NAMES": [
+      "shade",
+      "Shade",
+      "Shade:"
+    ],
+    "DESCRIPTION": "Negates up to that many instances of unblocked damage until next turn and heals you a small amount instead."
   }
 }

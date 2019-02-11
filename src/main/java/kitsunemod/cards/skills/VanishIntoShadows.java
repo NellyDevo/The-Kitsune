@@ -27,7 +27,6 @@ public class VanishIntoShadows extends AbstractKitsuneCard {
     private static final int POWER_STACKS = 1;
 
     private static final int HEAL_AMOUNT = 2;
-    private static final int UPGRADE_PLUS_HEAL_AMOUNT = 1;
 
     public VanishIntoShadows() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -53,7 +52,6 @@ public class VanishIntoShadows extends AbstractKitsuneCard {
         if (!upgraded) {
             upgradeName();
             AlwaysRetainField.alwaysRetain.set(this, true);
-            upgradeMagicNumber(UPGRADE_PLUS_HEAL_AMOUNT);
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
 

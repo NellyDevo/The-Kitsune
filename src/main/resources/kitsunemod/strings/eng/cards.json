@@ -75,13 +75,13 @@
   },
   "kitsunemod:LashOut": {
     "NAME": "Lash Out",
-    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: And gain !M! Intangible. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
-    "DESCRIPTION": "Until next turn, the next time you would take unblocked damage, heal !M! HP instead. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Until next turn, the next time you would take unblocked damage, heal !M! HP instead. NL Exhaust."
+    "DESCRIPTION": "Gain 1 kitsunemod:Shade. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. gain 1 kitsunemod:Shade. NL Exhaust."
   },
   "kitsunemod:CleansingNova": {
     "NAME": "Cleansing Nova",
