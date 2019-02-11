@@ -53,28 +53,33 @@ public class SoulstealPower extends AbstractPower {
     public void onAttack(DamageInfo info, int amount, AbstractCreature target) {
         //this check really shouldn't fail, unless we make a card that applies Light or Dark to enemies for negative effects
         if (target instanceof AbstractPlayer && !hasSoulstealed) {
-            //TODO: Implement this. Need to wire up light and dark as dummy powers at least
-            AbstractPlayer targetPlayer = (AbstractPlayer)target;
-            if (target.hasPower(FoxShapePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
-                hasSoulstealed = true;
-            }
-            else if (target.hasPower(KitsuneShapePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILL_O_WISPS));
-                hasSoulstealed = true;
-            }
-            else if (target.hasPower(HumanShapePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
-                hasSoulstealed = true;
-            }
-            else if (target.hasPower(NinetailedShapePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(NINETAILED_WILL_O_WISPS));
-                hasSoulstealed = true;
-            }
-            else {
-                logger.info("Soulsteal attempted to apply to a player without a Shape, is this intentional?");
-            }
+            applySoulsteal(target, true);
         }
+    }
+
+    public void applySoulsteal(AbstractCreature target, boolean isFromAttack) {
+        //TODO: Implement this. Need to wire up light and dark as dummy powers at least
+        AbstractPlayer targetPlayer = (AbstractPlayer)target;
+        if (target.hasPower(FoxShapePower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
+            hasSoulstealed = isFromAttack;
+        }
+        else if (target.hasPower(KitsuneShapePower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILL_O_WISPS));
+            hasSoulstealed = isFromAttack;
+        }
+        else if (target.hasPower(HumanShapePower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
+            hasSoulstealed = isFromAttack;
+        }
+        else if (target.hasPower(NinetailedShapePower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(NINETAILED_WILL_O_WISPS));
+            hasSoulstealed = isFromAttack;
+        }
+        else {
+            logger.info("Soulsteal attempted to apply to a player without a Shape, is this intentional?");
+        }
+
     }
 
     @Override
