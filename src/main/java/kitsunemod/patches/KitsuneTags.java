@@ -5,5 +5,5 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class KitsuneTags {
     @SpireEnum public static AbstractCard.CardTags SHAPESHIFT_CARD;
-    @SpireEnum public static AbstractCard.CardTags SO_HERE_ARE_A_COUPLE_OF_EXAMPLES;
+    @SpireEnum public static AbstractCard.CardTags ZERO_COST_ATTACK;
 }

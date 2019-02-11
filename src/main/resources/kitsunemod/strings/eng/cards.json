@@ -48,6 +48,11 @@
     "DESCRIPTION": "Gain !B! Block + !M! more for each time you've kitsunemod:Shapeshifted this combat. ",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:NipAtHeels": {
+    "NAME": "Nip at Heels",
+    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 
