@@ -76,6 +76,11 @@
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
     "DESCRIPTION": "Until next turn, the next time you would take unblocked damage, heal [#00FF00]!M2! HP instead. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Until next turn, the next time you would take unblocked damage, heal [#00FF00]!M2! HP instead. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL Until next turn, the next time you would take unblocked damage, heal [#00FF00]!kitsunemod:M2! HP instead. NL Exhaust."
+  },
+  "kitsunemod:CleansingNova": {
+    "NAME": "Cleansing Nova",
+    "DESCRIPTION": "Gain !B! block, then strip all of your block to deal that much damage to all enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
   }
 }
