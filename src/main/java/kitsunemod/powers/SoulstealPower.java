@@ -3,18 +3,21 @@ package kitsunemod.powers;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.powers.*;
 
 import kitsunemod.KitsuneMod;
+import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.actions.ApplyLightAction;
+import kitsunemod.actions.ChannelWillOWispAction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class SoulstealPower extends AbstractPower {
     public AbstractCreature source;
+
+    private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
     public static final String POWER_ID = KitsuneMod.makeID("SoulstealPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -23,7 +26,8 @@ public class SoulstealPower extends AbstractPower {
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
     private static final int LIGHT_DARK_PER_STACK = 2;
-    private static final int WILL_O_WISPS_TOTAL = 1;
+    private static final int KITSUNE_WILL_O_WISPS = 2;
+    private static final int NINETAILED_WILL_O_WISPS = 3;
 
 
     public SoulstealPower(final AbstractCreature owner, final AbstractCreature source, final int stacks) {
@@ -50,7 +54,21 @@ public class SoulstealPower extends AbstractPower {
         if (target instanceof AbstractPlayer) {
             //TODO: Implement this. Need to wire up light and dark as dummy powers at least
             AbstractPlayer targetPlayer = (AbstractPlayer)target;
-            AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer,targetPlayer, this.amount * LIGHT_DARK_PER_STACK));
+            if (target.hasPower(FoxShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
+            }
+            else if (target.hasPower(KitsuneShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILL_O_WISPS));
+            }
+            else if (target.hasPower(HumanShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
+            }
+            else if (target.hasPower(NinetailedShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(NINETAILED_WILL_O_WISPS));
+            }
+            else {
+                logger.info("Soulsteal attempted to apply to a player without a Shape, is this intentional?");
+            }
         }
     }
 
@@ -64,11 +82,11 @@ public class SoulstealPower extends AbstractPower {
     public void updateDescription() {
 
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + (amount * LIGHT_DARK_PER_STACK) + DESCRIPTIONS[1] + WILL_O_WISPS_TOTAL + DESCRIPTIONS[2] + DESCRIPTIONS[4];
+            description = DESCRIPTIONS[0] + (amount * LIGHT_DARK_PER_STACK) + DESCRIPTIONS[1] + KITSUNE_WILL_O_WISPS + DESCRIPTIONS[2] + DESCRIPTIONS[4];
         }
 
         else if (amount > 1) {
-            description = DESCRIPTIONS[0] + (amount * LIGHT_DARK_PER_STACK) + DESCRIPTIONS[1] + WILL_O_WISPS_TOTAL + DESCRIPTIONS[3] + DESCRIPTIONS[4];
+            description = DESCRIPTIONS[0] + (amount * LIGHT_DARK_PER_STACK) + DESCRIPTIONS[1] + KITSUNE_WILL_O_WISPS + DESCRIPTIONS[3] + DESCRIPTIONS[4];
         }
     }
 

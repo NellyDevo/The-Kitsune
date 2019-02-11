@@ -10,9 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
 
-public class ApplyLightAction extends AbstractGameAction {
 
-    public ApplyLightAction(
+public class ApplyDarkAction extends AbstractGameAction {
+
+    public ApplyDarkAction(
             final AbstractCreature target,
             final AbstractCreature source,
             final int stacks)
@@ -21,6 +22,7 @@ public class ApplyLightAction extends AbstractGameAction {
         this.source = source;
         this.target = target;
         this.amount = stacks;
+
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
     }
@@ -28,27 +30,28 @@ public class ApplyLightAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-            if (target.hasPower(DarkPower.POWER_ID)) {
+            if (target.hasPower(LightPower.POWER_ID)) {
                 //if this fails it means we made another power with DarkPower's ID and that breaks things anyway
-                DarkPower currentDarkPower = (DarkPower)target.getPower(DarkPower.POWER_ID);
-                int currentDarkPowerStacks = currentDarkPower.amount;
+                LightPower currentLightPower = (LightPower)target.getPower(LightPower.POWER_ID);
+                int currentLightPowerStacks = currentLightPower.amount;
 
                 //currently prioritizing semantics of behavior over not repeating a couple lines, can rewrite if needed
-                if (currentDarkPowerStacks == amount) {
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
+                if (currentLightPowerStacks == amount) {
+                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentLightPower));
                 }
-                else if (currentDarkPowerStacks > amount) {
-                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, DarkPower.POWER_ID, amount));
+                else if (currentLightPowerStacks > amount) {
+                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, LightPower.POWER_ID, amount));
                 }
                 else { //if (currentDarkPowerStacks < amount)
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
+                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentLightPower));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DarkPower(target, source, amount - currentLightPowerStacks), amount - currentLightPowerStacks));
                 }
 
             }
             else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount), amount));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DarkPower(target, source, amount), amount));
             }
+            isDone = true;
         }
 
         tickDuration();

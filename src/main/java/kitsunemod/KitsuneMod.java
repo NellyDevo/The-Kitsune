@@ -17,11 +17,17 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractKitsuneCard;
+import kitsunemod.cards.attacks.*;
 import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
+import kitsunemod.cards.powers.NinetailedForm;
+import kitsunemod.cards.skills.EssenceTheft;
+import kitsunemod.cards.skills.MemorizeSpell;
+import kitsunemod.cards.skills.ThickFur;
+import kitsunemod.cards.skills.VanishIntoShadows;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
@@ -112,10 +118,21 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Special
 
         //Commons
+        BaseMod.addCard(new FoxShape());
+        BaseMod.addCard(new KitsuneShape());
+        BaseMod.addCard(new HumanShape());
+        BaseMod.addCard(new ThickFur());
 
         //Uncommons
+        BaseMod.addCard(new MemorizeSpell());
+        BaseMod.addCard(new IgniteSilhouette());
+        BaseMod.addCard(new EssenceTheft());
 
-        //Rares.
+        //Rares
+        BaseMod.addCard(new NinetailedForm());
+        BaseMod.addCard(new LashOut());
+        BaseMod.addCard(new VanishIntoShadows());
+        BaseMod.addCard(new CleansingNova());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);
@@ -201,5 +218,12 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
     }
     public static String makeID(String id) {
         return MOD_ID_PREFIX + id;
+    }
+
+    public enum KitsuneShapes {
+        FOX,
+        KITSUNE,
+        HUMAN,
+        NINETAILED
     }
 }

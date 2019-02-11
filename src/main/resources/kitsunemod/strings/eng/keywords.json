@@ -14,7 +14,7 @@
       "Soulsteals",
       "Soulsteal:"
     ],
-    "DESCRIPTION": "When attacked, grants you a buff for each stack. NL Human: 2 #yLight. NL Kitsune: 1 #yWill-o-Wisp (static). NL Fox: 2 #yDark."
+    "DESCRIPTION": "When attacking you, grants you a buff for each stack. NL Human: 2 #yLight. NL Kitsune: 2 #yWill-o-Wisps (static). NL Fox: 2 #yDark."
   },
   "WILL-O-WISP": {
     "NAMES": [
@@ -25,5 +25,52 @@
       "Will-o-Wisp:"
     ],
     "DESCRIPTION": "Consumes itself at the end of your turn to deal damage equal to the number of wisps."
+  },
+
+  "SHAPESHIFT": {
+    "NAMES": [
+      "shapeshift",
+      "shapeshifts",
+      "Shapeshift",
+      "Shapeshifts",
+      "Shapeshift:"
+    ],
+    "DESCRIPTION": "Aspect effects of that #yShape will trigger and you gain minor persistent effects."
+  },
+  "SHAPE": {
+    "NAMES": [
+      "shape",
+      "shapes",
+      "Shape",
+      "Shapes",
+      "Shape:"
+    ],
+    "DESCRIPTION": "Aspect effects of that #yShape will trigger and you gain minor persistent effects."
+  },
+  "ASPECT": {
+    "NAMES": [
+      "aspect",
+      "aspects",
+      "Aspect",
+      "Aspects",
+      "Aspect:"
+    ],
+    "DESCRIPTION": "Aspect effects only trigger when you are in the listed Shape."
+  },
+  "LIGHT": {
+    "NAMES": [
+      "light",
+      "Light",
+      "Light:"
+    ],
+    "DESCRIPTION": "Persistent buff. Converted to Block at the start of your turn when over 9 stacks."
+  },
+  "DARK": {
+    "NAMES": [
+      "dark",
+      "Dark",
+      "Dark:"
+    ],
+    "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks"
   }
 }

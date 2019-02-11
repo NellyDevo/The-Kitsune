@@ -8,17 +8,20 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.KitsuneMod;
+import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
@@ -122,6 +125,13 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public AbstractCard getStartCardForEvent() {
         return new Strike();
+    }
+
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+        //added because preBattlePrep in AbstractPlayer does similar things, and until we promote the shape tracking logic here we need to do this at least
+        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(this, this, KitsuneMod.KitsuneShapes.KITSUNE));
     }
 
     @Override
