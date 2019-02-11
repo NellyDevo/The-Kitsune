@@ -53,9 +53,9 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:NipAtHeels": {
+  "kitsunemod:TestTheirTactics": {
     "NAME": "Test Their Tactics",
-    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
+    "DESCRIPTION": "Deal !D! Damage. Fox kitsunemod:Aspect: Draw a card.",
     "UPGRADE_DESCRIPTION": ""
   },
 

@@ -204,8 +204,8 @@ public class KitsuneMod implements
 //        BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
 //        String monsterStrings = Gdx.files.internal(languageString + "/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
 //        BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
-//        String eventStrings = Gdx.files.internal(languageString + "/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
-//        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        String eventStrings = Gdx.files.internal(languageString + "/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
         String orbStrings = Gdx.files.internal(languageString + "/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
     }
