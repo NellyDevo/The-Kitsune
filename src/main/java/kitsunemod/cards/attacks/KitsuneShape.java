@@ -46,7 +46,7 @@ public class KitsuneShape extends AbstractKitsuneCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
-        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, KitsuneMod.KitsuneShapes.FOX));
+        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, KitsuneMod.KitsuneShapes.KITSUNE));
     }
 
     @Override

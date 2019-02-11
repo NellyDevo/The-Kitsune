@@ -47,7 +47,7 @@ public class HumanShape extends AbstractKitsuneCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, KitsuneMod.KitsuneShapes.FOX));
+        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, KitsuneMod.KitsuneShapes.HUMAN));
     }
 
     @Override
