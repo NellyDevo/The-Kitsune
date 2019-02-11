@@ -48,5 +48,14 @@
     "DESCRIPTIONS": [
       "Currently in a Kitsune's true form. All Aspects will trigger, and you have significant increased Strength/Dex."
     ]
+  },
+  "kitsunemod:InTheShadowsPower": {
+    "NAME": "In the Shadows",
+    "DESCRIPTIONS": [
+      "Hiding in the shadows. Heal #g",
+      " HP instead of being damaged for ",
+      " more time when taking unblocked damage.",
+      " more times when taking unblocked damage."
+    ]
   }
 }

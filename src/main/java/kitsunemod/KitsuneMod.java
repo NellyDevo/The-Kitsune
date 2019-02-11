@@ -27,6 +27,7 @@ import kitsunemod.cards.powers.NinetailedForm;
 import kitsunemod.cards.skills.EssenceTheft;
 import kitsunemod.cards.skills.MemorizeSpell;
 import kitsunemod.cards.skills.ThickFur;
+import kitsunemod.cards.skills.VanishIntoShadows;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
@@ -130,6 +131,7 @@ public class KitsuneMod implements EditCardsSubscriber, EditCharactersSubscriber
         //Rares
         BaseMod.addCard(new NinetailedForm());
         BaseMod.addCard(new LashOut());
+        BaseMod.addCard(new VanishIntoShadows());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);
