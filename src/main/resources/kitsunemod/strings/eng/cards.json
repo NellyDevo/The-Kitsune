@@ -67,5 +67,10 @@
     "NAME": "Ninetailed Form",
     "DESCRIPTION": "Ethereal. NL You count as in all three kitsunemod:Shapes at once, Soulsteal gives you 3 Will-o-Wisps, and you gain base 2 Strength and Dexterity.",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:LashOut": {
+    "NAME": "Lash Out",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: And gain !M! Intangible. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
   }
 }

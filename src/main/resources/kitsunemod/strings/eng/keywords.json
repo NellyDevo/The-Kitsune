@@ -46,5 +46,15 @@
       "Shape:"
     ],
     "DESCRIPTION": "Aspect effects of that #yShape will trigger and you gain minor persistent effects."
+  },
+  "ASPECT": {
+    "NAMES": [
+      "aspect",
+      "aspects",
+      "Aspect",
+      "Aspects",
+      "Aspect:"
+    ],
+    "DESCRIPTION": "Aspect effects only trigger when you are in the listed Shape."
   }
 }
