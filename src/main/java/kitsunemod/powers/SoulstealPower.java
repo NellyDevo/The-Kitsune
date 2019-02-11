@@ -27,8 +27,8 @@ public class SoulstealPower extends AbstractPower {
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
     private static final int LIGHT_DARK_PER_STACK = 2;
-    private static final int KITSUNE_WILL_O_WISPS = 2;
-    private static final int NINETAILED_WILL_O_WISPS = 3;
+    private static final int KITSUNE_WILL_O_WISPS = 1;
+    private static final int NINETAILED_WILL_O_WISPS = 2;
 
 
     public SoulstealPower(final AbstractCreature owner, final AbstractCreature source, final int stacks) {
