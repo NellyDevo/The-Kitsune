@@ -1,10 +1,12 @@
 package kitsunemod.character;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -32,7 +34,8 @@ public class KitsuneCharacter extends CustomPlayer {
     public static final String MY_CHARACTER_SHOULDER_2 = "kitsunemod/images/char/shoulder2.png";
     public static final String MY_CHARACTER_SHOULDER_1 = "kitsunemod/images/char/shoulder.png";
     public static final String MY_CHARACTER_CORPSE = "kitsunemod/images/char/corpse.png";
-    public static final String MY_CHARACTER_ANIMATION = "kitsunemod/images/char/idle/Animation.scml";
+    public static final String SPINE_SKELETON = "kitsunemod/images/char/KitsuneForm.json";
+    public static final String SPINE_ATLAS = "kitsunemod/images/char/KitsuneForm.atlas";
     private static final String ID = KitsuneMod.makeID("KitsuneCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
@@ -54,10 +57,16 @@ public class KitsuneCharacter extends CustomPlayer {
     };
 
     public KitsuneCharacter(String name) {
-        super(name, KitsuneEnum.KITSUNE_CLASS, orbTextures, "kitsunemod/images/char/orb/vfx.png", null, new SpriterAnimation(MY_CHARACTER_ANIMATION));
+        super(name, KitsuneEnum.KITSUNE_CLASS, orbTextures, "kitsunemod/images/char/orb/vfx.png", null, null, null);
 
         dialogX = drawX + DIALOG_X_ADJUSTMENT * Settings.scale;
         dialogY = drawY + DIALOG_Y_ADJUSTMENT * Settings.scale;
+
+        loadAnimation(SPINE_ATLAS, SPINE_SKELETON, 1.0F);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+        this.stateData.setMix("Hit", "Idle", 0.1F);
+        e.setTimeScale(1.0F);
 
         initializeClass(null,
                 MY_CHARACTER_SHOULDER_2,
