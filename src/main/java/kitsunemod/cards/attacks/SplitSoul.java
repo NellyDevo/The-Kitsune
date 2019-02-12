@@ -55,13 +55,20 @@ public class SplitSoul extends AbstractElderCard {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damageArray, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+        incrementElder();
     }
 
 
 
     @Override
-    public void onCardDrawn(AbstractCard card) {
+    public void onCardDrawn(AbstractCard card, boolean isExtraDraw) {
         logger.info("SplitSoul: incrementing cards drawn");
+        if (isExtraDraw) {
+            incrementElder();
+        }
+    }
+
+    private void incrementElder() {
         misc++;
         upgrade();
     }

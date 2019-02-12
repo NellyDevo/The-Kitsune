@@ -174,7 +174,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         return null;
     }
 
-    public void onCardDrawn(AbstractCard card) { }
+    public void onCardDrawn(AbstractCard card, boolean isExtraDraw) { }
 
     public void onBlockedDamage(int amount) { }
 

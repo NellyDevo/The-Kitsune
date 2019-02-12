@@ -169,15 +169,11 @@ public class KitsuneMod implements
     public void receivePostDraw(AbstractCard card) {
         cardDrawsThisCombat++;
         cardDrawsThisTurn++;
-        System.out.println(cardDrawsThisTurn);
-        if (cardDrawsThisTurn > AbstractDungeon.player.gameHandSize) {
-            //triggerElderInGroupForCard(card, AbstractDungeon.player.masterDeck);
-            triggerElderInGroupForCard(card, AbstractDungeon.player.drawPile);
-            triggerElderInGroupForCard(card, AbstractDungeon.player.hand);
-            triggerElderInGroupForCard(card, AbstractDungeon.player.discardPile);
-            triggerElderInGroupForCard(card, AbstractDungeon.player.exhaustPile);
-            triggerElderInGroupForCard(card, AbstractDungeon.player.limbo);
-        }
+        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.drawPile);
+        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.hand);
+        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.discardPile);
+        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.exhaustPile);
+        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.limbo);
     }
 
     @Override
@@ -186,12 +182,19 @@ public class KitsuneMod implements
         return true;
     }
 
-    private void triggerElderInGroupForCard(AbstractCard card, CardGroup group) {
+    @Override
+    public void receivePostBattle(AbstractRoom room) {
+        KitsuneMod.shapeshiftsThisCombat = 0;
+        KitsuneMod.cardDrawsThisCombat = 0;
+        KitsuneMod.cardDrawsThisTurn = 0;
+    }
+
+    private void triggerElderInGroupForCardDraw(AbstractCard card, CardGroup group) {
         for (int i = 0; i < group.size(); i++) {
             AbstractCard currentCard = group.getNCardFromTop(i);
             if (currentCard instanceof AbstractElderCard) {
                 AbstractElderCard currentElderCard = (AbstractElderCard) currentCard;
-                currentElderCard.onCardDrawn(card);
+                currentElderCard.onCardDrawn(card, cardDrawsThisTurn > AbstractDungeon.player.gameHandSize);
             }
         }
 
@@ -268,11 +271,6 @@ public class KitsuneMod implements
         //Shop
 
         //Boss
-    }
-
-    @Override
-    public void receivePostBattle(AbstractRoom room) {
-        KitsuneMod.shapeshiftsThisCombat = 0;
     }
 
     public static String makeID(String id) {
