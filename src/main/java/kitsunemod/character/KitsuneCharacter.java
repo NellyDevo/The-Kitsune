@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -45,6 +46,7 @@ public class KitsuneCharacter extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
     private static final float DIALOG_X_ADJUSTMENT = 0.0F;
     private static final float DIALOG_Y_ADJUSTMENT = 220.0F;
+    //private HashMap<String, >
     public static final String[] orbTextures = {
             "kitsunemod/images/char/orb/layer1.png",
             "kitsunemod/images/char/orb/layer2.png",
@@ -202,5 +204,11 @@ public class KitsuneCharacter extends CustomPlayer {
         return new CharSelectInfo(NAMES[0], TEXT[0],
                 77, 77, 0, 99, 5, //starting hp, max hp, max orbs, starting gold, starting hand size
                 this, getStartingRelics(), getStartingDeck(), false);
+    }
+
+    //don't mind me just setting up the framework for dynamic animations
+    @Override
+    protected void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
+        super.loadAnimation(atlasUrl, skeletonUrl, scale);
     }
 }

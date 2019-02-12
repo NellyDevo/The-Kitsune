@@ -14,7 +14,7 @@ public class LoadElderCardPatch {
     public static AbstractCard Postfix(AbstractCard __result, String key, final int upgradeTime, final int misc) {
         if (__result instanceof AbstractElderCard) {
             __result.timesUpgraded = upgradeTime;
-            __result = __result.makeStatEquivalentCopy();
+            __result = __result.makeCopy();
         }
         return __result;
     }

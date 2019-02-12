@@ -7,17 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public abstract class AbstractElderCard extends AbstractKitsuneCard {
+
     public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
                              CardType type, CardColor color,
                              CardRarity rarity, CardTarget target) {
-        this(id, name, img, cost, rawDescription, type, color, rarity, target, 0);
-    }
-    public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
-                             CardType type, CardColor color,
-                             CardRarity rarity, CardTarget target, int timesUpgraded) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
-        this.timesUpgraded = timesUpgraded;
-        initializeWithUpgrades(timesUpgraded);
     }
 
     @Override
@@ -38,6 +32,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade1();
         }
+        timesUpgraded = 1;
         upgradeAll();
     }
 
@@ -47,6 +42,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade2();
         }
+        timesUpgraded = 2;
         upgradeAll();
     }
 
@@ -56,6 +52,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade3();
         }
+        timesUpgraded = 3;
         upgradeAll();
     }
 
@@ -65,6 +62,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade4();
         }
+        timesUpgraded = 4;
         upgradeAll();
     }
 
@@ -74,6 +72,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade5();
         }
+        timesUpgraded = 5;
         upgradeAll();
     }
 
@@ -83,6 +82,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade6();
         }
+        timesUpgraded = 6;
         upgradeAll();
     }
 
@@ -92,6 +92,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade7();
         }
+        timesUpgraded = 7;
         upgradeAll();
     }
 
@@ -101,6 +102,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade8();
         }
+        timesUpgraded = 8;
         upgradeAll();
     }
 
@@ -110,6 +112,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade9();
         }
+        timesUpgraded = 9;
         upgradeAll();
     }
 
@@ -187,19 +190,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     }
 
     @Override
-    public void upgradeName() {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
-        EXTRA_DESCRIPTIONS = cardStrings.EXTENDED_DESCRIPTION;
-
-        ++timesUpgraded;
-        upgraded = true;
-        name = NAME + "+" + timesUpgraded;
-        initializeTitle();
-    }
-
-    @Override
     public void upgrade() {
         if (firstCondition() && timesUpgraded >= 0) {
             upgrade1();
@@ -230,7 +220,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         }
     }
 
-    private void initializeWithUpgrades(int amount) {
+    protected void initializeWithUpgrades(int amount) {
         if (amount >= 1) {
             upgrade1();
         }
