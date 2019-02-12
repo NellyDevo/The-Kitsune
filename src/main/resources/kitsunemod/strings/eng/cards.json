@@ -63,6 +63,16 @@
     "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. kitsunemod:Elder: Draw 5 cards.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:Radiance": {
+    "NAME": "Radiance",
+    "DESCRIPTION": "Set your kitsunemod:Light to !M!. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:GrowingShadow": {
+    "NAME": "Growing Shadow",
+    "DESCRIPTION": "Set your kitsunemod:Dark to !M!. Apply !kitsunemod:M2! Vulnerable.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 

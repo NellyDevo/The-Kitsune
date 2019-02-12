@@ -141,6 +141,8 @@ public class KitsuneMod implements
         BaseMod.addCard(new NipAtHeels());
         BaseMod.addCard(new TestTheirTactics());
         BaseMod.addCard(new SplitSoul());
+        BaseMod.addCard(new Radiance());
+        BaseMod.addCard(new GrowingShadow());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
