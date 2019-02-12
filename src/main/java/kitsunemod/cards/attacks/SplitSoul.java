@@ -29,20 +29,19 @@ public class SplitSoul extends AbstractElderCard {
     private static final int ATTACK_DMG = 4;
     private static final int UPGRADE_PLUS_DMG_PER_TIER = 3;
 
-    private static final int CARDS_DRAWN = 1;
-
     private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 5;
     private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
     public SplitSoul() {
-        this(0);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+                CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
+                CardRarity.COMMON, CardTarget.ALL);
+        damage = baseDamage = ATTACK_DMG;
     }
 
     public SplitSoul(int timesUpgraded) {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.COMMON, CardTarget.ALL, timesUpgraded);
-        damage = baseDamage = ATTACK_DMG;
+        this();
+        initializeWithUpgrades(timesUpgraded);
     }
 
     @Override
@@ -82,13 +81,14 @@ public class SplitSoul extends AbstractElderCard {
 
     @Override
     public void upgradeName() {
-        super.upgradeName();
+        upgraded = true;
+        name = NAME + "+" + timesUpgraded;
+        initializeTitle();
     }
-
 
     @Override
     public AbstractCard makeCopy() {
-        logger.info("making new copy of SplitSoul with misc: " + misc);
+        logger.info("making new copy of SplitSoul with misc: " + misc + " (timesUpgrade = " + timesUpgraded + ".)");
         return new SplitSoul(timesUpgraded);
     }
 
