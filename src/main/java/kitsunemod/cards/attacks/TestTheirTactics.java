@@ -36,7 +36,7 @@ public class TestTheirTactics extends AbstractKitsuneCard {
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        tags.add(KitsuneTags.ZERO_COST_ATTACK);
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override

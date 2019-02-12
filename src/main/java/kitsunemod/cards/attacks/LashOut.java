@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.*;
 
 public class LashOut extends AbstractKitsuneCard {
@@ -37,6 +38,7 @@ public class LashOut extends AbstractKitsuneCard {
         block = baseBlock = HUMAN_ASPECT_BLOCK;
         magicNumber = baseMagicNumber = KITSUNE_ASPECT_SHADOW;
         exhaustOnUseOnce = true;
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override
