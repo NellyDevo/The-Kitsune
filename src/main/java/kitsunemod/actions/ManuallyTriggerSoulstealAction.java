@@ -35,10 +35,11 @@ public class ManuallyTriggerSoulstealAction extends AbstractGameAction {
                 return;
             }
             if (target.hasPower(SoulstealPower.POWER_ID)) {
-                AbstractPower soulstealPower = target.getPower(SoulstealPower.POWER_ID);
-                soulstealPower.onAttack(new DamageInfo(target, 0), 0, source);
+                SoulstealPower soulstealPower = (SoulstealPower)target.getPower(SoulstealPower.POWER_ID);
+                soulstealPower.applySoulsteal(source, false);
             }
             isDone = true;
         }
+        tickDuration();
     }
 }
