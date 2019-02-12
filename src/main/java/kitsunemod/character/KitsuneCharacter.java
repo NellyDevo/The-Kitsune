@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.esotericsoftware.spine.Skeleton;
+import com.esotericsoftware.spine.Slot;
+import com.esotericsoftware.spine.attachments.Attachment;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,6 +34,7 @@ import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.StarterRelic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class KitsuneCharacter extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3;
@@ -46,7 +49,9 @@ public class KitsuneCharacter extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
     private static final float DIALOG_X_ADJUSTMENT = 0.0F;
     private static final float DIALOG_Y_ADJUSTMENT = 220.0F;
-    //private HashMap<String, >
+    private AnimationState.TrackEntry animationTrackEntry;
+    private HashMap<String, Attachment> storedAssets = new HashMap<>();
+    private HashMap<String, Slot> animationSlots = new HashMap<>();
     public static final String[] orbTextures = {
             "kitsunemod/images/char/orb/layer1.png",
             "kitsunemod/images/char/orb/layer2.png",
@@ -68,16 +73,37 @@ public class KitsuneCharacter extends CustomPlayer {
         dialogY = drawY + DIALOG_Y_ADJUSTMENT * Settings.scale;
 
         loadAnimation(SPINE_ATLAS, SPINE_SKELETON, 1.0F);
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-        e.setTime(e.getEndTime() * MathUtils.random());
-        this.stateData.setMix("Hit", "Idle", 0.1F);
-        e.setTimeScale(1.0F);
+        animationTrackEntry = state.setAnimation(0, "Idle", true);
+        animationTrackEntry.setTime(animationTrackEntry.getEndTime() * MathUtils.random());
+        animationTrackEntry.setTimeScale(1.0F);
 
         initializeClass(null,
                 MY_CHARACTER_SHOULDER_2,
                 MY_CHARACTER_SHOULDER_1,
                 MY_CHARACTER_CORPSE,
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
+    }
+
+    public void transformToFox() {
+
+    }
+
+    public void transformToKitsune() {
+        animationSlots.get("Kitsune Hair").setAttachment(storedAssets.get("Kitsune Hair"));
+        animationSlots.get("Kitsune Tail").setAttachment(storedAssets.get("Kitsune Tail"));
+        animationSlots.get("Kitsune Left Ear").setAttachment(storedAssets.get("Kitsune Left Ear"));
+        animationSlots.get("Kitsune Right Ear").setAttachment(storedAssets.get("Kitsune Right Ear"));
+    }
+
+    public void transformToHuman() {
+        animationSlots.get("Kitsune Hair").setAttachment(null);
+        animationSlots.get("Kitsune Tail").setAttachment(null);
+        animationSlots.get("Kitsune Left Ear").setAttachment(null);
+        animationSlots.get("Kitsune Right Ear").setAttachment(null);
+    }
+
+    public void transformToNinetailed() {
+
     }
 
     @Override
@@ -210,5 +236,21 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     protected void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
         super.loadAnimation(atlasUrl, skeletonUrl, scale);
+
+        Slot hairSlot = skeleton.findSlot("Hair");
+        animationSlots.put("Kitsune Hair", hairSlot);
+        storedAssets.put("Kitsune Hair", hairSlot.getAttachment());
+
+        Slot tailSlot = skeleton.findSlot("Tail");
+        animationSlots.put("Kitsune Tail", tailSlot);
+        storedAssets.put("Kitsune Tail", tailSlot.getAttachment());
+
+        Slot leftEarSlot = skeleton.findSlot("Left_Ear");
+        animationSlots.put("Kitsune Left Ear", leftEarSlot);
+        storedAssets.put("Kitsune Left Ear", leftEarSlot.getAttachment());
+
+        Slot rightEarSlot = skeleton.findSlot("Right_Ear");
+        animationSlots.put("Kitsune Right Ear", rightEarSlot);
+        storedAssets.put("Kitsune Right Ear", rightEarSlot.getAttachment());
     }
 }
