@@ -143,6 +143,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new SplitSoul());
         BaseMod.addCard(new Radiance());
         BaseMod.addCard(new GrowingShadow());
+        BaseMod.addCard(new TricksterFlame());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
