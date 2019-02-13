@@ -184,6 +184,10 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     }
 
+    public void onLoseBlock(int amount) {
+
+    }
+
     @Override
     public boolean canUpgrade() {
         return false;

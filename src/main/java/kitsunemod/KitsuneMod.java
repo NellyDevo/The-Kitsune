@@ -55,7 +55,12 @@ public class KitsuneMod implements
         PostInitializeSubscriber,
         PostBattleSubscriber,
         PostDrawSubscriber,
-        PreMonsterTurnSubscriber {
+        PreMonsterTurnSubscriber,
+        OnPlayerLoseBlockSubscriber {
+
+    private interface ElderTriggerFunc {
+        void run(AbstractElderCard card);
+    }
 
     public static final Color kitsuneColor = CardHelper.getColor(152.0f, 34.0f, 171.0f); //change this to our class's decided color; currently leftover from mystic purple
 
@@ -175,11 +180,12 @@ public class KitsuneMod implements
     public void receivePostDraw(AbstractCard card) {
         cardDrawsThisCombat++;
         cardDrawsThisTurn++;
-        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.drawPile);
-        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.hand);
-        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.discardPile);
-        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.exhaustPile);
-        triggerElderInGroupForCardDraw(card, AbstractDungeon.player.limbo);
+        boolean isExtraDraw = cardDrawsThisTurn > AbstractDungeon.player.gameHandSize;
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
     }
 
     @Override
@@ -197,15 +203,24 @@ public class KitsuneMod implements
         KitsuneMod.turnsSpentInSameShape = 0;
     }
 
-    private void triggerElderInGroupForCardDraw(AbstractCard card, CardGroup group) {
+
+    public int receiveOnPlayerLoseBlock(int amount) {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseBlock(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseBlock(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseBlock(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseBlock(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseBlock(amount));
+        return amount;
+    }
+
+    private void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
         for (int i = 0; i < group.size(); i++) {
             AbstractCard currentCard = group.getNCardFromTop(i);
             if (currentCard instanceof AbstractElderCard) {
                 AbstractElderCard currentElderCard = (AbstractElderCard) currentCard;
-                currentElderCard.onCardDrawn(card, cardDrawsThisTurn > AbstractDungeon.player.gameHandSize);
+                trigger.run(currentElderCard);
             }
         }
-
     }
 
     @Override
