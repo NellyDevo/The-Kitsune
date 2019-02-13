@@ -30,6 +30,7 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.cards.powers.NinetailedForm;
+import kitsunemod.cards.powers.PerfectedShape;
 import kitsunemod.cards.skills.*;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
@@ -73,7 +74,10 @@ public class KitsuneMod implements
 
     private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
+    //ChangeShapeAction chanages these values as appropriate. We may need to change this later for elder cards or relics
     public static int shapeshiftsThisCombat = 0;
+    public static int turnsSpentInSameShape = 1;
+
     public static int cardDrawsThisCombat = 0;
     public static int cardDrawsThisTurn = 0;
 
@@ -144,6 +148,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new Radiance());
         BaseMod.addCard(new GrowingShadow());
         BaseMod.addCard(new TricksterFlame());
+        BaseMod.addCard(new PerfectedShape());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
@@ -180,6 +185,7 @@ public class KitsuneMod implements
     @Override
     public boolean receivePreMonsterTurn(AbstractMonster m) {
         cardDrawsThisTurn = 0;
+        turnsSpentInSameShape++;
         return true;
     }
 
@@ -188,6 +194,7 @@ public class KitsuneMod implements
         KitsuneMod.shapeshiftsThisCombat = 0;
         KitsuneMod.cardDrawsThisCombat = 0;
         KitsuneMod.cardDrawsThisTurn = 0;
+        KitsuneMod.turnsSpentInSameShape = 0;
     }
 
     private void triggerElderInGroupForCardDraw(AbstractCard card, CardGroup group) {

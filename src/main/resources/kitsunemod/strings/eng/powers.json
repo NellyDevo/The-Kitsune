@@ -23,6 +23,14 @@
       " stacks."]
   },
 
+  "kitsunemod:PerfectedShapePower": {
+    "NAME": "Perfected Shape",
+    "DESCRIPTIONS": [
+      "Gaining ",
+      " Block at the start of your turn for each turn spent in the same #yShape."
+    ]
+  },
+
   "kitsunemod:KitsuneShapePower": {
     "NAME": "Kitsune Shape",
     "DESCRIPTIONS": [

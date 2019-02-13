@@ -79,6 +79,12 @@
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisps."
   },
 
+  "kitsunemod:PerfectedShape": {
+    "NAME": "Perfected Shape",
+    "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+
 
 
   "kitsunemod:MemorizeSpell": {
