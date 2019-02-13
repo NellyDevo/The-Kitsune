@@ -50,8 +50,8 @@ public class KitsuneCharacter extends CustomPlayer {
     private static final float DIALOG_X_ADJUSTMENT = 0.0F;
     private static final float DIALOG_Y_ADJUSTMENT = 220.0F;
     private AnimationState.TrackEntry animationTrackEntry;
-    private HashMap<String, Attachment> storedAssets = new HashMap<>();
     private HashMap<String, Slot> animationSlots = new HashMap<>();
+    private HashMap<String, Attachment> storedAssets = new HashMap<>();
     public static final String[] orbTextures = {
             "kitsunemod/images/char/orb/layer1.png",
             "kitsunemod/images/char/orb/layer2.png",
@@ -85,21 +85,54 @@ public class KitsuneCharacter extends CustomPlayer {
     }
 
     public void transformToFox() {
+        animationSlots.get("Human Right Arm").setAttachment(null);
+        animationSlots.get("Human Left Arm").setAttachment(null);
+        animationSlots.get("Human Left Wrist").setAttachment(null);
+        animationSlots.get("Human Body").setAttachment(null);
+        animationSlots.get("Sword").setAttachment(null);
 
-    }
-
-    public void transformToKitsune() {
-        animationSlots.get("Kitsune Hair").setAttachment(storedAssets.get("Kitsune Hair"));
-        animationSlots.get("Kitsune Tail").setAttachment(storedAssets.get("Kitsune Tail"));
-        animationSlots.get("Kitsune Left Ear").setAttachment(storedAssets.get("Kitsune Left Ear"));
-        animationSlots.get("Kitsune Right Ear").setAttachment(storedAssets.get("Kitsune Right Ear"));
-    }
-
-    public void transformToHuman() {
         animationSlots.get("Kitsune Hair").setAttachment(null);
         animationSlots.get("Kitsune Tail").setAttachment(null);
         animationSlots.get("Kitsune Left Ear").setAttachment(null);
         animationSlots.get("Kitsune Right Ear").setAttachment(null);
+
+        animationSlots.get("Fox Pendant").setAttachment(storedAssets.get("Fox Pendant"));
+        animationSlots.get("Fox Tail").setAttachment(storedAssets.get("Fox Tail"));
+        animationSlots.get("Fox Body").setAttachment(storedAssets.get("Fox Body"));
+    }
+
+    public void transformToKitsune() {
+        animationSlots.get("Human Right Arm").setAttachment(storedAssets.get("Human Right Arm"));
+        animationSlots.get("Human Left Arm").setAttachment(storedAssets.get("Human Left Arm"));
+        animationSlots.get("Human Left Wrist").setAttachment(storedAssets.get("Human Left Wrist"));
+        animationSlots.get("Human Body").setAttachment(storedAssets.get("Human Body"));
+        animationSlots.get("Sword").setAttachment(storedAssets.get("Sword"));
+
+        animationSlots.get("Kitsune Hair").setAttachment(storedAssets.get("Kitsune Hair"));
+        animationSlots.get("Kitsune Tail").setAttachment(storedAssets.get("Kitsune Tail"));
+        animationSlots.get("Kitsune Left Ear").setAttachment(storedAssets.get("Kitsune Left Ear"));
+        animationSlots.get("Kitsune Right Ear").setAttachment(storedAssets.get("Kitsune Right Ear"));
+
+        animationSlots.get("Fox Pendant").setAttachment(null);
+        animationSlots.get("Fox Tail").setAttachment(null);
+        animationSlots.get("Fox Body").setAttachment(null);
+    }
+
+    public void transformToHuman() {
+        animationSlots.get("Human Right Arm").setAttachment(storedAssets.get("Human Right Arm"));
+        animationSlots.get("Human Left Arm").setAttachment(storedAssets.get("Human Left Arm"));
+        animationSlots.get("Human Left Wrist").setAttachment(storedAssets.get("Human Left Wrist"));
+        animationSlots.get("Human Body").setAttachment(storedAssets.get("Human Body"));
+        animationSlots.get("Sword").setAttachment(storedAssets.get("Sword"));
+
+        animationSlots.get("Kitsune Hair").setAttachment(null);
+        animationSlots.get("Kitsune Tail").setAttachment(null);
+        animationSlots.get("Kitsune Left Ear").setAttachment(null);
+        animationSlots.get("Kitsune Right Ear").setAttachment(null);
+
+        animationSlots.get("Fox Pendant").setAttachment(null);
+        animationSlots.get("Fox Tail").setAttachment(null);
+        animationSlots.get("Fox Body").setAttachment(null);
     }
 
     public void transformToNinetailed() {
@@ -237,20 +270,48 @@ public class KitsuneCharacter extends CustomPlayer {
     protected void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
         super.loadAnimation(atlasUrl, skeletonUrl, scale);
 
-        Slot hairSlot = skeleton.findSlot("Hair");
+        //Initialize Human Form
+        Slot rightArmSlot = skeleton.findSlot("Right_Arm"); //human, kitsune
+        animationSlots.put("Human Right Arm", rightArmSlot);
+        storedAssets.put("Human Right Arm", rightArmSlot.getAttachment());
+        Slot leftArmSlot = skeleton.findSlot("Sword_Arm"); //human, kitsune
+        animationSlots.put("Human Left Arm", leftArmSlot);
+        storedAssets.put("Human Left Arm", leftArmSlot.getAttachment());
+        Slot leftWristSlot = skeleton.findSlot("Wrist"); //human, kitsune
+        animationSlots.put("Human Left Wrist", leftWristSlot);
+        storedAssets.put("Human Left Wrist", leftWristSlot.getAttachment());
+        Slot swordSlot = skeleton.findSlot("Sword"); //human, kitsune
+        animationSlots.put("Sword", swordSlot);
+        storedAssets.put("Sword", swordSlot.getAttachment());
+        Slot bodySlot = skeleton.findSlot("Body"); //human, kitsune
+        animationSlots.put("Human Body", bodySlot);
+        storedAssets.put("Human Body", bodySlot.getAttachment());
+
+        //Initialize Kitsune Form
+        Slot hairSlot = skeleton.findSlot("Hair"); //kitsune
         animationSlots.put("Kitsune Hair", hairSlot);
         storedAssets.put("Kitsune Hair", hairSlot.getAttachment());
-
-        Slot tailSlot = skeleton.findSlot("Tail");
+        Slot tailSlot = skeleton.findSlot("Tail"); //kitsune
         animationSlots.put("Kitsune Tail", tailSlot);
         storedAssets.put("Kitsune Tail", tailSlot.getAttachment());
-
-        Slot leftEarSlot = skeleton.findSlot("Left_Ear");
+        Slot leftEarSlot = skeleton.findSlot("Left_Ear"); //kitsune
         animationSlots.put("Kitsune Left Ear", leftEarSlot);
         storedAssets.put("Kitsune Left Ear", leftEarSlot.getAttachment());
-
-        Slot rightEarSlot = skeleton.findSlot("Right_Ear");
+        Slot rightEarSlot = skeleton.findSlot("Right_Ear"); //kitsune
         animationSlots.put("Kitsune Right Ear", rightEarSlot);
         storedAssets.put("Kitsune Right Ear", rightEarSlot.getAttachment());
+
+        //Initialize Fox Form
+        Slot foxPendantSlot = skeleton.findSlot("Fox_Pendant"); //fox
+        animationSlots.put("Fox Pendant", foxPendantSlot);
+        storedAssets.put("Fox Pendant", foxPendantSlot.getAttachment());
+        Slot foxTailSlot = skeleton.findSlot("Fox_Tail"); //fox
+        animationSlots.put("Fox Tail", foxTailSlot);
+        storedAssets.put("Fox Tail", foxTailSlot.getAttachment());
+        Slot foxBodySlot = skeleton.findSlot("Fox_Body"); //fox
+        animationSlots.put("Fox Body", foxBodySlot);
+        storedAssets.put("Fox Body", foxBodySlot.getAttachment());
+
+        transformToKitsune();
     }
 }
