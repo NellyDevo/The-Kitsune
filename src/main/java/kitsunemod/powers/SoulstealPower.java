@@ -58,7 +58,6 @@ public class SoulstealPower extends AbstractPower {
     }
 
     public void applySoulsteal(AbstractCreature target, boolean isFromAttack) {
-        //TODO: Implement this. Need to wire up light and dark as dummy powers at least
         AbstractPlayer targetPlayer = (AbstractPlayer)target;
         if (target.hasPower(FoxShapePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));

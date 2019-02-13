@@ -87,7 +87,6 @@ public class ChangeShapeAction extends AbstractGameAction {
             case HUMAN:
                 return HumanShapePower.POWER_ID;
             case NINETAILED:
-                //TODO fix this when we have a Ninetails shape power and add here
                 return NinetailedShapePower.POWER_ID;
             default:
                 return "ShouldntBeHere";
