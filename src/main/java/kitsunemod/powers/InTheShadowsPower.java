@@ -49,8 +49,9 @@ public class InTheShadowsPower extends AbstractPower {
     public int onLoseHp(int damageAmount) {
 
         if (damageAmount > 0) {
+            flash();
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
-            AbstractDungeon.actionManager.addToBottom(new HealAction(owner, owner, healAmount));
+            AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, healAmount));
         }
 
         return 0;

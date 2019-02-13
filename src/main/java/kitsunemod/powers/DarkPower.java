@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import kitsunemod.KitsuneMod;
 
 public class DarkPower extends AbstractPower {
@@ -47,7 +48,7 @@ public class DarkPower extends AbstractPower {
     public void atStartOfTurnPostDraw() {
 
         if (amount >= TRIGGER_BASE_STACKS) {
-            flash();
+            AbstractDungeon.effectList.add(new FlashPowerEffect(this));
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(source, (int)(amount * EFFECT_MULTIPLIER), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.POISON));
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
