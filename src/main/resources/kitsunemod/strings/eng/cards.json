@@ -78,7 +78,16 @@
     "DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisp.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisps."
   },
-
+  "kitsunemod:FeralInstinct": {
+    "NAME": "Feral Instinct",
+    "DESCRIPTION": "Gain !B! Block twice. kitsunemod:Elder: Block 30 damage.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:InflictWounds": {
+    "NAME": "Inflict Wounds",
+    "DESCRIPTION": "Deal !D! damage. Human kitsunemod:Aspect: Apply !M! kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:PerfectedShape": {
     "NAME": "Perfected Shape",
     "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
@@ -102,6 +111,7 @@
     "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
     "UPGRADE_DESCRIPTION": ""
   },
+
 
 
   "kitsunemod:NinetailedForm": {
