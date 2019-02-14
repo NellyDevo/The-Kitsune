@@ -38,19 +38,25 @@ public abstract class AbstractShapePower extends AbstractPower {
 
     }
 
+    //if you have a shape applied, have the str/dex changed to/from zero, and then remove it, then you won't keep parity.
+    //This shouldn't need to be fixed but if it is fix it here
     @Override
     public void onInitialApplication() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StrengthPower(owner, bonusStrength), bonusStrength));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new DexterityPower(owner, bonusDexterity), bonusDexterity));
+        if (bonusStrength!= 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StrengthPower(owner, bonusStrength), bonusStrength));
+        }
+        if (bonusDexterity != 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new DexterityPower(owner, bonusDexterity), bonusDexterity));
+        }
     }
     @Override
     public void onRemove() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StrengthPower(owner, -bonusStrength), -bonusStrength));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new DexterityPower(owner, -bonusDexterity), -bonusDexterity));
-    }
-
-    public KitsuneMod.KitsuneShapes getShape() {
-        return shape;
+        if (bonusStrength != 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StrengthPower(owner, -bonusStrength), -bonusStrength));
+        }
+        if (bonusDexterity != 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new DexterityPower(owner, -bonusDexterity), -bonusDexterity));
+        }
     }
 
     @Override

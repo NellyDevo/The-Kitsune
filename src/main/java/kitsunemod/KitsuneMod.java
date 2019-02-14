@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractElderCard;
@@ -35,6 +36,7 @@ import kitsunemod.cards.skills.*;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
+import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.StarterRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -78,6 +80,8 @@ public class KitsuneMod implements
     private static final String miniManaSymbol = "kitsunemod/images/manaSymbol.png";
 
     private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
+
+    //TODO reorganize into implementation and mod setup sections
 
     //ChangeShapeAction chanages these values as appropriate. We may need to change this later for elder cards or relics
     public static int shapeshiftsThisCombat = 0;
@@ -205,6 +209,23 @@ public class KitsuneMod implements
         KitsuneMod.turnsSpentInSameShape = 0;
     }
 
+    public static void receiveChangeShape(KitsuneShapes shape) {
+        if (AbstractDungeon.player.relics != null) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+                //TODO expand to be more general; i.e. making a KitsuneRelic class and offering this hook
+                AbstractRelic r = AbstractDungeon.player.relics.get(i);
+                if (r instanceof KitsuneRelic) {
+                    ((KitsuneRelic) r).onChangeShape(shape);
+                }
+            }
+        }
+        if (AbstractDungeon.player instanceof KitsuneCharacter) {
+            ((KitsuneCharacter) AbstractDungeon.player).onShapeChange(shape);
+        }
+
+        KitsuneMod.shapeshiftsThisCombat++;
+        KitsuneMod.turnsSpentInSameShape = 0;
+    }
 
     public int receiveOnPlayerLoseBlock(int amount) {
         triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseBlock(amount));

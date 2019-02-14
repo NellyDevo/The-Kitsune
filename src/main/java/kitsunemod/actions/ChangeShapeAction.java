@@ -51,28 +51,18 @@ public class ChangeShapeAction extends AbstractGameAction {
             switch (newShape) {
                 case FOX:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new FoxShapePower(target, source)));
-                    if (AbstractDungeon.player instanceof KitsuneCharacter) {
-                        ((KitsuneCharacter)AbstractDungeon.player).transformToFox();
-                    }
                     break;
                 case KITSUNE:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new KitsuneShapePower(target, source)));
                     KitsuneMod.shapeshiftsThisCombat++;
-                    if (AbstractDungeon.player instanceof KitsuneCharacter) {
-                        ((KitsuneCharacter)AbstractDungeon.player).transformToKitsune();
-                    }
                     break;
                 case HUMAN:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new HumanShapePower(target, source)));
-                    if (AbstractDungeon.player instanceof KitsuneCharacter) {
-                        ((KitsuneCharacter)AbstractDungeon.player).transformToHuman();
-                    }
                     break;
                 case NINETAILED:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new NinetailedShapePower(target, source)));
             }
-            KitsuneMod.shapeshiftsThisCombat++;
-            KitsuneMod.turnsSpentInSameShape = 0;
+            KitsuneMod.receiveChangeShape(newShape);
         }
         tickDuration();
     }

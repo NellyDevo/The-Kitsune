@@ -8,8 +8,8 @@ import kitsunemod.KitsuneMod;
 public class NinetailedShapePower extends AbstractShapePower {
 
     public AbstractCreature source;
-    public static final int BONUS_DEXTERITY = 2;
-    public static final int BONUS_STRENGTH = 2;
+    public static int BONUS_DEXTERITY = 2;
+    public static int BONUS_STRENGTH = 2;
 
     public static final String POWER_ID = KitsuneMod.makeID("NinetailedShapePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

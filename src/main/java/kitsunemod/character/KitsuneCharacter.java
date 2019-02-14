@@ -139,6 +139,20 @@ public class KitsuneCharacter extends CustomPlayer {
 
     }
 
+    public void onShapeChange(KitsuneMod.KitsuneShapes shape) {
+        switch(shape) {
+            case FOX:
+                transformToFox();
+                break;
+            case KITSUNE:
+                transformToKitsune();
+                break;
+            case HUMAN:
+                transformToHuman();
+                break;
+        }
+    }
+
     @Override
     public String getSpireHeartText() {
         return TEXT[1]; //UPDATE BODY TEXT :(

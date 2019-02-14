@@ -15,8 +15,8 @@ public class HumanShapePower extends AbstractShapePower {
 
 
     public AbstractCreature source;
-    public static final int BONUS_DEXTERITY = -1;
-    public static final int BONUS_STRENGTH = 2;
+    public static int BONUS_DEXTERITY = -1;
+    public static int BONUS_STRENGTH = 2;
 
     public static final String POWER_ID = KitsuneMod.makeID("HumanShapePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
