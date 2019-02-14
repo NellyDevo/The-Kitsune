@@ -14,6 +14,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.IgniteSilhouetteAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.NinetailedShapePower;
 import kitsunemod.powers.SoulstealPower;
@@ -37,6 +38,7 @@ public class InflictWounds extends AbstractKitsuneCard {
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = SOULSTEAL_AMT;
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override

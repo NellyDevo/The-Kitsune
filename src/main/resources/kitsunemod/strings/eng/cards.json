@@ -98,6 +98,11 @@
     "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:Insight": {
+    "NAME": "Insight",
+    "DESCRIPTION": "Whenever you play an kitsunemod:Aspect card, draw another kitsunemod:Aspect card from your draw pile.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 

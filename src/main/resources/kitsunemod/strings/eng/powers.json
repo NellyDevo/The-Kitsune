@@ -82,5 +82,11 @@
       " more time when taking unblocked damage.",
       " more times when taking unblocked damage."
     ]
+  },
+  "kitsunemod:InsightPower": {
+    "NAME": "Insight",
+    "DESCRIPTIONS": [
+      "When you play an Aspect card, draw another Aspect card from your deck."
+    ]
   }
 }
