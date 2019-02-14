@@ -25,7 +25,7 @@ public class FoxShapePower extends AbstractShapePower {
 
 
     public FoxShapePower(final AbstractCreature owner, final AbstractCreature source) {
-        super(owner, source, KitsuneMod.KitsuneShapes.FOX, BONUS_STRENGTH, BONUS_DEXTERITY);
+        super(owner, source, DESCRIPTIONS, KitsuneMod.KitsuneShapes.FOX, BONUS_STRENGTH, BONUS_DEXTERITY);
 
         name = NAME;
         ID = POWER_ID;
@@ -34,10 +34,5 @@ public class FoxShapePower extends AbstractShapePower {
         //img = ImageMaster.loadImage(IMG);
         loadRegion("demonForm");
         updateDescription();
-    }
-
-    @Override
-    public void updateDescription() {
-        description = DESCRIPTIONS[0];
     }
 }

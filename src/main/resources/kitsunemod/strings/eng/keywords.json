@@ -47,7 +47,7 @@
       "Shapes",
       "Shape:"
     ],
-    "DESCRIPTION": "Aspect effects of that #yShape will trigger and you gain minor persistent effects."
+    "DESCRIPTION": "Aspect effects of that #yShape will trigger. Some relics and powers make your #yShape grant persistent buffs too."
   },
   "ASPECT": {
     "NAMES": [
