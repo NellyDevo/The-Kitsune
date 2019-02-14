@@ -160,6 +160,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new PerfectedShape());
         BaseMod.addCard(new FeralInstinct());
         BaseMod.addCard(new InflictWounds());
+        BaseMod.addCard(new AlluringGlimmer());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
