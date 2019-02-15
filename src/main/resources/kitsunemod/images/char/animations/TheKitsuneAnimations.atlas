@@ -1,68 +1,138 @@
 
-KitsuneForm.png
+TheKitsuneAnimations.png
 size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-Import/shadow_
+9 tails/Tail_09
   rotate: false
-  xy: 1, 605
-  size: 358, 602
-  orig: 358, 602
+  xy: 768, 1813
+  size: 127, 99
+  orig: 127, 99
   offset: 0, 0
   index: -1
-fox form/tail
+9 tails/Tail_08
+  rotate: false
+  xy: 1034, 1813
+  size: 108, 90
+  orig: 108, 90
+  offset: 0, 0
+  index: -1
+9 tails/Tail_07
+  rotate: false
+  xy: 853, 1942
+  size: 206, 84
+  orig: 206, 84
+  offset: 0, 0
+  index: -1
+9 tails/Tail_06
+  rotate: false
+  xy: 897, 1813
+  size: 135, 93
+  orig: 135, 93
+  offset: 0, 0
+  index: -1
+9 tails/Tail_05
+  rotate: false
+  xy: 166, 1925
+  size: 204, 119
+  orig: 204, 119
+  offset: 0, 0
+  index: -1
+9 tails/Tail_04
+  rotate: false
+  xy: 653, 1813
+  size: 113, 126
+  orig: 113, 126
+  offset: 0, 0
+  index: -1
+9 tails/Tail_03
   rotate: false
   xy: 166, 1813
-  size: 222, 91
-  orig: 222, 91
+  size: 268, 110
+  orig: 268, 110
   offset: 0, 0
   index: -1
-Import/sword_hand
+9 tails/Tail_02
   rotate: false
-  xy: 361, 605
-  size: 358, 602
-  orig: 358, 602
+  xy: 436, 1813
+  size: 215, 127
+  orig: 215, 127
   offset: 0, 0
   index: -1
-Import/sword_arm
+9 tails/Tail_01
   rotate: false
-  xy: 1, 1209
-  size: 358, 602
-  orig: 358, 602
+  xy: 372, 1942
+  size: 255, 86
+  orig: 255, 86
   offset: 0, 0
   index: -1
-Import/Human
+Import/shadow_
   rotate: false
   xy: 1081, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
-Import/Red_hair
+fox form/tail
   rotate: false
-  xy: 1, 1
-  size: 358, 602
-  orig: 358, 602
+  xy: 629, 1942
+  size: 222, 91
+  orig: 222, 91
   offset: 0, 0
   index: -1
-Import/left_ear
-  rotate: false
-  xy: 721, 605
-  size: 358, 602
-  orig: 358, 602
-  offset: 0, 0
-  index: -1
-Import/right_ear
+Import/sword_hand
   rotate: false
   xy: 721, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
-Import/Tail
+Import/sword_arm
   rotate: false
   xy: 721, 1209
+  size: 358, 602
+  orig: 358, 602
+  offset: 0, 0
+  index: -1
+Import/Human
+  rotate: false
+  xy: 1, 605
+  size: 358, 602
+  orig: 358, 602
+  offset: 0, 0
+  index: -1
+Import/Red_hair
+  rotate: false
+  xy: 361, 605
+  size: 358, 602
+  orig: 358, 602
+  offset: 0, 0
+  index: -1
+Orange Hair
+  rotate: false
+  xy: 1441, 1
+  size: 358, 602
+  orig: 358, 602
+  offset: 0, 0
+  index: -1
+Import/left_ear
+  rotate: false
+  xy: 1, 1209
+  size: 358, 602
+  orig: 358, 602
+  offset: 0, 0
+  index: -1
+Import/right_ear
+  rotate: false
+  xy: 361, 1209
+  size: 358, 602
+  orig: 358, 602
+  offset: 0, 0
+  index: -1
+Import/Tail
+  rotate: false
+  xy: 721, 605
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
@@ -76,7 +146,7 @@ Import/sword
   index: -1
 Import/Arm
   rotate: false
-  xy: 361, 1209
+  xy: 1, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
@@ -90,7 +160,7 @@ fox form/body
   index: -1
 fox form/pendant
   rotate: false
-  xy: 166, 1906
+  xy: 1061, 1905
   size: 13, 54
   orig: 13, 54
   offset: 0, 0
