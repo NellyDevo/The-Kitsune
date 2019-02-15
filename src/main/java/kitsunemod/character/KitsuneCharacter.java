@@ -41,8 +41,8 @@ public class KitsuneCharacter extends CustomPlayer {
     public static final String MY_CHARACTER_SHOULDER_2 = "kitsunemod/images/char/shoulder2.png";
     public static final String MY_CHARACTER_SHOULDER_1 = "kitsunemod/images/char/shoulder.png";
     public static final String MY_CHARACTER_CORPSE = "kitsunemod/images/char/corpse.png";
-    public static final String SPINE_SKELETON = "kitsunemod/images/char/KitsuneForm.json";
-    public static final String SPINE_ATLAS = "kitsunemod/images/char/KitsuneForm.atlas";
+    public static final String SPINE_SKELETON = "kitsunemod/images/char/animations/TheKitsuneAnimations.json";
+    public static final String SPINE_ATLAS = "kitsunemod/images/char/animations/TheKitsuneAnimations.atlas";
     private static final String ID = KitsuneMod.makeID("KitsuneCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
@@ -99,6 +99,17 @@ public class KitsuneCharacter extends CustomPlayer {
         animationSlots.get("Fox Pendant").setAttachment(storedAssets.get("Fox Pendant"));
         animationSlots.get("Fox Tail").setAttachment(storedAssets.get("Fox Tail"));
         animationSlots.get("Fox Body").setAttachment(storedAssets.get("Fox Body"));
+
+        animationSlots.get("Ninetails Tail One").setAttachment(null);
+        animationSlots.get("Ninetails Tail Two").setAttachment(null);
+        animationSlots.get("Ninetails Tail Three").setAttachment(null);
+        animationSlots.get("Ninetails Tail Four").setAttachment(null);
+        animationSlots.get("Ninetails Tail Five").setAttachment(null);
+        animationSlots.get("Ninetails Tail Six").setAttachment(null);
+        animationSlots.get("Ninetails Tail Seven").setAttachment(null);
+        animationSlots.get("Ninetails Tail Eight").setAttachment(null);
+        animationSlots.get("Ninetails Tail Nine").setAttachment(null);
+        animationSlots.get("Ninetails Hair").setAttachment(null);
     }
 
     public void transformToKitsune() {
@@ -116,6 +127,17 @@ public class KitsuneCharacter extends CustomPlayer {
         animationSlots.get("Fox Pendant").setAttachment(null);
         animationSlots.get("Fox Tail").setAttachment(null);
         animationSlots.get("Fox Body").setAttachment(null);
+
+        animationSlots.get("Ninetails Tail One").setAttachment(null);
+        animationSlots.get("Ninetails Tail Two").setAttachment(null);
+        animationSlots.get("Ninetails Tail Three").setAttachment(null);
+        animationSlots.get("Ninetails Tail Four").setAttachment(null);
+        animationSlots.get("Ninetails Tail Five").setAttachment(null);
+        animationSlots.get("Ninetails Tail Six").setAttachment(null);
+        animationSlots.get("Ninetails Tail Seven").setAttachment(null);
+        animationSlots.get("Ninetails Tail Eight").setAttachment(null);
+        animationSlots.get("Ninetails Tail Nine").setAttachment(null);
+        animationSlots.get("Ninetails Hair").setAttachment(null);
     }
 
     public void transformToHuman() {
@@ -133,10 +155,45 @@ public class KitsuneCharacter extends CustomPlayer {
         animationSlots.get("Fox Pendant").setAttachment(null);
         animationSlots.get("Fox Tail").setAttachment(null);
         animationSlots.get("Fox Body").setAttachment(null);
+
+        animationSlots.get("Ninetails Tail One").setAttachment(null);
+        animationSlots.get("Ninetails Tail Two").setAttachment(null);
+        animationSlots.get("Ninetails Tail Three").setAttachment(null);
+        animationSlots.get("Ninetails Tail Four").setAttachment(null);
+        animationSlots.get("Ninetails Tail Five").setAttachment(null);
+        animationSlots.get("Ninetails Tail Six").setAttachment(null);
+        animationSlots.get("Ninetails Tail Seven").setAttachment(null);
+        animationSlots.get("Ninetails Tail Eight").setAttachment(null);
+        animationSlots.get("Ninetails Tail Nine").setAttachment(null);
+        animationSlots.get("Ninetails Hair").setAttachment(null);
     }
 
     public void transformToNinetailed() {
+        animationSlots.get("Human Right Arm").setAttachment(storedAssets.get("Human Right Arm"));
+        animationSlots.get("Human Left Arm").setAttachment(storedAssets.get("Human Left Arm"));
+        animationSlots.get("Human Left Wrist").setAttachment(storedAssets.get("Human Left Wrist"));
+        animationSlots.get("Human Body").setAttachment(storedAssets.get("Human Body"));
+        animationSlots.get("Sword").setAttachment(storedAssets.get("Sword"));
 
+        animationSlots.get("Kitsune Hair").setAttachment(null);
+        animationSlots.get("Kitsune Tail").setAttachment(null);
+        animationSlots.get("Kitsune Left Ear").setAttachment(storedAssets.get("Kitsune Left Ear"));
+        animationSlots.get("Kitsune Right Ear").setAttachment(storedAssets.get("Kitsune Right Ear"));
+
+        animationSlots.get("Fox Pendant").setAttachment(null);
+        animationSlots.get("Fox Tail").setAttachment(null);
+        animationSlots.get("Fox Body").setAttachment(null);
+
+        animationSlots.get("Ninetails Tail One").setAttachment(storedAssets.get("Ninetails Tail One"));
+        animationSlots.get("Ninetails Tail Two").setAttachment(storedAssets.get("Ninetails Tail Two"));
+        animationSlots.get("Ninetails Tail Three").setAttachment(storedAssets.get("Ninetails Tail Three"));
+        animationSlots.get("Ninetails Tail Four").setAttachment(storedAssets.get("Ninetails Tail Four"));
+        animationSlots.get("Ninetails Tail Five").setAttachment(storedAssets.get("Ninetails Tail Five"));
+        animationSlots.get("Ninetails Tail Six").setAttachment(storedAssets.get("Ninetails Tail Six"));
+        animationSlots.get("Ninetails Tail Seven").setAttachment(storedAssets.get("Ninetails Tail Seven"));
+        animationSlots.get("Ninetails Tail Eight").setAttachment(storedAssets.get("Ninetails Tail Eight"));
+        animationSlots.get("Ninetails Tail Nine").setAttachment(storedAssets.get("Ninetails Tail Nine"));
+        animationSlots.get("Ninetails Hair").setAttachment(storedAssets.get("Ninetails Hair"));
     }
 
     public void onShapeChange(KitsuneMod.KitsuneShapes shape) {
@@ -149,6 +206,9 @@ public class KitsuneCharacter extends CustomPlayer {
                 break;
             case HUMAN:
                 transformToHuman();
+                break;
+            case NINETAILED:
+                transformToNinetailed();
                 break;
         }
     }
@@ -279,25 +339,24 @@ public class KitsuneCharacter extends CustomPlayer {
                 this, getStartingRelics(), getStartingDeck(), false);
     }
 
-    //don't mind me just setting up the framework for dynamic animations
     @Override
     protected void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
         super.loadAnimation(atlasUrl, skeletonUrl, scale);
 
         //Initialize Human Form
-        Slot rightArmSlot = skeleton.findSlot("Right_Arm"); //human, kitsune
+        Slot rightArmSlot = skeleton.findSlot("Right_Arm"); //human, kitsune, ninetailed
         animationSlots.put("Human Right Arm", rightArmSlot);
         storedAssets.put("Human Right Arm", rightArmSlot.getAttachment());
-        Slot leftArmSlot = skeleton.findSlot("Sword_Arm"); //human, kitsune
+        Slot leftArmSlot = skeleton.findSlot("Sword_Arm"); //human, kitsune, ninetailed
         animationSlots.put("Human Left Arm", leftArmSlot);
         storedAssets.put("Human Left Arm", leftArmSlot.getAttachment());
-        Slot leftWristSlot = skeleton.findSlot("Wrist"); //human, kitsune
+        Slot leftWristSlot = skeleton.findSlot("Wrist"); //human, kitsune, ninetailed
         animationSlots.put("Human Left Wrist", leftWristSlot);
         storedAssets.put("Human Left Wrist", leftWristSlot.getAttachment());
-        Slot swordSlot = skeleton.findSlot("Sword"); //human, kitsune
+        Slot swordSlot = skeleton.findSlot("Sword"); //human, kitsune, ninetailed
         animationSlots.put("Sword", swordSlot);
         storedAssets.put("Sword", swordSlot.getAttachment());
-        Slot bodySlot = skeleton.findSlot("Body"); //human, kitsune
+        Slot bodySlot = skeleton.findSlot("Body"); //human, kitsune, ninetailed
         animationSlots.put("Human Body", bodySlot);
         storedAssets.put("Human Body", bodySlot.getAttachment());
 
@@ -308,10 +367,10 @@ public class KitsuneCharacter extends CustomPlayer {
         Slot tailSlot = skeleton.findSlot("Tail"); //kitsune
         animationSlots.put("Kitsune Tail", tailSlot);
         storedAssets.put("Kitsune Tail", tailSlot.getAttachment());
-        Slot leftEarSlot = skeleton.findSlot("Left_Ear"); //kitsune
+        Slot leftEarSlot = skeleton.findSlot("Left_Ear"); //kitsune, ninetails
         animationSlots.put("Kitsune Left Ear", leftEarSlot);
         storedAssets.put("Kitsune Left Ear", leftEarSlot.getAttachment());
-        Slot rightEarSlot = skeleton.findSlot("Right_Ear"); //kitsune
+        Slot rightEarSlot = skeleton.findSlot("Right_Ear"); //kitsune, ninetails
         animationSlots.put("Kitsune Right Ear", rightEarSlot);
         storedAssets.put("Kitsune Right Ear", rightEarSlot.getAttachment());
 
@@ -325,6 +384,38 @@ public class KitsuneCharacter extends CustomPlayer {
         Slot foxBodySlot = skeleton.findSlot("Fox_Body"); //fox
         animationSlots.put("Fox Body", foxBodySlot);
         storedAssets.put("Fox Body", foxBodySlot.getAttachment());
+
+        //Initialize Ninetailed Form
+        Slot ninetailsTailOneSlot = skeleton.findSlot("Nine_Tail_1"); //ninetails
+        animationSlots.put("Ninetails Tail One", ninetailsTailOneSlot);
+        storedAssets.put("Ninetails Tail One", ninetailsTailOneSlot.getAttachment());
+        Slot ninetailsTailTwoSlot = skeleton.findSlot("Nine_Tail_2"); //ninetails
+        animationSlots.put("Ninetails Tail Two", ninetailsTailTwoSlot);
+        storedAssets.put("Ninetails Tail Two", ninetailsTailTwoSlot.getAttachment());
+        Slot ninetailsTailThreeSlot = skeleton.findSlot("Nine_Tail_3"); //ninetails
+        animationSlots.put("Ninetails Tail Three", ninetailsTailThreeSlot);
+        storedAssets.put("Ninetails Tail Three", ninetailsTailThreeSlot.getAttachment());
+        Slot ninetailsTailFourSlot = skeleton.findSlot("Nine_Tail_4"); //ninetails
+        animationSlots.put("Ninetails Tail Four", ninetailsTailFourSlot);
+        storedAssets.put("Ninetails Tail Four", ninetailsTailFourSlot.getAttachment());
+        Slot ninetailsTailFiveSlot = skeleton.findSlot("Nine_Tail_5"); //ninetails
+        animationSlots.put("Ninetails Tail Five", ninetailsTailFiveSlot);
+        storedAssets.put("Ninetails Tail Five", ninetailsTailFiveSlot.getAttachment());
+        Slot ninetailsTailSixSlot = skeleton.findSlot("Nine_Tail_6"); //ninetails
+        animationSlots.put("Ninetails Tail Six", ninetailsTailSixSlot);
+        storedAssets.put("Ninetails Tail Six", ninetailsTailSixSlot.getAttachment());
+        Slot ninetailsTailSevenSlot = skeleton.findSlot("Nine_Tail_7"); //ninetails
+        animationSlots.put("Ninetails Tail Seven", ninetailsTailSevenSlot);
+        storedAssets.put("Ninetails Tail Seven", ninetailsTailSevenSlot.getAttachment());
+        Slot ninetailsTailEightSlot = skeleton.findSlot("Nine_Tail_8"); //ninetails
+        animationSlots.put("Ninetails Tail Eight", ninetailsTailEightSlot);
+        storedAssets.put("Ninetails Tail Eight", ninetailsTailEightSlot.getAttachment());
+        Slot ninetailsTailNineSlot = skeleton.findSlot("Nine_Tail_9"); //ninetails
+        animationSlots.put("Ninetails Tail Nine", ninetailsTailNineSlot);
+        storedAssets.put("Ninetails Tail Nine", ninetailsTailNineSlot.getAttachment());
+        Slot ninetailsHairSlot = skeleton.findSlot("Orange_Hair"); //ninetails
+        animationSlots.put("Ninetails Hair", ninetailsHairSlot);
+        storedAssets.put("Ninetails Hair", ninetailsHairSlot.getAttachment());
 
         transformToKitsune();
     }
