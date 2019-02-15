@@ -88,5 +88,13 @@
     "DESCRIPTIONS": [
       "When you play an Aspect card, draw another Aspect card from your deck."
     ]
+  },
+  "kitsunemod:FastShapePower": {
+    "NAME": "Fast Shape",
+    "DESCRIPTIONS": [
+      "Playing #yShapeshift cards no longer exhausts them. ",
+      "Drawn #yShapeshift cards cost #g",
+      " less."
+    ]
   }
 }
