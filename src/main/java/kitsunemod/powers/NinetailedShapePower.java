@@ -8,8 +8,8 @@ import kitsunemod.KitsuneMod;
 public class NinetailedShapePower extends AbstractShapePower {
 
     public AbstractCreature source;
-    public static int BONUS_DEXTERITY = 2;
-    public static int BONUS_STRENGTH = 2;
+
+
 
     public static final String POWER_ID = KitsuneMod.makeID("NinetailedShapePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -19,7 +19,9 @@ public class NinetailedShapePower extends AbstractShapePower {
 
 
     public NinetailedShapePower(final AbstractCreature owner, final AbstractCreature source) {
-        super(owner, source, DESCRIPTIONS, KitsuneMod.KitsuneShapes.NINETAILED, BONUS_STRENGTH, BONUS_DEXTERITY);
+        super(owner, source, DESCRIPTIONS, KitsuneMod.KitsuneShapes.NINETAILED,
+                FoxShapePower.BONUS_STRENGTH + KitsuneShapePower.BONUS_STRENGTH + HumanShapePower.BONUS_STRENGTH,
+                FoxShapePower.BONUS_DEXTERITY + KitsuneShapePower.BONUS_DEXTERITY + HumanShapePower.BONUS_DEXTERITY);
 
         name = NAME;
         ID = POWER_ID;
