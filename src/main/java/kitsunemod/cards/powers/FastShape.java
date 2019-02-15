@@ -32,7 +32,7 @@ public class FastShape extends AbstractKitsuneCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.NONE);
-
+        magicNumber = baseMagicNumber = UPGRADED_COST_REDUCE_AMOUNT;
         tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 

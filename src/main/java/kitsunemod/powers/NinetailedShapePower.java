@@ -32,4 +32,3 @@ public class NinetailedShapePower extends AbstractShapePower {
         updateDescription();
     }
 }
-a
