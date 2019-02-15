@@ -59,7 +59,6 @@ public class ChangeShapeAction extends AbstractGameAction {
                     break;
                 case KITSUNE:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new KitsuneShapePower(target, source)));
-                    KitsuneMod.shapeshiftsThisCombat++;
                     break;
                 case HUMAN:
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new HumanShapePower(target, source)));
