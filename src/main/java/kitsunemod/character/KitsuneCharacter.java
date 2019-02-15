@@ -265,7 +265,6 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        //added because preBattlePrep in AbstractPlayer does similar things, and until we promote the shape tracking logic here we need to do this at least
         AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(this, this, KitsuneMod.KitsuneShapes.KITSUNE));
     }
 

@@ -29,7 +29,7 @@ public class ShiningPearl extends KitsuneRelic {
     public static final int KITSUNE_WILLOWISPS_AMOUNT = 1;
 
     @Override
-    public void onEquip() {
+    public void atPreBattle() {
         FoxShapePower.BONUS_STRENGTH += FOX_BONUS_STR;
         FoxShapePower.BONUS_DEXTERITY += FOX_BONUS_DEX;
 
@@ -41,7 +41,7 @@ public class ShiningPearl extends KitsuneRelic {
     }
 
     @Override
-    public void onUnequip() {
+    public void onVictory() {
         FoxShapePower.BONUS_STRENGTH -= FOX_BONUS_STR;
         FoxShapePower.BONUS_DEXTERITY -= FOX_BONUS_DEX;
 
@@ -50,6 +50,10 @@ public class ShiningPearl extends KitsuneRelic {
 
         HumanShapePower.BONUS_STRENGTH -= HUMAN_BONUS_STR;
         HumanShapePower.BONUS_DEXTERITY -= HUMAN_BONUS_DEX;
+        description = getUpdatedDescription();
+        this.tips.clear();
+        this.tips.add(new PowerTip(name,description));
+        this.initializeTips();
     }
 
     @Override
@@ -58,11 +62,6 @@ public class ShiningPearl extends KitsuneRelic {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILLOWISPS_AMOUNT));
         }
-    }
-
-    @Override
-    public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
     }
 
     @Override
@@ -92,11 +91,8 @@ public class ShiningPearl extends KitsuneRelic {
     }
 
     @Override
-    public void onVictory() {
-        description = getUpdatedDescription();
-        this.tips.clear();
-        this.tips.add(new PowerTip(name,description));
-        this.initializeTips();
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
     }
 
     @Override

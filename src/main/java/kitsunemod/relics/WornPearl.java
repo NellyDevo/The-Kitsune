@@ -22,15 +22,28 @@ public class WornPearl extends KitsuneRelic {
     //starter relics never get onEquip called
     //for [curse word]ing no reason
     //this is a workaround while preserving /some/ readability, change the base values in the respective shapes please
-    public static final int FOX_BONUS_STR = FoxShapePower.BONUS_STRENGTH;
-    public static final int FOX_BONUS_DEX = FoxShapePower.BONUS_DEXTERITY;
-    public static final int KITSUNE_BONUS_STR = KitsuneShapePower.BONUS_STRENGTH;
-    public static final int KITSUNE_BONUS_DEX = KitsuneShapePower.BONUS_DEXTERITY;
-    public static final int HUMAN_BONUS_STR = HumanShapePower.BONUS_STRENGTH;
-    public static final int HUMAN_BONUS_DEX = HumanShapePower.BONUS_DEXTERITY;
+    public static final int FOX_BONUS_STR = -1;
+    public static final int FOX_BONUS_DEX = 2;
+    public static final int KITSUNE_BONUS_STR = 1;
+    public static final int KITSUNE_BONUS_DEX = 1;
+    public static final int HUMAN_BONUS_STR = 2;
+    public static final int HUMAN_BONUS_DEX = -1;
+
 
     @Override
-    public void onUnequip() {
+    public void atPreBattle() {
+        FoxShapePower.BONUS_STRENGTH += FOX_BONUS_STR;
+        FoxShapePower.BONUS_DEXTERITY += FOX_BONUS_DEX;
+
+        KitsuneShapePower.BONUS_STRENGTH += KITSUNE_BONUS_STR;
+        KitsuneShapePower.BONUS_DEXTERITY += KITSUNE_BONUS_DEX;
+
+        HumanShapePower.BONUS_STRENGTH += HUMAN_BONUS_STR;
+        HumanShapePower.BONUS_DEXTERITY += HUMAN_BONUS_DEX;
+    }
+
+    @Override
+    public void onVictory() {
         FoxShapePower.BONUS_STRENGTH -= FOX_BONUS_STR;
         FoxShapePower.BONUS_DEXTERITY -= FOX_BONUS_DEX;
 
@@ -39,11 +52,10 @@ public class WornPearl extends KitsuneRelic {
 
         HumanShapePower.BONUS_STRENGTH -= HUMAN_BONUS_STR;
         HumanShapePower.BONUS_DEXTERITY -= HUMAN_BONUS_DEX;
-    }
-
-    @Override
-    public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        description = getUpdatedDescription();
+        this.tips.clear();
+        this.tips.add(new PowerTip(name,description));
+        this.initializeTips();
     }
 
     @Override
@@ -67,11 +79,8 @@ public class WornPearl extends KitsuneRelic {
     }
 
     @Override
-    public void onVictory() {
-        description = getUpdatedDescription();
-        this.tips.clear();
-        this.tips.add(new PowerTip(name,description));
-        this.initializeTips();
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
     }
 
     @Override
