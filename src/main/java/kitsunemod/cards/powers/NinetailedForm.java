@@ -12,6 +12,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.SoulstealPower;
 
 public class NinetailedForm extends AbstractKitsuneCard {
@@ -30,6 +31,7 @@ public class NinetailedForm extends AbstractKitsuneCard {
                 CardRarity.RARE, CardTarget.NONE);
 
         isEthereal = true;
+        tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 
     @Override
