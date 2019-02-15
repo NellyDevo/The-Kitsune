@@ -33,6 +33,7 @@ import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.StarterRelic;
 
+import javax.swing.text.SimpleAttributeSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -84,6 +85,7 @@ public class KitsuneCharacter extends CustomPlayer {
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
     }
 
+    //I'm a Shapeshifter
     public void transformToFox() {
         animationSlots.get("Human Right Arm").setAttachment(null);
         animationSlots.get("Human Left Arm").setAttachment(null);
@@ -101,6 +103,7 @@ public class KitsuneCharacter extends CustomPlayer {
         animationSlots.get("Fox Body").setAttachment(storedAssets.get("Fox Body"));
     }
 
+    //Chained down to my core
     public void transformToKitsune() {
         animationSlots.get("Human Right Arm").setAttachment(storedAssets.get("Human Right Arm"));
         animationSlots.get("Human Left Arm").setAttachment(storedAssets.get("Human Left Arm"));
@@ -118,6 +121,7 @@ public class KitsuneCharacter extends CustomPlayer {
         animationSlots.get("Fox Body").setAttachment(null);
     }
 
+    //Please don't take off my mask
     public void transformToHuman() {
         animationSlots.get("Human Right Arm").setAttachment(storedAssets.get("Human Right Arm"));
         animationSlots.get("Human Left Arm").setAttachment(storedAssets.get("Human Left Arm"));
@@ -135,6 +139,7 @@ public class KitsuneCharacter extends CustomPlayer {
         animationSlots.get("Fox Body").setAttachment(null);
     }
 
+    //my place to hide
     public void transformToNinetailed() {
 
     }

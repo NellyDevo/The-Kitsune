@@ -13,6 +13,11 @@ import kitsunemod.powers.*;
 public class ChangeShapeAction extends AbstractGameAction {
     private KitsuneMod.KitsuneShapes newShape;
 
+    //i'm a shapeshifter
+    //at poe's masquerade
+    //hiding both face and mind
+    //all free for you to draw
+
     public ChangeShapeAction(
             final AbstractCreature target,
             final AbstractCreature source,
