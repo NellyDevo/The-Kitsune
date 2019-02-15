@@ -34,27 +34,44 @@
   "kitsunemod:KitsuneShapePower": {
     "NAME": "Kitsune Shape",
     "DESCRIPTIONS": [
-      "Currently in the form of a Kitsune. Kitsune Aspect will trigger, and you have minor stat bonuses."
+      "Currently in the form of a Kitsune. Kitsune #yAspect effects will trigger.",
+      "Currently in the form of a Kitsune. Kitsune #yAspect effects will trigger, and you have ",
+      " #yStrength and ",
+      " #yStrength.",
+      " #yDexterity."
     ]
   },
 
   "kitsunemod:FoxShapePower": {
     "NAME": "Fox Shape",
     "DESCRIPTIONS": [
-      "Currently in the form of a Fox. Fox Aspect will trigger, and you have less Strength but more Dexterity."
+      "Currently in the form of a Fox. Fox #yAspect effects will trigger.",
+      "Currently in the form of a Fox. Fox #yAspect effects will trigger, and you have ",
+      " #yStrength and ",
+      " #yStrength.",
+      " #yDexterity."
+
     ]
   },
 
   "kitsunemod:HumanShapePower": {
     "NAME": "Human Shape",
     "DESCRIPTIONS": [
-      "Currently in the form of a Human. Human Aspect will trigger, and you have less Dexterity but more Strength."
+      "Currently in the form of a Human. Human #yAspect effects will trigger.",
+      "Currently in the form of a Human. Human #yAspect effects will trigger, and you have ",
+      " #yStrength and ",
+      " #yStrength.",
+      " #yDexterity."
     ]
   },
   "kitsunemod:NinetailedShapePower": {
     "NAME": "Ninetailed Shape",
     "DESCRIPTIONS": [
-      "Currently in a Kitsune's true form. All Aspects will trigger, and you have significant increased Strength/Dex."
+      "Currently in the true form of a foxgirl. All #yAspect effects will trigger.",
+      "Currently in the true form of a foxgirl. All #yAspect effects will trigger, and you have ",
+      " #yStrength and ",
+      " #yStrength.",
+      " #yDexterity."
     ]
   },
   "kitsunemod:InTheShadowsPower": {
@@ -64,6 +81,20 @@
       " HP instead of being damaged for ",
       " more time when taking unblocked damage.",
       " more times when taking unblocked damage."
+    ]
+  },
+  "kitsunemod:InsightPower": {
+    "NAME": "Insight",
+    "DESCRIPTIONS": [
+      "When you play an Aspect card, draw another Aspect card from your deck."
+    ]
+  },
+  "kitsunemod:FastShapePower": {
+    "NAME": "Fast Shape",
+    "DESCRIPTIONS": [
+      "Playing #yShapeshift cards no longer exhausts them. ",
+      "Drawn #yShapeshift cards cost #g",
+      " less."
     ]
   }
 }

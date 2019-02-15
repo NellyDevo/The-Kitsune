@@ -22,9 +22,9 @@ public class DancingLights extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/DancingLights.png";
 
     private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     private static final int ATTACK_DMG = 10;
-    private static final int UPGRADE_PLUS_DMG = 2;
 
     private static final int WILLOWISPS_CHANNEL = 2;
     private static final int WILLOWISPS_PLUS_CHANNEL = 1;
@@ -56,7 +56,7 @@ public class DancingLights extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(WILLOWISPS_PLUS_CHANNEL);
         }
     }

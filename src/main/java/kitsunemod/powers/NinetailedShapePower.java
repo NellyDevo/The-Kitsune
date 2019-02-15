@@ -19,7 +19,7 @@ public class NinetailedShapePower extends AbstractShapePower {
 
 
     public NinetailedShapePower(final AbstractCreature owner, final AbstractCreature source) {
-        super(owner, source, KitsuneMod.KitsuneShapes.KITSUNE, BONUS_STRENGTH, BONUS_DEXTERITY);
+        super(owner, source, DESCRIPTIONS, KitsuneMod.KitsuneShapes.NINETAILED, BONUS_STRENGTH, BONUS_DEXTERITY);
 
         name = NAME;
         ID = POWER_ID;
@@ -28,10 +28,5 @@ public class NinetailedShapePower extends AbstractShapePower {
         //img = ImageMaster.loadImage(IMG);
         loadRegion("demonForm");
         updateDescription();
-    }
-
-    @Override
-    public void updateDescription() {
-        description = DESCRIPTIONS[0];
     }
 }

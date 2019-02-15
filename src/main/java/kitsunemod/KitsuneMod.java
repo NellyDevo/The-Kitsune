@@ -30,6 +30,8 @@ import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
+import kitsunemod.cards.powers.FastShape;
+import kitsunemod.cards.powers.Insight;
 import kitsunemod.cards.powers.NinetailedForm;
 import kitsunemod.cards.powers.PerfectedShape;
 import kitsunemod.cards.skills.*;
@@ -160,6 +162,10 @@ public class KitsuneMod implements
         BaseMod.addCard(new PerfectedShape());
         BaseMod.addCard(new FeralInstinct());
         BaseMod.addCard(new InflictWounds());
+        BaseMod.addCard(new AlluringGlimmer());
+        BaseMod.addCard(new Insight());
+        BaseMod.addCard(new FastShape());
+        BaseMod.addCard(new BladeAndClaw());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());

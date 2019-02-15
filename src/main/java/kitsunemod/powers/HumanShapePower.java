@@ -26,7 +26,7 @@ public class HumanShapePower extends AbstractShapePower {
 
 
     public HumanShapePower(final AbstractCreature owner, final AbstractCreature source) {
-        super(owner, source, KitsuneMod.KitsuneShapes.HUMAN, BONUS_STRENGTH, BONUS_DEXTERITY);
+        super(owner, source, DESCRIPTIONS, KitsuneMod.KitsuneShapes.HUMAN, BONUS_STRENGTH, BONUS_DEXTERITY);
 
         name = NAME;
         ID = POWER_ID;
@@ -35,10 +35,5 @@ public class HumanShapePower extends AbstractShapePower {
         //img = ImageMaster.loadImage(IMG);
         loadRegion("demonForm");
         updateDescription();
-    }
-
-    @Override
-    public void updateDescription() {
-        description = DESCRIPTIONS[0];
     }
 }
