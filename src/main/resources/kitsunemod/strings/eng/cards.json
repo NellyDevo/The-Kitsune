@@ -88,14 +88,14 @@
     "DESCRIPTION": "Deal !D! damage. Human kitsunemod:Aspect: Apply !M! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:PerfectedShape": {
-    "NAME": "Perfected Shape",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:AlluringGlimmer": {
     "NAME": "Alluring Glimmer",
     "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! Soulsteal.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:PerfectedShape": {
+    "NAME": "Perfected Shape",
+    "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:Insight": {
@@ -107,6 +107,11 @@
     "NAME": "Fast Shape",
     "DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played.",
     "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less. "
+  },
+  "kitsunemod:BladeAndClaw": {
+    "NAME": "BladeAndClaw",
+    "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
+    "UPGRADE_DESCRIPTION": ""
   },
 
 
