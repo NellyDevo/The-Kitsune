@@ -1,17 +1,13 @@
 package kitsunemod.character;
 
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
-import com.esotericsoftware.spine.Skeleton;
 import com.esotericsoftware.spine.Slot;
 import com.esotericsoftware.spine.attachments.Attachment;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,9 +27,8 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
-import kitsunemod.relics.StarterRelic;
+import kitsunemod.relics.WornPearl;
 
-import javax.swing.text.SimpleAttributeSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -272,8 +267,8 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(StarterRelic.ID);
-        UnlockTracker.markRelicAsSeen(StarterRelic.ID);
+        retVal.add(WornPearl.ID);
+        UnlockTracker.markRelicAsSeen(WornPearl.ID);
         return retVal;
     }
 

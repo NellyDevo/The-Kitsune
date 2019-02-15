@@ -1,5 +1,5 @@
 {
-  "kitsunemod:StarterRelic": {
+  "kitsunemod:WornPearl": {
     "NAME": "Worn Pearl",
     "FLAVOR": "As close to me as my heart.",
     "DESCRIPTIONS": [
@@ -9,6 +9,21 @@
       " NL Human #yAspect: ",
       " Strength, ",
       " Dexterity."
+    ]
+  },
+  "kitsunemod:ShiningPearl": {
+    "NAME": "Shining Pearl",
+    "FLAVOR": "Just like when I was young!",
+    "DESCRIPTIONS": [
+      "Gain increased bonuses in different forms.",
+      " NL Fox #yAspect: ",
+      " NL Kitsune #yAspect: ",
+      " NL Human #yAspect: ",
+      " Strength, ",
+      " Dexterity.",
+      " Also channel ",
+      " #yWill-o-wisp at the start of your turn.",
+      " @yWill-o-Wisps at the start of your turn."
     ]
   }
 }

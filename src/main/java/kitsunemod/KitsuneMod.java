@@ -39,7 +39,8 @@ import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.relics.KitsuneRelic;
-import kitsunemod.relics.StarterRelic;
+import kitsunemod.relics.ShiningPearl;
+import kitsunemod.relics.WornPearl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -312,7 +313,8 @@ public class KitsuneMod implements
     @Override
     public void receiveEditRelics() {
         //starter
-        BaseMod.addRelicToCustomPool(new StarterRelic(), KITSUNE_COLOR);
+        BaseMod.addRelicToCustomPool(new WornPearl(), KITSUNE_COLOR);
+        BaseMod.addRelicToCustomPool(new ShiningPearl(), KITSUNE_COLOR);
 
         //Common
 
