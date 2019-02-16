@@ -10,6 +10,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.powers.CharmMonsterPower;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
@@ -25,11 +26,12 @@ public class TestCard extends AbstractKitsuneCard {
     public TestCard() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.BASIC, CardTarget.SELF);
+                CardRarity.BASIC, CardTarget.ENEMY);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new CharmMonsterPower(m)));
     }
 
     @Override

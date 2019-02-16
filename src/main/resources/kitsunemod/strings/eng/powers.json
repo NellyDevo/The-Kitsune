@@ -15,6 +15,11 @@
       "x your Light in block if you're over ",
       " stacks."]
   },
+  "kitsunemod:Charmed": {
+    "NAME": "Charmed",
+    "DESCRIPTIONS": [
+      "This monster will fight for you during this turn."]
+  },
   "kitsunemod:DarkPower": {
     "NAME": "Dark",
     "DESCRIPTIONS": [
@@ -62,6 +67,13 @@
       " #yStrength and ",
       " #yStrength.",
       " #yDexterity."
+    ]
+  },
+  "kitsunemod:MonsterDefendPlayer": {
+    "NAME": "Bodyguard",
+    "DESCRIPTIONS": [
+      "Your charmed minion will take #b",
+      " damage for you."
     ]
   },
   "kitsunemod:NinetailedShapePower": {
