@@ -10,6 +10,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.powers.CharmMonsterPower;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
@@ -25,25 +26,12 @@ public class TestCard extends AbstractKitsuneCard {
     public TestCard() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.BASIC, CardTarget.SELF);
+                CardRarity.BASIC, CardTarget.ENEMY);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(FoxShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.KITSUNE));
-        }
-        else if (p.hasPower(KitsuneShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.HUMAN));
-
-        }
-        else if (p.hasPower(HumanShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.FOX));
-        }
-        else
-        {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.KITSUNE));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new CharmMonsterPower(m)));
     }
 
     @Override

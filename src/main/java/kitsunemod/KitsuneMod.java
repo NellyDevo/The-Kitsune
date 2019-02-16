@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -38,6 +40,7 @@ import kitsunemod.cards.skills.*;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
+import kitsunemod.powers.CharmMonsterPower;
 import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.StarterRelic;
 import org.apache.logging.log4j.LogManager;
@@ -204,6 +207,32 @@ public class KitsuneMod implements
     public boolean receivePreMonsterTurn(AbstractMonster m) {
         cardDrawsThisTurn = 0;
         turnsSpentInSameShape++;
+        if (m.hasPower(CharmMonsterPower.POWER_ID)) {
+            CharmMonsterPower charm = (CharmMonsterPower)m.getPower(CharmMonsterPower.POWER_ID);
+            boolean otherMonstersExist = false;
+            for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (monster != m && !monster.isDeadOrEscaped()) {
+                    otherMonstersExist = true;
+                }
+            }
+            AbstractMonster target = null;
+            if (otherMonstersExist) {
+                target = AbstractDungeon.getRandomMonster(m);
+            }
+            charm.actions.doActions(charm.move, target, otherMonstersExist);
+            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    try {
+                        charm.intentColorField.set(m, charm.storedColor);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    isDone = true;
+                }
+            });
+            return false;
+        }
         return true;
     }
 
