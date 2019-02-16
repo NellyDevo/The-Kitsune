@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,8 +36,8 @@ public class CharmMonsterPower extends AbstractPower {
     public Color storedColor;
     public Field intentColorField;
 
-    public CharmMonsterPower(AbstractMonster owner) {
-        amount = -1;
+    public CharmMonsterPower(AbstractMonster owner, int amount) {
+        this.amount = amount;
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -54,7 +55,22 @@ public class CharmMonsterPower extends AbstractPower {
 
     @Override
     public void atEndOfRound() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+        if (amount > 1) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, this, 1));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    try {
+                        intentColorField.set(owner, storedColor);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    isDone = true;
+                }
+            });
+        }
     }
 
     @Override

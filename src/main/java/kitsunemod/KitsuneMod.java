@@ -220,17 +220,6 @@ public class KitsuneMod implements
                 target = AbstractDungeon.getRandomMonster(m);
             }
             charm.actions.doActions(charm.move, target, otherMonstersExist);
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    try {
-                        charm.intentColorField.set(m, charm.storedColor);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
-                    isDone = true;
-                }
-            });
             return false;
         }
         return true;
