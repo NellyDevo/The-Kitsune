@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import kitsunemod.KitsuneMod;
-import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.powers.*;
 
 public class ChangeShapeAction extends AbstractGameAction {
-    private KitsuneMod.KitsuneShapes newShape;
+    private AbstractShapePower newShape;
+    private KitsuneMod.KitsuneShapes newShapeID;
 
     //i'm a shapeshifter
     //at poe's masquerade
@@ -21,20 +21,22 @@ public class ChangeShapeAction extends AbstractGameAction {
     public ChangeShapeAction(
             final AbstractCreature target,
             final AbstractCreature source,
-            final KitsuneMod.KitsuneShapes newShape)
+            final AbstractShapePower newShape)
 
     {
         this.source = source;
         this.target = target;
         this.newShape = newShape;
+        this.newShapeID = getShapeForPowerID(newShape);
+
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
     }
 
     @Override
     public void update() {
-        if (duration == Settings.ACTION_DUR_FAST) {
-            if (target.hasPower(getPowerIDForShape(newShape))) {
+        if (duration == Settings.ACTION_DUR_FAST && !isDone) {
+            if (target.hasPower(newShape.ID)) {
                 isDone = true;
                 return;
             }
@@ -44,47 +46,36 @@ public class ChangeShapeAction extends AbstractGameAction {
                 return;
             }
 
-            if (target.hasPower(getPowerIDForShape(KitsuneMod.KitsuneShapes.FOX))) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, getPowerIDForShape(KitsuneMod.KitsuneShapes.FOX)));
+            if (target.hasPower(FoxShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, FoxShapePower.POWER_ID));
             }
-            if (target.hasPower(getPowerIDForShape(KitsuneMod.KitsuneShapes.KITSUNE))) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, getPowerIDForShape(KitsuneMod.KitsuneShapes.KITSUNE)));
+            if (target.hasPower(KitsuneShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, KitsuneShapePower.POWER_ID));
             }
-            if (target.hasPower(getPowerIDForShape(KitsuneMod.KitsuneShapes.HUMAN))) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, getPowerIDForShape(KitsuneMod.KitsuneShapes.HUMAN)));
+            if (target.hasPower(HumanShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, HumanShapePower.POWER_ID));
             }
-            switch (newShape) {
-                case FOX:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new FoxShapePower(target, source)));
-                    break;
-                case KITSUNE:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new KitsuneShapePower(target, source)));
-                    break;
-                case HUMAN:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new HumanShapePower(target, source)));
-                    break;
-                case NINETAILED:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new NinetailedShapePower(target, source)));
-            }
-            KitsuneMod.receiveChangeShape(newShape);
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, newShape));
+
+            KitsuneMod.receiveChangeShape(newShapeID);
         }
         tickDuration();
     }
 
-    //maybe this should be somewhere else but for now its staying here
-    private String getPowerIDForShape(final KitsuneMod.KitsuneShapes shape) {
-        switch (shape) {
-            case FOX:
-                return FoxShapePower.POWER_ID;
-            case KITSUNE:
-                return KitsuneShapePower.POWER_ID;
-            case HUMAN:
-                return HumanShapePower.POWER_ID;
-            case NINETAILED:
-                return NinetailedShapePower.POWER_ID;
-            default:
-                return "ShouldntBeHere";
+    private KitsuneMod.KitsuneShapes getShapeForPowerID(AbstractShapePower shape) {
+        if (shape.ID.equals(FoxShapePower.POWER_ID)) {
+            return KitsuneMod.KitsuneShapes.FOX;
         }
+        if (shape.ID.equals(KitsuneShapePower.POWER_ID)) {
+            return KitsuneMod.KitsuneShapes.KITSUNE;
+        }
+        if (shape.ID.equals(HumanShapePower.POWER_ID)) {
+            return KitsuneMod.KitsuneShapes.HUMAN;
+        }
+        if (shape.ID.equals(NinetailedShapePower.POWER_ID)) {
+            return KitsuneMod.KitsuneShapes.NINETAILED;
+        }
+        //shouldnt get here
+        return KitsuneMod.KitsuneShapes.KITSUNE;
     }
-
 }

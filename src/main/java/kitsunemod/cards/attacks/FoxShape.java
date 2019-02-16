@@ -16,6 +16,7 @@ import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
+import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.KitsuneShapePower;
 
 public class FoxShape extends AbstractKitsuneCard {
@@ -42,7 +43,7 @@ public class FoxShape extends AbstractKitsuneCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, KitsuneMod.KitsuneShapes.FOX));
+        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, new FoxShapePower(p, p)));
     }
 
     @Override

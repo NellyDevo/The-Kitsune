@@ -18,10 +18,10 @@ public class NinetailedShapePower extends AbstractShapePower {
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
 
-    public NinetailedShapePower(final AbstractCreature owner, final AbstractCreature source) {
+    public NinetailedShapePower(final AbstractCreature owner, final AbstractCreature source, int strength, int dexterity) {
         super(owner, source, DESCRIPTIONS, KitsuneMod.KitsuneShapes.NINETAILED,
-                FoxShapePower.BONUS_STRENGTH + KitsuneShapePower.BONUS_STRENGTH + HumanShapePower.BONUS_STRENGTH,
-                FoxShapePower.BONUS_DEXTERITY + KitsuneShapePower.BONUS_DEXTERITY + HumanShapePower.BONUS_DEXTERITY);
+                strength,
+                dexterity);
 
         name = NAME;
         ID = POWER_ID;

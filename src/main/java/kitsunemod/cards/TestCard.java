@@ -30,20 +30,6 @@ public class TestCard extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(FoxShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.KITSUNE));
-        }
-        else if (p.hasPower(KitsuneShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.HUMAN));
-
-        }
-        else if (p.hasPower(HumanShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.FOX));
-        }
-        else
-        {
-            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p,p, KitsuneMod.KitsuneShapes.KITSUNE));
-        }
     }
 
     @Override

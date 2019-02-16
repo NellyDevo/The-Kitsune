@@ -13,7 +13,7 @@ import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
-import kitsunemod.powers.SoulstealPower;
+import kitsunemod.powers.*;
 
 public class NinetailedForm extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("NinetailedForm");
@@ -36,7 +36,9 @@ public class NinetailedForm extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, KitsuneMod.KitsuneShapes.NINETAILED));
+        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, new NinetailedShapePower(p, p,
+                FoxShapePower.BONUS_STRENGTH + KitsuneShapePower.BONUS_STRENGTH + HumanShapePower.BONUS_STRENGTH,
+                FoxShapePower.BONUS_DEXTERITY + KitsuneShapePower.BONUS_DEXTERITY + HumanShapePower.BONUS_DEXTERITY)));
     }
 
     @Override

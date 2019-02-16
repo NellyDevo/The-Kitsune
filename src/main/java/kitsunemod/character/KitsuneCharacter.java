@@ -27,6 +27,8 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
+import kitsunemod.powers.KitsuneShapePower;
+import kitsunemod.relics.LuminousPearl;
 import kitsunemod.relics.WornPearl;
 
 import java.util.ArrayList;
@@ -265,7 +267,9 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(this, this, KitsuneMod.KitsuneShapes.KITSUNE));
+        if (!hasRelic(LuminousPearl.ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(this, this, new KitsuneShapePower(this, this)));
+        }
     }
 
     @Override
