@@ -28,11 +28,11 @@ public class BladeAndClaw extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/TestTheirTactics.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 8;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int ATTACK_DMG = 6;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
-    private static final int ASPECT_HP_LOSS = 2;
-    private static final int UPGRADE_PLUS_ASPECT_HP_LOSS = 2;
+    private static final int ASPECT_HP_LOSS = 4;
+    private static final int UPGRADE_PLUS_ASPECT_HP_LOSS = 3;
 
     public BladeAndClaw() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
