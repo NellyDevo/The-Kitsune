@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,8 +36,8 @@ public class CharmMonsterPower extends AbstractPower {
     public Color storedColor;
     public Field intentColorField;
 
-    public CharmMonsterPower(AbstractMonster owner) {
-        amount = -1;
+    public CharmMonsterPower(AbstractMonster owner, int amount) {
+        this.amount = amount;
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -54,7 +55,22 @@ public class CharmMonsterPower extends AbstractPower {
 
     @Override
     public void atEndOfRound() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+        if (amount > 1) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, this, 1));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    try {
+                        intentColorField.set(owner, storedColor);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    isDone = true;
+                }
+            });
+        }
     }
 
     @Override
@@ -95,10 +111,10 @@ public class CharmMonsterPower extends AbstractPower {
                                             // deal damage
                                             if (moveInfo.isMultiDamage) {
                                                 for (int i = 0; i < moveInfo.multiplier; ++i) {
-                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                                 }
                                             } else {
-                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                             }
                                         }
                                     };
@@ -119,10 +135,10 @@ public class CharmMonsterPower extends AbstractPower {
                                             //deal damage
                                             if (moveInfo.isMultiDamage) {
                                                 for (int i = 0; i < moveInfo.multiplier; ++i) {
-                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                                 }
                                             } else {
-                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                             }
                                         }
                                         //weak buff player
@@ -145,13 +161,13 @@ public class CharmMonsterPower extends AbstractPower {
                                             //deal damage
                                             if (moveInfo.isMultiDamage) {
                                                 for (int i = 0; i < moveInfo.multiplier; ++i) {
-                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                                 }
                                             } else {
-                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                             }
                                             //weak debuff enemy
-                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new WeakPower(target, 2, false/*TODO*/), 2));
+                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new WeakPower(target, 2, true), 2));
                                         }
                                     };
                                     intentColorField.set(owner, Color.GREEN.cpy());
@@ -171,10 +187,10 @@ public class CharmMonsterPower extends AbstractPower {
                                             //deal damage
                                             if (moveInfo.isMultiDamage) {
                                                 for (int i = 0; i < moveInfo.multiplier; ++i) {
-                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                    AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                                 }
                                             } else {
-                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+                                                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SMASH));
                                             }
                                         }
                                         //weak defend player
@@ -199,8 +215,8 @@ public class CharmMonsterPower extends AbstractPower {
                                     actions = (moveInfo, target, otherMonsters) -> {
                                         //normal debuff random enemy
                                         if (otherMonsters) {
-                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new WeakPower(target, 2, false/*TODO*/), 2));
-                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new VulnerablePower(target, 2, false/*TODO*/), 2));
+                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new WeakPower(target, 2, true), 2));
+                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new VulnerablePower(target, 2, true), 2));
                                         }
                                     };
                                     intentColorField.set(owner, Color.GREEN.cpy());
@@ -215,8 +231,8 @@ public class CharmMonsterPower extends AbstractPower {
                                 actions = (moveInfo, target, otherMonsters) -> {
                                     //debuff all enemies
                                     for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, owner, new WeakPower(monster, 2, false/*TODO*/), 2));
-                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, owner, new VulnerablePower(monster, 2, false/*TODO*/), 2));
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, owner, new WeakPower(monster, 2, true), 2));
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, owner, new VulnerablePower(monster, 2, true), 2));
                                     }
                                 };
                                 intentColorField.set(owner, Color.GREEN.cpy());
@@ -233,7 +249,7 @@ public class CharmMonsterPower extends AbstractPower {
                                     actions = (moveInfo, target, otherMonsters) -> {
                                         //weak debuff random enemy
                                         if (otherMonsters) {
-                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new WeakPower(target, 2, false/*TODO*/), 2));
+                                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, owner, new WeakPower(target, 2, true), 2));
                                         }
                                         //weak defend player
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, owner, new MonsterDefendPlayerPower(AbstractDungeon.player, owner, 8)));
