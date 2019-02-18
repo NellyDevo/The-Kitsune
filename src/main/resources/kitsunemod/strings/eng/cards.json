@@ -110,7 +110,7 @@
   },
 
   "kitsunemod:BladeAndClaw": {
-    "NAME": "BladeAndClaw",
+    "NAME": "Blade And Claw",
     "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
   },
@@ -135,6 +135,21 @@
   "kitsunemod:RendSpirit": {
     "NAME": "Rend Spirit",
     "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:NourishingFlame": {
+    "NAME": "Nourishing Flame",
+    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! Will-o-wisp.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! Will-o-wisps."
+  },
+  "kitsunemod:BareFangs": {
+    "NAME": "Bare Fangs",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:Flourish": {
+    "NAME": "Flourish",
+    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Gain !M! Dexterity.",
     "UPGRADE_DESCRIPTION": ""
   },
 
