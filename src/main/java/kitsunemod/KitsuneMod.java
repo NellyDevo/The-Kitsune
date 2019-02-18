@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -64,10 +65,9 @@ public class KitsuneMod implements
         PostInitializeSubscriber,
         PostBattleSubscriber,
         PostDrawSubscriber,
-        PreMonsterTurnSubscriber,
-        OnPlayerLoseBlockSubscriber {
+        PreMonsterTurnSubscriber {
 
-    private interface ElderTriggerFunc {
+    public interface ElderTriggerFunc {
         void run(AbstractElderCard card);
     }
 
@@ -86,7 +86,7 @@ public class KitsuneMod implements
     private static final String charPortrait = "kitsunemod/images/charSelect/portrait.png";
     private static final String miniManaSymbol = "kitsunemod/images/manaSymbol.png";
 
-    private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
+    public static final Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
     //TODO reorganize into implementation and mod setup sections
 
@@ -254,16 +254,24 @@ public class KitsuneMod implements
         KitsuneMod.turnsSpentInSameShape = 0;
     }
 
-    public int receiveOnPlayerLoseBlock(int amount) {
-        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseBlock(amount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseBlock(amount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseBlock(amount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseBlock(amount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseBlock(amount));
-        return amount;
+    public static void receivePlayerIsAttacked(DamageInfo info) {
+        if (AbstractDungeon.player.currentBlock <= 0) {
+            return;
+        }
+        if (info.type == DamageInfo.DamageType.HP_LOSS) {
+            return;
+        }
+        logger.info("KitsuneMod: receiving player being attacked for " + info.output);
+        int blockingAmount = Math.min(info.output, AbstractDungeon.player.currentBlock);
+
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
     }
 
-    private void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
+    public static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
         for (int i = 0; i < group.size(); i++) {
             AbstractCard currentCard = group.getNCardFromTop(i);
             if (currentCard instanceof AbstractElderCard) {

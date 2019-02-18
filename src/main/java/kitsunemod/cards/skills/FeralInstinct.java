@@ -45,7 +45,6 @@ public class FeralInstinct extends AbstractElderCard {
 
     @Override
     public void onLoseBlock(int amount) {
-
         misc += amount;
         upgrade();
     }
