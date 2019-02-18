@@ -45,7 +45,7 @@ public class InflictWounds extends AbstractKitsuneCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if (p.hasPower(HumanShapePower.POWER_ID) || p.hasPower(NinetailedShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new SoulstealPower(m, p, magicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new SoulstealPower(m, p, magicNumber), magicNumber));
         }
     }
 
