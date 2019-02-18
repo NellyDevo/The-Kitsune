@@ -30,26 +30,26 @@ public class ShiningPearl extends KitsuneRelic {
 
     @Override
     public void atPreBattle() {
-        FoxShapePower.BONUS_STRENGTH += FOX_BONUS_STR;
-        FoxShapePower.BONUS_DEXTERITY += FOX_BONUS_DEX;
+        FoxShapePower.BONUS_STRENGTH = FOX_BONUS_STR;
+        FoxShapePower.BONUS_DEXTERITY = FOX_BONUS_DEX;
 
-        KitsuneShapePower.BONUS_STRENGTH += KITSUNE_BONUS_STR;
-        KitsuneShapePower.BONUS_DEXTERITY += KITSUNE_BONUS_DEX;
+        KitsuneShapePower.BONUS_STRENGTH = KITSUNE_BONUS_STR;
+        KitsuneShapePower.BONUS_DEXTERITY = KITSUNE_BONUS_DEX;
 
-        HumanShapePower.BONUS_STRENGTH += HUMAN_BONUS_STR;
-        HumanShapePower.BONUS_DEXTERITY += HUMAN_BONUS_DEX;
+        HumanShapePower.BONUS_STRENGTH = HUMAN_BONUS_STR;
+        HumanShapePower.BONUS_DEXTERITY = HUMAN_BONUS_DEX;
     }
 
     @Override
     public void onVictory() {
-        FoxShapePower.BONUS_STRENGTH -= FOX_BONUS_STR;
-        FoxShapePower.BONUS_DEXTERITY -= FOX_BONUS_DEX;
+        FoxShapePower.BONUS_STRENGTH = 0;
+        FoxShapePower.BONUS_DEXTERITY = 0;
 
-        KitsuneShapePower.BONUS_STRENGTH -= KITSUNE_BONUS_STR;
-        KitsuneShapePower.BONUS_DEXTERITY -= KITSUNE_BONUS_DEX;
+        KitsuneShapePower.BONUS_STRENGTH = 0;
+        KitsuneShapePower.BONUS_DEXTERITY = 0;
 
-        HumanShapePower.BONUS_STRENGTH -= HUMAN_BONUS_STR;
-        HumanShapePower.BONUS_DEXTERITY -= HUMAN_BONUS_DEX;
+        HumanShapePower.BONUS_STRENGTH = 0;
+        HumanShapePower.BONUS_DEXTERITY = 0;
         description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(name,description));
