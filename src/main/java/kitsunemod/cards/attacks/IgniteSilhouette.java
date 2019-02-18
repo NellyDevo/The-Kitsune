@@ -20,7 +20,7 @@ public class IgniteSilhouette extends AbstractKitsuneCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "kitsunemod/images/cards/strike.png";
+    public static final String IMG_PATH = "kitsunemod/images/cards/IgniteSilhouette.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;
     private static final int UPGRADE_PLUS_DMG = 3;
