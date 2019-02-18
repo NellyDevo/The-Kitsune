@@ -132,6 +132,11 @@
     "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:RendSpirit": {
+    "NAME": "Rend Spirit",
+    "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 

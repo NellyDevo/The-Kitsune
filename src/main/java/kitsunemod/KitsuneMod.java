@@ -176,6 +176,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new MemorizeSpell());
         BaseMod.addCard(new IgniteSilhouette());
         BaseMod.addCard(new EssenceTheft());
+        BaseMod.addCard(new RendSpirit());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
