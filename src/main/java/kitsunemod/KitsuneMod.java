@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -21,7 +20,6 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -180,6 +178,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new NourishingFlame());
         BaseMod.addCard(new BareFangs());
         BaseMod.addCard(new Flourish());
+        BaseMod.addCard(new Cornered());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
@@ -258,20 +257,24 @@ public class KitsuneMod implements
     }
 
     public static int receivePlayerIsAttacked(DamageInfo info, int damageAmount) {
-        if (AbstractDungeon.player.currentBlock <= 0) {
-            return damageAmount;
-        }
-        if (info.type == DamageInfo.DamageType.HP_LOSS) {
-            return damageAmount;
-        }
-        logger.info("KitsuneMod: receiving player being attacked for " + info.output);
-        int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
+        if (damageAmount > 0) {
+            int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
 
-        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
+            if (info.type == DamageInfo.DamageType.HP_LOSS || blockingAmount < damageAmount) {
+                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+            }
+            else if (blockingAmount > 0) {
+                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+            }
+        }
         return damageAmount;
     }
 

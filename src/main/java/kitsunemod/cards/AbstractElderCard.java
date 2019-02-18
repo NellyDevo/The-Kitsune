@@ -176,15 +176,13 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     public void onCardDrawn(AbstractCard card, boolean isExtraDraw) { }
 
-    public void onBlockedDamage(int amount) { }
-
-    public void onLoseHp(DamageInfo info) { }
+    public int onLoseHp(DamageInfo info, int finalAmount) { return finalAmount; }
 
     public void onEnterRoom(AbstractRoom room) {
 
     }
 
-    public void onLoseBlock(int amount) {
+    public void onBlockedDamage(int amount) {
 
     }
 
