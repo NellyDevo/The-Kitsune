@@ -157,7 +157,10 @@
   },
   "kitsunemod:CleansingNova": {
     "NAME": "Cleansing Nova",
-    "DESCRIPTION": "Gain !B! Block, then strip all of your Block to deal that much damage to all enemies. Exhaust.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Gain !B! Block. NL Lose all Block to deal that much to ALL enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !D! damage)"
+    ]
   }
 }
