@@ -254,21 +254,22 @@ public class KitsuneMod implements
         KitsuneMod.turnsSpentInSameShape = 0;
     }
 
-    public static void receivePlayerIsAttacked(DamageInfo info) {
+    public static int receivePlayerIsAttacked(DamageInfo info, int damageAmount) {
         if (AbstractDungeon.player.currentBlock <= 0) {
-            return;
+            return damageAmount;
         }
         if (info.type == DamageInfo.DamageType.HP_LOSS) {
-            return;
+            return damageAmount;
         }
         logger.info("KitsuneMod: receiving player being attacked for " + info.output);
-        int blockingAmount = Math.min(info.output, AbstractDungeon.player.currentBlock);
+        int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
 
         triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
         triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
         triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
         triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
         triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseBlock(blockingAmount));
+        return damageAmount;
     }
 
     public static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {

@@ -16,11 +16,17 @@ public class ModifyPlayerIsAttackedPatch {
     public ModifyPlayerIsAttackedPatch() {
     }
 
+    //right now we
     @SpireInsertPatch(
+            localvars = {"damageAmount"},
             locator = ModifyPlayerIsAttackedPatch.LocatorPre.class
     )
-    public static void InsertPre(AbstractCreature __instance, @ByRef DamageInfo info) {
-        KitsuneMod.receivePlayerIsAttacked(info);
+    public static void InsertPre(AbstractCreature __instance, DamageInfo info, @ByRef int[] damageAmount) {
+        int damage = KitsuneMod.receivePlayerIsAttacked(info, damageAmount[0]);
+        if (damage < 0) {
+            damage = 0;
+        }
+        damageAmount[0] = damage;
     }
 
     private static class LocatorPre extends SpireInsertLocator {
