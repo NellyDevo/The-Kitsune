@@ -154,7 +154,7 @@
   },
   "kitsunemod:Cornered": {
     "NAME": "Cornered",
-    "DESCRIPTION": "Deal !kitsunemod:M2! + !M!% of your missing HP as damage. NL kitsunemod:Elder: Lose 15 HP.",
+    "DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage. NL kitsunemod:Elder: Lose 15 HP.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " NL (currently !D! damage)"
@@ -183,7 +183,7 @@
     "DESCRIPTION": "Gain !B! Block. NL Lose all Block to deal that much to ALL enemies. Exhaust.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      " NL ( !D! damage)"
+      " NL (currently !D! damage)"
     ]
   }
 }
