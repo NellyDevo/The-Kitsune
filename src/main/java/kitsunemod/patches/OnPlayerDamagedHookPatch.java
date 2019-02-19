@@ -12,13 +12,13 @@ import kitsunemod.KitsuneMod;
         method = "damage",
         paramtypez = {DamageInfo.class}
 )
-public class ModifyPlayerIsAttackedPatch {
-    public ModifyPlayerIsAttackedPatch() {
+public class OnPlayerDamagedHookPatch {
+    public OnPlayerDamagedHookPatch() {
     }
 
     @SpireInsertPatch(
             localvars = {"damageAmount"},
-            locator = ModifyPlayerIsAttackedPatch.LocatorPre.class
+            locator = OnPlayerDamagedHookPatch.LocatorPre.class
     )
     public static void InsertPre(AbstractCreature __instance, DamageInfo info, @ByRef int[] damageAmount) {
         int damage = KitsuneMod.receivePlayerIsAttacked(info, damageAmount[0]);
