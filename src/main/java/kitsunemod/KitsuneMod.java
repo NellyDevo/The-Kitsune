@@ -66,17 +66,14 @@ public class KitsuneMod implements
         PostDrawSubscriber,
         PreMonsterTurnSubscriber {
 
-    public static void receiveEnergyChanged(int energyDelta) {
-        logger.info("receiveEnergyChanged: " + energyDelta);
-    }
-
-    public interface ElderTriggerFunc {
-        void run(AbstractElderCard card);
-    }
+    //                                      //
+    // --- CONSTANTS AND REFERENCE DATA --- //
+    //                                      //
 
     public static final Color kitsuneColor = CardHelper.getColor(152.0f, 34.0f, 171.0f); //change this to our class's decided color; currently leftover from mystic purple
 
     private static final String MOD_ID_PREFIX = "kitsunemod:";
+
     private static final String attackCard = "kitsunemod/images/512/bg_attack_kitsune.png";
     private static final String skillCard = "kitsunemod/images/512/bg_skill_kitsune.png";
     private static final String powerCard = "kitsunemod/images/512/bg_power_kitsune.png";
@@ -91,14 +88,19 @@ public class KitsuneMod implements
 
     public static final Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
 
-    //TODO reorganize into implementation and mod setup sections
-
-    //ChangeShapeAction chanages these values as appropriate. We may need to change this later for elder cards or relics
     public static int shapeshiftsThisCombat = 0;
     public static int turnsSpentInSameShape = 1;
 
     public static int cardDrawsThisCombat = 0;
     public static int cardDrawsThisTurn = 0;
+
+    public static String makeID(String id) {
+        return MOD_ID_PREFIX + id;
+    }
+
+    //                                             //
+    // --- INITIALIZATION AND CONTENT ADDITION --- //
+    //                                             //
 
     public KitsuneMod(){
         BaseMod.subscribe(this);
@@ -202,119 +204,10 @@ public class KitsuneMod implements
     }
 
     @Override
-    public void receivePostDraw(AbstractCard card) {
-        cardDrawsThisCombat++;
-        cardDrawsThisTurn++;
-        boolean isExtraDraw = cardDrawsThisTurn > AbstractDungeon.player.gameHandSize;
-        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
-    }
-
-    public static void receiveRoomEntered(AbstractRoom room) {
-        //the patch here is before an ? room is potentially rerolled - so i can assume that all ? rooms are instances of EventRoom
-        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onEnterRoom(room));
-    }
-
-    @Override
-    public boolean receivePreMonsterTurn(AbstractMonster m) {
-        cardDrawsThisTurn = 0;
-        turnsSpentInSameShape++;
-        if (m.hasPower(CharmMonsterPower.POWER_ID)) {
-            CharmMonsterPower charm = (CharmMonsterPower)m.getPower(CharmMonsterPower.POWER_ID);
-            boolean otherMonstersExist = false;
-            for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (monster != m && !monster.isDeadOrEscaped()) {
-                    otherMonstersExist = true;
-                }
-            }
-            AbstractMonster target = null;
-            if (otherMonstersExist) {
-                target = AbstractDungeon.getRandomMonster(m);
-            }
-            charm.actions.doActions(charm.move, target, otherMonstersExist);
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public void receivePostBattle(AbstractRoom room) {
-        KitsuneMod.shapeshiftsThisCombat = 0;
-        KitsuneMod.cardDrawsThisCombat = 0;
-        KitsuneMod.cardDrawsThisTurn = 0;
-        KitsuneMod.turnsSpentInSameShape = 0;
-    }
-
-    public static void receiveChangeShape(KitsuneShapes shape) {
-        if (AbstractDungeon.player.relics != null) {
-            for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
-                //TODO expand to be more general; i.e. making a KitsuneRelic class and offering this hook
-                AbstractRelic r = AbstractDungeon.player.relics.get(i);
-                if (r instanceof KitsuneRelic) {
-                    ((KitsuneRelic) r).onChangeShape(shape);
-                }
-            }
-        }
-        if (AbstractDungeon.player instanceof KitsuneCharacter) {
-            ((KitsuneCharacter) AbstractDungeon.player).onShapeChange(shape);
-        }
-
-        KitsuneMod.shapeshiftsThisCombat++;
-        KitsuneMod.turnsSpentInSameShape = 0;
-    }
-
-    public static int receivePlayerIsAttacked(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0) {
-            int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
-
-            if (info.type == DamageInfo.DamageType.HP_LOSS || blockingAmount < damageAmount) {
-                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-            }
-            if (blockingAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS) {
-                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
-            }
-        }
-        return damageAmount;
-    }
-
-    public static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
-        for (int i = 0; i < group.size(); i++) {
-            AbstractCard currentCard = group.getNCardFromTop(i);
-            if (currentCard instanceof AbstractElderCard) {
-                AbstractElderCard currentElderCard = (AbstractElderCard) currentCard;
-                trigger.run(currentElderCard);
-            }
-        }
-    }
-
-    @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new KitsuneCharacter(CardCrawlGame.playerName), charButton, charPortrait, KitsuneEnum.KITSUNE_CLASS); //TODO: blue button
     }
 
-    private String getLanguageString(Settings.GameLanguage language) { //for future localization support
-        switch (language) {
-//            case ZHS:
-//                return "zhs";
-            default:
-                return "eng";
-        }
-    }
 
     @Override
     public void receiveEditKeywords() {
@@ -359,11 +252,22 @@ public class KitsuneMod implements
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
     }
 
+    private String getLanguageString(Settings.GameLanguage language) { //for future localization support
+        switch (language) {
+//            case ZHS:
+//                return "zhs";
+            default:
+                return "eng";
+        }
+    }
+
     @Override
     public void receiveEditRelics() {
         //starter
         BaseMod.addRelicToCustomPool(new WornPearl(), KITSUNE_COLOR);
         BaseMod.addRelicToCustomPool(new ShiningPearl(), KITSUNE_COLOR);
+
+        //special/event
         BaseMod.addRelicToCustomPool(new LuminousPearl(), KITSUNE_COLOR);
 
         //Common
@@ -377,14 +281,127 @@ public class KitsuneMod implements
         //Boss
     }
 
-    public static String makeID(String id) {
-        return MOD_ID_PREFIX + id;
+    //                                  //
+    // --- CODE HOOKS FOR MOD LOGIC --- //
+    //                                  //
+
+    @Override
+    public void receivePostDraw(AbstractCard card) {
+        cardDrawsThisCombat++;
+        cardDrawsThisTurn++;
+        boolean isExtraDraw = cardDrawsThisTurn > AbstractDungeon.player.gameHandSize;
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
     }
+
+    @Override
+    public boolean receivePreMonsterTurn(AbstractMonster m) {
+        cardDrawsThisTurn = 0;
+        turnsSpentInSameShape++;
+        if (m.hasPower(CharmMonsterPower.POWER_ID)) {
+            CharmMonsterPower charm = (CharmMonsterPower)m.getPower(CharmMonsterPower.POWER_ID);
+            boolean otherMonstersExist = false;
+            for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (monster != m && !monster.isDeadOrEscaped()) {
+                    otherMonstersExist = true;
+                }
+            }
+            AbstractMonster target = null;
+            if (otherMonstersExist) {
+                target = AbstractDungeon.getRandomMonster(m);
+            }
+            charm.actions.doActions(charm.move, target, otherMonstersExist);
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom room) {
+        KitsuneMod.shapeshiftsThisCombat = 0;
+        KitsuneMod.cardDrawsThisCombat = 0;
+        KitsuneMod.cardDrawsThisTurn = 0;
+        KitsuneMod.turnsSpentInSameShape = 0;
+    }
+
+    public static void receiveEnergyChanged(int energyDelta) {
+        logger.info("receiveEnergyChanged: " + energyDelta);
+    }
+
+    public static void receiveRoomEntered(AbstractRoom room) {
+        //the patch here is before an ? room is potentially rerolled - so i can assume that all ? rooms are instances of EventRoom
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onEnterRoom(room));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onEnterRoom(room));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onEnterRoom(room));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onEnterRoom(room));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onEnterRoom(room));
+    }
+
+    public static void receiveChangeShape(KitsuneShapes shape) {
+        if (AbstractDungeon.player.relics != null) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+                //TODO expand to be more general; i.e. making a KitsuneRelic class and offering this hook
+                AbstractRelic r = AbstractDungeon.player.relics.get(i);
+                if (r instanceof KitsuneRelic) {
+                    ((KitsuneRelic) r).onChangeShape(shape);
+                }
+            }
+        }
+        if (AbstractDungeon.player instanceof KitsuneCharacter) {
+            ((KitsuneCharacter) AbstractDungeon.player).onShapeChange(shape);
+        }
+
+        KitsuneMod.shapeshiftsThisCombat++;
+        KitsuneMod.turnsSpentInSameShape = 0;
+    }
+
+    public static int receivePlayerIsAttacked(DamageInfo info, int damageAmount) {
+        if (damageAmount > 0) {
+            int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
+
+            if (info.type == DamageInfo.DamageType.HP_LOSS || blockingAmount < damageAmount) {
+                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+            }
+            if (blockingAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS) {
+                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+            }
+        }
+        return damageAmount;
+    }
+
+    private static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
+        for (int i = 0; i < group.size(); i++) {
+            AbstractCard currentCard = group.getNCardFromTop(i);
+            if (currentCard instanceof AbstractElderCard) {
+                AbstractElderCard currentElderCard = (AbstractElderCard) currentCard;
+                trigger.run(currentElderCard);
+            }
+        }
+    }
+
+    //
+    //enums/interfaces
+    //
 
     public enum KitsuneShapes {
         FOX,
         KITSUNE,
         HUMAN,
         NINETAILED
+    }
+
+    public interface ElderTriggerFunc {
+        void run(AbstractElderCard card);
     }
 }
