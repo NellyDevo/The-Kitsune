@@ -343,7 +343,6 @@ public class KitsuneMod implements
     public static void receiveChangeShape(KitsuneShapes shape) {
         if (AbstractDungeon.player.relics != null) {
             for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
-                //TODO expand to be more general; i.e. making a KitsuneRelic class and offering this hook
                 AbstractRelic r = AbstractDungeon.player.relics.get(i);
                 if (r instanceof KitsuneRelic) {
                     ((KitsuneRelic) r).onChangeShape(shape);
