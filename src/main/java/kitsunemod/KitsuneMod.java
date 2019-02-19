@@ -267,7 +267,7 @@ public class KitsuneMod implements
                 triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
             }
-            else if (blockingAmount > 0) {
+            if (blockingAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS) {
                 triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
