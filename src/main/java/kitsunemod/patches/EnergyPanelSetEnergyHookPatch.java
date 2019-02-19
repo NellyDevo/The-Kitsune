@@ -11,7 +11,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.nextRoom;
 
 @SpirePatch(
         clz = EnergyPanel.class,
-        method = "setEnergy",
+        method = "setEnergy"
 )
 public class EnergyPanelSetEnergyHookPatch {
     public EnergyPanelSetEnergyHookPatch() {
