@@ -53,6 +53,9 @@ public abstract class AbstractShapePower extends AbstractPower {
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType damageType) {
         if (damageType == DamageInfo.DamageType.NORMAL) {
+            if (damage + amount < 0.0f) {
+                return 0.0f;
+            }
             return damage + (float)amount;
         }
         return damage;
