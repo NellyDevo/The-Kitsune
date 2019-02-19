@@ -16,7 +16,6 @@ public class ModifyPlayerIsAttackedPatch {
     public ModifyPlayerIsAttackedPatch() {
     }
 
-    //right now we
     @SpireInsertPatch(
             localvars = {"damageAmount"},
             locator = ModifyPlayerIsAttackedPatch.LocatorPre.class

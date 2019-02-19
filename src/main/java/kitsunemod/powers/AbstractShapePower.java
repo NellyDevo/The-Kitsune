@@ -96,7 +96,7 @@ public abstract class AbstractShapePower extends AbstractPower {
         }
     }
 
-    //also lifted this, again, same issue as above with the color constants. overriding it is pointless if we don't have access to important fields
+    //also lifted this, again, same issue as above with the color constants. Frustrating that we have to copy code out of the base game like this
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
         if (this.amount > 0) {
             if (!isTurnBased) {
