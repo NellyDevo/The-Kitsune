@@ -66,6 +66,9 @@ public class KitsuneMod implements
         PostDrawSubscriber,
         PreMonsterTurnSubscriber {
 
+    public static void receiveEnergyChanged(int energyDelta) {
+        logger.info("receiveEnergyChanged: " + energyDelta);
+    }
 
     public interface ElderTriggerFunc {
         void run(AbstractElderCard card);
