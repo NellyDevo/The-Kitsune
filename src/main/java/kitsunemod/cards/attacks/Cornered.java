@@ -92,7 +92,11 @@ public class Cornered extends AbstractElderCard {
     @Override
     public int onLoseHp(DamageInfo info, int finalAmount) {
         misc += finalAmount;
+        int tempTimesUpgraded = this.timesUpgraded;
         upgrade();
+        if (timesUpgraded != tempTimesUpgraded) {
+            playUpgradeVfx();
+        }
         return finalAmount;
     }
 

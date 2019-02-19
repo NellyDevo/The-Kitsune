@@ -1,10 +1,16 @@
 package kitsunemod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.UpgradeHammerImprintEffect;
+import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
@@ -249,6 +255,21 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         }
         if (amount >= 9) {
             upgrade9();
+        }
+
+    }
+
+    //call this in the hook that calls upgrade() if the upgrade went through
+    //attaching it directly into upgradeAll or such causes an infinite loop when makeCopy gets called
+    //or rewrite this to suppress playing the vfx during initialization, either way is vaguely ugly imo
+    protected void playUpgradeVfx() {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            AbstractDungeon.actionManager.addToTop(new VFXAction(new UpgradeShineEffect(Settings.WIDTH / 2, Settings.HEIGHT / 2)));
+            AbstractDungeon.actionManager.addToTop(new VFXAction(new ShowCardBrieflyEffect(this.makeStatEquivalentCopy())));
+        }
+        else {
+            AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(this));
+            AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2, Settings.HEIGHT / 2));
         }
     }
 }

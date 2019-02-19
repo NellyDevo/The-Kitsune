@@ -46,7 +46,11 @@ public class FeralInstinct extends AbstractElderCard {
     @Override
     public void onBlockedDamage(int amount) {
         misc += amount;
+        int tempTimesUpgraded = this.timesUpgraded;
         upgrade();
+        if (timesUpgraded != tempTimesUpgraded) {
+            playUpgradeVfx();
+        }
     }
 
     @Override
