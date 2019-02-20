@@ -80,10 +80,8 @@ public class SplitSoul extends AbstractElderCard {
 
     @Override
     public void upgradeAll() {
-        if (timesUpgraded < 9) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG_PER_TIER);
-        }
+        upgradeName();
+        upgradeDamage(UPGRADE_PLUS_DMG_PER_TIER);
     }
 
     @Override

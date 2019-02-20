@@ -103,10 +103,8 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public void upgradeAll() {
-        if (timesUpgraded < 9) {
-            upgradeName();
-            upgradeMagicNumber(ELDER_TIER_MISSING_HP_MULT);
-        }
+        upgradeName();
+        upgradeMagicNumber(ELDER_TIER_MISSING_HP_MULT);
     }
 
     @Override

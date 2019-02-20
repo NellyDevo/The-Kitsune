@@ -57,10 +57,8 @@ public class FeralInstinct extends AbstractElderCard {
 
     @Override
     public void upgradeAll() {
-        if (timesUpgraded < 9) {
-            upgradeName();
-            upgradeBlock(UPGRADE_BLOCK_AMT_PER_ELDER_TIER);
-        }
+        upgradeName();
+        upgradeBlock(UPGRADE_BLOCK_AMT_PER_ELDER_TIER);
     }
 
     @Override
