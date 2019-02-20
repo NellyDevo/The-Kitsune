@@ -136,6 +136,11 @@
     "DESCRIPTION": "Set your kitsunemod:Dark to !kitsunemod:M2!. Apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:HauntingLights": {
+    "NAME": "Haunting Lights",
+    "DESCRIPTION": "Deal !D! Damage. NL Kitsune kitsunemod:Aspect: Apply !M! Weak to the target and yourself.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:HumanShape": {
     "NAME": "Human Shape",
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",
