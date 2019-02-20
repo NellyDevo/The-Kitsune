@@ -24,6 +24,11 @@
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, heal !M! HP and play this card again on a random enemy.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:DrownInTheDeep": {
+    "NAME": "Drown in the Deep",
+    "DESCRIPTION": "Target loses !M! HP X times, doubling it each time.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage.",
@@ -44,10 +49,6 @@
     "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",
     "UPGRADE_DESCRIPTION": ""
   },
-
-
-
-
   "kitsunemod:FoxShape": {
     "NAME": "Fox Shape",
     "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. NL Exhaust.",
