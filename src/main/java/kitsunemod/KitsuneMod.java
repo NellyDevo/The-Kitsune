@@ -192,6 +192,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new PackKill());
         BaseMod.addCard(new ResoluteTechnique());
         BaseMod.addCard(new HauntingLights());
+        BaseMod.addCard(new RepayInKind());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

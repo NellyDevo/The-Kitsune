@@ -237,6 +237,11 @@
     "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:RepayInKind": {
+    "NAME": "Repay in Kind",
+    "DESCRIPTION": "Deal !D! damage. Apply the same amount of Weak you have.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Apply the same amount of Weak and Vulnerable you have."
+  },
   "kitsunemod:ResoluteTechnique": {
     "NAME": "Resolute Technique",
     "DESCRIPTION": "Gain !M! Weak, then deal !D! damage. Kitsune kitsunemod:Aspect: Loses HP instead.",
