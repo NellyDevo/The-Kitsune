@@ -36,7 +36,7 @@ public class PackKill extends AbstractKitsuneCard {
     public PackKill() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.COMMON, CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = ASPECT_SECOND_ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = ASPECT_THIRD_ATTACK_DMG;
