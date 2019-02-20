@@ -4,6 +4,11 @@
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:BlinkSlash": {
+    "NAME": "Blink Slash",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !B! block for each enemy hit.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:BurnFromMemory": {
     "NAME": "Burn From Memory",
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy and you are below half HP, heal 15 HP. NL Exhaust.",
