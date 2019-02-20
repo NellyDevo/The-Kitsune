@@ -112,8 +112,8 @@
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw 5 cards.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card."
   },
   "kitsunemod:Radiance": {
     "NAME": "Radiance",
