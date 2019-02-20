@@ -27,6 +27,13 @@
       "x your Dark in damage to a random enemy if you're over ",
       " stacks."]
   },
+  "kitsunemod:GatheringDarkPower": {
+    "NAME": "Gathering Dark",
+    "DESCRIPTIONS": [
+      "Your #yDark no longer dissipates when over 9 stacks. At the end of your turn, gain #b",
+      " #yDark."
+    ]
+  },
 
   "kitsunemod:PerfectedShapePower": {
     "NAME": "Perfected Shape",
