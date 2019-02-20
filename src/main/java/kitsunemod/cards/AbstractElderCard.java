@@ -199,13 +199,13 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgrade() {
-        if (firstCondition() && timesUpgraded >= 0) {
+        if (firstCondition() && timesUpgraded == 0) {
             upgrade1();
         }
-        if (secondCondition() && timesUpgraded >= 1) {
+        if (secondCondition() && timesUpgraded == 1) {
             upgrade2();
         }
-        if (thirdCondition() && timesUpgraded >= 2) {
+        if (thirdCondition() && timesUpgraded == 2) {
             upgrade3();
         }
         if (fourthCondition() && timesUpgraded == 3) {
