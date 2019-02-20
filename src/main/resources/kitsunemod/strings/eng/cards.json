@@ -232,6 +232,11 @@
     "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:ResoluteTechnique": {
+    "NAME": "Resolute Technique",
+    "DESCRIPTION": "Gain !M! Weak, then deal !D! damage. Kitsune kitsunemod:Aspect: Loses HP instead.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:ShapeMastery": {
     "NAME": "Shape Mastery",
     "DESCRIPTION": "Gain !B! block. Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.",
