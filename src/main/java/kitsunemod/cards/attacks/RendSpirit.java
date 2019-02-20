@@ -48,8 +48,9 @@ public class RendSpirit extends AbstractKitsuneCard {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
         if (p.hasPower(KitsuneShapePower.POWER_ID) || p.hasPower(NinetailedShapePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.75f));
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, p, magicNumber));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new ScrapeEffect(m.hb.cX, m.hb.cY)));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25f));
+            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, p, magicNumber));
         }
     }
 
