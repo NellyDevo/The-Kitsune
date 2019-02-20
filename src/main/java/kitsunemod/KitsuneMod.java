@@ -143,8 +143,9 @@ public class KitsuneMod implements
 
     @Override
     public void receiveEditCards() {
-        //secondMagicNumber dynamic variable
-        BaseMod.addDynamicVariable(new AbstractKitsuneCard.SecondMagicNumber()); //dynamic variable registered here
+        //dynamic variables
+        BaseMod.addDynamicVariable(new AbstractKitsuneCard.SecondMagicNumber());
+        BaseMod.addDynamicVariable(new AbstractElderCard.ElderNumber());
 
         //Basic
         BaseMod.addCard(new Defend());

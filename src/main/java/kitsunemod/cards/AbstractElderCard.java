@@ -1,12 +1,20 @@
 package kitsunemod.cards;
 
+import basemod.abstracts.DynamicVariable;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import kitsunemod.KitsuneMod;
 
 public abstract class AbstractElderCard extends AbstractKitsuneCard {
+    public int elderNumber;
+    public int baseElderNumber;
+    public boolean isElderNumberModified;
+    public boolean upgradedElderNumber;
 
     public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
                              CardType type, CardColor color,
@@ -249,6 +257,67 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         }
         if (amount >= 9) {
             upgrade9();
+        }
+    }
+
+    public static class ElderNumber extends DynamicVariable {
+
+        @Override
+        public int baseValue(AbstractCard card) {
+            if (card instanceof AbstractElderCard) {
+                return ((AbstractElderCard)card).baseElderNumber;
+            } else {
+                return -1;
+            }
+        }
+
+        @Override
+        public boolean isModified(AbstractCard card) {
+            if (card instanceof AbstractElderCard) {
+                return ((AbstractElderCard)card).isElderNumberModified;
+            } else {
+                return false;
+            }
+        }
+
+        @Override
+        public void setIsModified(AbstractCard card, boolean v) {
+            if (card instanceof AbstractElderCard) {
+                ((AbstractElderCard)card).isElderNumberModified = v;
+            }
+        }
+
+        @Override
+        public String key() { //controls what card text will be recognized as the magic number
+            return KitsuneMod.makeID("Elder");
+        }
+
+        @Override
+        public boolean upgraded(AbstractCard card) {
+            if (card instanceof AbstractElderCard) {
+                return ((AbstractElderCard)card).upgradedElderNumber;
+            } else {
+                return false;
+            }
+        }
+
+        @Override
+        public int value(AbstractCard card) {
+            if (card instanceof AbstractElderCard) {
+                return ((AbstractElderCard)card).elderNumber;
+            } else {
+                return -1;
+            }
+        }
+
+        @Override
+        public Color getDecreasedValueColor() {
+            return Settings.GREEN_TEXT_COLOR;
+        }
+
+        @Override
+        public Color getIncreasedValueColor() {
+            return Settings.RED_TEXT_COLOR;
         }
     }
 }
