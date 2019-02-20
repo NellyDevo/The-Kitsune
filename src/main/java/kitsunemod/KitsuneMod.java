@@ -197,6 +197,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new GrowingHunger());
         BaseMod.addCard(new ShapeMastery());
         BaseMod.addCard(new PurityOfFunction());
+        BaseMod.addCard(new WaningExistence());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

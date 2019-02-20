@@ -236,5 +236,10 @@
     "EXTENDED_DESCRIPTION": [
       " NL (currently !D! damage)"
     ]
+  },
+  "kitsunemod:WaningExistence": {
+    "NAME": "Waning Existence",
+    "DESCRIPTION": "Deal !D! Damage. NL Deals additional damage equal to the target's stacks of kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Deals additional damage equal to double the target's stacks of kitsunemod:Soulsteal."
   }
 }
