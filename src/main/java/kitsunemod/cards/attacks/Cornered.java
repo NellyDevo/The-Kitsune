@@ -45,6 +45,7 @@ public class Cornered extends AbstractElderCard {
         damage = baseDamage = BASE_DAMAGE;
         magicNumber = baseMagicNumber = BASE_MISSING_HP_MULT;
         secondMagicNumber = baseSecondMagicNumber = BASE_DAMAGE;
+        elderNumber = baseElderNumber = ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT;
     }
 
     public Cornered(int timesUpgraded) {
@@ -65,22 +66,24 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public void applyPowers() {
-        super.applyPowers();
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();
         baseDamage = secondMagicNumber;
+        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
+        isElderNumberModified = elderNumber != baseElderNumber;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        super.applyPowers();
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();
         baseDamage = secondMagicNumber;
+        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
+        isElderNumberModified = elderNumber != baseElderNumber;
     }
 
     @Override
@@ -98,7 +101,7 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     protected boolean allCondition() {
-        return misc >= (timesUpgraded + 1) * ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT;
+        return misc >= (timesUpgraded + 1) * baseElderNumber;
     }
 
     @Override
