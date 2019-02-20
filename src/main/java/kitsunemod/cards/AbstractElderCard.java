@@ -122,6 +122,10 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         }
         timesUpgraded = 9;
         upgradeAll();
+        finalizeDescription();
+    }
+
+    protected void finalizeDescription() {
     }
 
     protected void upgradeAll() {

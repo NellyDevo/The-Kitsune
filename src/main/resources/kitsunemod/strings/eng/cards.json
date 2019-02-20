@@ -224,7 +224,8 @@
     "DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage. NL kitsunemod:Elder: Lose !kitsunemod:Elder! HP.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      " NL (currently !D! damage)"
+      " NL (currently !D! damage)",
+      "Deal !kitsunemod:M2! + !M! % of your missing HP as damage."
     ]
   },
 

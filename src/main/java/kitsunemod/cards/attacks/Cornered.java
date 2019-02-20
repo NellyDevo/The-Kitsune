@@ -38,6 +38,8 @@ public class Cornered extends AbstractElderCard {
     private static final int ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT = 15;
     private static final int SWITCH_EFFECT_DAMAGE_THRESHHOLD = 25;
 
+    private String currentDescription;
+
     public Cornered() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
@@ -45,6 +47,7 @@ public class Cornered extends AbstractElderCard {
         damage = baseDamage = BASE_DAMAGE;
         magicNumber = baseMagicNumber = BASE_MISSING_HP_MULT;
         secondMagicNumber = baseSecondMagicNumber = BASE_DAMAGE;
+        currentDescription = DESCRIPTION;
         elderNumber = baseElderNumber = ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT;
     }
 
@@ -60,7 +63,7 @@ public class Cornered extends AbstractElderCard {
             effect = AbstractGameAction.AttackEffect.BLUNT_HEAVY;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), effect));
-        rawDescription = DESCRIPTION;
+        rawDescription = currentDescription;
         initializeDescription();
     }
 
@@ -68,7 +71,7 @@ public class Cornered extends AbstractElderCard {
     public void applyPowers() {
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        rawDescription = currentDescription + EXTENDED_DESCRIPTION[0];
         initializeDescription();
         baseDamage = secondMagicNumber;
         elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
@@ -79,7 +82,7 @@ public class Cornered extends AbstractElderCard {
     public void calculateCardDamage(AbstractMonster mo) {
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        rawDescription = currentDescription + EXTENDED_DESCRIPTION[0];
         initializeDescription();
         baseDamage = secondMagicNumber;
         elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
@@ -88,8 +91,13 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public void onMoveToDiscard() {
-        rawDescription = DESCRIPTION;
+        rawDescription = currentDescription;
         initializeDescription();
+    }
+
+    @Override
+    public void finalizeDescription() {
+        currentDescription = EXTENDED_DESCRIPTION[1];
     }
 
     @Override
