@@ -17,6 +17,7 @@ public class FeralInstinct extends AbstractElderCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
     private static final int COST = 1;
 
@@ -29,11 +30,19 @@ public class FeralInstinct extends AbstractElderCard {
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
+        elderNumber = baseElderNumber = ELDER_TIER_BLOCKED_REQUIREMENT;
     }
 
     public FeralInstinct(int timesUpgraded) {
         this();
         initializeWithUpgrades(timesUpgraded);
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
+        isElderNumberModified = elderNumber != baseElderNumber;
     }
 
     @Override
@@ -51,7 +60,7 @@ public class FeralInstinct extends AbstractElderCard {
 
     @Override
     protected boolean allCondition() {
-        return misc >= (timesUpgraded + 1) * ELDER_TIER_BLOCKED_REQUIREMENT;
+        return misc >= (timesUpgraded + 1) * baseElderNumber;
     }
 
 
@@ -59,6 +68,12 @@ public class FeralInstinct extends AbstractElderCard {
     public void upgradeAll() {
         upgradeName();
         upgradeBlock(UPGRADE_BLOCK_AMT_PER_ELDER_TIER);
+    }
+
+    @Override
+    public void finalizeDescription() {
+        rawDescription = EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override

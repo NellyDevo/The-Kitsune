@@ -147,8 +147,11 @@
   },
   "kitsunemod:FeralInstinct": {
     "NAME": "Feral Instinct",
-    "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block 30 damage.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block twice."
+    ]
   },
   "kitsunemod:InflictWounds": {
     "NAME": "Inflict Wounds",
