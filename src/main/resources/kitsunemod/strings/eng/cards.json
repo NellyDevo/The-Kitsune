@@ -1,7 +1,7 @@
 {
   "kitsunemod:AlluringGlimmer": {
     "NAME": "Alluring Glimmer",
-    "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! Soulsteal.",
+    "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:AnsweredPrayers": {
@@ -178,8 +178,8 @@
   },
   "kitsunemod:NourishingFlame": {
     "NAME": "Nourishing Flame",
-    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! Will-o-wisp.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! Will-o-wisps."
+    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! kitsunemod:Will-o-wisp.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! kitsunemod:Will-o-wisps."
   },
   "kitsunemod:PerfectedShape": {
     "NAME": "Perfected Shape",
@@ -236,7 +236,7 @@
   },
   "kitsunemod:ThickFur": {
     "NAME": "Thick Fur",
-    "DESCRIPTION": "Gain !M! Dark and !B! Block. ",
+    "DESCRIPTION": "Gain !M! kitsunemod:Dark and !B! Block. ",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TricksterFlame": {
