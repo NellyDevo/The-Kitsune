@@ -1,6 +1,8 @@
 package kitsunemod.cards.attacks;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
@@ -13,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
@@ -47,9 +50,10 @@ public class CleansingNova extends AbstractKitsuneCard {
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         if (doDamage) {
             AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(p, p));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.15f));
             AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_AWAKENED_ATTACK"));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShockWaveEffect(p.hb.cX, p.hb.cY, new Color(0.9f, 0.8f, 0.95f, 1.0f), ShockWaveEffect.ShockWaveType.CHAOTIC)));
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.15f));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         } else {
             p.useShakeAnimation(0.5f);
             AbstractDungeon.actionManager.addToBottom(new SFXAction("POWER_CONSTRICTED"));
