@@ -38,6 +38,14 @@
     "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:GrowingHunger": {
+    "NAME": "Growing Hunger",
+    "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal for each turn you've remained in the same kitsunemod:Shape.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !kitsunemod:M2! kitsunemod:Soulsteal. )"
+    ]
+  },
   "kitsunemod:KitsuneShape": {
     "NAME": "Kitsune Shape",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. kitsunemod:Shapeshift into a Kitsune. NL Exhaust.",
