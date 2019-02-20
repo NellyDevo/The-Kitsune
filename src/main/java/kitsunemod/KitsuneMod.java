@@ -192,6 +192,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new VanishIntoShadows());
         BaseMod.addCard(new CleansingNova());
+        BaseMod.addCard(new TerrorPhantasm());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

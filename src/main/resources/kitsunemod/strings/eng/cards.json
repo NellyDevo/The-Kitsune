@@ -73,6 +73,11 @@
     "DESCRIPTION": "Set your kitsunemod:Dark to !kitsunemod:M2!. Apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:TerrorPhantasm": {
+    "NAME": "Terror Phantasm",
+    "DESCRIPTION": "Apply 3 Weak and Vulnerable. NL At the start of each of its turns, target loses !M! HP.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:TricksterFlame": {
     "NAME": "Trickster Flame",
     "DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisp.",

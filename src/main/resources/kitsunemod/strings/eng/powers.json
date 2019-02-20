@@ -108,5 +108,12 @@
       "Drawn #yShapeshift cards cost #g",
       " less."
     ]
+  },
+  "kitsunemod:TerrorPhantasmPower": {
+    "NAME": "Terror Phantasm",
+    "DESCRIPTIONS": [
+      "At the start of its turn, this enemy loses #b",
+      " HP."
+    ]
   }
 }
