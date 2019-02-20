@@ -98,6 +98,8 @@ public class Cornered extends AbstractElderCard {
     @Override
     public void finalizeDescription() {
         currentDescription = EXTENDED_DESCRIPTION[1];
+        rawDescription = currentDescription;
+        initializeDescription();
     }
 
     @Override
