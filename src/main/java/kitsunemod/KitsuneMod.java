@@ -201,6 +201,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new DeathStroke());
         BaseMod.addCard(new BurnFromMemory());
         BaseMod.addCard(new BlinkSlash());
+        BaseMod.addCard(new MassSuggestion());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

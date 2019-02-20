@@ -81,6 +81,14 @@
     "DESCRIPTION": "Gain !B! Block + !M! more for each time you've kitsunemod:Shapeshifted this combat. ",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:MassSuggestion": {
+    "NAME": "Mass Suggestion",
+    "DESCRIPTION": "kitsunemod:Charm X random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Charm X+1 random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
+    "EXTENDED_DESCRIPTION": [
+      "It didn't have any effect!"
+    ]
+  },
   "kitsunemod:NipAtHeels": {
     "NAME": "Nip at Heels",
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
