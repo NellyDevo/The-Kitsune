@@ -60,7 +60,7 @@
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw 5 cards.",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw 5 extra cards.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:Radiance": {
@@ -90,7 +90,7 @@
   },
   "kitsunemod:AlluringGlimmer": {
     "NAME": "Alluring Glimmer",
-    "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! Soulsteal.",
+    "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PerfectedShape": {
@@ -100,8 +100,8 @@
   },
   "kitsunemod:Insight": {
     "NAME": "Insight",
-    "DESCRIPTION": "Whenever you play an kitsunemod:Aspect card, draw another kitsunemod:Aspect card from your draw pile.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Whenever you play an kitsunemod:Aspect card, put an kitsunemod:Aspect card from your draw pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a card, put an kitsunemod:Aspect card from your draw pile into your hand."
   },
   "kitsunemod:FastShape": {
     "NAME": "Fast Shape",

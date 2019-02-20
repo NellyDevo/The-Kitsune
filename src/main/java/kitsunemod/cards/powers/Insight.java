@@ -21,7 +21,6 @@ public class Insight extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/Insight.png";
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
 
     public Insight() {
@@ -32,7 +31,22 @@ public class Insight extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InsightPower(p)));
+        if (!this.upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InsightPower(p)));
+        }
+        else {
+            if (p.hasPower(ID)) {
+                InsightPower power = (InsightPower)p.getPower(ID);
+                power.isUpgraded = true;
+                power.flash();
+            }
+            else {
+                InsightPower power = new InsightPower(p);
+                power.isUpgraded = true;
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, power));
+            }
+        }
+
     }
 
     @Override
@@ -44,7 +58,8 @@ public class Insight extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

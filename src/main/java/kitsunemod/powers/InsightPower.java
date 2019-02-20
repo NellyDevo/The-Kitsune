@@ -29,6 +29,7 @@ public class InsightPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
+    public boolean isUpgraded = false;
 
     public InsightPower(final AbstractCreature owner) {
 
@@ -45,17 +46,17 @@ public class InsightPower extends AbstractPower {
         updateDescription();
     }
 
-    //partially lifted from DrawPileToHandAction in StS base code
-    //may refactor into action later
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        flash();
-        AbstractDungeon.actionManager.addToBottom(
-                new MoveCardsAction(
-                        AbstractDungeon.player.hand,
-                        AbstractDungeon.player.drawPile,
-                        (c) -> c.tags.contains(KitsuneTags.ASPECT_CARD),
-                        1));
+        if (card.hasTag(KitsuneTags.ASPECT_CARD) || isUpgraded) {
+            flash();
+            AbstractDungeon.actionManager.addToBottom(
+                    new MoveCardsAction(
+                            AbstractDungeon.player.hand,
+                            AbstractDungeon.player.drawPile,
+                            (c) -> c.tags.contains(KitsuneTags.ASPECT_CARD),
+                            1));
+        }
     }
 
 
