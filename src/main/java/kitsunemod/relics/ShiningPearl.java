@@ -89,7 +89,19 @@ public class ShiningPearl extends KitsuneRelic {
         this.tips.add(new PowerTip(name, description));
         this.initializeTips();
     }
-
+    @Override
+    public void obtain() {
+        if (AbstractDungeon.player.hasRelic(WornPearl.ID)) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); ++i) {
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(WornPearl.ID)) {
+                    instantObtain(AbstractDungeon.player, i, true);
+                    break;
+                }
+            }
+        } else {
+            super.obtain();
+        }
+    }
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
