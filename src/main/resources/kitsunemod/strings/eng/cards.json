@@ -164,6 +164,11 @@
     "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
     "UPGRADE_DESCRIPTION": "kitsunemod:Charm an enemy for !M! turns."
   },
+  "kitsunemod:FlashOfLight": {
+    "NAME": "Flash of Light",
+    "DESCRIPTION": "Deal !D! Damage. Gain !M! Light.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 
