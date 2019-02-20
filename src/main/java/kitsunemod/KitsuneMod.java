@@ -191,6 +191,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new CleansingNova());
         BaseMod.addCard(new GatheringDark());
         BaseMod.addCard(new GatheringLight());
+        BaseMod.addCard(new CommuneWithSpirits());
         BaseMod.addCard(new TerrorPhantasm());
 
         //Register cards that should be visible by default

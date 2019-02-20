@@ -6,8 +6,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import kitsunemod.orbs.WillOWisp;
+import kitsunemod.powers.WispAffectingPower;
 
 public class ChannelWillOWispAction extends AbstractGameAction {
 
@@ -21,6 +23,11 @@ public class ChannelWillOWispAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             AbstractPlayer p = AbstractDungeon.player;
             int a = amount;
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power instanceof WispAffectingPower) {
+                    a = ((WispAffectingPower)power).onChannelWisp(a);
+                }
+            }
             while(a > 0) {
                 boolean hasEmptySlot = false;
                 if(p.maxOrbs < 10) {

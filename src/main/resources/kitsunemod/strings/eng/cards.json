@@ -14,6 +14,11 @@
     "DESCRIPTION": "Gain !B! Block. Apply !M! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:CommuneWithSpirits": {
+    "NAME": "Commune With Spirits",
+    "DESCRIPTION": "Whenever you Channel kitsunemod:Will-o-Wisps, channel !M! more and draw a card.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:DancingLights": {
     "NAME": "Dancing Lights",
     "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",

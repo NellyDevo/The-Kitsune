@@ -20,6 +20,17 @@
     "DESCRIPTIONS": [
       "This monster will fight for you during this turn."]
   },
+  "kitsunemod:CommuneWithSpirits": {
+    "NAME": "Commune With Spirits",
+    "DESCRIPTIONS": [
+      "Whenever you channel #yWill-o-Wisps, channel #b",
+      " additional #yWill-o-Wisp",
+      " additional #yWill-o-Wisps",
+      " and draw #b",
+      " card.",
+      " cards."
+    ]
+  },
   "kitsunemod:DarkPower": {
     "NAME": "Dark",
     "DESCRIPTIONS": [
