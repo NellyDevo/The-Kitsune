@@ -32,10 +32,7 @@ import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
-import kitsunemod.cards.powers.FastShape;
-import kitsunemod.cards.powers.Insight;
-import kitsunemod.cards.powers.NinetailedForm;
-import kitsunemod.cards.powers.PerfectedShape;
+import kitsunemod.cards.powers.*;
 import kitsunemod.cards.skills.*;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
@@ -196,6 +193,20 @@ public class KitsuneMod implements
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new VanishIntoShadows());
         BaseMod.addCard(new CleansingNova());
+        BaseMod.addCard(new GatheringDark());
+        BaseMod.addCard(new GatheringLight());
+        BaseMod.addCard(new CommuneWithSpirits());
+        BaseMod.addCard(new TerrorPhantasm());
+        BaseMod.addCard(new AnsweredPrayers());
+        BaseMod.addCard(new GrowingHunger());
+        BaseMod.addCard(new ShapeMastery());
+        BaseMod.addCard(new PurityOfFunction());
+        BaseMod.addCard(new WaningExistence());
+        BaseMod.addCard(new DeathStroke());
+        BaseMod.addCard(new BurnFromMemory());
+        BaseMod.addCard(new BlinkSlash());
+        BaseMod.addCard(new MassSuggestion());
+        BaseMod.addCard(new DrownInTheDeep());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

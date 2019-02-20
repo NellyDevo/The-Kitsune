@@ -20,12 +20,37 @@
     "DESCRIPTIONS": [
       "This monster will fight for you during this turn."]
   },
+  "kitsunemod:CommuneWithSpirits": {
+    "NAME": "Commune With Spirits",
+    "DESCRIPTIONS": [
+      "Whenever you channel #yWill-o-Wisps, channel #b",
+      " additional #yWill-o-Wisp",
+      " additional #yWill-o-Wisps",
+      " and draw #b",
+      " card.",
+      " cards."
+    ]
+  },
   "kitsunemod:DarkPower": {
     "NAME": "Dark",
     "DESCRIPTIONS": [
       "At the start of your turn, consume this to deal ",
       "x your Dark in damage to a random enemy if you're over ",
       " stacks."]
+  },
+  "kitsunemod:GatheringDarkPower": {
+    "NAME": "Gathering Dark",
+    "DESCRIPTIONS": [
+      "Your #yDark no longer dissipates when over 9 stacks. At the end of your turn, gain #b",
+      " #yDark."
+    ]
+  },
+  "kitsunemod:GatheringLightPower": {
+    "NAME": "Gathering Light",
+    "DESCRIPTIONS": [
+      "Your #yLight no longer dissipates when over 9 stacks. At the end of your turn, gain #b",
+      " #yLight."
+    ]
   },
 
   "kitsunemod:PerfectedShapePower": {
@@ -107,6 +132,13 @@
       "Playing #yShapeshift cards no longer exhausts them. ",
       "Drawn #yShapeshift cards cost #g",
       " less."
+    ]
+  },
+  "kitsunemod:TerrorPhantasmPower": {
+    "NAME": "Terror Phantasm",
+    "DESCRIPTIONS": [
+      "At the start of its turn, this enemy loses #b",
+      " HP."
     ]
   }
 }
