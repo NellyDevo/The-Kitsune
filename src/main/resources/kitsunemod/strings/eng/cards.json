@@ -76,6 +76,16 @@
     "DESCRIPTION": "Deal !D! Damage. NL Fox kitsunemod:Aspect: Draw a card.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:ShapeMastery": {
+    "NAME": "Shape Mastery",
+    "DESCRIPTION": "Gain !B! block. Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Human Shape.",
+      "Kitsune Shape.",
+      "Fox Shape"
+    ]
+  },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
     "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw 5 cards.",
