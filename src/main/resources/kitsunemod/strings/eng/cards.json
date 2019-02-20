@@ -169,6 +169,11 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !M! Light.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:EtherealKnives": {
+    "NAME": "Ethereal Knives",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
+    "UPGRADE_DESCRIPTION": ""
+  },
 
 
 
