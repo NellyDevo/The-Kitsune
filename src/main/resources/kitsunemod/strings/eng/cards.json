@@ -216,6 +216,14 @@
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:PurityOfFunction": {
+    "NAME": "Purity of Function",
+    "DESCRIPTION": "Gain !M! Block for each stack of debuff on you.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !B! Block.)"
+]
+  },
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
     "DESCRIPTION": "Gain 1 kitsunemod:Shade. NL Exhaust.",
