@@ -66,7 +66,7 @@
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:DominateWill": {
-    "NAME": "Cornered",
+    "NAME": "Dominate Will",
     "DESCRIPTION": "If an enemy is a Minion or is below !kitsunemod:M2! HP, Charm it for !M! turns. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [

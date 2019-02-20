@@ -19,6 +19,7 @@ public class DominateWill extends AbstractKitsuneCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
     private static final int COST = 1;
 
@@ -41,7 +42,7 @@ public class DominateWill extends AbstractKitsuneCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new CharmMonsterPower(m, magicNumber),magicNumber));
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, cardStrings.EXTENDED_DESCRIPTION[0], true)));
+            AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, EXTENDED_DESCRIPTION[0], true));
         }
     }
 
