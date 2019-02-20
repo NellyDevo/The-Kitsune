@@ -330,6 +330,14 @@ public class KitsuneMod implements
         KitsuneMod.turnsSpentInSameShape = 0;
     }
 
+    public static void receiveOnMonsterDeath(AbstractMonster m) {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onMonsterDied(m));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onMonsterDied(m));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onMonsterDied(m));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onMonsterDied(m));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onMonsterDied(m));
+    }
+
     public static void receiveEnergyChanged(int energyDelta) {
         logger.info("receiveEnergyChanged: " + energyDelta);
     }

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.UpgradeHammerImprintEffect;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
@@ -271,5 +272,9 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(this));
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2, Settings.HEIGHT / 2));
         }
+    }
+
+    public void onMonsterDied(AbstractMonster m) {
+
     }
 }
