@@ -90,5 +90,13 @@
       "Elder:"
     ],
     "DESCRIPTION": "Special cards that can't be smithed but automatically upgrade through 9 tiers based on performing actions."
+  },
+  "Charm": {
+    "NAMES": [
+      "charm",
+      "Charm",
+      "Charm:"
+    ],
+    "DESCRIPTION": "Will repeat its last chosen action in a manner beneficial to you."
   }
 }

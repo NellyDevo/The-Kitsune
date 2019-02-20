@@ -108,7 +108,6 @@
     "DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played.",
     "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less. "
   },
-
   "kitsunemod:BladeAndClaw": {
     "NAME": "Blade And Claw",
     "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Target loses !M! HP.",
@@ -159,6 +158,11 @@
     "EXTENDED_DESCRIPTION": [
       " NL (currently !D! damage)"
     ]
+  },
+  "kitsunemod:Puppeteer": {
+    "NAME": "Puppeteer",
+    "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Charm an enemy for !M! turns."
   },
 
 

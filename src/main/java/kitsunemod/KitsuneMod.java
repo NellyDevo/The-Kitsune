@@ -186,6 +186,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new BareFangs());
         BaseMod.addCard(new Flourish());
         BaseMod.addCard(new Cornered());
+        BaseMod.addCard(new Puppeteer());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
