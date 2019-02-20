@@ -1,28 +1,15 @@
 {
-  "EXAMPLE": {
-    "NAMES": [
-      "examplekeyword",
-      "examplekeywords"
-    ],
-    "DESCRIPTION": "Why is an example keyword on an actual card"
-  },
   "SOULSTEAL": {
     "NAMES": [
       "soulsteal",
-      "soulsteals",
-      "Soulsteal",
-      "Soulsteals",
-      "Soulsteal:"
+      "soulsteals"
     ],
     "DESCRIPTION": "When attacking you, grants you a buff for each stack. NL Human: 2 #yLight. NL Kitsune: 2 #yWill-o-Wisps (static). NL Fox: 2 #yDark."
   },
   "WILL-O-WISP": {
     "NAMES": [
       "will-o-wisp",
-      "will-o-wisps",
-      "Will-o-Wisp",
-      "Will-o-Wisps",
-      "Will-o-Wisp:"
+      "will-o-wisps"
     ],
     "DESCRIPTION": "Consumes itself at the end of your turn to deal damage equal to the number of wisps."
   },
@@ -31,63 +18,45 @@
     "NAMES": [
       "shapeshift",
       "shapeshifts",
-      "shapeshifted",
-      "Shapeshift",
-      "Shapeshifts",
-      "Shapeshifted",
-      "Shapeshift:"
+      "shapeshifted"
     ],
     "DESCRIPTION": "Grants minor base Strength/Dexterity changes."
   },
   "SHAPE": {
     "NAMES": [
       "shape",
-      "shapes",
-      "Shape",
-      "Shapes",
-      "Shape:"
+      "shapes"
     ],
     "DESCRIPTION": "Aspect effects of that #yShape will trigger. Some relics and powers make your #yShape grant persistent buffs too."
   },
   "ASPECT": {
     "NAMES": [
       "aspect",
-      "aspects",
-      "Aspect",
-      "Aspects",
-      "Aspect:"
+      "aspects"
     ],
     "DESCRIPTION": "Aspect effects only trigger when you are in the listed Shape."
   },
   "LIGHT": {
     "NAMES": [
-      "light",
-      "Light",
-      "Light:"
+      "light"
     ],
     "DESCRIPTION": "Persistent buff. Converted to Block at the start of your turn when over 9 stacks."
   },
   "DARK": {
     "NAMES": [
-      "dark",
-      "Dark",
-      "Dark:"
+      "dark"
     ],
     "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks"
   },
   "SHADE": {
     "NAMES": [
-      "shade",
-      "Shade",
-      "Shade:"
+      "shade"
     ],
     "DESCRIPTION": "Negates up to that many instances of unblocked damage until next turn and heals you a small amount instead."
   },
   "Elder": {
     "NAMES": [
-      "elder",
-      "Elder",
-      "Elder:"
+      "elder"
     ],
     "DESCRIPTION": "Special cards that can't be smithed but automatically upgrade through 9 tiers based on performing actions."
   },

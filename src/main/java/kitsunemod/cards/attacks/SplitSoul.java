@@ -23,6 +23,7 @@ public class SplitSoul extends AbstractElderCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/SplitSoul.png";
     private static final int COST = 1;
 
@@ -37,7 +38,8 @@ public class SplitSoul extends AbstractElderCard {
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.ALL);
         damage = baseDamage = ATTACK_DMG;
-        this.isMultiDamage = true;
+        isMultiDamage = true;
+        elderNumber = baseElderNumber = ELDER_TIER_CARDS_DRAWN_REQUIREMENT;
     }
 
     public SplitSoul(int timesUpgraded) {
@@ -52,7 +54,12 @@ public class SplitSoul extends AbstractElderCard {
         incrementElder();
     }
 
-
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
+        isElderNumberModified = elderNumber != baseElderNumber;
+    }
 
     @Override
     public void onCardDrawn(AbstractCard card, boolean isExtraDraw) {
@@ -74,15 +81,13 @@ public class SplitSoul extends AbstractElderCard {
 
     @Override
     protected boolean allCondition() {
-        return misc >= (timesUpgraded + 1) * ELDER_TIER_CARDS_DRAWN_REQUIREMENT;
+        return misc >= (timesUpgraded + 1) * baseElderNumber;
     }
 
     @Override
     public void upgradeAll() {
-        if (timesUpgraded < 9) {
-            upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG_PER_TIER);
-        }
+        upgradeName();
+        upgradeDamage(UPGRADE_PLUS_DMG_PER_TIER);
     }
 
     @Override
@@ -90,6 +95,12 @@ public class SplitSoul extends AbstractElderCard {
         upgraded = true;
         name = NAME + "+" + timesUpgraded;
         initializeTitle();
+    }
+
+    @Override
+    public void finalizeDescription() {
+        rawDescription = UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 
     @Override

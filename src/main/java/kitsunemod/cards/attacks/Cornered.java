@@ -26,6 +26,7 @@ public class Cornered extends AbstractElderCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_attack.png";
 
@@ -38,6 +39,8 @@ public class Cornered extends AbstractElderCard {
     private static final int ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT = 15;
     private static final int SWITCH_EFFECT_DAMAGE_THRESHHOLD = 25;
 
+    private String currentDescription;
+
     public Cornered() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
@@ -45,6 +48,8 @@ public class Cornered extends AbstractElderCard {
         damage = baseDamage = BASE_DAMAGE;
         magicNumber = baseMagicNumber = BASE_MISSING_HP_MULT;
         secondMagicNumber = baseSecondMagicNumber = BASE_DAMAGE;
+        currentDescription = DESCRIPTION;
+        elderNumber = baseElderNumber = ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT;
     }
 
     public Cornered(int timesUpgraded) {
@@ -59,7 +64,7 @@ public class Cornered extends AbstractElderCard {
             effect = AbstractGameAction.AttackEffect.BLUNT_HEAVY;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), effect));
-        rawDescription = DESCRIPTION;
+        rawDescription = currentDescription;
         initializeDescription();
     }
 
@@ -67,24 +72,34 @@ public class Cornered extends AbstractElderCard {
     public void applyPowers() {
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        rawDescription = currentDescription + EXTENDED_DESCRIPTION[0];
         initializeDescription();
         baseDamage = secondMagicNumber;
+        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
+        isElderNumberModified = elderNumber != baseElderNumber;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
-        super.applyPowers();
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        super.calculateCardDamage(mo);
+        rawDescription = currentDescription + EXTENDED_DESCRIPTION[0];
         initializeDescription();
         baseDamage = secondMagicNumber;
+        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
+        isElderNumberModified = elderNumber != baseElderNumber;
     }
 
     @Override
     public void onMoveToDiscard() {
-        rawDescription = DESCRIPTION;
+        rawDescription = currentDescription;
+        initializeDescription();
+    }
+
+    @Override
+    public void finalizeDescription() {
+        currentDescription = UPGRADE_DESCRIPTION;
+        rawDescription = currentDescription;
         initializeDescription();
     }
 
@@ -101,15 +116,13 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     protected boolean allCondition() {
-        return misc >= (timesUpgraded + 1) * ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT;
+        return misc >= (timesUpgraded + 1) * baseElderNumber;
     }
 
     @Override
     public void upgradeAll() {
-        if (timesUpgraded < 9) {
-            upgradeName();
-            upgradeMagicNumber(ELDER_TIER_MISSING_HP_MULT);
-        }
+        upgradeName();
+        upgradeMagicNumber(ELDER_TIER_MISSING_HP_MULT);
     }
 
     @Override

@@ -1,7 +1,22 @@
 {
+  "kitsunemod:AlluringGlimmer": {
+    "NAME": "Alluring Glimmer",
+    "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:AnsweredPrayers": {
     "NAME": "Answered Prayers",
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:BareFangs": {
+    "NAME": "Bare Fangs",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:BladeAndClaw": {
+    "NAME": "Blade And Claw",
+    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:BlinkSlash": {
@@ -14,9 +29,30 @@
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy and you are below half HP, heal 15 HP. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:Defend": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block.",
+  "kitsunemod:CleansingNova": {
+    "NAME": "Cleansing Nova",
+    "DESCRIPTION": "Gain !B! Block. NL Lose all Block to deal that much to ALL enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !D! damage)"
+    ]
+  },
+  "kitsunemod:CommuneWithSpirits": {
+    "NAME": "Commune With Spirits",
+    "DESCRIPTION": "Whenever you Channel kitsunemod:Will-o-Wisps, channel !M! more and draw a card.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:Cornered": {
+    "NAME": "Cornered",
+    "DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage. NL kitsunemod:Elder: Lose !kitsunemod:Elder! HP.",
+    "UPGRADE_DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage.",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !D! damage)"
+    ]
+  },
+  "kitsunemod:DancingLights": {
+    "NAME": "Dancing Lights",
+    "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:DeathStroke": {
@@ -24,34 +60,67 @@
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, heal !M! HP and play this card again on a random enemy.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:DominateWill": {
+    "NAME": "Cornered",
+    "DESCRIPTION": "If an enemy is a Minion or is below !kitsunemod:M2! HP, Charm it for !M! turns. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "They resisted me!"
+    ]
+  },
   "kitsunemod:DrownInTheDeep": {
     "NAME": "Drown in the Deep",
     "DESCRIPTION": "Target loses !M! HP X times, doubling it each time.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:Strike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage.",
+  "kitsunemod:EssenceTheft": {
+    "NAME": "Essence Theft",
+    "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:Wink": {
-    "NAME": "Wink",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! kitsunemod:Soulsteal.",
+  "kitsunemod:EtherealKnives": {
+    "NAME": "Ethereal Knives",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:CommuneWithSpirits": {
-    "NAME": "Commune With Spirits",
-    "DESCRIPTION": "Whenever you Channel kitsunemod:Will-o-Wisps, channel !M! more and draw a card.",
+  "kitsunemod:FastShape": {
+    "NAME": "Fast Shape",
+    "DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played.",
+    "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less. "
+  },
+  "kitsunemod:FeralInstinct": {
+    "NAME": "Feral Instinct",
+    "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block twice."
+  },
+  "kitsunemod:FlashOfLight": {
+    "NAME": "Flash of Light",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Light.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:DancingLights": {
-    "NAME": "Dancing Lights",
-    "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",
+  "kitsunemod:Flourish": {
+    "NAME": "Flourish",
+    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Gain !M! Dexterity.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FoxShape": {
     "NAME": "Fox Shape",
     "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:GatheringDark": {
+    "NAME": "Gathering Dark",
+    "DESCRIPTION": "Your kitsunemod:Dark no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Dark.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:GatheringLight": {
+    "NAME": "Gathering Light",
+    "DESCRIPTION": "Your kitsunemod:Light no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Light.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:GrowingHunger": {
@@ -62,9 +131,9 @@
       " NL ( !kitsunemod:M2! kitsunemod:Soulsteal. )"
     ]
   },
-  "kitsunemod:KitsuneShape": {
-    "NAME": "Kitsune Shape",
-    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. kitsunemod:Shapeshift into a Kitsune. NL Exhaust.",
+  "kitsunemod:GrowingShadow": {
+    "NAME": "Growing Shadow",
+    "DESCRIPTION": "Set your kitsunemod:Dark to !kitsunemod:M2!. Apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:HumanShape": {
@@ -72,14 +141,34 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:ThickFur": {
-    "NAME": "Thick Fur",
-    "DESCRIPTION": "Gain !M! Dark and !B! Block. ",
+  "kitsunemod:IgniteSilhouette": {
+    "NAME": "Ignite Silhouette",
+    "DESCRIPTION": "Deal !D! damage. Gain kitsunemod:Dark equal to unblocked damage.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:InflictWounds": {
+    "NAME": "Inflict Wounds",
+    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Apply !M! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:Ingenuity": {
     "NAME": "Ingenuity ",
     "DESCRIPTION": "Gain !B! Block + !M! more for each time you've kitsunemod:Shapeshifted this combat. ",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:Insight": {
+    "NAME": "Insight",
+    "DESCRIPTION": "Whenever you play an kitsunemod:Aspect card, draw another kitsunemod:Aspect card from your draw pile.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:KitsuneShape": {
+    "NAME": "Kitsune Shape",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. kitsunemod:Shapeshift into a Kitsune. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:LashOut": {
+    "NAME": "Lash Out",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:MassSuggestion": {
@@ -90,14 +179,52 @@
       "It didn't have any effect!"
     ]
   },
+  "kitsunemod:MemorizeSpell": {
+    "NAME": "Memorize Spell",
+    "DESCRIPTION": "Choose a card in your hand. Retain it until next turn.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card in your hand. Retain it until next turn."
+  },
+  "kitsunemod:NinetailedForm": {
+    "NAME": "Ninetailed Form",
+    "DESCRIPTION": "Ethereal. NL You count as in all three kitsunemod:Shapes at once.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:NipAtHeels": {
     "NAME": "Nip at Heels",
     "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:TestTheirTactics": {
-    "NAME": "Test Their Tactics",
-    "DESCRIPTION": "Deal !D! Damage. NL Fox kitsunemod:Aspect: Draw a card.",
+  "kitsunemod:NourishingFlame": {
+    "NAME": "Nourishing Flame",
+    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! kitsunemod:Will-o-wisp.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! kitsunemod:Will-o-wisps."
+  },
+  "kitsunemod:PerfectedShape": {
+    "NAME": "Perfected Shape",
+    "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:Puppeteer": {
+    "NAME": "Puppeteer",
+    "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Charm an enemy for !M! turns."
+  },
+  "kitsunemod:PurityOfFunction": {
+    "NAME": "Purity of Function",
+    "DESCRIPTION": "Gain !M! Block for each stack of debuff on you.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !B! Block.)"
+    ]
+  },
+  "kitsunemod:Radiance": {
+    "NAME": "Radiance",
+    "DESCRIPTION": "Set your kitsunemod:Light to !M!. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:RendSpirit": {
+    "NAME": "Rend Spirit",
+    "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:ShapeMastery": {
@@ -112,27 +239,12 @@
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw 5 extra cards.",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card."
   },
-  "kitsunemod:Radiance": {
-    "NAME": "Radiance",
-    "DESCRIPTION": "Set your kitsunemod:Light to !M!. Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:GatheringDark": {
-    "NAME": "Gathering Dark",
-    "DESCRIPTION": "Your kitsunemod:Dark no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Dark.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:GatheringLight": {
-    "NAME": "Gathering Light",
-    "DESCRIPTION": "Your kitsunemod:Light no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Light.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:GrowingShadow": {
-    "NAME": "Growing Shadow",
-    "DESCRIPTION": "Set your kitsunemod:Dark to !kitsunemod:M2!. Apply !M! Vulnerable.",
+  "kitsunemod:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TerrorPhantasm": {
@@ -140,157 +252,39 @@
     "DESCRIPTION": "Apply 3 Weak and Vulnerable. NL At the start of each of its turns, target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:TestTheirTactics": {
+    "NAME": "Test Their Tactics",
+    "DESCRIPTION": "Deal !D! Damage. NL Fox kitsunemod:Aspect: Draw a card.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:ThickFur": {
+    "NAME": "Thick Fur",
+    "DESCRIPTION": "Gain !M! kitsunemod:Dark and !B! Block. ",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:TricksterFlame": {
     "NAME": "Trickster Flame",
     "DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisp.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisps."
-  },
-  "kitsunemod:FeralInstinct": {
-    "NAME": "Feral Instinct",
-    "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block 30 damage.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:InflictWounds": {
-    "NAME": "Inflict Wounds",
-    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Apply !M! kitsunemod:Soulsteal.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:AlluringGlimmer": {
-    "NAME": "Alluring Glimmer",
-    "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! kitsunemod:Soulsteal.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:PerfectedShape": {
-    "NAME": "Perfected Shape",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:Insight": {
-    "NAME": "Insight",
-    "DESCRIPTION": "Whenever you play an kitsunemod:Aspect card, put an kitsunemod:Aspect card from your draw pile into your hand.",
-    "UPGRADE_DESCRIPTION": "Whenever you play a card, put an kitsunemod:Aspect card from your draw pile into your hand."
-  },
-  "kitsunemod:FastShape": {
-    "NAME": "Fast Shape",
-    "DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played.",
-    "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less. "
-  },
-  "kitsunemod:BladeAndClaw": {
-    "NAME": "Blade And Claw",
-    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Target loses !M! HP.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-
-
-
-  "kitsunemod:MemorizeSpell": {
-    "NAME": "Memorize Spell",
-    "DESCRIPTION": "Choose a card in your hand. Retain it until next turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card in your hand. Retain it until next turn."
-  },
-  "kitsunemod:IgniteSilhouette": {
-    "NAME": "Ignite Silhouette",
-    "DESCRIPTION": "Deal !D! damage. Gain kitsunemod:Dark equal to unblocked damage.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:EssenceTheft": {
-    "NAME": "Essence Theft",
-    "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:RendSpirit": {
-    "NAME": "Rend Spirit",
-    "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:NourishingFlame": {
-    "NAME": "Nourishing Flame",
-    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! Will-o-wisp.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! Will-o-wisps."
-  },
-  "kitsunemod:BareFangs": {
-    "NAME": "Bare Fangs",
-    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Strength.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:Flourish": {
-    "NAME": "Flourish",
-    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Gain !M! Dexterity.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:Cornered": {
-    "NAME": "Cornered",
-    "DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage. NL kitsunemod:Elder: Lose 15 HP.",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      " NL (currently !D! damage)"
-    ]
-  },
-  "kitsunemod:Puppeteer": {
-    "NAME": "Puppeteer",
-    "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
-    "UPGRADE_DESCRIPTION": "kitsunemod:Charm an enemy for !M! turns."
-  },
-  "kitsunemod:FlashOfLight": {
-    "NAME": "Flash of Light",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Light.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:EtherealKnives": {
-    "NAME": "Ethereal Knives",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
-    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PressAdvantage": {
     "NAME": "Press the Advantage",
     "DESCRIPTION": "Deal !D! damage. NL kitsunemod:Elder: Kill !M! non-minion enemies.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:DominateWill": {
-    "NAME": "Cornered",
-    "DESCRIPTION": "If an enemy is a Minion or is below !kitsunemod:M2! HP, Charm it for !M! turns. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      "They resisted me!"
-    ]
-  },
-
-
-
-  "kitsunemod:NinetailedForm": {
-    "NAME": "Ninetailed Form",
-    "DESCRIPTION": "Ethereal. NL You count as in all three kitsunemod:Shapes at once.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:LashOut": {
-    "NAME": "Lash Out",
-    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:PurityOfFunction": {
-    "NAME": "Purity of Function",
-    "DESCRIPTION": "Gain !M! Block for each stack of debuff on you.",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      " NL ( !B! Block.)"
-]
-  },
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
     "DESCRIPTION": "Gain 1 kitsunemod:Shade. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. Gain 1 kitsunemod:Shade. NL Exhaust."
   },
-  "kitsunemod:CleansingNova": {
-    "NAME": "Cleansing Nova",
-    "DESCRIPTION": "Gain !B! Block. NL Lose all Block to deal that much to ALL enemies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      " NL ( !D! damage)"
-    ]
-  },
   "kitsunemod:WaningExistence": {
     "NAME": "Waning Existence",
     "DESCRIPTION": "Deal !D! Damage. NL Deals additional damage equal to the target's stacks of kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Deals additional damage equal to double the target's stacks of kitsunemod:Soulsteal."
+  },
+  "kitsunemod:Wink": {
+    "NAME": "Wink",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": ""
   }
 }
