@@ -33,7 +33,7 @@ public class PerfectedShape extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PerfectedShapePower(p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PerfectedShapePower(p, magicNumber), magicNumber));
     }
 
     @Override
