@@ -34,6 +34,7 @@ public class DominateWill extends AbstractKitsuneCard {
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         magicNumber = baseMagicNumber = CHARM_TURNS;
         secondMagicNumber = baseSecondMagicNumber = NON_MINION_HP_THRESHHOLD;
+        exhaust = true;
     }
 
     @Override
