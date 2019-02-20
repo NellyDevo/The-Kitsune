@@ -193,6 +193,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new GatheringLight());
         BaseMod.addCard(new CommuneWithSpirits());
         BaseMod.addCard(new TerrorPhantasm());
+        BaseMod.addCard(new AnsweredPrayers());
 
         //Register cards that should be visible by default
         UnlockTracker.addCard(Defend.ID);

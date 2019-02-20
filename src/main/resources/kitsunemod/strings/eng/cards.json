@@ -1,4 +1,9 @@
 {
+  "kitsunemod:AnsweredPrayers": {
+    "NAME": "Answered Prayers",
+    "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block.",
