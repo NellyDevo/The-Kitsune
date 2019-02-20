@@ -50,7 +50,7 @@
   },
   "kitsunemod:NipAtHeels": {
     "NAME": "Nip at Heels",
-    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block.",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TestTheirTactics": {
@@ -166,7 +166,7 @@
   },
   "kitsunemod:FlashOfLight": {
     "NAME": "Flash of Light",
-    "DESCRIPTION": "Deal !D! Damage. Gain !M! Light.",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Light.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:EtherealKnives": {
@@ -197,7 +197,7 @@
     "DESCRIPTION": "Gain !B! Block. NL Lose all Block to deal that much to ALL enemies. Exhaust.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      " NL (currently !D! damage)"
+      " NL ( !D! damage)"
     ]
   }
 }
