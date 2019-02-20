@@ -26,6 +26,7 @@ public class Cornered extends AbstractElderCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_attack.png";
 
@@ -97,7 +98,7 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public void finalizeDescription() {
-        currentDescription = EXTENDED_DESCRIPTION[1];
+        currentDescription = UPGRADE_DESCRIPTION;
         rawDescription = currentDescription;
         initializeDescription();
     }

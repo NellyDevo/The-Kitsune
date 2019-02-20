@@ -148,10 +148,7 @@
   "kitsunemod:FeralInstinct": {
     "NAME": "Feral Instinct",
     "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage.",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block twice."
-    ]
+    "UPGRADE_DESCRIPTION": "Gain !B! Block twice."
   },
   "kitsunemod:InflictWounds": {
     "NAME": "Inflict Wounds",
@@ -225,10 +222,9 @@
   "kitsunemod:Cornered": {
     "NAME": "Cornered",
     "DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage. NL kitsunemod:Elder: Lose !kitsunemod:Elder! HP.",
-    "UPGRADE_DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": "Deal !kitsunemod:M2! + !M! % of your missing HP as damage.",
     "EXTENDED_DESCRIPTION": [
-      " NL (currently !D! damage)",
-      "Deal !kitsunemod:M2! + !M! % of your missing HP as damage."
+      " NL (currently !D! damage)"
     ]
   },
 
