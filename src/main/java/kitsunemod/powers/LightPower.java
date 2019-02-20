@@ -49,7 +49,17 @@ public class LightPower extends AbstractPower {
             AbstractDungeon.effectList.add(new FlashPowerEffect(this));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, (int)(amount * EFFECT_MULTIPLIER)));
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+            boolean shouldConsume = true;
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof GatheringPower) {
+                    if (!((GatheringPower)p).shouldConsume(this)) {
+                        shouldConsume = false;
+                    }
+                }
+            }
+            if (shouldConsume) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+            }
         }
     }
 

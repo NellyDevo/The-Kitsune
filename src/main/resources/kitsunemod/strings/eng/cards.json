@@ -73,6 +73,11 @@
     "DESCRIPTION": "Your kitsunemod:Dark no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Dark.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:GatheringLight": {
+    "NAME": "Gathering Light",
+    "DESCRIPTION": "Your kitsunemod:Light no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Light.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:GrowingShadow": {
     "NAME": "Growing Shadow",
     "DESCRIPTION": "Set your kitsunemod:Dark to !kitsunemod:M2!. Apply !M! Vulnerable.",

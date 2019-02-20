@@ -32,10 +32,7 @@ import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
-import kitsunemod.cards.powers.FastShape;
-import kitsunemod.cards.powers.Insight;
-import kitsunemod.cards.powers.NinetailedForm;
-import kitsunemod.cards.powers.PerfectedShape;
+import kitsunemod.cards.powers.*;
 import kitsunemod.cards.skills.*;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
@@ -193,6 +190,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new VanishIntoShadows());
         BaseMod.addCard(new CleansingNova());
         BaseMod.addCard(new GatheringDark());
+        BaseMod.addCard(new GatheringLight());
         BaseMod.addCard(new TerrorPhantasm());
 
         //Register cards that should be visible by default

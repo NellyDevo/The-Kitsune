@@ -34,6 +34,13 @@
       " #yDark."
     ]
   },
+  "kitsunemod:GatheringLightPower": {
+    "NAME": "Gathering Light",
+    "DESCRIPTIONS": [
+      "Your #yLight no longer dissipates when over 9 stacks. At the end of your turn, gain #b",
+      " #yLight."
+    ]
+  },
 
   "kitsunemod:PerfectedShapePower": {
     "NAME": "Perfected Shape",
