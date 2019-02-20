@@ -187,6 +187,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new FlashOfLight());
         BaseMod.addCard(new EtherealKnives());
         BaseMod.addCard(new PressAdvantage());
+        BaseMod.addCard(new DominateWill());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
