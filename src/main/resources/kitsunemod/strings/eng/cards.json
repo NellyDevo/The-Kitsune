@@ -9,6 +9,11 @@
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:DeathStroke": {
+    "NAME": "Death Stroke",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, heal !M! HP and play this card again on a random enemy.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage.",
