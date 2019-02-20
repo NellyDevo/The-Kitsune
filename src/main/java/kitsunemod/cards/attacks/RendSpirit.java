@@ -29,10 +29,10 @@ public class RendSpirit extends AbstractKitsuneCard {
     private static final int COST = 3;
 
     private static final int ATTACK_DMG = 20;
-    private static final int UPGRADE_PLUS_DMG = 25;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     private static final int ASPECT_HP_LOSS = 10;
-    private static final int UPGRADE_PLUS_ASPECT_HP_LOSS = 15;
+    private static final int UPGRADE_PLUS_ASPECT_HP_LOSS = 5;
 
     public RendSpirit() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
