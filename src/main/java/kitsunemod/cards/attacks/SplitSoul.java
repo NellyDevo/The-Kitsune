@@ -37,6 +37,7 @@ public class SplitSoul extends AbstractElderCard {
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.ALL);
         damage = baseDamage = ATTACK_DMG;
+        this.isMultiDamage = true;
     }
 
     public SplitSoul(int timesUpgraded) {
@@ -46,14 +47,7 @@ public class SplitSoul extends AbstractElderCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        int[] damageArray = new int[AbstractDungeon.monsterList.size()];
-
-        for (int i = 0; i < damageArray.length; i++) {
-            damageArray[i] = damage;
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damageArray, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         incrementElder();
     }
