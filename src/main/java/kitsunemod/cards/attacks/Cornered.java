@@ -65,7 +65,6 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public void applyPowers() {
-        super.applyPowers();
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
@@ -75,7 +74,7 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        super.applyPowers();
+        super.calculateCardDamage(mo);
         this.baseDamage = this.baseDamage + MathUtils.floor((float)(AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth) * ((float)magicNumber/ 100));
         super.applyPowers();
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
