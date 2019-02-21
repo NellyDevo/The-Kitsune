@@ -191,6 +191,16 @@
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:LieInWait": {
+    "NAME": "Lie in Wait",
+    "DESCRIPTION": "Lose !M! HP. Gain",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " [E]",
+      ".",
+      " . Conserve your Energy this turn."
+    ]
+  },
   "kitsunemod:MassSuggestion": {
     "NAME": "Mass Suggestion",
     "DESCRIPTION": "kitsunemod:Charm X random non-boss enemies for 1 round and apply 1 Vulnerable to them.",

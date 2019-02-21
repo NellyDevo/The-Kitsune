@@ -203,6 +203,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new PurityOfForm());
         BaseMod.addCard(new PleaForGuidance());
         BaseMod.addCard(new DeceptiveGuise());
+        BaseMod.addCard(new LieInWait());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
