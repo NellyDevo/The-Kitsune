@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -35,6 +36,9 @@ import kitsunemod.cards.TestCard;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.cards.powers.*;
 import kitsunemod.cards.skills.*;
+import kitsunemod.cards.special.QuickshapeFox;
+import kitsunemod.cards.special.QuickshapeHuman;
+import kitsunemod.cards.special.QuickshapeKitsune;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
@@ -156,6 +160,9 @@ public class KitsuneMod implements
         BaseMod.addCard(new DancingLights());
 
         //Special
+        BaseMod.addCard(new QuickshapeFox());
+        BaseMod.addCard(new QuickshapeKitsune());
+        BaseMod.addCard(new QuickshapeHuman());
 
         //Commons
         BaseMod.addCard(new FoxShape());
@@ -204,6 +211,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new PleaForGuidance());
         BaseMod.addCard(new DeceptiveGuise());
         BaseMod.addCard(new LieInWait());
+        BaseMod.addCard(new UnstableShape());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

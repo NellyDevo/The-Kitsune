@@ -67,5 +67,11 @@
       "Charm:"
     ],
     "DESCRIPTION": "Will repeat its last chosen action in a manner beneficial to you."
+  },
+  "Quickshape": {
+    "NAMES": [
+      "quickshape"
+    ],
+    "DESCRIPTION": "Uncollectable zero-cost cards with Ethereal and Exhaust that change your shape."
   }
 }

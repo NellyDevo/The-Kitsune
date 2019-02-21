@@ -162,5 +162,15 @@
       "Channeling a #yWIll-o-Wisp every ",
       " [E] spent."
     ]
+  },
+  "kitsunemod:UnstableShapePower": {
+    "NAME": "Unstable Shape",
+    "DESCRIPTIONS": [
+      "Adding ",
+      " random",
+      " upgraded ",
+      " Quickshape card to your hand every turn.",
+      " Quickshape cards to your hand every turn."
+    ]
   }
 }

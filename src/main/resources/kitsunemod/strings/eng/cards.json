@@ -270,6 +270,21 @@
       " NL ( !B! Block.)"
     ]
   },
+  "kitsunemod:QuickshapeFox": {
+    "NAME": "Quickshape: Fox",
+    "DESCRIPTION": "Ethereal. NL kitsunemod:Shapeshift into a Fox. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL kitsunemod:Shapeshift into a Fox. NL Draw a Card. NL Exhaust."
+  },
+  "kitsunemod:QuickshapeKitsune": {
+    "NAME": "Quickshape: Kitsune",
+    "DESCRIPTION": "Ethereal. NL kitsunemod:Shapeshift into a Kitsune. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL kitsunemod:Shapeshift into a Kitsune. NL Draw a Card. NL Exhaust."
+  },
+  "kitsunemod:QuickshapeHuman": {
+    "NAME": "Quickshape: Human",
+    "DESCRIPTION": "Ethereal. NL kitsunemod:Shapeshift into a Human. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL kitsunemod:Shapeshift into a Human. NL Draw a Card. NL Exhaust."
+  },
   "kitsunemod:Radiance": {
     "NAME": "Radiance",
     "DESCRIPTION": "Set your kitsunemod:Light to !M!. Gain !B! Block.",
@@ -339,6 +354,11 @@
     "NAME": "Trickster Flame",
     "DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisp.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisps."
+  },
+  "kitsunemod:UnstableShape": {
+    "NAME": "Unstable Shape",
+    "DESCRIPTION": "At the start of your turn, add a random kitsunemod:Quickshape card to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random upgraded kitsunemod:Quickshape card to your hand."
   },
   "kitsunemod:PressAdvantage": {
     "NAME": "Press the Advantage",
