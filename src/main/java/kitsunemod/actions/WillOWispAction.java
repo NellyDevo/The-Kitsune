@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
@@ -22,7 +23,7 @@ public class WillOWispAction extends AbstractGameAction {
     private DamageInfo info;
     public WillOWisp orb;
 
-    public WillOWispAction(float x, float y, AbstractMonster target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp orb, int imgIndex, float glowScale) {
+    public WillOWispAction(float x, float y, AbstractCreature target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp orb, int imgIndex, float glowScale) {
         child = new WillOWispProjectile(x, y, target, duration, startColor, endColor, imgIndex, glowScale);
         AbstractDungeon.effectList.add(child);
         this.target = target;

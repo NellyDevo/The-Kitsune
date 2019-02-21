@@ -196,6 +196,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new FleshToStone());
         BaseMod.addCard(new FeedingFrenzy());
         BaseMod.addCard(new TransmuteSelf());
+        BaseMod.addCard(new PurifyingBlaze());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

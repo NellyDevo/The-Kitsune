@@ -229,6 +229,14 @@
     "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
     "UPGRADE_DESCRIPTION": "kitsunemod:Charm an enemy for !M! turns."
   },
+  "kitsunemod:PurifyingBlaze": {
+    "NAME": "Purifying Blaze",
+    "DESCRIPTION": "Evoke all kitsunemod:Will-o-Wisps targeting you. At the start of your next turn, gain twice that much energy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "I have no Will-o-Wisps!"
+    ]
+  },
   "kitsunemod:PurityOfFunction": {
     "NAME": "Purity of Function",
     "DESCRIPTION": "Gain !M! Block for each stack of debuff on you.",

@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -99,6 +100,24 @@ public class WillOWisp extends AbstractOrb {
             AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
             AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
         }
+    }
+    public void onEvoke(AbstractCreature target) {
+        applyFocus();
+        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.33f, color, Color.RED.cpy(), this, imgIndex, glowScale));
+        if (tookSlot) {
+            for (AbstractOrb orb : AbstractDungeon.player.orbs) {
+                if (orb instanceof WillOWisp && !((WillOWisp)orb).tookSlot && orb != this) {
+                    ((WillOWisp)orb).tookSlot = true;
+                    tookSlot = false;
+                    break;
+                }
+            }
+        }
+        if (tookSlot) {
+            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
+            AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
+        }
+
     }
 
     @Override
