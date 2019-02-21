@@ -140,5 +140,20 @@
       "At the start of its turn, this enemy loses #b",
       " HP."
     ]
+  },
+  "kitsunemod:DelayedStrengthLossPower": {
+    "NAME": "Delayed Strength Loss",
+    "DESCRIPTIONS": [
+      "In ",
+      " turns, losing #r",
+      " Strength."
+    ]
+  },
+  "kitsunemod:FeedingFrenzyPower": {
+    "NAME": "Feeding Frenzy",
+    "DESCRIPTIONS": [
+      "Cannot block. Dealing damage heals you for #b",
+      " HP"
+    ]
   }
 }
