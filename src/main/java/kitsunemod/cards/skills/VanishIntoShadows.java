@@ -39,7 +39,7 @@ public class VanishIntoShadows extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, secondMagicNumber, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, secondMagicNumber, magicNumber),secondMagicNumber));
     }
 
     @Override
