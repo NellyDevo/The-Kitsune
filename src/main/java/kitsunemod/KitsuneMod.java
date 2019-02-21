@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
@@ -38,6 +39,7 @@ import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.CharmMonsterPower;
+import kitsunemod.powers.RoaringFirePower;
 import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.LuminousPearl;
 import kitsunemod.relics.ShiningPearl;
@@ -197,6 +199,8 @@ public class KitsuneMod implements
         BaseMod.addCard(new FeedingFrenzy());
         BaseMod.addCard(new TransmuteSelf());
         BaseMod.addCard(new PurifyingBlaze());
+        BaseMod.addCard(new RoaringFire());
+        BaseMod.addCard(new PurityOfForm());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
@@ -362,6 +366,13 @@ public class KitsuneMod implements
 
     public static void receiveEnergyChanged(int energyDelta) {
         logger.info("receiveEnergyChanged: " + energyDelta);
+        if (energyDelta < 0) {
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power instanceof RoaringFirePower) {
+                    ((RoaringFirePower) power).onEnergyUsed(-energyDelta);
+                }
+            }
+        }
     }
 
     public static void receiveRoomEntered(AbstractRoom room) {

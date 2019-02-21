@@ -237,6 +237,11 @@
       "I have no Will-o-Wisps!"
     ]
   },
+  "kitsunemod:PurityOfForm": {
+    "NAME": "Purity of Form",
+    "DESCRIPTION": "Gain !M! Weak. Remove all other debuffs from yourself.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:PurityOfFunction": {
     "NAME": "Purity of Function",
     "DESCRIPTION": "Gain !M! Block for each stack of debuff on you.",
@@ -263,6 +268,11 @@
   "kitsunemod:ResoluteTechnique": {
     "NAME": "Resolute Technique",
     "DESCRIPTION": "Gain !M! Weak, then deal !D! damage. Kitsune kitsunemod:Aspect: Loses HP instead.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:RoaringFire": {
+    "NAME": "Roaring Fire",
+    "DESCRIPTION": "Every !M! Energy you spend, Channel a kitsunemod:Will-o-Wisp.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:ShapeMastery": {

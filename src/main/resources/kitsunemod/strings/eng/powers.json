@@ -155,5 +155,12 @@
       "Cannot block. Dealing damage heals you for #b",
       " HP"
     ]
+  },
+  "kitsunemod:RoaringFirePower": {
+    "NAME": "Roaring Fire",
+    "DESCRIPTIONS": [
+      "Channeling a #yWIll-o-Wisp every ",
+      " [E] spent."
+    ]
   }
 }
