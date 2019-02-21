@@ -103,6 +103,11 @@
     "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Light.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:FleshToStone": {
+    "NAME": "Flesh to Stone",
+    "DESCRIPTION": "Lose !M! HP. Gain !kitsunemod:M2! Weak. Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:Flourish": {
     "NAME": "Flourish",
     "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Gain !M! Dexterity.",
