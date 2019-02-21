@@ -60,6 +60,11 @@
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, heal !M! HP and play this card again on a random enemy.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:DeceptiveGuise": {
+    "NAME": "Deceptive Guise",
+    "DESCRIPTION": "Gain !B! Block. Human kitsunemod:Aspect: For each enemy.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block.",
