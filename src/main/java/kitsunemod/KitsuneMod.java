@@ -201,6 +201,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new PurifyingBlaze());
         BaseMod.addCard(new RoaringFire());
         BaseMod.addCard(new PurityOfForm());
+        BaseMod.addCard(new PleaForGuidance());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

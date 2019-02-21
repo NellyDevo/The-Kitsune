@@ -224,6 +224,11 @@
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Then !M! damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Then !M!, then !kitsunemod:M2! damage."
   },
+  "kitsunemod:PleaForGuidance": {
+    "NAME": "Plea for Guidance",
+    "DESCRIPTION": "Channel !M! Will-o-Wisp. Draw !kitsunemod:M2! card.",
+    "UPGRADE_DESCRIPTION": "Channel !M! Will-o-Wisps. Draw !kitsunemod:M2! cards."
+  },
   "kitsunemod:Puppeteer": {
     "NAME": "Puppeteer",
     "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
