@@ -320,6 +320,11 @@
       "Fox Shape"
     ]
   },
+  "kitsunemod:SiphonSoul": {
+    "NAME": "Siphon Soul",
+    "DESCRIPTION": "Remove all kitsunemod:Soulsteal from target enemy to heal half that much HP. NL Ethereal. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove all kitsunemod:Soulsteal from target enemy to heal that much HP. NL Ethereal. Exhaust."
+  },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
     "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
