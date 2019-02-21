@@ -94,7 +94,7 @@
     "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less. "
   },
   "kitsunemod:FeedingFrenzy": {
-    "NAME": "Feeding Frenzy.",
+    "NAME": "Feeding Frenzy",
     "DESCRIPTION": "Gain !kitsunemod:M2! Strength for !M! turns. NL Fox kitsunemod:Aspect: Instead of blocking, heal for !B! HP when attacking. Affected by Block modifiers.",
     "UPGRADE_DESCRIPTION": ""
   },
@@ -292,6 +292,11 @@
     "DESCRIPTION": "Gain !M! kitsunemod:Dark and !B! Block. ",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:TransmuteSelf": {
+    "NAME": "Transmute Self",
+    "DESCRIPTION": "Lose !kitsunemod:M2! HP. Gain !M! Shade.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisps."
+  },
   "kitsunemod:TricksterFlame": {
     "NAME": "Trickster Flame",
     "DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisp.",
@@ -304,8 +309,8 @@
   },
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
-    "DESCRIPTION": "Gain 1 kitsunemod:Shade. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain 1 kitsunemod:Shade. NL Exhaust."
+    "DESCRIPTION": "Gain !kitsunemod:M2! kitsunemod:Shade. Your kitsunemod:Shade heals you for !M! this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain !kitsunemod:M2! kitsunemod:Shade. Your kitsunemod:Shade heals you for !M! this turn. NL Exhaust."
   },
   "kitsunemod:WaningExistence": {
     "NAME": "Waning Existence",

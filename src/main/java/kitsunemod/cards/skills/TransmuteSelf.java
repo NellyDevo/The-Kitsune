@@ -2,6 +2,7 @@ package kitsunemod.cards.skills;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,54 +14,44 @@ import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.InTheShadowsPower;
 
-public class VanishIntoShadows extends AbstractKitsuneCard {
-    public static final String ID = KitsuneMod.makeID("VanishIntoShadows");
+public class TransmuteSelf extends AbstractKitsuneCard {
+    public static final String ID = KitsuneMod.makeID("TransmuteSelf");
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
+
     private static final int COST = 1;
 
-    private static final int SHADE_STACKS = 2;
-
-    private static final int HEAL_AMOUNT = 4;
-    private static final int UPGRADE_PLUS_HEAL_AMOUNT = 2;
-
-    public VanishIntoShadows() {
+    private static final int SHADE_STACKS = 1;
+    private static final int UPGRADE_PLUS_SHADE_STACKS = 1;
+    private static final int HP_LOSS = 2;
+    private static final int UPGRADE_PLUS_HP_LOSS = 1;
+    public TransmuteSelf() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.RARE, CardTarget.SELF);
-        magicNumber = baseMagicNumber = HEAL_AMOUNT;
-        secondMagicNumber = baseSecondMagicNumber = SHADE_STACKS;
-        this.exhaustOnUseOnce = true;
+                CardRarity.UNCOMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = SHADE_STACKS;
+        secondMagicNumber = baseSecondMagicNumber = HP_LOSS;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(InTheShadowsPower.POWER_ID)) {
-            InTheShadowsPower power = (InTheShadowsPower)p.getPower(InTheShadowsPower.POWER_ID);
-            power.stackPower(secondMagicNumber);
-            power.amount2 = magicNumber;
-            power.flash();
-        }
-        else
-        {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, secondMagicNumber, magicNumber),secondMagicNumber));
-        }
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, secondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, magicNumber), magicNumber));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new VanishIntoShadows();
+        return new TransmuteSelf();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            AlwaysRetainField.alwaysRetain.set(this, true);
-            upgradeMagicNumber(UPGRADE_PLUS_HEAL_AMOUNT);
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_SHADE_STACKS);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_HP_LOSS);
             initializeDescription();
 
         }

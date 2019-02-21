@@ -1,10 +1,12 @@
 package kitsunemod.powers;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,9 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
-public class InTheShadowsPower extends AbstractPower {
-
-    private int healAmount;
+public class InTheShadowsPower extends TwoAmountPower {
 
     public static final String POWER_ID = KitsuneMod.makeID("InTheShadowsPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -30,7 +30,7 @@ public class InTheShadowsPower extends AbstractPower {
             final int healAmount) {
 
         this.owner = owner;
-        this.healAmount = healAmount;
+        amount2 = healAmount;
 
         isTurnBased = false;
         name = NAME;
@@ -44,17 +44,19 @@ public class InTheShadowsPower extends AbstractPower {
         updateDescription();
 
     }
+    public InTheShadowsPower(final AbstractCreature owner, final int stacks) {
+        this(owner, stacks, DEFAULT_HEAL_AMOUNT);
+    }
 
     @Override
-    public int onLoseHp(int damageAmount) {
-
-        if (damageAmount > 0) {
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (damageAmount > 0 && !info.owner.isPlayer) {
             flash();
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
-            AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, healAmount));
+            AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, amount2));
+            return 0;
         }
-
-        return 0;
+        return damageAmount;
     }
 
     public void stackPower(int stackAmount) {
@@ -71,10 +73,10 @@ public class InTheShadowsPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + healAmount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
 
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + healAmount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
         }
     }
 }
