@@ -22,9 +22,6 @@ public class DelayedStrengthLossPower extends TwoAmountPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
-    private boolean alsoBerzerk = false;
-    private int healAmount = 0;
-
     public DelayedStrengthLossPower(final AbstractCreature owner, int turns, int amount) {
         this.owner = owner;
         isTurnBased = true;
@@ -44,6 +41,12 @@ public class DelayedStrengthLossPower extends TwoAmountPower {
     @Override
     public void onRemove() {
         AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, StrengthPower.POWER_ID, amount2));
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        super.atEndOfTurn(isPlayer);
+        this.stackPower(-1);
     }
 
     @Override
