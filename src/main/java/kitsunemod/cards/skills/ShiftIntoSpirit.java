@@ -84,7 +84,7 @@ public class ShiftIntoSpirit extends AbstractElderCard {
     @Override
     public void upgradeAll() {
         upgradeName();
-        upgradeMagicNumber(ELDER_TIER_UPGRADE_BLOCK);
+        upgradeBlock(ELDER_TIER_UPGRADE_BLOCK);
     }
 
     @Override
