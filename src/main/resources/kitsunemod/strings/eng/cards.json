@@ -225,6 +225,14 @@
       "It didn't have any effect!"
     ]
   },
+  "kitsunemod:MasteryOfLightAndDark": {
+    "NAME": "Mastery of Light and Dark",
+    "DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark needs !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark needs !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers.",
+    "EXTENDED_DESCRIPTION": [
+      "kitsunemod:Light and kitsunemod:Dark needs !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times."
+    ]
+  },
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
     "DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an kitsunemod:Echo of that card to your hand.",

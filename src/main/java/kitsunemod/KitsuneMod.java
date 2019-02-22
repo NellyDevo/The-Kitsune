@@ -41,6 +41,7 @@ import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.CharmMonsterPower;
+import kitsunemod.powers.MasteryOfLightAndDarkPower;
 import kitsunemod.powers.RoaringFirePower;
 import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.LuminousPearl;
@@ -215,6 +216,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new AncientWisdom());
         BaseMod.addCard(new ShiftIntoSpirit());
         BaseMod.addCard(new Serenity());
+        BaseMod.addCard(new MasteryOfLightAndDark());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
@@ -451,6 +453,28 @@ public class KitsuneMod implements
         triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onApplyLight(amount));
         triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onApplyLight(amount));
         triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onApplyLight(amount));
+    }
+
+    public static void receiveOnTriggerLight() {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, AbstractElderCard::onTriggerLight);
+        if (AbstractDungeon.player.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
+            ((MasteryOfLightAndDarkPower)AbstractDungeon.player.getPower(MasteryOfLightAndDarkPower.POWER_ID)).onTriggerLight();
+        }
+    }
+
+    public static void receiveOnTriggerDark() {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, AbstractElderCard::onTriggerDark);
+        if (AbstractDungeon.player.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
+            ((MasteryOfLightAndDarkPower)AbstractDungeon.player.getPower(MasteryOfLightAndDarkPower.POWER_ID)).onTriggerDark();
+        }
     }
 
     private static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {

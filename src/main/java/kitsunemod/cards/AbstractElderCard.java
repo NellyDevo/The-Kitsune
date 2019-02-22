@@ -209,6 +209,14 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     }
 
+    public void onTriggerLight() {
+
+    }
+
+    public void onTriggerDark() {
+
+    }
+
     @Override
     public boolean canUpgrade() {
         return false;

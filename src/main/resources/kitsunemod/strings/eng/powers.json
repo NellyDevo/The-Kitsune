@@ -126,6 +126,14 @@
       "When you play an Aspect card, draw another Aspect card from your deck."
     ]
   },
+  "kitsunemod:MasteryOfLightAndDarkPower": {
+    "NAME": "Mastery of Light and Dark",
+    "DESCRIPTIONS": [
+      "Increase the trigger requirement of #yLight and #yDark by #b",
+      ", and Gain #b",
+      " #yLight or #yDark when it triggers."
+    ]
+  },
   "kitsunemod:MemorizeSpellPower": {
     "NAME": "Memorized Spell",
     "DESCRIPTIONS": [
