@@ -216,6 +216,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new AncientMalice());
         BaseMod.addCard(new AncientWisdom());
         BaseMod.addCard(new ShiftIntoSpirit());
+        BaseMod.addCard(new Serenity());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

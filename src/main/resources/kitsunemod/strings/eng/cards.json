@@ -326,6 +326,11 @@
     "DESCRIPTION": "Every !M! Energy you spend, Channel a kitsunemod:Will-o-Wisp.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:Serenity": {
+    "NAME": "Serenity",
+    "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:ShapeMastery": {
     "NAME": "Shape Mastery",
     "DESCRIPTION": "Gain !B! block. Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.",
