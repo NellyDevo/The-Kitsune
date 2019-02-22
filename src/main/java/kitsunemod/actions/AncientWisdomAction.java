@@ -29,12 +29,12 @@ public class AncientWisdomAction extends AbstractGameAction {
         } else {
             list.addAll(p.hand.group);
         }
-        int darkAmount = 0;
+        int lightAmount = 0;
         for (AbstractCard card : list) {
             card.flash();
-            darkAmount += card.costForTurn;
+            lightAmount += card.costForTurn;
         }
-        AbstractDungeon.actionManager.addToTop(new ApplyDarkAction(p, p, darkAmount));
+        AbstractDungeon.actionManager.addToTop(new ApplyLightAction(p, p, lightAmount));
         isDone = true;
     }
 }
