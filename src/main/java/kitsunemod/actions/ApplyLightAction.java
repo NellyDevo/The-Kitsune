@@ -50,7 +50,7 @@ public class ApplyLightAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
                     if (target.hasPower(BalancingActPower.POWER_ID)) {
-                        psuedoTriggerDark(target.getPower(BalancingActPower.POWER_ID));
+                        pseudoTriggerDark(target.getPower(BalancingActPower.POWER_ID));
                     }
                 }
 
@@ -63,7 +63,7 @@ public class ApplyLightAction extends AbstractGameAction {
         tickDuration();
     }
 
-    private void psuedoTriggerDark(AbstractPower power) {
+    private void pseudoTriggerDark(AbstractPower power) {
         power.flash();
         AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, power.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.POISON));
     }
