@@ -227,8 +227,12 @@
   },
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
-    "DESCRIPTION": "Choose a card in your hand. Retain it until next turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card in your hand. Retain it until next turn."
+    "DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an kitsunemod:Echo of that card to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an Upgraded kitsunemod:Echo of that card to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose a card to Memorize",
+      "Echo: "
+    ]
   },
   "kitsunemod:NinetailedForm": {
     "NAME": "Ninetailed Form",

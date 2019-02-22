@@ -126,6 +126,15 @@
       "When you play an Aspect card, draw another Aspect card from your deck."
     ]
   },
+  "kitsunemod:MemorizeSpellPower": {
+    "NAME": "Memorized Spell",
+    "DESCRIPTIONS": [
+      "At the start of each turn, add an ",
+      "#yEcho of ",
+      "#yUpgraded #yEcho of ",
+      " to your hand."
+    ]
+  },
   "kitsunemod:FastShapePower": {
     "NAME": "Fast Shape",
     "DESCRIPTIONS": [
