@@ -29,6 +29,8 @@ public class SiphonSoul extends AbstractKitsuneCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
+        exhaust = true;
+        isEthereal = true;
     }
 
     @Override
