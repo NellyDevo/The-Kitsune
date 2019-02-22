@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 
 public class BlinkSlash extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("BlinkSlash");
@@ -36,6 +37,7 @@ public class BlinkSlash extends AbstractKitsuneCard {
         damage = baseDamage = DAMAGE_AMT;
         block = baseBlock = BLOCK_AMT;
         isMultiDamage = true;
+        tags.add(KitsuneTags.ZERO_COST_ATTACK);
     }
 
     @Override

@@ -156,6 +156,11 @@
     "DESCRIPTION": "Deal !D! Damage. NL Kitsune kitsunemod:Aspect: Apply !M! Weak to the target and yourself.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:HeightenedReflexes": {
+    "NAME": "Heightened Reflexes",
+    "DESCRIPTION": "When attacked, respond with a random 0-cost Attack on your attacker.",
+    "UPGRADE_DESCRIPTION": "When attacked, respond with a random upgraded 0-cost Attack on your attacker."
+  },
   "kitsunemod:HumanShape": {
     "NAME": "Human Shape",
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",

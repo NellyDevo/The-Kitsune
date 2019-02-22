@@ -212,6 +212,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new DeceptiveGuise());
         BaseMod.addCard(new LieInWait());
         BaseMod.addCard(new UnstableShape());
+        BaseMod.addCard(new HeightenedReflexes());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
