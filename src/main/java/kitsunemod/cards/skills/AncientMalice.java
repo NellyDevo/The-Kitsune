@@ -29,6 +29,7 @@ public class AncientMalice extends AbstractElderCard {
     private static final int BASE_DISCARD = 1;
     private static final int ELDER_TIER_UPGRADE_CARD_DISCARD = 1;
     private static final int ELDER_TIER_DARK_GAIN_REQUIREMENT = 50;
+    private static final int DARK_PER_DISCARD = 2;
 
     public AncientMalice() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -48,7 +49,7 @@ public class AncientMalice extends AbstractElderCard {
         int tmp = magicNumber;
         tmp = Math.min(tmp, p.hand.size());
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, tmp, false));
-        AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(p, p, tmp));
+        AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(p, p, tmp * DARK_PER_DISCARD));
         if (p.hasPower(HumanShapePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, tmp));
         }

@@ -41,6 +41,7 @@ import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.CharmMonsterPower;
+import kitsunemod.powers.InTheShadowsPower;
 import kitsunemod.powers.MasteryOfLightAndDarkPower;
 import kitsunemod.powers.RoaringFirePower;
 import kitsunemod.relics.KitsuneRelic;
@@ -425,7 +426,7 @@ public class KitsuneMod implements
     }
 
     public static int receivePlayerIsAttacked(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0) {
+        if (damageAmount > 0 && !AbstractDungeon.player.hasPower(InTheShadowsPower.POWER_ID)) {
             int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
 
             if (info.type == DamageInfo.DamageType.HP_LOSS || blockingAmount < damageAmount) {
