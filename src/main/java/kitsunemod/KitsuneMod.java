@@ -7,7 +7,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -24,7 +23,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.cards.AbstractKitsuneCard;
@@ -43,6 +41,7 @@ import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.CharmMonsterPower;
+import kitsunemod.powers.MasteryOfLightAndDarkPower;
 import kitsunemod.powers.RoaringFirePower;
 import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.LuminousPearl;
@@ -212,6 +211,13 @@ public class KitsuneMod implements
         BaseMod.addCard(new DeceptiveGuise());
         BaseMod.addCard(new LieInWait());
         BaseMod.addCard(new UnstableShape());
+        BaseMod.addCard(new SiphonSoul());
+        BaseMod.addCard(new AncientMalice());
+        BaseMod.addCard(new AncientWisdom());
+        BaseMod.addCard(new ShiftIntoSpirit());
+        BaseMod.addCard(new Serenity());
+        BaseMod.addCard(new MasteryOfLightAndDark());
+        BaseMod.addCard(new BalancingAct());
         BaseMod.addCard(new HeightenedReflexes());
 
         //Rares
@@ -336,6 +342,9 @@ public class KitsuneMod implements
         triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
         triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
         triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onCardDrawn(card, isExtraDraw));
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onCardDrawn(card, isExtraDraw);
+        }
     }
 
     @Override
@@ -374,6 +383,9 @@ public class KitsuneMod implements
         triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onMonsterDied(m));
         triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onMonsterDied(m));
         triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onMonsterDied(m));
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onMonsterDied(m);
+        }
     }
 
     public static void receiveEnergyChanged(int energyDelta) {
@@ -389,11 +401,10 @@ public class KitsuneMod implements
 
     public static void receiveRoomEntered(AbstractRoom room) {
         //the patch here is before an ? room is potentially rerolled - so i can assume that all ? rooms are instances of EventRoom
-        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onEnterRoom(room));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.masterDeck, (elderCard) -> elderCard.onEnterRoom(room));
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onEnterRoom(room);
+        }
     }
 
     public static void receiveChangeShape(KitsuneShapes shape) {
@@ -423,6 +434,9 @@ public class KitsuneMod implements
                 triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+                if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+                    ((AbstractElderCard)AbstractDungeon.player.cardInUse).onLoseHp(info, damageAmount);
+                }
             }
             if (blockingAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS) {
                 triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
@@ -430,9 +444,62 @@ public class KitsuneMod implements
                 triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
+                if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+                    ((AbstractElderCard)AbstractDungeon.player.cardInUse).onBlockedDamage(blockingAmount);
+                }
             }
         }
         return damageAmount;
+    }
+
+    public static void receiveOnApplyDark(int amount) {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onApplyDark(amount));
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onApplyDark(amount);
+        }
+    }
+
+    public static void receiveOnApplyLight(int amount) {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onApplyLight(amount));
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onApplyLight(amount);
+        }
+    }
+
+    public static void receiveOnTriggerLight() {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, AbstractElderCard::onTriggerLight);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, AbstractElderCard::onTriggerLight);
+        if (AbstractDungeon.player.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
+            ((MasteryOfLightAndDarkPower)AbstractDungeon.player.getPower(MasteryOfLightAndDarkPower.POWER_ID)).onTriggerLight();
+        }
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onTriggerLight();
+        }
+    }
+
+    public static void receiveOnTriggerDark() {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, AbstractElderCard::onTriggerDark);
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, AbstractElderCard::onTriggerDark);
+        if (AbstractDungeon.player.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
+            ((MasteryOfLightAndDarkPower)AbstractDungeon.player.getPower(MasteryOfLightAndDarkPower.POWER_ID)).onTriggerDark();
+        }
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard)AbstractDungeon.player.cardInUse).onTriggerDark();
+        }
     }
 
     private static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {

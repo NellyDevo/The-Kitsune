@@ -15,6 +15,14 @@
       "x your Light in block if you're over ",
       " stacks."]
   },
+  "kitsunemod:BalancingActPower": {
+    "NAME": "Balancing Act",
+    "DESCRIPTIONS": [
+      "Whenever you switch from #yDark to #yLight, deal #b",
+      " damage to a random enemy. Whenever you switch from #yLight to #yDark, gain #b",
+      " Block."
+    ]
+  },
   "kitsunemod:Charmed": {
     "NAME": "Charmed",
     "DESCRIPTIONS": [
@@ -124,6 +132,23 @@
     "NAME": "Insight",
     "DESCRIPTIONS": [
       "When you play an Aspect card, draw another Aspect card from your deck."
+    ]
+  },
+  "kitsunemod:MasteryOfLightAndDarkPower": {
+    "NAME": "Mastery of Light and Dark",
+    "DESCRIPTIONS": [
+      "Increase the trigger requirement of #yLight and #yDark by #b",
+      ", and Gain #b",
+      " #yLight or #yDark when it triggers."
+    ]
+  },
+  "kitsunemod:MemorizeSpellPower": {
+    "NAME": "Memorized Spell",
+    "DESCRIPTIONS": [
+      "At the start of each turn, add an ",
+      "#yEcho of ",
+      "#yUpgraded #yEcho of ",
+      " to your hand."
     ]
   },
   "kitsunemod:FastShapePower": {

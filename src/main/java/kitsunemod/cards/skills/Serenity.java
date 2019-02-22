@@ -1,50 +1,61 @@
 package kitsunemod.cards.skills;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 
-public class MemorizeSpell extends AbstractKitsuneCard {
-    public static final String ID = KitsuneMod.makeID("MemorizeSpell");
+public class Serenity extends AbstractKitsuneCard {
+    public static final String ID = KitsuneMod.makeID("Serenity");
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
-
     private static final int COST = 1;
-    private static final int CARDS_TO_RETAIN = 1;
 
-    public MemorizeSpell() {
+    private static final int BLOCK_AMT = 6;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int TURN_LIMIT = 3;
+    private static final int PLATED_ARMOR_AMT = 2;
+    private static final int UPGRADE_PLATED_ARMOR = 1;
+
+
+    public Serenity() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = PLATED_ARMOR_AMT;
+        secondMagicNumber = baseSecondMagicNumber = TURN_LIMIT;
+        block = baseBlock = BLOCK_AMT;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(p, CARDS_TO_RETAIN));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        if (KitsuneMod.turnsSpentInSameShape >= secondMagicNumber) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber), magicNumber));
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new MemorizeSpell();
+        return new Serenity();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            AlwaysRetainField.alwaysRetain.set(this, true);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(UPGRADE_PLATED_ARMOR);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
         }
     }
 }

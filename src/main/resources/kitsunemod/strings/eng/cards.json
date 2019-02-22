@@ -4,9 +4,30 @@
     "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:AncientMalice": {
+    "NAME": "Ancient Malice",
+    "DESCRIPTION": "Discard !M! card to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark",
+    "UPGRADE_DESCRIPTION": "Discard !M! cards to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Discard !M! cards to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark"
+    ]
+  },
+  "kitsunemod:AncientWisdom": {
+    "NAME": "Ancient Wisdom",
+    "DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random card in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light",
+    "UPGRADE_DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light"
+    ]
+  },
   "kitsunemod:AnsweredPrayers": {
     "NAME": "Answered Prayers",
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:BalancingAct": {
+    "NAME": "Balancing Act",
+    "DESCRIPTION": "Whenever you switch from kitsunemod:Dark to kitsunemod:Light, deal !M! damage to a random enemy. NL Whenever you switch from kitsunemod:Light to kitsunemod:Dark, gain !M! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:BareFangs": {
@@ -214,10 +235,22 @@
       "It didn't have any effect!"
     ]
   },
+  "kitsunemod:MasteryOfLightAndDark": {
+    "NAME": "Mastery of Light and Dark",
+    "DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers.",
+    "EXTENDED_DESCRIPTION": [
+      "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times."
+    ]
+  },
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
-    "DESCRIPTION": "Choose a card in your hand. Retain it until next turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Choose a card in your hand. Retain it until next turn."
+    "DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an kitsunemod:Echo of that card to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an Upgraded kitsunemod:Echo of that card to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose a card to Memorize",
+      "Echo: "
+    ]
   },
   "kitsunemod:NinetailedForm": {
     "NAME": "Ninetailed Form",
@@ -320,6 +353,11 @@
     "DESCRIPTION": "Every !M! Energy you spend, Channel a kitsunemod:Will-o-Wisp.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:Serenity": {
+    "NAME": "Serenity",
+    "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:ShapeMastery": {
     "NAME": "Shape Mastery",
     "DESCRIPTION": "Gain !B! block. Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.",
@@ -329,6 +367,16 @@
       "Kitsune Shape.",
       "Fox Shape"
     ]
+  },
+  "kitsunemod:ShiftIntoSpirit": {
+    "NAME": "Shift into Spirit",
+    "DESCRIPTION": "Gain !B! Block. NL kitsunemod:Elder: visit !kitsunemod:Elder! ? rooms.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Heal !M! HP."
+  },
+  "kitsunemod:SiphonSoul": {
+    "NAME": "Siphon Soul",
+    "DESCRIPTION": "Remove all kitsunemod:Soulsteal from target enemy to heal half that much HP. NL Ethereal. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove all kitsunemod:Soulsteal from target enemy to heal that much HP. NL Ethereal. Exhaust."
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",

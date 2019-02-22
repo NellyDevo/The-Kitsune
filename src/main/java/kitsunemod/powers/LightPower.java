@@ -23,6 +23,7 @@ public class LightPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
+    private int baseThreshold;
 
     public LightPower(final AbstractCreature owner, final AbstractCreature source, final int stacks) {
 
@@ -38,16 +39,18 @@ public class LightPower extends AbstractPower {
         //temporary until I start making power art too
         //img = ImageMaster.loadImage(IMG);
         loadRegion("echo");
-        updateDescription();
 
+        baseThreshold = TRIGGER_BASE_STACKS;
+        updateDescription();
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
 
-        if (amount >= TRIGGER_BASE_STACKS) {
+        if (amount >= calculateThreshold(baseThreshold)) {
             AbstractDungeon.effectList.add(new FlashPowerEffect(this));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, (int)(amount * EFFECT_MULTIPLIER)));
+            KitsuneMod.receiveOnTriggerLight();
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
             boolean shouldConsume = true;
             for (AbstractPower p : AbstractDungeon.player.powers) {
@@ -68,10 +71,15 @@ public class LightPower extends AbstractPower {
 
     }
 
+    private int calculateThreshold(int amount) {
+        if (owner.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
+            amount = ((MasteryOfLightAndDarkPower)owner.getPower(MasteryOfLightAndDarkPower.POWER_ID)).affectThreshold(amount);
+        }
+        return amount;
+    }
 
     @Override
     public void updateDescription() {
-
-        description = DESCRIPTIONS[0] + EFFECT_MULTIPLIER + DESCRIPTIONS[1] + TRIGGER_BASE_STACKS + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + EFFECT_MULTIPLIER + DESCRIPTIONS[1] + calculateThreshold(baseThreshold) + DESCRIPTIONS[2];
     }
 }

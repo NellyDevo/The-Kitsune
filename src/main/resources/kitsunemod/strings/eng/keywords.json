@@ -73,5 +73,11 @@
       "quickshape"
     ],
     "DESCRIPTION": "Uncollectable zero-cost cards with Ethereal and Exhaust that change your shape."
+  },
+  "Echo": {
+    "NAMES": [
+      "echo"
+    ],
+    "DESCRIPTION": "Echoes are copies of cards with Ethereal and Exhaust."
   }
 }
