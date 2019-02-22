@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
+import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.HumanShapePower;
@@ -47,6 +48,7 @@ public class AncientMalice extends AbstractElderCard {
         int tmp = magicNumber;
         tmp = Math.min(tmp, p.hand.size());
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, tmp, false));
+        AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(p, p, tmp));
         if (p.hasPower(HumanShapePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, tmp));
         }
