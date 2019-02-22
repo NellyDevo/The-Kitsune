@@ -100,4 +100,11 @@ public class MasteryOfLightAndDark extends AbstractElderCard {
     public AbstractCard makeCopy() {
         return new MasteryOfLightAndDark(timesUpgraded);
     }
+
+    @Override
+    public void upgrade1(){
+        super.upgrade1();
+        rawDescription = EXTENDED_DESCRIPTION[0];
+        initializeDescription();
+    }
 }
