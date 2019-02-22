@@ -25,6 +25,7 @@ public class DarkPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
+    public static final DamageInfo.DamageType DARK_DAMAGE_TYPE = DamageInfo.DamageType.THORNS;
     private int baseThreshold;
 
     public DarkPower(final AbstractCreature owner, final AbstractCreature source, final int stacks) {
@@ -51,7 +52,7 @@ public class DarkPower extends AbstractPower {
 
         if (amount >= calculateThreshold(baseThreshold)) {
             AbstractDungeon.effectList.add(new FlashPowerEffect(this));
-            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(source, (int)(amount * EFFECT_MULTIPLIER), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.POISON));
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(source, (int)(amount * EFFECT_MULTIPLIER), DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
             KitsuneMod.receiveOnTriggerDark();
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
             boolean shouldConsume = true;

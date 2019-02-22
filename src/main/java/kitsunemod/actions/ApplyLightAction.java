@@ -35,7 +35,7 @@ public class ApplyLightAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             KitsuneMod.receiveOnApplyLight(amount);
             if (target.hasPower(DarkPower.POWER_ID)) {
-                //if this fails it means we made another power with DarkPower's ID and that breaks things anyway
+                //if this fails it means we made another power with LightPower's ID and that breaks things anyway
                 DarkPower currentDarkPower = (DarkPower)target.getPower(DarkPower.POWER_ID);
                 int currentDarkPowerStacks = currentDarkPower.amount;
 
@@ -65,6 +65,6 @@ public class ApplyLightAction extends AbstractGameAction {
 
     private void pseudoTriggerDark(AbstractPower power) {
         power.flash();
-        AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, power.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.POISON));
+        AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, power.amount, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
     }
 }
