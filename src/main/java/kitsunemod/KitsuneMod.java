@@ -213,6 +213,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new LieInWait());
         BaseMod.addCard(new UnstableShape());
         BaseMod.addCard(new SiphonSoul());
+        BaseMod.addCard(new AncientMalice());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
