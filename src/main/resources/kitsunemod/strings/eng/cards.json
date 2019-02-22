@@ -4,6 +4,14 @@
     "DESCRIPTION": "Gain !M! kitsunemod:Light. Apply !kitsunemod:M2! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:AncientMalice": {
+    "NAME": "Ancient Malice",
+    "DESCRIPTION": "Discard !M! card to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark",
+    "UPGRADE_DESCRIPTION": "Discard !M! cards to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Discard !M! cards to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark"
+    ]
+  },
   "kitsunemod:AnsweredPrayers": {
     "NAME": "Answered Prayers",
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",

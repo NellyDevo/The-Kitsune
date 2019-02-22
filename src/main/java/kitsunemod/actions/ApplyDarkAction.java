@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import kitsunemod.KitsuneMod;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
 
@@ -30,6 +31,7 @@ public class ApplyDarkAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
+            KitsuneMod.receiveOnApplyDark(amount);
             if (target.hasPower(LightPower.POWER_ID)) {
                 //if this fails it means we made another power with DarkPower's ID and that breaks things anyway
                 LightPower currentLightPower = (LightPower)target.getPower(LightPower.POWER_ID);

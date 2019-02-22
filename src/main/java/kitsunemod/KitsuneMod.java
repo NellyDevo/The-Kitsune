@@ -435,6 +435,14 @@ public class KitsuneMod implements
         return damageAmount;
     }
 
+    public static void receiveOnApplyDark(int amount) {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onApplyDark(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onApplyDark(amount));
+    }
+
     private static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
         for (int i = 0; i < group.size(); i++) {
             AbstractCard currentCard = group.getNCardFromTop(i);
