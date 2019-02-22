@@ -197,5 +197,15 @@
       " Quickshape card to your hand every turn.",
       " Quickshape cards to your hand every turn."
     ]
+  },
+  "kitsunemod:HeightenedReflexesPower": {
+    "NAME": "Heightened Reflexes",
+    "DESCRIPTIONS": [
+      "Responding with ",
+      " random",
+      " upgraded ",
+      " zero-cost attack when attacked.",
+      " zero-cost attacks when attacked."
+    ]
   }
 }

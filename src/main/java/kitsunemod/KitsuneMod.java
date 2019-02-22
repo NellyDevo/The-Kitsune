@@ -218,6 +218,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new Serenity());
         BaseMod.addCard(new MasteryOfLightAndDark());
         BaseMod.addCard(new BalancingAct());
+        BaseMod.addCard(new HeightenedReflexes());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
