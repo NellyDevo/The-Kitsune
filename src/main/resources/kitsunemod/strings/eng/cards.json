@@ -12,6 +12,14 @@
       "Discard !M! cards to gain twice that much kitsunemod:Dark. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark"
     ]
   },
+  "kitsunemod:AncientWisdom": {
+    "NAME": "Ancient Wisdom",
+    "DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light",
+    "UPGRADE_DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light"
+    ]
+  },
   "kitsunemod:AnsweredPrayers": {
     "NAME": "Answered Prayers",
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",

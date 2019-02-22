@@ -205,6 +205,10 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     }
 
+    public void onApplyLight(int amount) {
+
+    }
+
     @Override
     public boolean canUpgrade() {
         return false;

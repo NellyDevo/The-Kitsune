@@ -444,6 +444,14 @@ public class KitsuneMod implements
         triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onApplyDark(amount));
     }
 
+    public static void receiveOnApplyLight(int amount) {
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onApplyLight(amount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onApplyLight(amount));
+    }
+
     private static void triggerElderFunctionsInGroup(CardGroup group, ElderTriggerFunc trigger) {
         for (int i = 0; i < group.size(); i++) {
             AbstractCard currentCard = group.getNCardFromTop(i);
