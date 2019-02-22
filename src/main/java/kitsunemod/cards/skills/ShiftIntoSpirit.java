@@ -1,8 +1,6 @@
 package kitsunemod.cards.skills;
 
 import basemod.BaseMod;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,10 +14,9 @@ import kitsunemod.actions.AncientWisdomAction;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.FoxShapePower;
-import kitsunemod.powers.HumanShapePower;
 
-public class AncientWisdom extends AbstractElderCard {
-    public static final String ID = KitsuneMod.makeID("AncientWisdom");
+public class ShiftIntoSpirit extends AbstractElderCard {
+    public static final String ID = KitsuneMod.makeID("AncientMalice");
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -30,11 +27,11 @@ public class AncientWisdom extends AbstractElderCard {
 
     private static final int COST = 2;
 
-    private static final int BASE_RANDOM_CARD = 1;
-    private static final int ELDER_TIER_UPGRADE_RANDOM_CARD = 1;
-    private static final int ELDER_TIER_LIGHT_GAIN_REQUIREMENT = 50;
+    private static final int BASE_BLOCK = 10;
+    private static final int ELDER_TIER_UPGRADE_BLOCK = 1;
+    private static final int ELDER_TIER_QUESTION_ROOM_REQUIREMENT = 2;
 
-    public AncientWisdom() {
+    public ShiftIntoSpirit() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF);
@@ -42,7 +39,7 @@ public class AncientWisdom extends AbstractElderCard {
         magicNumber = baseMagicNumber = BASE_RANDOM_CARD;
     }
 
-    public AncientWisdom(int timesUpgraded) {
+    public ShiftIntoSpirit(int timesUpgraded) {
         this();
         initializeWithUpgrades(timesUpgraded);
     }
@@ -99,7 +96,7 @@ public class AncientWisdom extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new AncientWisdom(timesUpgraded);
+        return new ShiftIntoSpirit(timesUpgraded);
     }
 
     @Override
