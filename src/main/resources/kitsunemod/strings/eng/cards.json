@@ -249,6 +249,11 @@
     "DESCRIPTION": "Channel !M! Will-o-Wisp. Draw !kitsunemod:M2! card.",
     "UPGRADE_DESCRIPTION": "Channel !M! Will-o-Wisps. Draw !kitsunemod:M2! cards."
   },
+  "kitsunemod:PressAdvantage": {
+    "NAME": "Press the Advantage",
+    "DESCRIPTION": "Deal !D! damage. NL kitsunemod:Elder: Kill !M! non-minion enemies.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:Puppeteer": {
     "NAME": "Puppeteer",
     "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
@@ -364,11 +369,6 @@
     "NAME": "Unstable Shape",
     "DESCRIPTION": "At the start of your turn, add a random kitsunemod:Quickshape card to your hand.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, add a random upgraded kitsunemod:Quickshape card to your hand."
-  },
-  "kitsunemod:PressAdvantage": {
-    "NAME": "Press the Advantage",
-    "DESCRIPTION": "Deal !D! damage. NL kitsunemod:Elder: Kill !M! non-minion enemies.",
-    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
