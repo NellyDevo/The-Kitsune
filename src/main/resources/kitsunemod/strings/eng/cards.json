@@ -14,7 +14,7 @@
   },
   "kitsunemod:AncientWisdom": {
     "NAME": "Ancient Wisdom",
-    "DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light",
+    "DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random card in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light",
     "UPGRADE_DESCRIPTION": "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first.",
     "EXTENDED_DESCRIPTION": [
       "Gain kitsunemod:Light equal to the total cost of !M! random cards in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light"
@@ -232,10 +232,10 @@
   },
   "kitsunemod:MasteryOfLightAndDark": {
     "NAME": "Mastery of Light and Dark",
-    "DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark needs !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times.",
-    "UPGRADE_DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark needs !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers.",
+    "DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers.",
     "EXTENDED_DESCRIPTION": [
-      "kitsunemod:Light and kitsunemod:Dark needs !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times."
+      "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times."
     ]
   },
   "kitsunemod:MemorizeSpell": {
