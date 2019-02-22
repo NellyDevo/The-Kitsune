@@ -34,6 +34,8 @@ public class MemorizeSpellPower extends AbstractPower implements NonStackablePow
     public MemorizeSpellPower(AbstractCreature owner, AbstractCard card, boolean isUpgraded) {
         this.owner = owner;
         this.card = card.makeCopy();
+        ID = POWER_ID;
+        name = NAME;
         upgrade = isUpgraded;
 
         //temporary until I start making power art too
@@ -62,9 +64,9 @@ public class MemorizeSpellPower extends AbstractPower implements NonStackablePow
             e.printStackTrace();
         }
         if (((AbstractPlayer)owner).hand.size() == BaseMod.MAX_HAND_SIZE) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToDiscardEffect(card,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToDiscardEffect(newCard,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToHandEffect(card,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToHandEffect(newCard,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
         }
     }
 
