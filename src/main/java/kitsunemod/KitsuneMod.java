@@ -400,11 +400,7 @@ public class KitsuneMod implements
 
     public static void receiveRoomEntered(AbstractRoom room) {
         //the patch here is before an ? room is potentially rerolled - so i can assume that all ? rooms are instances of EventRoom
-        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onEnterRoom(room));
-        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onEnterRoom(room));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.masterDeck, (elderCard) -> elderCard.onEnterRoom(room));
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onEnterRoom(room);
         }
