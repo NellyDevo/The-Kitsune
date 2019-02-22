@@ -336,6 +336,11 @@
       "Fox Shape"
     ]
   },
+  "kitsunemod:ShiftIntoSpirit": {
+    "NAME": "Shift into Spirit",
+    "DESCRIPTION": "Gain !B! Block. NL kitsunemod:Elder: visit !kitsunemod:Elder! ? rooms.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Heal !M! HP."
+  },
   "kitsunemod:SiphonSoul": {
     "NAME": "Siphon Soul",
     "DESCRIPTION": "Remove all kitsunemod:Soulsteal from target enemy to heal half that much HP. NL Ethereal. Exhaust.",
