@@ -219,12 +219,13 @@
   },
   "kitsunemod:LieInWait": {
     "NAME": "Lie in Wait",
-    "DESCRIPTION": "Lose !M! HP. Gain",
+    "DESCRIPTION": "Lose !M! HP.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
+      " NL Gain [E]",
       " [E]",
       ".",
-      " . Conserve your Energy this turn."
+      " Conserve your Energy this turn."
     ]
   },
   "kitsunemod:MassSuggestion": {

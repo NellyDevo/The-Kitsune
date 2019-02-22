@@ -66,15 +66,25 @@ public class LieInWait extends AbstractKitsuneCard {
 
     private String getRawDescription() {
         String description = DESCRIPTION;
-        for (int i = 0; i < secondMagicNumber; i++) {
-            description += cardStrings.EXTENDED_DESCRIPTION[0];
+        String energyString = "";
+        if (secondMagicNumber == 1) {
+            energyString += cardStrings.EXTENDED_DESCRIPTION[0];
+            energyString += cardStrings.EXTENDED_DESCRIPTION[2];
         }
+        else if (secondMagicNumber > 1) {
+            energyString += cardStrings.EXTENDED_DESCRIPTION[0];
+            for (int i = 0; i < secondMagicNumber - 1; i++) {
+                energyString += cardStrings.EXTENDED_DESCRIPTION[1];
+            }
+            energyString += cardStrings.EXTENDED_DESCRIPTION[2];
+        }
+        description += energyString;
         if (!upgraded) {
-            description += cardStrings.EXTENDED_DESCRIPTION[1];
+            description += cardStrings.EXTENDED_DESCRIPTION[2];
         }
         else
         {
-            description += cardStrings.EXTENDED_DESCRIPTION[2];
+            description += cardStrings.EXTENDED_DESCRIPTION[3];
         }
         return description;
     }
