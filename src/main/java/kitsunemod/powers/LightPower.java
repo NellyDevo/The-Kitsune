@@ -39,10 +39,9 @@ public class LightPower extends AbstractPower {
         //temporary until I start making power art too
         //img = ImageMaster.loadImage(IMG);
         loadRegion("echo");
-        updateDescription();
 
         baseThreshold = TRIGGER_BASE_STACKS;
-
+        updateDescription();
     }
 
     @Override

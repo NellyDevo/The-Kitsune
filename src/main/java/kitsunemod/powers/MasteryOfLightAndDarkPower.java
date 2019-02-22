@@ -10,7 +10,7 @@ import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.actions.ApplyLightAction;
 
 public class MasteryOfLightAndDarkPower extends AbstractPower {
-    public static final String POWER_ID = KitsuneMod.makeID("MasteryOfLightAndDark");
+    public static final String POWER_ID = KitsuneMod.makeID("MasteryOfLightAndDarkPower");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
