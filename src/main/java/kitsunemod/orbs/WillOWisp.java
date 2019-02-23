@@ -163,9 +163,9 @@ public class WillOWisp extends AbstractOrb {
     @Override
     public void render(final SpriteBatch sb) {
         sb.setColor(new Color(0.0f, 1.0f, 1.0f, 0.75f));
-        sb.draw(img[imgIndex], cX, cY + this.bobEffect.y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale * glowScale, 2.0f * Settings.scale * glowScale, 0.0f);
+        sb.draw(img[imgIndex], cX - img[imgIndex].packedWidth / 2.0f, cY + this.bobEffect.y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale * glowScale, 2.0f * Settings.scale * glowScale, 0.0f);
         sb.setColor(color);
-        sb.draw(img[imgIndex], cX, cY + this.bobEffect.y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale, 2.0f * Settings.scale, 0.0f);
+        sb.draw(img[imgIndex], cX - img[imgIndex].packedWidth / 2.0f, cY + this.bobEffect.y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale, 2.0f * Settings.scale, 0.0f);
         this.renderText(sb);
         this.hb.render(sb);
     }
