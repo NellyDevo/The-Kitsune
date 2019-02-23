@@ -426,19 +426,9 @@ public class KitsuneMod implements
     }
 
     public static int receivePlayerIsAttacked(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && !AbstractDungeon.player.hasPower(InTheShadowsPower.POWER_ID)) {
+        if (damageAmount > 0) {
             int blockingAmount = Math.min(damageAmount, AbstractDungeon.player.currentBlock);
 
-            if (info.type == DamageInfo.DamageType.HP_LOSS || blockingAmount < damageAmount) {
-                triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
-                if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
-                    ((AbstractElderCard)AbstractDungeon.player.cardInUse).onLoseHp(info, damageAmount);
-                }
-            }
             if (blockingAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS) {
                 triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
                 triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onBlockedDamage(blockingAmount));
@@ -451,6 +441,17 @@ public class KitsuneMod implements
             }
         }
         return damageAmount;
+    }
+    public static void receivePlayerTookDamage(DamageInfo info,  int damageAmount) {
+        //this function always gets triggered when its HP loss and the amount is > 0 so no sanity checking necessary
+        triggerElderFunctionsInGroup(AbstractDungeon.player.drawPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.hand, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.discardPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.exhaustPile, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+        triggerElderFunctionsInGroup(AbstractDungeon.player.limbo, (elderCard) -> elderCard.onLoseHp(info, damageAmount));
+        if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
+            ((AbstractElderCard) AbstractDungeon.player.cardInUse).onLoseHp(info, damageAmount);
+        }
     }
 
     public static void receiveOnApplyDark(int amount) {
