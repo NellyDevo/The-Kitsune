@@ -26,7 +26,6 @@ public class WillOWispAction extends AbstractGameAction {
     public WillOWispAction(float x, float y, AbstractCreature target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp orb, int imgIndex, float glowScale) {
         child = new WillOWispProjectile(x, y, target, duration, startColor, endColor, imgIndex, glowScale);
         AbstractDungeon.effectList.add(child);
-        this.target = target;
         this.info = info;
         this.orb = orb;
     }
@@ -69,12 +68,12 @@ public class WillOWispAction extends AbstractGameAction {
         if (isParent) {
             for (WillOWispProjectile projectile : children) {
                 if (projectile.doDamage && !projectile.didDamage) {
-                    target.damageFlash = true;
-                    target.damageFlashFrames = 4;
-                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, AttackEffect.FIRE));
-                    target.tint.color = Color.RED.cpy();
-                    target.tint.changeColor(Color.WHITE.cpy());
-                    target.damage(info);
+                    projectile.target.damageFlash = true;
+                    projectile.target.damageFlashFrames = 4;
+                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(projectile.target.hb.cX, projectile.target.hb.cY, AttackEffect.FIRE));
+                    projectile.target.tint.color = Color.RED.cpy();
+                    projectile.target.tint.changeColor(Color.WHITE.cpy());
+                    projectile.target.damage(info);
                     if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                         AbstractDungeon.actionManager.clearPostCombatActions();
                     }

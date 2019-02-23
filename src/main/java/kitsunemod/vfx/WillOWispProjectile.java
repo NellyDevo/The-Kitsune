@@ -15,6 +15,7 @@ public class WillOWispProjectile extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion[] img = WillOWisp.img;
     public boolean doDamage = false;
     public boolean didDamage = false;
+    public AbstractCreature target;
     private float startX;
     private float startY;
     private float endX;
@@ -34,6 +35,7 @@ public class WillOWispProjectile extends AbstractGameEffect {
     public WillOWispProjectile(float x, float y, AbstractCreature target, float endDuration, Color startColor, Color endColor, int imgIndex, float glowScale) {
         startX = this.x = x;
         startY = this.y = y;
+        this.target = target;
         endX = target.hb.cX;
         endY = target.hb.cY;
         duration = 0.0f;
