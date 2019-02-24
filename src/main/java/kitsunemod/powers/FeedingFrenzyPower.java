@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import kitsunemod.KitsuneMod;
+import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.KitsuneTags;
 
 public class FeedingFrenzyPower extends TwoAmountPower {
@@ -46,8 +48,11 @@ public class FeedingFrenzyPower extends TwoAmountPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         super.atEndOfTurn(isPlayer);
-        amount--;
-        flash();
+        this.stackPower(-1);
+        updateDescription();
+        if (this.amount <= 0) {
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+        }
     }
 
     @Override
@@ -58,6 +63,7 @@ public class FeedingFrenzyPower extends TwoAmountPower {
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL) {
+            flash();
             AbstractDungeon.actionManager.addToBottom(new HealAction(owner, owner, amount2));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlashPowerEffect(this)));
         }
