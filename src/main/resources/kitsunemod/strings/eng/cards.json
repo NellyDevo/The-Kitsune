@@ -205,7 +205,7 @@
   "kitsunemod:Insight": {
     "NAME": "Insight",
     "DESCRIPTION": "Whenever you play an kitsunemod:Aspect card, draw another kitsunemod:Aspect card from your draw pile.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "Whenever you play a card, draw another kitsunemod:Aspect card from your draw pile."
   },
   "kitsunemod:KitsuneShape": {
     "NAME": "Kitsune Shape",
