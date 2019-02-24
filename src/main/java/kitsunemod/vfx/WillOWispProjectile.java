@@ -15,6 +15,7 @@ public class WillOWispProjectile extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion[] img = WillOWisp.img;
     public boolean doDamage = false;
     public boolean didDamage = false;
+    public AbstractCreature target;
     private float startX;
     private float startY;
     private float endX;
@@ -34,6 +35,7 @@ public class WillOWispProjectile extends AbstractGameEffect {
     public WillOWispProjectile(float x, float y, AbstractCreature target, float endDuration, Color startColor, Color endColor, int imgIndex, float glowScale) {
         startX = this.x = x;
         startY = this.y = y;
+        this.target = target;
         endX = target.hb.cX;
         endY = target.hb.cY;
         duration = 0.0f;
@@ -99,10 +101,10 @@ public class WillOWispProjectile extends AbstractGameEffect {
     public void render(SpriteBatch sb) {
         if (glowScale > 0) {
             sb.setColor(new Color(0.0f, 1.0f, 1.0f, 0.75f));
-            sb.draw(img[imgIndex], x, y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale * glowScale, 2.0f * Settings.scale * glowScale, rotation);
+            sb.draw(img[imgIndex], x - img[imgIndex].packedWidth / 2.0f, y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale * glowScale, 2.0f * Settings.scale * glowScale, rotation);
         }
         sb.setColor(color);
-        sb.draw(img[imgIndex], x, y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale, 2.0f * Settings.scale, rotation);
+        sb.draw(img[imgIndex], x - img[imgIndex].packedWidth / 2.0f, y, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale, 2.0f * Settings.scale, rotation);
     }
 
     @Override

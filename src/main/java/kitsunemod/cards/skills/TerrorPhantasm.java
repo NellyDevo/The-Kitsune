@@ -39,7 +39,7 @@ public class TerrorPhantasm extends AbstractKitsuneCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, WEAK_VULN_AMOUNT, false)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, WEAK_VULN_AMOUNT, false)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TerrorPhantasmPower(m, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new TerrorPhantasmPower(m, magicNumber), magicNumber));
     }
 
     @Override
