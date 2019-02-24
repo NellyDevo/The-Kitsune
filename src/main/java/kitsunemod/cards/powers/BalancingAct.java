@@ -18,7 +18,7 @@ public class BalancingAct extends AbstractKitsuneCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "kitsunemod/images/cards/default_power.png";
+    public static final String IMG_PATH = "kitsunemod/images/cards/BalancingAct.png";
 
     private static final int COST = 1;
     private static final int BASE_AMOUNT = 18;
