@@ -22,7 +22,7 @@ public class BurnFromMemory extends AbstractKitsuneCard {
 
     private static final int DAMAGE_AMT = 28;
     private static final int UPGRADE_DAMAGE_AMT = 7;
-    private static final int HEAL_AMT = 15;
+    private static final int HEAL_AMT = 12;
 
     public BurnFromMemory() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

@@ -47,7 +47,7 @@
   },
   "kitsunemod:BurnFromMemory": {
     "NAME": "Burn From Memory",
-    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy and you are below half HP, heal 15 HP. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy and you are below half HP, heal !M! HP. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:CleansingNova": {
