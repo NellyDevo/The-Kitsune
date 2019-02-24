@@ -34,7 +34,7 @@ public class GatheringLight extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GatheringLightPower(p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GatheringLightPower(p, magicNumber), magicNumber));
     }
 
     @Override
