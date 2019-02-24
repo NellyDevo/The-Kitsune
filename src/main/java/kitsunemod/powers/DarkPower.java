@@ -1,5 +1,6 @@
 package kitsunemod.powers;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
@@ -23,7 +25,6 @@ public class DarkPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
     public static final DamageInfo.DamageType DARK_DAMAGE_TYPE = DamageInfo.DamageType.THORNS;
     private int baseThreshold;
@@ -39,9 +40,8 @@ public class DarkPower extends AbstractPower {
         type = PowerType.BUFF;
         amount = stacks;
 
-        //temporary until I start making power art too
-        //img = ImageMaster.loadImage(IMG);
-        loadRegion("corruption");
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/DarkPower_84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/DarkPower_32.png"), 0, 0, 32, 32);
 
         baseThreshold = TRIGGER_BASE_STACKS;
         updateDescription();
