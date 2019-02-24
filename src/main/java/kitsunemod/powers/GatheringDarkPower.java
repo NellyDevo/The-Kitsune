@@ -1,14 +1,16 @@
 package kitsunemod.powers;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 
-public class GatheringDarkPower extends AbstractPower implements GatheringPower{
+public class GatheringDarkPower extends AbstractPower implements GatheringPower {
 
     public static final String POWER_ID = KitsuneMod.makeID("GatheringDarkPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -24,9 +26,8 @@ public class GatheringDarkPower extends AbstractPower implements GatheringPower{
         type = PowerType.BUFF;
         amount = stacks;
 
-        //temporary until I start making power art too
-        //img = ImageMaster.loadImage(IMG);
-        loadRegion("corruption");
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/DarkPower_84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/DarkPower_32.png"), 0, 0, 32, 32);
         updateDescription();
     }
 
