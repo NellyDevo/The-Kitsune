@@ -41,7 +41,6 @@ import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.CharmMonsterPower;
-import kitsunemod.powers.InTheShadowsPower;
 import kitsunemod.powers.MasteryOfLightAndDarkPower;
 import kitsunemod.powers.RoaringFirePower;
 import kitsunemod.relics.KitsuneRelic;
@@ -364,7 +363,7 @@ public class KitsuneMod implements
             if (otherMonstersExist) {
                 target = AbstractDungeon.getRandomMonster(m);
             }
-            charm.actions.doActions(charm.move, target, otherMonstersExist);
+            charm.actions.doActions(charm.charmedMoveInfo, target, otherMonstersExist);
             return false;
         }
         return true;

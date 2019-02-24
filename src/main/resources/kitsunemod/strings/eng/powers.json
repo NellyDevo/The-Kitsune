@@ -26,7 +26,25 @@
   "kitsunemod:Charmed": {
     "NAME": "Charmed",
     "DESCRIPTIONS": [
-      "This monster will fight for you during this turn."]
+      "This monster will fight for you. Action: ",
+      "Attacking another random monster for #r",
+      " damage.",
+      "Giving you #g",
+      " #yStrength.",
+      "Applying ",
+      " #yWeak to a random monster.",
+      " #yWeak and ",
+      " #yVulnerable to a random monster.",
+      "Taking the next #b",
+      " damage you would take for the rest of the turn.",
+      " damage you would take for the rest of the turn, and ",
+      " damage, and ",
+      "giving you #g",
+      "applying ",
+      "taking the next #b",
+      " #yVulnerable to ALL monsters.",
+      "Stunned by your good looks and smooth moves!"
+    ]
   },
   "kitsunemod:CommuneWithSpirits": {
     "NAME": "Commune With Spirits",
