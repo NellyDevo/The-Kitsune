@@ -17,6 +17,7 @@ import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
+import kitsunemod.powers.NinetailedShapePower;
 
 public class AncientWisdom extends AbstractElderCard {
     public static final String ID = KitsuneMod.makeID("AncientWisdom");
@@ -49,7 +50,7 @@ public class AncientWisdom extends AbstractElderCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(FoxShapePower.POWER_ID)) {
+        if (p.hasPower(FoxShapePower.POWER_ID) || p.hasPower(NinetailedShapePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE));
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         }
