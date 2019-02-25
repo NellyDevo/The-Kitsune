@@ -346,7 +346,7 @@
   },
   "kitsunemod:ResoluteTechnique": {
     "NAME": "Resolute Technique",
-    "DESCRIPTION": "Gain !M! Weak, then deal !D! damage. Kitsune kitsunemod:Aspect: Loses HP instead.",
+    "DESCRIPTION": "Gain !M! Weak, then deal !D! damage. Kitsune kitsunemod:Aspect: Loses !kitsunemod:M2! HP instead.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:RoaringFire": {
