@@ -36,7 +36,7 @@ public class GrowingHunger extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new SoulstealPower(m, p, secondMagicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new SoulstealPower(m, p, secondMagicNumber), secondMagicNumber));
         rawDescription = DESCRIPTION;
         initializeDescription();
     }
