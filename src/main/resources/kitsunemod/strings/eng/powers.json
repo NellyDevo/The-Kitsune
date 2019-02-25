@@ -6,7 +6,7 @@
       " Light/Dark, or ",
       " Will-o-Wisp",
       " Will-o-Wisps",
-      " when this monster attacks you."]
+      " the first time this monster attacks you."]
   },
   "kitsunemod:LightPower": {
     "NAME": "Light",
