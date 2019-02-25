@@ -59,7 +59,7 @@ public class GrowingShadow extends AbstractKitsuneCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(p, p, darkToGain));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.2f));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
     }
 
     @Override
