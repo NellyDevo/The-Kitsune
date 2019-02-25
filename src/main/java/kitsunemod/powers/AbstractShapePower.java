@@ -47,6 +47,7 @@ public abstract class AbstractShapePower extends AbstractPower {
         isTurnBased = false;
         canGoNegative = true;
         type = PowerType.BUFF;
+        priority = -300;
 
     }
 
