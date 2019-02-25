@@ -422,7 +422,7 @@
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
     "DESCRIPTION": "Gain !kitsunemod:M2! kitsunemod:Shade. Your kitsunemod:Shade heals you for !M! this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain !kitsunemod:M2! kitsunemod:Shade. Your kitsunemod:Shade heals you for !M! this turn. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !kitsunemod:M2! kitsunemod:Shade. Your kitsunemod:Shade heals you for !M! this turn. NL Exhaust."
   },
   "kitsunemod:WaningExistence": {
     "NAME": "Waning Existence",
