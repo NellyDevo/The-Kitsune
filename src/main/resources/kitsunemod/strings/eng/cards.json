@@ -406,8 +406,8 @@
   },
   "kitsunemod:TransmuteSelf": {
     "NAME": "Transmute Self",
-    "DESCRIPTION": "Lose !kitsunemod:M2! HP. Gain !M! Shade.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Channel !M! kitsunemod:Will-o-Wisps."
+    "DESCRIPTION": "Lose !kitsunemod:M2! HP. Gain !M! kitsunemod:Shade.",
+    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TricksterFlame": {
     "NAME": "Trickster Flame",
