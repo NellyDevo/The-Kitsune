@@ -230,8 +230,8 @@
   },
   "kitsunemod:MassSuggestion": {
     "NAME": "Mass Suggestion",
-    "DESCRIPTION": "kitsunemod:Charm X random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
-    "UPGRADE_DESCRIPTION": "kitsunemod:Charm X+1 random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
+    "DESCRIPTION": "kitsunemod:Charm up to X different random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
+    "UPGRADE_DESCRIPTION": "kitsunemod:Charm up to X+1 different random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
     "EXTENDED_DESCRIPTION": [
       "It didn't have any effect!"
     ]

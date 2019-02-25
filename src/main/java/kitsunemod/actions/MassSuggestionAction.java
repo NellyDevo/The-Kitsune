@@ -56,6 +56,10 @@ public class MassSuggestionAction extends AbstractGameAction {
                     AbstractMonster tmp = legalTargets.get(AbstractDungeon.cardRandomRng.random(legalTargets.size() - 1));
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(tmp, AbstractDungeon.player, new CharmMonsterPower(tmp, 1), 1));
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(tmp, AbstractDungeon.player, new VulnerablePower(tmp, 1, false), 1));
+                    legalTargets.remove(tmp);
+                    if (legalTargets.size() == 0) {
+                        break;
+                    }
                 }
             }
         }
