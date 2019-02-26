@@ -4,24 +4,20 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
-import kitsunemod.actions.ChannelWillOWispAction;
-import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
-import kitsunemod.powers.KitsuneShapePower;
 
-public class PreciousAmulet extends KitsuneRelic implements ClickableRelic {
-    public static final String ID = KitsuneMod.makeID("PreciousAmulet");
+public class BrokenCollar extends KitsuneRelic implements ClickableRelic {
+    public static final String ID = KitsuneMod.makeID("BrokenCollar");
     public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
     public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
 
     public boolean active = true;
 
-    public PreciousAmulet() {
+    public BrokenCollar() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
         active = true;
         counter = 1;
@@ -32,7 +28,7 @@ public class PreciousAmulet extends KitsuneRelic implements ClickableRelic {
     public boolean shouldAutoChangeShape() {
         if (active) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ChangeShapeAction(AbstractDungeon.player, AbstractDungeon.player, new HumanShapePower(AbstractDungeon.player, AbstractDungeon.player)));
+                    new ChangeShapeAction(AbstractDungeon.player, AbstractDungeon.player, new FoxShapePower(AbstractDungeon.player, AbstractDungeon.player)));
             beginLongPulse();
             return false;
         }
@@ -51,16 +47,16 @@ public class PreciousAmulet extends KitsuneRelic implements ClickableRelic {
         flash();
         counter = (active) ? 1 : 0;
         //don't 100% like hardcoding the other in each's relic but whatever it works
-        if (active && AbstractDungeon.player.hasRelic(BrokenCollar.ID)) {
-            BrokenCollar other = (BrokenCollar)AbstractDungeon.player.getRelic(BrokenCollar.ID);
+        if (active && AbstractDungeon.player.hasRelic(PreciousAmulet.ID)) {
+            PreciousAmulet other = (PreciousAmulet)AbstractDungeon.player.getRelic(PreciousAmulet.ID);
             other.active = false;
             other.counter = 0;
         }
     }
 
     private void turnOffOther() {
-        if (AbstractDungeon.player.hasRelic(BrokenCollar.ID)) {
-            BrokenCollar other = (BrokenCollar)AbstractDungeon.player.getRelic(BrokenCollar.ID);
+        if (AbstractDungeon.player.hasRelic(PreciousAmulet.ID)) {
+            PreciousAmulet other = (PreciousAmulet)AbstractDungeon.player.getRelic(PreciousAmulet.ID);
             other.active = false;
             other.counter = 0;
         }
@@ -97,6 +93,6 @@ public class PreciousAmulet extends KitsuneRelic implements ClickableRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new PreciousAmulet();
+        return new BrokenCollar();
     }
 }

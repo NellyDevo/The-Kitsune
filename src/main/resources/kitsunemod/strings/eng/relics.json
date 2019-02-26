@@ -39,5 +39,12 @@
     "DESCRIPTIONS": [
       "Right click to toggle. When active, start each fight in Human #yShape."
     ]
+  },
+  "kitsunemod:BrokenCollar": {
+    "NAME": "Broken Collar",
+    "FLAVOR": "A reminder I will never be bound again.",
+    "DESCRIPTIONS": [
+      "Right click to toggle. When active, start each fight in Fox #yShape."
+    ]
   }
 }
