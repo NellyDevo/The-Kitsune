@@ -27,8 +27,13 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
+import kitsunemod.powers.FoxShapePower;
+import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
+import kitsunemod.powers.NinetailedShapePower;
+import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.LuminousPearl;
+import kitsunemod.relics.PreciousAmulet;
 import kitsunemod.relics.WornPearl;
 
 import java.util.ArrayList;
@@ -267,7 +272,13 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        if (!hasRelic(LuminousPearl.ID)) {
+        //.allMatch is short-circuiting, so technically the first relic that says no prevents further ones from triggering.
+        //This is, at this time, intended - if that needs to change, change it here
+        //The only relics slated to alter default shape are the 2 commons that alter starting shape and Luminous Pearl, and you can't have the last with the other two
+        boolean useDefaultShape = relics.stream()
+                .filter(relic -> relic instanceof KitsuneRelic)
+                .allMatch(relic -> ((KitsuneRelic) relic).shouldAutoChangeShape());
+        if (useDefaultShape) {
             AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(this, this, new KitsuneShapePower(this, this)));
         }
     }

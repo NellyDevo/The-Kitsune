@@ -39,9 +39,8 @@ public class LuminousPearl extends KitsuneRelic {
     public static final int STR_PER_SHAPESHIFT_CARD = 1;
     public static final int DEX_PER_SHAPESHIFT_CARD = 1;
 
-
     @Override
-    public void atBattleStartPreDraw() {
+    public boolean shouldAutoChangeShape() {
         int drawPileCards = exhaustShapeshiftCardsInPile(AbstractDungeon.player.drawPile, CardGroup.DRAW_PILE_X, CardGroup.DRAW_PILE_Y);
         int handCards = exhaustShapeshiftCardsInPile(AbstractDungeon.player.hand, CardGroup.DRAW_PILE_X, CardGroup.DRAW_PILE_Y);
         int discardPileCards = exhaustShapeshiftCardsInPile(AbstractDungeon.player.discardPile, CardGroup.DISCARD_PILE_X, CardGroup.DISCARD_PILE_Y);
@@ -51,8 +50,8 @@ public class LuminousPearl extends KitsuneRelic {
 
         AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(AbstractDungeon.player, AbstractDungeon.player,
                 new NinetailedShapePower(AbstractDungeon.player,AbstractDungeon.player,strGain,dexGain)));
+        return false;
     }
-
     private int exhaustShapeshiftCardsInPile(CardGroup toCheck, float exhaustFromX, float exhaustFromY) {
         CardGroup shapeshiftCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 

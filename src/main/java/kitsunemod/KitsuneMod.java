@@ -43,10 +43,7 @@ import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.CharmMonsterPower;
 import kitsunemod.powers.MasteryOfLightAndDarkPower;
 import kitsunemod.powers.RoaringFirePower;
-import kitsunemod.relics.KitsuneRelic;
-import kitsunemod.relics.LuminousPearl;
-import kitsunemod.relics.ShiningPearl;
-import kitsunemod.relics.WornPearl;
+import kitsunemod.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -318,6 +315,7 @@ public class KitsuneMod implements
         BaseMod.addRelicToCustomPool(new LuminousPearl(), KITSUNE_COLOR);
 
         //Common
+        BaseMod.addRelicToCustomPool(new PreciousAmulet(), KITSUNE_COLOR);
 
         //Uncommon
 

@@ -28,9 +28,16 @@
   },
   "kitsunemod:LuminousPearl": {
     "NAME": "Luminous Pearl",
-    "FLAVOR": "It would seem that with my offering, I have ascended to become an elder spirit...",
+    "FLAVOR": "It would seem that with my offering, I have ascended to become an elder spirit.",
     "DESCRIPTIONS": [
-      "Start each fight in Ninetailed Shape and #yExhaust all #yShapeshift cards in your deck to gain 1 #yStrength and #yDexterity for each."
+      "Start each fight in Ninetailed #yShape and #yExhaust all #yShapeshift cards in your deck to gain 1 #yStrength and #yDexterity for each."
+    ]
+  },
+  "kitsunemod:PreciousAmulet": {
+    "NAME": "Precious Amulet",
+    "FLAVOR": "But how could this be here? I miss her so much...",
+    "DESCRIPTIONS": [
+      "Right click to toggle. When active, start each fight in Human #yShape."
     ]
   }
 }
