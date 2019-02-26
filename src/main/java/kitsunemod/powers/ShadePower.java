@@ -2,23 +2,20 @@ package kitsunemod.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
-public class InTheShadowsPower extends TwoAmountPower {
+public class ShadePower extends TwoAmountPower {
 
-    public static final String POWER_ID = KitsuneMod.makeID("InTheShadowsPower");
+    public static final String POWER_ID = KitsuneMod.makeID("ShadePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -26,7 +23,7 @@ public class InTheShadowsPower extends TwoAmountPower {
     public static final int DEFAULT_HEAL_AMOUNT = 2;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
-    public InTheShadowsPower(
+    public ShadePower(
             final AbstractCreature owner,
             final int stacks,
             final int healAmount) {
@@ -47,7 +44,7 @@ public class InTheShadowsPower extends TwoAmountPower {
         updateDescription();
 
     }
-    public InTheShadowsPower(final AbstractCreature owner, final int stacks) {
+    public ShadePower(final AbstractCreature owner, final int stacks) {
         this(owner, stacks, DEFAULT_HEAL_AMOUNT);
     }
 

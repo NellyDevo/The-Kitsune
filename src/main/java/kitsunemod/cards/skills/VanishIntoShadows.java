@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.InTheShadowsPower;
+import kitsunemod.powers.ShadePower;
 
 public class VanishIntoShadows extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("VanishIntoShadows");
@@ -37,15 +37,15 @@ public class VanishIntoShadows extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(InTheShadowsPower.POWER_ID)) {
-            InTheShadowsPower power = (InTheShadowsPower)p.getPower(InTheShadowsPower.POWER_ID);
+        if (p.hasPower(ShadePower.POWER_ID)) {
+            ShadePower power = (ShadePower)p.getPower(ShadePower.POWER_ID);
             power.stackPower(secondMagicNumber);
             power.amount2 = magicNumber;
             power.flash();
         }
         else
         {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, secondMagicNumber, magicNumber),secondMagicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadePower(p, secondMagicNumber, magicNumber),secondMagicNumber));
         }
     }
 

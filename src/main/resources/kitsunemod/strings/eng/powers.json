@@ -137,8 +137,8 @@
       " #yDexterity."
     ]
   },
-  "kitsunemod:InTheShadowsPower": {
-    "NAME": "In the Shadows",
+  "kitsunemod:ShadePower": {
+    "NAME": "Shade",
     "DESCRIPTIONS": [
       "Hiding in the shadows. Heal #g",
       " HP instead of being damaged for ",
@@ -202,7 +202,7 @@
   "kitsunemod:RoaringFirePower": {
     "NAME": "Roaring Fire",
     "DESCRIPTIONS": [
-      "Channeling a #yWIll-o-Wisp every ",
+      "Channeling a #yWill-o-Wisp every ",
       " [E] spent."
     ]
   },

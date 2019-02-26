@@ -69,7 +69,7 @@ public class LashOut extends AbstractKitsuneCard {
         }
         if (isKitsune) {
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, magicNumber, InTheShadowsPower.DEFAULT_HEAL_AMOUNT)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadePower(p, magicNumber, ShadePower.DEFAULT_HEAL_AMOUNT)));
         }
         if (isHuman) {
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));

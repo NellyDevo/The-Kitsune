@@ -1,6 +1,5 @@
 package kitsunemod.cards.skills;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.InTheShadowsPower;
+import kitsunemod.powers.ShadePower;
 
 public class TransmuteSelf extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("TransmuteSelf");
@@ -39,7 +38,7 @@ public class TransmuteSelf extends AbstractKitsuneCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, secondMagicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InTheShadowsPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadePower(p, magicNumber), magicNumber));
     }
 
     @Override

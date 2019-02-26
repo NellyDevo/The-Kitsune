@@ -1,6 +1,5 @@
 package kitsunemod.cards.skills;
 
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.InTheShadowsPower;
 import kitsunemod.powers.TerrorPhantasmPower;
 
 public class TerrorPhantasm extends AbstractKitsuneCard {
