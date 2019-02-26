@@ -406,7 +406,7 @@
   },
   "kitsunemod:TransmuteSelf": {
     "NAME": "Transmute Self",
-    "DESCRIPTION": "Lose !kitsunemod:M2! HP. Gain !M! kitsunemod:Shade.",
+    "DESCRIPTION": "Lose !kitsunemod:M2! HP. Gain !M! kitsunemod:Shade. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TricksterFlame": {

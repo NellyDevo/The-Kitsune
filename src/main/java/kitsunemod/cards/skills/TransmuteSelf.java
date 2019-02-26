@@ -33,6 +33,7 @@ public class TransmuteSelf extends AbstractKitsuneCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = SHADE_STACKS;
         secondMagicNumber = baseSecondMagicNumber = HP_LOSS;
+        exhaust = true;
     }
 
     @Override
