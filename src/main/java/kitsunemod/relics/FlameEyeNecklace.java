@@ -13,7 +13,7 @@ public class FlameEyeNecklace extends KitsuneRelic {
     private static final int MAX_WISP_REDUCE = 4;
 
     public FlameEyeNecklace() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     @Override
