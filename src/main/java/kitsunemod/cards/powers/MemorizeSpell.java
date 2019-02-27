@@ -42,7 +42,6 @@ public class MemorizeSpell extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            AlwaysRetainField.alwaysRetain.set(this, true);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
