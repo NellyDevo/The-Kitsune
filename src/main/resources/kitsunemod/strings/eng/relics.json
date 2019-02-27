@@ -1,4 +1,12 @@
 {
+  "kitsunemod:GlowingMatch": {
+    "NAME": "Glowing Match",
+    "FLAVOR": "Came with a note that says \"Never let the fire in you die.\"",
+    "DESCRIPTIONS": [
+      "#yWill-o-Wisps deal #b",
+      " extra damage."
+    ]
+  },
   "kitsunemod:WornPearl": {
     "NAME": "Worn Pearl",
     "FLAVOR": "As close to me as my heart.",

@@ -17,8 +17,10 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.WillOWispAction;
+import kitsunemod.relics.KitsuneRelic;
 
 public class WillOWisp extends AbstractOrb {
     public static final String ORB_ID = KitsuneMod.makeID("Will-O-Wisp");
@@ -76,6 +78,11 @@ public class WillOWisp extends AbstractOrb {
         for (AbstractOrb orb : AbstractDungeon.player.orbs) {
             if (orb instanceof WillOWisp) {
                 ++damage;
+            }
+        }
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof KitsuneRelic) {
+                damage = ((KitsuneRelic)relic).onCalculateWispDamage(damage);
             }
         }
         evokeAmount = damage;

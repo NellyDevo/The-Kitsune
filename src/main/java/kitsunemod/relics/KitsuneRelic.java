@@ -19,4 +19,5 @@ public abstract class KitsuneRelic extends CustomRelic {
 
     public void onChangeShape(KitsuneMod.KitsuneShapes shape) {}
     public boolean shouldAutoChangeShape() {return true;}
+    public int onCalculateWispDamage(int amount) {return amount;}
 }

@@ -320,6 +320,7 @@ public class KitsuneMod implements
         BaseMod.addRelicToCustomPool(new MiniatureFountain(), KITSUNE_COLOR);
 
         //Uncommon
+        BaseMod.addRelicToCustomPool(new GlowingMatch(), KITSUNE_COLOR);
 
         //Rare
 
