@@ -81,6 +81,15 @@
       "Right click to toggle. When active, start each fight in Human #yShape."
     ]
   },
+  "kitsunemod:QuicksandPouch": {
+    "NAME": "Quicksand Pouch",
+    "FLAVOR": "Somehow enemy attacks pass right through me with this.",
+    "DESCRIPTIONS": [
+      "If you're below #r",
+      "% HP at the start of combat, gain #b",
+      " #yShade."
+    ]
+  },
   "kitsunemod:BrokenCollar": {
     "NAME": "Broken Collar",
     "FLAVOR": "A reminder I will never be bound again.",

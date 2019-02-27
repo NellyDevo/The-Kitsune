@@ -326,6 +326,7 @@ public class KitsuneMod implements
 
         //Rare
         BaseMod.addRelicToCustomPool(new PendulumOfEternalBalance(), KITSUNE_COLOR);
+        BaseMod.addRelicToCustomPool(new QuicksandPouch(), KITSUNE_COLOR);
 
         //Shop
 
