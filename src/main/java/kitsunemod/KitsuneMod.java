@@ -332,6 +332,7 @@ public class KitsuneMod implements
 
         //Boss
         BaseMod.addRelicToCustomPool(new FlameEyeNecklace(), KITSUNE_COLOR);
+        BaseMod.addRelicToCustomPool(new RunicChoker(), KITSUNE_COLOR);
     }
 
     //                                  //

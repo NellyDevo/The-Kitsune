@@ -7,10 +7,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.powers.*;
 
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.actions.ApplyLightAction;
 import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.relics.KitsuneRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,27 +60,33 @@ public class SoulstealPower extends AbstractPower {
     }
 
     public void applySoulsteal(AbstractCreature target, boolean isFromAttack) {
-        AbstractPlayer targetPlayer = (AbstractPlayer)target;
-        if (target.hasPower(FoxShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
-            hasSoulstealed = isFromAttack;
+        AbstractPlayer targetPlayer = (AbstractPlayer) target;
+        boolean shouldTrigger = true;
+        for (AbstractRelic relic : targetPlayer.relics) {
+            if (relic instanceof KitsuneRelic) {
+                if (!((KitsuneRelic)relic).shouldTriggerSoulsteal()) {
+                    shouldTrigger = false;
+                    break;
+                }
+            }
         }
-        else if (target.hasPower(KitsuneShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILL_O_WISPS));
-            hasSoulstealed = isFromAttack;
+        if (shouldTrigger) {
+            if (target.hasPower(FoxShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
+                hasSoulstealed = isFromAttack;
+            } else if (target.hasPower(KitsuneShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILL_O_WISPS));
+                hasSoulstealed = isFromAttack;
+            } else if (target.hasPower(HumanShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
+                hasSoulstealed = isFromAttack;
+            } else if (target.hasPower(NinetailedShapePower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(NINETAILED_WILL_O_WISPS));
+                hasSoulstealed = isFromAttack;
+            } else {
+                logger.info("Soulsteal attempted to apply to a player without a Shape, is this intentional?");
+            }
         }
-        else if (target.hasPower(HumanShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(targetPlayer, owner, this.amount * LIGHT_DARK_PER_STACK));
-            hasSoulstealed = isFromAttack;
-        }
-        else if (target.hasPower(NinetailedShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(NINETAILED_WILL_O_WISPS));
-            hasSoulstealed = isFromAttack;
-        }
-        else {
-            logger.info("Soulsteal attempted to apply to a player without a Shape, is this intentional?");
-        }
-
     }
 
     @Override

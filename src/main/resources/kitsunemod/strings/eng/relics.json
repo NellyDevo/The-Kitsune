@@ -98,6 +98,13 @@
       " #yShade."
     ]
   },
+  "kitsunemod:RunicChoker": {
+    "NAME": "Runic Choker",
+    "FLAVOR": "Not nearly as velvety-smooth as others but really enhances that punk warlock look.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. You can no longer trigger #ySoulsteal."
+    ]
+  },
   "kitsunemod:BrokenCollar": {
     "NAME": "Broken Collar",
     "FLAVOR": "A reminder I will never be bound again.",

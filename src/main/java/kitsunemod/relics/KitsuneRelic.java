@@ -25,4 +25,5 @@ public abstract class KitsuneRelic extends CustomRelic {
     public void onTriggeredDark() {}
     public void onTriggeredLight() {}
     public int onCalculateMaxWisps(int amount) {return amount;}
+    public boolean shouldTriggerSoulsteal() {return true;}
 }
