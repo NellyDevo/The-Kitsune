@@ -66,6 +66,14 @@
       " #yLight."
     ]
   },
+  "kitsunemod:PendulumOfEternalBalance": {
+    "NAME": "Pendulum of Eternal Balance",
+    "FLAVOR": "If held, it never stops swinging back and forth.",
+    "DESCRIPTIONS": [
+      "When you trigger #yLight or #yDark, reset to #b",
+      " stacks of the opposite."
+    ]
+  },
   "kitsunemod:PreciousAmulet": {
     "NAME": "Precious Amulet",
     "FLAVOR": "But how could this be here? I miss her so much...",

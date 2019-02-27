@@ -325,6 +325,7 @@ public class KitsuneMod implements
         BaseMod.addRelicToCustomPool(new CuriousVial(), KITSUNE_COLOR);
 
         //Rare
+        BaseMod.addRelicToCustomPool(new PendulumOfEternalBalance(), KITSUNE_COLOR);
 
         //Shop
 
@@ -600,6 +601,11 @@ public class KitsuneMod implements
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onTriggerLight();
         }
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof KitsuneRelic) {
+                ((KitsuneRelic)relic).onTriggeredLight();
+            }
+        }
     }
 
     public static void receiveOnTriggerDark() {
@@ -628,6 +634,11 @@ public class KitsuneMod implements
         }
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onTriggerDark();
+        }
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof KitsuneRelic) {
+                ((KitsuneRelic)relic).onTriggeredDark();
+            }
         }
     }
 
