@@ -7,6 +7,14 @@
       " stacks earlier."
     ]
   },
+  "kitsunemod:CuriousVial": {
+    "NAME": "Curious Vial",
+    "FLAVOR": "It always seems to refill itself with a strange black liquid when you aren't looking at it...",
+    "DESCRIPTIONS": [
+      "Taking damage in combat charges the relic up to #b",
+      " charges. Right click to consume the charges and gain that much #yDark."
+    ]
+  },
   "kitsunemod:GlowingMatch": {
     "NAME": "Glowing Match",
     "FLAVOR": "Came with a note that says \"Never let the fire in you die.\"",
