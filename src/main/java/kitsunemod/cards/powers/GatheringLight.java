@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.GatheringDarkPower;
 import kitsunemod.powers.GatheringLightPower;
 
 public class GatheringLight extends AbstractKitsuneCard {

@@ -1,25 +1,15 @@
 package kitsunemod.relics;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.Soul;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.effects.ShowCardAndExhaustEffect;
 import kitsunemod.patches.KitsuneTags;
-import kitsunemod.powers.FoxShapePower;
-import kitsunemod.powers.HumanShapePower;
-import kitsunemod.powers.KitsuneShapePower;
 import kitsunemod.powers.NinetailedShapePower;
 
 public class LuminousPearl extends KitsuneRelic {

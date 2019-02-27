@@ -11,7 +11,6 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.HeightenedReflexesPower;
-import kitsunemod.powers.UnstableShapePower;
 
 public class HeightenedReflexes extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("HeightenedReflexes");

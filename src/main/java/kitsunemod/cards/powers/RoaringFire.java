@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.InsightPower;
 import kitsunemod.powers.RoaringFirePower;
 
 public class RoaringFire extends AbstractKitsuneCard {

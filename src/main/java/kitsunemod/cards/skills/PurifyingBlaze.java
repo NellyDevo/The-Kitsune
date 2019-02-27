@@ -1,7 +1,6 @@
 package kitsunemod.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,11 +12,9 @@ import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.EvokeWillOWispTargetedAction;
-import kitsunemod.actions.ManuallyTriggerSoulstealAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.SoulstealPower;
 
 public class PurifyingBlaze extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("PurifyingBlaze");

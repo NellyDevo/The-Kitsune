@@ -2,7 +2,6 @@ package kitsunemod.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -17,7 +16,6 @@ import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.NinetailedShapePower;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 public class PackKill extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("PackKill");

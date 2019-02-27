@@ -1,7 +1,6 @@
 package kitsunemod.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,9 +14,6 @@ import kitsunemod.actions.ApplyLightAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
-import kitsunemod.powers.HumanShapePower;
-import kitsunemod.powers.NinetailedShapePower;
-import kitsunemod.powers.SoulstealPower;
 
 public class FlashOfLight extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("FlashOfLight");

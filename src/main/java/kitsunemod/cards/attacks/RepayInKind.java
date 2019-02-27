@@ -14,11 +14,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.patches.KitsuneTags;
-import kitsunemod.powers.KitsuneShapePower;
 
 public class RepayInKind extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("RepayInKind");

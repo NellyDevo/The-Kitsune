@@ -3,8 +3,6 @@ package kitsunemod.cards;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import kitsunemod.KitsuneMod;
 
 public abstract class AbstractKitsuneCard extends CustomCard {

@@ -1,8 +1,8 @@
 package kitsunemod.cards;
 
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import basemod.abstracts.DynamicVariable;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;

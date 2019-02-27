@@ -1,7 +1,5 @@
 package kitsunemod.cards.attacks;
 
-import basemod.helpers.BaseModCardTags;
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,7 +15,6 @@ import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
-import kitsunemod.powers.KitsuneShapePower;
 
 public class FoxShape extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("FoxShape");

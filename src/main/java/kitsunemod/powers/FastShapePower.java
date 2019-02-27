@@ -1,6 +1,5 @@
 package kitsunemod.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCardDrawPower;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -13,9 +12,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.powers.FastShape;
 import kitsunemod.patches.KitsuneTags;
-
-import java.util.HashMap;
-import java.util.UUID;
 
 public class FastShapePower extends AbstractPower {
 

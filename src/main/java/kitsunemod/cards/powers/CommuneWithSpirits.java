@@ -11,7 +11,6 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.CommuneWithSpiritsPower;
-import kitsunemod.powers.GatheringDarkPower;
 
 public class CommuneWithSpirits extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("CommuneWithSpirits");

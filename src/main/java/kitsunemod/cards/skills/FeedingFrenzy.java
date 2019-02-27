@@ -1,9 +1,7 @@
 package kitsunemod.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.Feed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,11 +9,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ManuallyTriggerSoulstealAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
-import kitsunemod.powers.*;
+import kitsunemod.powers.DelayedStrengthLossPower;
+import kitsunemod.powers.FeedingFrenzyPower;
+import kitsunemod.powers.FoxShapePower;
+import kitsunemod.powers.NinetailedShapePower;
 
 public class FeedingFrenzy extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("FeedingFrenzy");

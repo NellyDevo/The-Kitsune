@@ -1,8 +1,6 @@
 package kitsunemod.cards.skills;
 
 import basemod.BaseMod;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,7 +15,6 @@ import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
-import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.NinetailedShapePower;
 
 public class AncientWisdom extends AbstractElderCard {

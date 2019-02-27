@@ -11,12 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
-import kitsunemod.actions.ManuallyTriggerSoulstealAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
-import kitsunemod.powers.SoulstealPower;
 
 public class GrowingShadow extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("GrowingShadow");

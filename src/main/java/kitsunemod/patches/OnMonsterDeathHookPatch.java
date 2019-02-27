@@ -3,7 +3,6 @@ package kitsunemod.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CtBehavior;
 import kitsunemod.KitsuneMod;
 

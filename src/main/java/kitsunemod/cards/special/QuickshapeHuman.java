@@ -12,7 +12,6 @@ import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.HumanShapePower;
-import kitsunemod.powers.KitsuneShapePower;
 
 public class QuickshapeHuman extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("QuickshapeHuman");

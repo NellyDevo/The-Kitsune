@@ -1,7 +1,6 @@
 package kitsunemod.cards.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,7 +12,6 @@ import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FastShapePower;
-import kitsunemod.powers.InsightPower;
 
 public class FastShape extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("FastShape");

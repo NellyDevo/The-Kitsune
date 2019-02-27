@@ -11,7 +11,6 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.KitsuneShapePower;
 
 public class QuickshapeKitsune extends AbstractKitsuneCard {

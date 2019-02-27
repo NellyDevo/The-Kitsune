@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChannelWillOWispAction;
-import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;

@@ -11,7 +11,6 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.powers.InsightPower;
-import kitsunemod.powers.PerfectedShapePower;
 
 public class Insight extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("Insight");

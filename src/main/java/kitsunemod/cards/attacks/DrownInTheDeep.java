@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.DrownInTheDeepAction;
-import kitsunemod.actions.MassSuggestionAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 

@@ -27,11 +27,9 @@ import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.basic.Wink;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
-import kitsunemod.powers.FoxShapePower;
-import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
-import kitsunemod.powers.NinetailedShapePower;
-import kitsunemod.relics.*;
+import kitsunemod.relics.KitsuneRelic;
+import kitsunemod.relics.WornPearl;
 
 import java.util.ArrayList;
 import java.util.HashMap;

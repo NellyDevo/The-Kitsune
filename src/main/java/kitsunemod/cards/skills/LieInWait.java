@@ -1,7 +1,6 @@
 package kitsunemod.cards.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,8 +13,6 @@ import com.megacrit.cardcrawl.powers.ConservePower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.HumanShapePower;
-import kitsunemod.powers.NinetailedShapePower;
 
 public class LieInWait extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("LieInWait");

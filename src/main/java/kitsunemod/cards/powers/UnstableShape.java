@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.PerfectedShapePower;
 import kitsunemod.powers.UnstableShapePower;
 
 public class UnstableShape extends AbstractKitsuneCard {

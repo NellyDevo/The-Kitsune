@@ -1,6 +1,5 @@
 package kitsunemod.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import kitsunemod.KitsuneMod;

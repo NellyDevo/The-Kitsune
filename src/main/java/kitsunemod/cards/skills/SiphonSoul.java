@@ -1,6 +1,5 @@
 package kitsunemod.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.CharmMonsterPower;
 import kitsunemod.powers.SoulstealPower;
 
 public class SiphonSoul extends AbstractKitsuneCard {
