@@ -33,6 +33,15 @@
       "Start each fight in Ninetailed #yShape and #yExhaust all #yShapeshift cards in your deck to gain 1 #yStrength and #yDexterity for each."
     ]
   },
+  "kitsunemod:MiniatureFountain": {
+    "NAME": "Miniature Fountain",
+    "FLAVOR": "Leaves the user feeling refreshed and purified.",
+    "DESCRIPTIONS": [
+      "After #b",
+      " turns in combat, gain #b",
+      " #yLight."
+    ]
+  },
   "kitsunemod:PreciousAmulet": {
     "NAME": "Precious Amulet",
     "FLAVOR": "But how could this be here? I miss her so much...",

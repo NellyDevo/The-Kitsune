@@ -317,6 +317,7 @@ public class KitsuneMod implements
         //Common
         BaseMod.addRelicToCustomPool(new PreciousAmulet(), KITSUNE_COLOR);
         BaseMod.addRelicToCustomPool(new BrokenCollar(), KITSUNE_COLOR);
+        BaseMod.addRelicToCustomPool(new MiniatureFountain(), KITSUNE_COLOR);
 
         //Uncommon
 
