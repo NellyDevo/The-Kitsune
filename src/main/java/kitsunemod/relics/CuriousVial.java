@@ -22,11 +22,10 @@ public class CuriousVial extends KitsuneRelic implements ClickableRelic {
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
+    public void onLoseHp(int damageAmount) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && counter < MAX_STACKS) {
             ++counter;
         }
-        return damageAmount;
     }
 
     @Override
