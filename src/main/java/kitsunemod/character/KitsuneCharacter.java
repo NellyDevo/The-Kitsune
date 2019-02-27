@@ -31,10 +31,7 @@ import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
 import kitsunemod.powers.NinetailedShapePower;
-import kitsunemod.relics.KitsuneRelic;
-import kitsunemod.relics.LuminousPearl;
-import kitsunemod.relics.PreciousAmulet;
-import kitsunemod.relics.WornPearl;
+import kitsunemod.relics.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
