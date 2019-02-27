@@ -1,4 +1,12 @@
 {
+  "kitsunemod:BlackAndWhiteStone": {
+    "NAME": "Black and White Stone",
+    "FLAVOR": "A symbol of the Eternal Balance. Strange I'd find it here.",
+    "DESCRIPTIONS": [
+      "#yDark and #yLight trigger #b",
+      " stacks earlier."
+    ]
+  },
   "kitsunemod:GlowingMatch": {
     "NAME": "Glowing Match",
     "FLAVOR": "Came with a note that says \"Never let the fire in you die.\"",

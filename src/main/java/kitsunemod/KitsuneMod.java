@@ -321,6 +321,7 @@ public class KitsuneMod implements
 
         //Uncommon
         BaseMod.addRelicToCustomPool(new GlowingMatch(), KITSUNE_COLOR);
+        BaseMod.addRelicToCustomPool(new BlackAndWhiteStone(), KITSUNE_COLOR);
 
         //Rare
 

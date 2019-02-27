@@ -10,8 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import kitsunemod.KitsuneMod;
+import kitsunemod.relics.KitsuneRelic;
 
 public class LightPower extends AbstractPower {
 
@@ -75,6 +77,11 @@ public class LightPower extends AbstractPower {
     private int calculateThreshold(int amount) {
         if (owner.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
             amount = ((MasteryOfLightAndDarkPower)owner.getPower(MasteryOfLightAndDarkPower.POWER_ID)).affectThreshold(amount);
+        }
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof KitsuneRelic) {
+                amount = ((KitsuneRelic)relic).onCalculateLightTriggerThreshold(amount);
+            }
         }
         return amount;
     }
