@@ -22,12 +22,14 @@ public class WillOWispAction extends AbstractGameAction {
     private boolean isParent = false;
     private DamageInfo info;
     public WillOWisp orb;
+    private boolean restoreSlot;
 
-    public WillOWispAction(float x, float y, AbstractCreature target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp orb, int imgIndex, float glowScale) {
+    public WillOWispAction(float x, float y, AbstractCreature target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp orb, int imgIndex, float glowScale, boolean restoreSlot) {
         child = new WillOWispProjectile(x, y, target, duration, startColor, endColor, imgIndex, glowScale);
         AbstractDungeon.effectList.add(child);
         this.info = info;
         this.orb = orb;
+        this.restoreSlot = restoreSlot;
     }
 
     @Override
@@ -38,10 +40,12 @@ public class WillOWispAction extends AbstractGameAction {
             children = new ArrayList<>();
             children.add(child);
             AbstractDungeon.player.orbs.remove(orb);
-            if (orb.tookSlot) {
-                p.orbs.add(new EmptyOrbSlot());
-            } else {
-                --p.maxOrbs;
+            if (restoreSlot) {
+                if (orb.tookSlot) {
+                    p.orbs.add(new EmptyOrbSlot());
+                } else {
+                    --p.maxOrbs;
+                }
             }
             float frameExtender = 0.0f;
             for (AbstractGameAction action : AbstractDungeon.actionManager.actions) {
@@ -52,10 +56,12 @@ public class WillOWispAction extends AbstractGameAction {
                     children.add(((WillOWispAction)action).child);
                     WillOWisp otherOrb = ((WillOWispAction)action).orb;
                     AbstractDungeon.player.orbs.remove(otherOrb);
-                    if (otherOrb.tookSlot) {
-                        p.orbs.add(new EmptyOrbSlot());
-                    } else {
-                        --p.maxOrbs;
+                    if (restoreSlot) {
+                        if (otherOrb.tookSlot) {
+                            p.orbs.add(new EmptyOrbSlot());
+                        } else {
+                            --p.maxOrbs;
+                        }
                     }
                 }
             }

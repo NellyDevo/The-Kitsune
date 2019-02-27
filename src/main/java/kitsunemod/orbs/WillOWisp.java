@@ -93,7 +93,7 @@ public class WillOWisp extends AbstractOrb {
     public void onEvoke() {
         applyFocus();
         AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.33f, color, Color.RED.cpy(), this, imgIndex, glowScale));
+        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.33f, color, Color.RED.cpy(), this, imgIndex, glowScale, true));
         if (tookSlot) {
             for (AbstractOrb orb : AbstractDungeon.player.orbs) {
                 if (orb instanceof WillOWisp && !((WillOWisp)orb).tookSlot && orb != this) {
@@ -110,7 +110,7 @@ public class WillOWisp extends AbstractOrb {
     }
     public void onEvoke(AbstractCreature target) {
         applyFocus();
-        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.33f, color, Color.RED.cpy(), this, imgIndex, glowScale));
+        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.33f, color, Color.RED.cpy(), this, imgIndex, glowScale, true));
         if (tookSlot) {
             for (AbstractOrb orb : AbstractDungeon.player.orbs) {
                 if (orb instanceof WillOWisp && !((WillOWisp)orb).tookSlot && orb != this) {
@@ -131,7 +131,13 @@ public class WillOWisp extends AbstractOrb {
     public void onEndOfTurn() {
         applyFocus();
         AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale));
+        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale, true));
+    }
+
+    public void evokeWithoutAffectingSlots() {
+        applyFocus();
+        AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale, false));
     }
 
     @Override

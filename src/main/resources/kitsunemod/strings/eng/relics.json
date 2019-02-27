@@ -15,6 +15,14 @@
       " charges. Right click to consume the charges and gain that much #yDark."
     ]
   },
+  "kitsunemod:FlameEyeNecklace": {
+    "NAME": "Flame-Eye Necklace",
+    "FLAVOR": "I feel invigorated, but spirits seem to shy away from me now...",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Reduce your maximum #yWill-o-Wisp count by #b",
+      "."
+    ]
+  },
   "kitsunemod:GlowingMatch": {
     "NAME": "Glowing Match",
     "FLAVOR": "Came with a note that says \"Never let the fire in you die.\"",

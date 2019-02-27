@@ -24,4 +24,5 @@ public abstract class KitsuneRelic extends CustomRelic {
     public int onCalculateDarkTriggerThreshold(int amount) {return amount;}
     public void onTriggeredDark() {}
     public void onTriggeredLight() {}
+    public int onCalculateMaxWisps(int amount) {return amount;}
 }

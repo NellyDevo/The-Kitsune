@@ -331,6 +331,7 @@ public class KitsuneMod implements
         //Shop
 
         //Boss
+        BaseMod.addRelicToCustomPool(new FlameEyeNecklace(), KITSUNE_COLOR);
     }
 
     //                                  //
