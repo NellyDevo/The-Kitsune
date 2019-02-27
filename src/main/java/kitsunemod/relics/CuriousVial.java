@@ -17,7 +17,7 @@ public class CuriousVial extends KitsuneRelic implements ClickableRelic {
     private static final int MAX_STACKS = 10;
 
     public CuriousVial() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
         counter = 0;
     }
 
