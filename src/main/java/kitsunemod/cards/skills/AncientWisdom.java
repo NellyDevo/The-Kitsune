@@ -15,6 +15,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.AncientWisdomAction;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.NinetailedShapePower;
@@ -41,6 +42,7 @@ public class AncientWisdom extends AbstractElderCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         elderNumber = baseElderNumber = ELDER_TIER_LIGHT_GAIN_REQUIREMENT;
         magicNumber = baseMagicNumber = BASE_RANDOM_CARD;
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     public AncientWisdom(int timesUpgraded) {

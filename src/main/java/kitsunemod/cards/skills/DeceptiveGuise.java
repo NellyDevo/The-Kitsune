@@ -12,6 +12,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChannelWillOWispAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.NinetailedShapePower;
 
@@ -32,6 +33,7 @@ public class DeceptiveGuise extends AbstractKitsuneCard {
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         block = baseBlock = BLOCK;
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override

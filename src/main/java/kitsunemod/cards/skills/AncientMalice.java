@@ -12,6 +12,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.HumanShapePower;
 
 public class AncientMalice extends AbstractElderCard {
@@ -37,6 +38,7 @@ public class AncientMalice extends AbstractElderCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = BASE_DISCARD;
         elderNumber = baseElderNumber = ELDER_TIER_DARK_GAIN_REQUIREMENT;
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     public AncientMalice(int timesUpgraded) {

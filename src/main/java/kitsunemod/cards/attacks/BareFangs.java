@@ -42,6 +42,7 @@ public class BareFangs extends AbstractKitsuneCard {
         magicNumber = baseMagicNumber = WILLOWISPS_CHANNELED;
 
         tags.add(KitsuneTags.ZERO_COST_ATTACK);
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override

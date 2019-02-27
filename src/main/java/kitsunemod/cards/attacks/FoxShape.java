@@ -35,8 +35,7 @@ public class FoxShape extends AbstractKitsuneCard {
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        exhaustOnUseOnce = true;
-
+        exhaust = true;
         tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 

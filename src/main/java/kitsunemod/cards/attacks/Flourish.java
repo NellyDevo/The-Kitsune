@@ -42,6 +42,7 @@ public class Flourish extends AbstractKitsuneCard {
         magicNumber = baseMagicNumber = BONUS_DEX;
 
         tags.add(KitsuneTags.ZERO_COST_ATTACK);
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override

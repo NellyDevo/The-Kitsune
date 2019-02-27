@@ -38,8 +38,7 @@ public class KitsuneShape extends AbstractKitsuneCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = WEAK_AMT;
-        exhaustOnUseOnce = true;
-
+        exhaust = true;
         tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 

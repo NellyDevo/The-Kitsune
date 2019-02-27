@@ -39,8 +39,7 @@ public class HumanShape extends AbstractKitsuneCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         block = baseBlock = BLOCK_AMT;
-        exhaustOnUseOnce = true;
-
+        exhaust = true;
         tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 

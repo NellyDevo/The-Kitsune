@@ -14,6 +14,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ManuallyTriggerSoulstealAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.*;
 
 public class FeedingFrenzy extends AbstractKitsuneCard {
@@ -37,6 +38,8 @@ public class FeedingFrenzy extends AbstractKitsuneCard {
         block = baseBlock = HEAL_AMT;
         magicNumber = baseMagicNumber = TURNS;
         secondMagicNumber = baseSecondMagicNumber = STRENGTH_PLUS_AMT;
+
+        tags.add(KitsuneTags.ASPECT_CARD);
     }
 
     @Override

@@ -11,6 +11,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 
 public class Ingenuity extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("Ingenuity");

@@ -13,6 +13,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
@@ -36,6 +37,7 @@ public class ShapeMastery extends AbstractKitsuneCard implements ModalChoice.Cal
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.RARE, CardTarget.SELF);
         block = baseBlock = BLOCK_AMOUNT;
+        tags.add(KitsuneTags.SHAPESHIFT_CARD);
         modal = new ModalChoiceBuilder()
                 .setCallback(this)
                 .setColor(AbstractCardEnum.KITSUNE_COLOR)
