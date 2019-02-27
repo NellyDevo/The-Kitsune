@@ -12,7 +12,7 @@ public class GlowingMatch extends KitsuneRelic {
     private static final int DAMAGE_INCREASE = 1;
 
     public GlowingMatch() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
     @Override
