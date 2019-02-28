@@ -18,6 +18,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     public int baseElderNumber;
     public boolean isElderNumberModified;
     public boolean upgradedElderNumber;
+    public boolean upgradedThisRoom;
 
     public AbstractElderCard(String id, String name, String img, int cost, String rawDescription,
                              CardType type, CardColor color,
@@ -44,6 +45,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade1();
         }
         timesUpgraded = 1;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -54,6 +56,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade2();
         }
         timesUpgraded = 2;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -64,6 +67,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade3();
         }
         timesUpgraded = 3;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -74,6 +78,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade4();
         }
         timesUpgraded = 4;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -84,6 +89,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade5();
         }
         timesUpgraded = 5;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -94,6 +100,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade6();
         }
         timesUpgraded = 6;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -104,6 +111,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade7();
         }
         timesUpgraded = 7;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -114,6 +122,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade8();
         }
         timesUpgraded = 8;
+        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -217,6 +226,14 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     }
 
+    public void onMonsterDied(AbstractMonster m) {
+
+    }
+
+    public void onVictory() {
+        upgradedThisRoom = false;
+    }
+
     @Override
     public boolean canUpgrade() {
         return false;
@@ -224,6 +241,9 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgrade() {
+        if (upgradedThisRoom) {
+            return;
+        }
         if (firstCondition() && timesUpgraded == 0) {
             upgrade1();
         }
@@ -296,10 +316,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(this));
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2, Settings.HEIGHT / 2));
         }
-    }
-
-    public void onMonsterDied(AbstractMonster m) {
-
     }
 
     public static class ElderNumber extends DynamicVariable {

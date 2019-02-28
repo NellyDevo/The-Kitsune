@@ -81,11 +81,13 @@ public class MasteryOfLightAndDark extends AbstractElderCard {
     }
 
     private void onTriggerLightOrDark() {
-        ++misc;
-        int tmp = timesUpgraded;
-        upgrade();
-        if (tmp != timesUpgraded) {
-            playUpgradeVfx();
+        if (!upgradedThisRoom) {
+            misc++;
+            int tmp = timesUpgraded;
+            upgrade();
+            if (tmp != timesUpgraded) {
+                playUpgradeVfx();
+            }
         }
     }
 

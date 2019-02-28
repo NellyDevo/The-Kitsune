@@ -24,7 +24,7 @@ public class FeralInstinct extends AbstractElderCard {
 
     private static final int BLOCK_AMT = 3;
     private static final int UPGRADE_BLOCK_AMT_PER_ELDER_TIER = 1;
-    private static final int ELDER_TIER_BLOCKED_REQUIREMENT = 30;
+    private static final int ELDER_TIER_BLOCKED_REQUIREMENT = 20;
 
     public FeralInstinct() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -40,13 +40,6 @@ public class FeralInstinct extends AbstractElderCard {
     }
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        elderNumber = baseElderNumber * (timesUpgraded + 1) - misc;
-        isElderNumberModified = elderNumber != baseElderNumber;
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
@@ -55,17 +48,19 @@ public class FeralInstinct extends AbstractElderCard {
 
     @Override
     public void onBlockedDamage(int amount) {
-        misc += amount;
-        int tempTimesUpgraded = this.timesUpgraded;
-        upgrade();
-        if (timesUpgraded != tempTimesUpgraded) {
-            playUpgradeVfx();
+        if (amount > ELDER_TIER_BLOCKED_REQUIREMENT && !upgradedThisRoom) {
+            misc++;
+            int tempTimesUpgraded = this.timesUpgraded;
+            upgrade();
+            if (timesUpgraded != tempTimesUpgraded) {
+                playUpgradeVfx();
+            }
         }
     }
 
     @Override
     protected boolean allCondition() {
-        return misc >= (timesUpgraded + 1) * baseElderNumber;
+        return misc >= (timesUpgraded + 1);
     }
 
 

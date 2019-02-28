@@ -68,11 +68,13 @@ public class SplitSoul extends AbstractElderCard {
     }
 
     private void incrementElder() {
-        misc++;
-        int tempTimesUpgraded = this.timesUpgraded;
-        upgrade();
-        if (timesUpgraded != tempTimesUpgraded) {
-            playUpgradeVfx();
+        if (!upgradedThisRoom) {
+            misc++;
+            int tempTimesUpgraded = this.timesUpgraded;
+            upgrade();
+            if (timesUpgraded != tempTimesUpgraded) {
+                playUpgradeVfx();
+            }
         }
 
     }

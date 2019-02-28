@@ -126,7 +126,7 @@
   },
   "kitsunemod:FeralInstinct": {
     "NAME": "Feral Instinct",
-    "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage.",
+    "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage in one hit.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block twice."
   },
   "kitsunemod:FlashOfLight": {

@@ -47,7 +47,7 @@ public class PressAdvantage extends AbstractElderCard {
 
     @Override
     public void onMonsterDied(AbstractMonster m) {
-        if (!m.hasPower("Minion")) {
+        if (!m.hasPower("Minion") && !upgradedThisRoom) {
             misc++;
             int tempTimesUpgraded = this.timesUpgraded;
             upgrade();

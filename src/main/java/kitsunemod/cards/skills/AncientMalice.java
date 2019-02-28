@@ -72,11 +72,13 @@ public class AncientMalice extends AbstractElderCard {
 
     @Override
     public void onApplyDark(int amount) {
-        int tempTimesUpgraded = this.timesUpgraded;
-        misc += amount;
-        upgrade();
-        if (timesUpgraded != tempTimesUpgraded) {
-            playUpgradeVfx();
+        if (!upgradedThisRoom) {
+            misc += amount;
+            int tempTimesUpgraded = this.timesUpgraded;
+            upgrade();
+            if (timesUpgraded != tempTimesUpgraded) {
+                playUpgradeVfx();
+            }
         }
     }
 

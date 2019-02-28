@@ -66,7 +66,7 @@ public class ShiftIntoSpirit extends AbstractElderCard {
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        if (room instanceof EventRoom) {
+        if (room instanceof EventRoom && !upgradedThisRoom) {
             ++misc;
             int tmpUpgrades = timesUpgraded;
             upgrade();

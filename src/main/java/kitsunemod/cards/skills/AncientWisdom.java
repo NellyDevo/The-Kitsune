@@ -71,11 +71,13 @@ public class AncientWisdom extends AbstractElderCard {
 
     @Override
     public void onApplyLight(int amount) {
-        int tempTimesUpgraded = this.timesUpgraded;
-        misc += amount;
-        upgrade();
-        if (timesUpgraded != tempTimesUpgraded) {
-            playUpgradeVfx();
+        if (!upgradedThisRoom) {
+            misc += amount;
+            int tempTimesUpgraded = this.timesUpgraded;
+            upgrade();
+            if (timesUpgraded != tempTimesUpgraded) {
+                playUpgradeVfx();
+            }
         }
     }
 
