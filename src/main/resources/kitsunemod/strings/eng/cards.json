@@ -270,7 +270,7 @@
   },
   "kitsunemod:PerfectedShape": {
     "NAME": "Perfected Shape",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block for each turn you've remained in the same kitsunemod:Shape.",
+    "DESCRIPTION": "At the end of your turn, if you didn't kitsunemod:Shapeshift, gain !M! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PackKill": {

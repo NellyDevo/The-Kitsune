@@ -396,7 +396,7 @@ public class KitsuneMod implements
         KitsuneMod.shapeshiftsThisCombat = 0;
         KitsuneMod.cardDrawsThisCombat = 0;
         KitsuneMod.cardDrawsThisTurn = 0;
-        KitsuneMod.turnsSpentInSameShape = 0;
+        KitsuneMod.turnsSpentInSameShape = 1;
     }
 
     public static void receiveOnMonsterDeath(AbstractMonster m) {

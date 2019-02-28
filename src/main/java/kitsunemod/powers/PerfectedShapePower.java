@@ -34,9 +34,10 @@ public class PerfectedShapePower extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurn() {
-        int totalBlock = KitsuneMod.turnsSpentInSameShape * amount;
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, totalBlock));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (KitsuneMod.turnsSpentInSameShape > 0 && isPlayer) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, amount));
+        }
     }
 
     @Override

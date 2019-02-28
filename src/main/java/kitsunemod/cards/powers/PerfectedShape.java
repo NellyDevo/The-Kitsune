@@ -19,15 +19,15 @@ public class PerfectedShape extends AbstractKitsuneCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_power.png";
 
-    private static final int COST = 2;
-    private static final int BLOCK_PER_SAME_SHAPE_TURN = 1;
-    private static final int UPGRADED_BLOCK_PER_SAME_SHAPE_TURN = 1;
+    private static final int COST = 1;
+    private static final int BLOCK_WHEN_NOT_SHAPESHIFTING = 4;
+    private static final int UPGRADED_BLOCK_WHEN_NOT_SHAPESHIFTING = 2;
 
     public PerfectedShape() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.NONE);
-        magicNumber = baseMagicNumber = BLOCK_PER_SAME_SHAPE_TURN;
+        magicNumber = baseMagicNumber = BLOCK_WHEN_NOT_SHAPESHIFTING;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class PerfectedShape extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_BLOCK_PER_SAME_SHAPE_TURN);
+            upgradeMagicNumber(UPGRADED_BLOCK_WHEN_NOT_SHAPESHIFTING);
         }
     }
 }
