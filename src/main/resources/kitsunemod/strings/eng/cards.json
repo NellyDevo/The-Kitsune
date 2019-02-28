@@ -246,11 +246,11 @@
   },
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
-    "DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an kitsunemod:Echo of that card to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose a card in your hand. At the start of each turn, add an Upgraded kitsunemod:Echo of that card to your hand.",
+    "DESCRIPTION": "Choose an Attack or Skill in your hand. Add a kitsunemod:Echo of that card to your hand for your next !M! turns.",
+    "UPGRADE_DESCRIPTION": "Choose an Attack or Skillin your hand. Add an upgraded kitsunemod:Echo of that card to your hand for your next !M! turns.",
     "EXTENDED_DESCRIPTION": [
       "Memorize",
-      "Echo: "
+      "Echo of "
     ]
   },
   "kitsunemod:NinetailedForm": {

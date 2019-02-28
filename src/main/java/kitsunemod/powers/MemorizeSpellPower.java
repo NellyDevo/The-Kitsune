@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -15,10 +16,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import kitsunemod.KitsuneMod;
-import kitsunemod.cards.powers.MemorizeSpell;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import kitsunemod.cards.skills.MemorizeSpell;
 
 public class MemorizeSpellPower extends AbstractPower implements NonStackablePower {
 
@@ -31,12 +29,15 @@ public class MemorizeSpellPower extends AbstractPower implements NonStackablePow
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
-    public MemorizeSpellPower(AbstractCreature owner, AbstractCard card, boolean isUpgraded) {
+
+    public MemorizeSpellPower(AbstractCreature owner, AbstractCard card, boolean isUpgraded, int turns) {
         this.owner = owner;
         this.card = card.makeCopy();
+        amount = turns;
         ID = POWER_ID;
         name = NAME;
         upgrade = isUpgraded;
+        this.isTurnBased = true;
 
         //temporary until I start making power art too
         //img = ImageMaster.loadImage(IMG);
@@ -47,26 +48,28 @@ public class MemorizeSpellPower extends AbstractPower implements NonStackablePow
 
     @Override
     public void atStartOfTurn() {
-        AbstractCard newCard = card.makeCopy();
-        if (upgrade) {
-            newCard.upgrade();
-        }
-        newCard.exhaust = true;
-        newCard.isEthereal = true;
-        newCard.purgeOnUse = true;
-        AlwaysRetainField.alwaysRetain.set(newCard, false);
-        newCard.retain = false;
-        newCard.name = MemorizeSpell.EXTENDED_DESCRIPTION[1] + newCard.name;
-        try {
-            Method initializeTitleMethod = AbstractCard.class.getDeclaredMethod("initializeTitle");
-            initializeTitleMethod.invoke(newCard);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        if (((AbstractPlayer)owner).hand.size() == BaseMod.MAX_HAND_SIZE) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToDiscardEffect(newCard,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToHandEffect(newCard,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
+        amount--;
+        if (amount >= 0) {
+            AbstractCard newCard = card.makeCopy();
+            if (upgrade) {
+                newCard.upgrade();
+            }
+            newCard.exhaust = true;
+            newCard.isEthereal = true;
+            newCard.purgeOnUse = true;
+            AlwaysRetainField.alwaysRetain.set(newCard, false);
+            newCard.retain = false;
+            newCard.name = MemorizeSpell.EXTENDED_DESCRIPTION[1] + newCard.name;
+            if (((AbstractPlayer)owner).hand.size() == BaseMod.MAX_HAND_SIZE) {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToDiscardEffect(newCard,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShowCardAndAddToHandEffect(newCard,Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F), 0.1f));
+            }
+            if (amount == 0) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+            } else {
+                flash();
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package kitsunemod.cards.powers;
+package kitsunemod.cards.skills;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,19 +17,22 @@ public class MemorizeSpell extends AbstractKitsuneCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "kitsunemod/images/cards/default_power.png";
+    public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
 
     private static final int COST = 2;
 
+    private static final int TURNS = 3;
+
     public MemorizeSpell() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.KITSUNE_COLOR,
+                CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.NONE);
+        magicNumber = baseMagicNumber = TURNS;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MemorizeSpellAction(upgraded));
+        AbstractDungeon.actionManager.addToBottom(new MemorizeSpellAction(upgraded,1, magicNumber));
     }
 
     @Override
