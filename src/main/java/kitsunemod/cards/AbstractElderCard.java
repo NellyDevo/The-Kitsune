@@ -31,7 +31,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
         super.applyPowers();
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
         }
         if (timesUpgraded < 9) {
             upgrade();
@@ -41,7 +40,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade1() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade1();
         }
         timesUpgraded = 1;
@@ -51,7 +49,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade2() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade2();
         }
         timesUpgraded = 2;
@@ -61,7 +58,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade3() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade3();
         }
         timesUpgraded = 3;
@@ -71,7 +67,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade4() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade4();
         }
         timesUpgraded = 4;
@@ -81,7 +76,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade5() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade5();
         }
         timesUpgraded = 5;
@@ -91,7 +85,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade6() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade6();
         }
         timesUpgraded = 6;
@@ -101,7 +94,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade7() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade7();
         }
         timesUpgraded = 7;
@@ -111,7 +103,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade8() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade8();
         }
         timesUpgraded = 8;
@@ -121,7 +112,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     protected void upgrade9() {
         AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
         if (masterDeckCopy != null && !AbstractDungeon.player.masterDeck.contains(this)) {
-            masterDeckCopy.misc = this.misc;
             masterDeckCopy.upgrade9();
         }
         timesUpgraded = 9;
@@ -235,6 +225,10 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgrade() {
+        AbstractElderCard masterDeckCopy = getMasterDeckEquivalent(this);
+        if (masterDeckCopy != null) {
+            masterDeckCopy.misc = this.misc;
+        }
         if (firstCondition() && timesUpgraded == 0) {
             upgrade1();
         }
