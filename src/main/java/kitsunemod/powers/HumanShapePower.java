@@ -1,7 +1,9 @@
 package kitsunemod.powers;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
 
@@ -25,9 +27,9 @@ public class HumanShapePower extends AbstractShapePower {
         name = NAME;
         ID = POWER_ID;
 
-        //temporary until I start making power art too
-        //img = ImageMaster.loadImage(IMG);
-        loadRegion("demonForm");
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/HumanShapePower_84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/HumanShapePower_32.png"), 0, 0, 32, 32);
+
         updateDescription();
     }
 }
