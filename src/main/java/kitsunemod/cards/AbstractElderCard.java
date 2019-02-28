@@ -213,8 +213,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     }
 
     public void onVictory() {
-        KitsuneMod.logger.info("resetting upgradedThisRoom to false on " + this.name + ", it is currently" + upgradedThisRoom);
-        KitsuneMod.logger.info("misc: " + misc + ", timesUpgraded: " + timesUpgraded + ", current allCondition result: " + allCondition());
         upgradedThisRoom = false;
     }
 

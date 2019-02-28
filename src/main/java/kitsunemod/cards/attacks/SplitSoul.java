@@ -62,7 +62,6 @@ public class SplitSoul extends AbstractElderCard {
 
     @Override
     public void onCardDrawn(AbstractCard card, boolean isExtraDraw) {
-        logger.info("SplitSoul: incrementing cards drawn");
         if (isExtraDraw) {
             incrementElder();
         }
@@ -107,7 +106,6 @@ public class SplitSoul extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        logger.info("making new copy of SplitSoul with misc: " + misc + " (timesUpgrade = " + timesUpgraded + ".)");
         return new SplitSoul(timesUpgraded, misc);
     }
 

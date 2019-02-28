@@ -430,7 +430,6 @@ public class KitsuneMod implements
     }
 
     public static void receiveEnergyChanged(int energyDelta) {
-        logger.info("receiveEnergyChanged: " + energyDelta);
         if (energyDelta < 0) {
             for (AbstractPower power : AbstractDungeon.player.powers) {
                 if (power instanceof RoaringFirePower) {
