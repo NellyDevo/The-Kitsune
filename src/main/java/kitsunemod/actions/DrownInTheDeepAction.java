@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -46,6 +47,7 @@ public class DrownInTheDeepAction extends AbstractGameAction {
         if (duration == 0.1f) {
             if (effect > 0) {
                 target.damage(new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.HP_LOSS));
+                CardCrawlGame.sound.play("POWER_POISON", 0.05F);
                 damage *= 2;
                 --effect;
             } else {
