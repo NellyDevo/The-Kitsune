@@ -130,14 +130,26 @@ public class WillOWisp extends AbstractOrb {
     @Override
     public void onEndOfTurn() {
         applyFocus();
-        AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale, true));
+        if (AbstractDungeon.getMonsters().monsters.stream().anyMatch(monster -> !monster.isDeadOrEscaped() && !monster.halfDead)) {
+            AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+            AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale, true));
+        }
+        else
+        {
+            //remove orbs here
+        }
     }
 
     public void evokeWithoutAffectingSlots() {
         applyFocus();
-        AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
-        AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale, false));
+        if (AbstractDungeon.getMonsters().monsters.stream().anyMatch(monster -> !monster.isDeadOrEscaped() && !monster.halfDead)) {
+            AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+            AbstractDungeon.actionManager.addToBottom(new WillOWispAction(cX, cY, target, new DamageInfo(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS), 0.5f, color, Color.RED.cpy(), this, imgIndex, glowScale, false));
+        }
+        else
+        {
+            //remove orbs here
+        }
     }
 
     @Override
