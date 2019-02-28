@@ -35,8 +35,9 @@ public class PressAdvantage extends AbstractElderCard {
         this.isMultiDamage = true;
     }
 
-    public PressAdvantage(int timesUpgraded) {
+    public PressAdvantage(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -53,6 +54,7 @@ public class PressAdvantage extends AbstractElderCard {
             upgrade();
             if (timesUpgraded != tempTimesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
     }
@@ -79,7 +81,7 @@ public class PressAdvantage extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new PressAdvantage(timesUpgraded);
+        return new PressAdvantage(timesUpgraded, misc);
     }
 
 }

@@ -45,8 +45,9 @@ public class Cornered extends AbstractElderCard {
         elderNumber = baseElderNumber = ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT;
     }
 
-    public Cornered(int timesUpgraded) {
+    public Cornered(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -104,6 +105,7 @@ public class Cornered extends AbstractElderCard {
             upgrade();
             if (timesUpgraded != tempTimesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
         return finalAmount;
@@ -129,6 +131,6 @@ public class Cornered extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Cornered(timesUpgraded);
+        return new Cornered(timesUpgraded, misc);
     }
 }

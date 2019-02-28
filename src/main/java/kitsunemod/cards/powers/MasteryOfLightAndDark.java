@@ -36,8 +36,9 @@ public class MasteryOfLightAndDark extends AbstractElderCard {
         elderNumber = baseElderNumber = ELDER_TIER_TRIGGER_REQUIREMENT;
     }
 
-    public MasteryOfLightAndDark(int timesUpgraded) {
+    public MasteryOfLightAndDark(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -87,6 +88,7 @@ public class MasteryOfLightAndDark extends AbstractElderCard {
             upgrade();
             if (tmp != timesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
     }
@@ -100,7 +102,7 @@ public class MasteryOfLightAndDark extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new MasteryOfLightAndDark(timesUpgraded);
+        return new MasteryOfLightAndDark(timesUpgraded, misc);
     }
 
     @Override

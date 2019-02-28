@@ -42,8 +42,9 @@ public class AncientWisdom extends AbstractElderCard {
         tags.add(KitsuneTags.ASPECT_CARD);
     }
 
-    public AncientWisdom(int timesUpgraded) {
+    public AncientWisdom(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -77,6 +78,7 @@ public class AncientWisdom extends AbstractElderCard {
             upgrade();
             if (timesUpgraded != tempTimesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
     }
@@ -101,7 +103,7 @@ public class AncientWisdom extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new AncientWisdom(timesUpgraded);
+        return new AncientWisdom(timesUpgraded, misc);
     }
 
     @Override

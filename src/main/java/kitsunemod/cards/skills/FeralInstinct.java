@@ -34,8 +34,9 @@ public class FeralInstinct extends AbstractElderCard {
         elderNumber = baseElderNumber = ELDER_TIER_BLOCKED_REQUIREMENT;
     }
 
-    public FeralInstinct(int timesUpgraded) {
+    public FeralInstinct(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -54,6 +55,7 @@ public class FeralInstinct extends AbstractElderCard {
             upgrade();
             if (timesUpgraded != tempTimesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
     }
@@ -78,7 +80,7 @@ public class FeralInstinct extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new FeralInstinct(timesUpgraded);
+        return new FeralInstinct(timesUpgraded, misc);
     }
 
     @Override

@@ -40,8 +40,9 @@ public class SplitSoul extends AbstractElderCard {
         elderNumber = baseElderNumber = ELDER_TIER_CARDS_DRAWN_REQUIREMENT;
     }
 
-    public SplitSoul(int timesUpgraded) {
+    public SplitSoul(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -74,6 +75,7 @@ public class SplitSoul extends AbstractElderCard {
             upgrade();
             if (timesUpgraded != tempTimesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
 
@@ -106,7 +108,7 @@ public class SplitSoul extends AbstractElderCard {
     @Override
     public AbstractCard makeCopy() {
         logger.info("making new copy of SplitSoul with misc: " + misc + " (timesUpgrade = " + timesUpgraded + ".)");
-        return new SplitSoul(timesUpgraded);
+        return new SplitSoul(timesUpgraded, misc);
     }
 
 }

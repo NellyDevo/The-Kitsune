@@ -35,11 +35,12 @@ public class ShiftIntoSpirit extends AbstractElderCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         elderNumber = baseElderNumber = ELDER_TIER_QUESTION_ROOM_REQUIREMENT;
         block = baseBlock = BASE_BLOCK;
+     
         magicNumber = baseMagicNumber = HEAL_AMOUNT;
     }
-
-    public ShiftIntoSpirit(int timesUpgraded) {
+    public ShiftIntoSpirit(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -72,6 +73,7 @@ public class ShiftIntoSpirit extends AbstractElderCard {
             upgrade();
             if (tmpUpgrades != timesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
     }
@@ -96,6 +98,6 @@ public class ShiftIntoSpirit extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new ShiftIntoSpirit(timesUpgraded);
+        return new ShiftIntoSpirit(timesUpgraded, misc);
     }
 }

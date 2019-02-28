@@ -41,8 +41,9 @@ public class AncientMalice extends AbstractElderCard {
         tags.add(KitsuneTags.ASPECT_CARD);
     }
 
-    public AncientMalice(int timesUpgraded) {
+    public AncientMalice(int timesUpgraded, int misc) {
         this();
+        this.misc = misc;
         initializeWithUpgrades(timesUpgraded);
     }
 
@@ -78,6 +79,7 @@ public class AncientMalice extends AbstractElderCard {
             upgrade();
             if (timesUpgraded != tempTimesUpgraded) {
                 playUpgradeVfx();
+                upgradedThisRoom = true;
             }
         }
     }
@@ -102,7 +104,7 @@ public class AncientMalice extends AbstractElderCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new AncientMalice(timesUpgraded);
+        return new AncientMalice(timesUpgraded, misc);
     }
 
     @Override

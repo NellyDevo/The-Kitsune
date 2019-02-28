@@ -397,6 +397,9 @@ public class KitsuneMod implements
         KitsuneMod.cardDrawsThisCombat = 0;
         KitsuneMod.cardDrawsThisTurn = 0;
         KitsuneMod.turnsSpentInSameShape = 1;
+        AbstractDungeon.player.masterDeck.group.stream()
+                .filter(card -> card instanceof AbstractElderCard)
+                .forEach(card -> ((AbstractElderCard) card).onVictory());
     }
 
     public static void receiveOnMonsterDeath(AbstractMonster m) {

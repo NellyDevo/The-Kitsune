@@ -45,7 +45,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade1();
         }
         timesUpgraded = 1;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -56,7 +55,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade2();
         }
         timesUpgraded = 2;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -67,7 +65,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade3();
         }
         timesUpgraded = 3;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -78,7 +75,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade4();
         }
         timesUpgraded = 4;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -89,7 +85,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade5();
         }
         timesUpgraded = 5;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -100,7 +95,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade6();
         }
         timesUpgraded = 6;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -111,7 +105,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade7();
         }
         timesUpgraded = 7;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -122,7 +115,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
             masterDeckCopy.upgrade8();
         }
         timesUpgraded = 8;
-        upgradedThisRoom = true;
         upgradeAll();
     }
 
@@ -231,6 +223,8 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     }
 
     public void onVictory() {
+        KitsuneMod.logger.info("resetting upgradedThisRoom to false on " + this.name + ", it is currently" + upgradedThisRoom);
+        KitsuneMod.logger.info("misc: " + misc + ", timesUpgraded: " + timesUpgraded + ", current allCondition result: " + allCondition());
         upgradedThisRoom = false;
     }
 
@@ -241,9 +235,6 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     @Override
     public void upgrade() {
-        if (upgradedThisRoom) {
-            return;
-        }
         if (firstCondition() && timesUpgraded == 0) {
             upgrade1();
         }
