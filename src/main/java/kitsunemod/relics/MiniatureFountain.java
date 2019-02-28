@@ -10,6 +10,7 @@ public class MiniatureFountain extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("MiniatureFountain");
     public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
     public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/starterrelic_gray.png");
 
     private static final int TURN_COUNT = 2;
     private static final int LIGHT_AMOUNT = 9;
@@ -32,6 +33,8 @@ public class MiniatureFountain extends KitsuneRelic {
         if (counter == TURN_COUNT) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyLightAction(AbstractDungeon.player, AbstractDungeon.player, LIGHT_AMOUNT));
+            this.usedUp = true;
+            this.img = ALT_IMG;
             stopPulse();
         }
     }
@@ -39,6 +42,8 @@ public class MiniatureFountain extends KitsuneRelic {
     @Override
     public void onVictory() {
         counter = -1;
+        this.usedUp = false;
+        this.img = IMG;
         stopPulse();
     }
 
