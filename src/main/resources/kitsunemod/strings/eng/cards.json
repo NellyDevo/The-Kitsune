@@ -214,7 +214,7 @@
   },
   "kitsunemod:LashOut": {
     "NAME": "Lash Out",
-    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: And !B! Block. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: twice. NL Kitsune kitsunemod:Aspect: Gain !M! kitsunemod:Shade. NL Human kitsunemod:Aspect: Gain !B! Block. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:LieInWait": {
@@ -247,7 +247,7 @@
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
     "DESCRIPTION": "Choose an Attack or Skill in your hand. Add a kitsunemod:Echo of that card to your hand for your next !M! turns.",
-    "UPGRADE_DESCRIPTION": "Choose an Attack or Skillin your hand. Add an upgraded kitsunemod:Echo of that card to your hand for your next !M! turns.",
+    "UPGRADE_DESCRIPTION": "Choose an Attack or Skill in your hand. Add an upgraded kitsunemod:Echo of that card to your hand for your next !M! turns.",
     "EXTENDED_DESCRIPTION": [
       "Memorize",
       "Echo of "
@@ -357,7 +357,10 @@
   "kitsunemod:Serenity": {
     "NAME": "Serenity",
     "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Active!)"
+    ]
   },
   "kitsunemod:ShapeMastery": {
     "NAME": "Shape Mastery",

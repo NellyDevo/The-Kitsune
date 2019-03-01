@@ -58,4 +58,19 @@ public class Serenity extends AbstractKitsuneCard {
             upgradeBlock(UPGRADE_PLUS_BLOCK);
         }
     }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (KitsuneMod.turnsSpentInSameShape >= TURN_LIMIT) {
+            rawDescription = DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        rawDescription = DESCRIPTION;
+        initializeDescription();
+    }
 }
