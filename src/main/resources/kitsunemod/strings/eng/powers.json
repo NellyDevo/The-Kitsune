@@ -3,16 +3,16 @@
     "NAME": "Soulsteal",
     "DESCRIPTIONS": [
       "Currently giving you ",
-      " Light/Dark, or ",
-      " Will-o-Wisp",
-      " Will-o-Wisps",
+      " #yLight/Dark, or ",
+      " #yWill-o-Wisp",
+      " #yWill-o-Wisps",
       " the first time this monster attacks you."]
   },
   "kitsunemod:LightPower": {
     "NAME": "Light",
     "DESCRIPTIONS": [
       "At the start of your turn, consume this to get ",
-      "x your Light in block if you're over ",
+      "x your #yLight in #yBlock if you're over ",
       " stacks."]
   },
   "kitsunemod:BalancingActPower": {
@@ -61,7 +61,7 @@
     "NAME": "Dark",
     "DESCRIPTIONS": [
       "At the start of your turn, consume this to deal ",
-      "x your Dark in damage to a random enemy if you're over ",
+      "x your #yDark in damage to a random enemy if you're over ",
       " stacks."]
   },
   "kitsunemod:GatheringDarkPower": {
@@ -83,15 +83,15 @@
     "NAME": "Perfected Shape",
     "DESCRIPTIONS": [
       "Gaining ",
-      " Block at the start of your turn for each turn spent in the same #yShape."
+      " Block at the end of your turn if you didn't #yShapeshift this turn."
     ]
   },
 
   "kitsunemod:KitsuneShapePower": {
     "NAME": "Kitsune Shape",
     "DESCRIPTIONS": [
-      "Currently in the form of a Kitsune. Kitsune #yAspect effects will trigger.",
-      "Currently in the form of a Kitsune. Kitsune #yAspect effects will trigger, and you have ",
+      "Currently in the form of a Kitsune. NL Kitsune #yAspect effects will trigger.",
+      "Currently in the form of a Kitsune. NL Kitsune #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
       " #yDexterity."
@@ -101,8 +101,8 @@
   "kitsunemod:FoxShapePower": {
     "NAME": "Fox Shape",
     "DESCRIPTIONS": [
-      "Currently in the form of a Fox. Fox #yAspect effects will trigger.",
-      "Currently in the form of a Fox. Fox #yAspect effects will trigger, and you have ",
+      "Currently in the form of a Fox. NL Fox #yAspect effects will trigger.",
+      "Currently in the form of a Fox. NL Fox #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
       " #yDexterity."
@@ -113,8 +113,8 @@
   "kitsunemod:HumanShapePower": {
     "NAME": "Human Shape",
     "DESCRIPTIONS": [
-      "Currently in the form of a Human. Human #yAspect effects will trigger.",
-      "Currently in the form of a Human. Human #yAspect effects will trigger, and you have ",
+      "Currently in the form of a Human. NL Human #yAspect effects will trigger.",
+      "Currently in the form of a Human. NL Human #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
       " #yDexterity."
@@ -130,8 +130,8 @@
   "kitsunemod:NinetailedShapePower": {
     "NAME": "Ninetailed Shape",
     "DESCRIPTIONS": [
-      "Currently in the true form of a foxgirl. All #yAspect effects will trigger.",
-      "Currently in the true form of a foxgirl. All #yAspect effects will trigger, and you have ",
+      "Currently in the true form of a foxgirl. NL All #yAspect effects will trigger.",
+      "Currently in the true form of a foxgirl. NL All #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
       " #yDexterity."
@@ -149,7 +149,7 @@
   "kitsunemod:InsightPower": {
     "NAME": "Insight",
     "DESCRIPTIONS": [
-      "When you play an Aspect card, draw another Aspect card from your deck."
+      "When you play an #yAspect card, draw another #yAspect card from your deck."
     ]
   },
   "kitsunemod:MasteryOfLightAndDarkPower": {

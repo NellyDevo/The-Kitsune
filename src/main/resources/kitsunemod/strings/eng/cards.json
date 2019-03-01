@@ -131,7 +131,7 @@
   },
   "kitsunemod:FlashOfLight": {
     "NAME": "Flash of Light",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! Light.",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! kitsunemod:Light.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FleshToStone": {
@@ -169,7 +169,7 @@
   },
   "kitsunemod:GrowingShadow": {
     "NAME": "Growing Shadow",
-    "DESCRIPTION": "Set your kitsunemod:Dark to !kitsunemod:M2!. Apply !M! Vulnerable.",
+    "DESCRIPTION": "Your kitsunemod:Dark becomes !kitsunemod:M2!. Apply !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:HauntingLights": {
@@ -331,7 +331,7 @@
   },
   "kitsunemod:Radiance": {
     "NAME": "Radiance",
-    "DESCRIPTION": "Set your kitsunemod:Light to !M!. Gain !B! Block.",
+    "DESCRIPTION": "your kitsunemod:Light becomes !M!. Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:RendSpirit": {
@@ -381,7 +381,7 @@
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card."
   },
   "kitsunemod:Strike": {
@@ -389,7 +389,7 @@
     "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:TerrorPhantasm": {
+    "kitsunemod:TerrorPhantasm": {
     "NAME": "Terror Phantasm",
     "DESCRIPTION": "Apply 3 Weak and Vulnerable. NL At the start of each of its turns, target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
@@ -431,7 +431,7 @@
   },
   "kitsunemod:Wink": {
     "NAME": "Wink",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! kitsunemod:Soulsteal.",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": ""
   }
 }

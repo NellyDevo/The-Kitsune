@@ -4,14 +4,14 @@
       "soulsteal",
       "soulsteals"
     ],
-    "DESCRIPTION": "The first time attacking you in a turn, grants you a buff for each stack. NL Human: 2 #yLight. NL Kitsune: 2 #yWill-o-Wisps (static). NL Fox: 2 #yDark."
+    "DESCRIPTION": "The first time . NL Human: 2 #yLight. NL Kitsune: 2 #yWill-o-Wisps (static). NL Fox: 2 #yDark."
   },
   "WILL-O-WISP": {
     "NAMES": [
       "will-o-wisp",
       "will-o-wisps"
     ],
-    "DESCRIPTION": "Consumes itself at the end of your turn to deal damage equal to the number of wisps."
+    "DESCRIPTION": "Consumes itself at the end of your turn to deal damage to a random enemy equal to the number of wisps channeled."
   },
 
   "SHAPESHIFT": {
@@ -20,14 +20,14 @@
       "shapeshifts",
       "shapeshifted"
     ],
-    "DESCRIPTION": "Grants minor base Strength/Dexterity changes."
+    "DESCRIPTION": "Grants minor base Strength/Dexterity changes. #yAspect cards of that #yShape will trigger."
   },
   "SHAPE": {
     "NAMES": [
       "shape",
       "shapes"
     ],
-    "DESCRIPTION": "Aspect effects of that #yShape will trigger. Some relics and powers make your #yShape grant persistent buffs too."
+    "DESCRIPTION": "Aspect effects of that #yShape will trigger. Some relics and powers make your #yShape grant persistent buffs."
   },
   "ASPECT": {
     "NAMES": [
@@ -46,13 +46,13 @@
     "NAMES": [
       "dark"
     ],
-    "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks"
+    "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks."
   },
   "SHADE": {
     "NAMES": [
       "shade"
     ],
-    "DESCRIPTION": "Negates up to that many instances of unblocked damage until next turn and heals you a small amount instead."
+    "DESCRIPTION": "Negates up to that many instances of unblocked damage until next turn and heals you for 2 instead."
   },
   "Elder": {
     "NAMES": [
