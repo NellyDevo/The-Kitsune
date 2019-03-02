@@ -1,5 +1,6 @@
 package kitsunemod.cards.skills;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -26,13 +27,14 @@ public class TransmuteSelf extends AbstractKitsuneCard {
     private static final int UPGRADE_PLUS_SHADE_STACKS = 1;
     private static final int HP_LOSS = 2;
     private static final int UPGRADE_PLUS_HP_LOSS = 1;
+    
     public TransmuteSelf() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = SHADE_STACKS;
         secondMagicNumber = baseSecondMagicNumber = HP_LOSS;
-        exhaust = true;
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 
     @Override
