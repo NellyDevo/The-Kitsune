@@ -27,7 +27,7 @@ public class TransmuteSelf extends AbstractKitsuneCard {
     private static final int UPGRADE_PLUS_SHADE_STACKS = 1;
     private static final int HP_LOSS = 2;
     private static final int UPGRADE_PLUS_HP_LOSS = 1;
-    
+
     public TransmuteSelf() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
