@@ -2,11 +2,10 @@
   "kitsunemod:SoulstealPower": {
     "NAME": "Soulsteal",
     "DESCRIPTIONS": [
-      "Currently giving you ",
-      " #yLight/Dark, or ",
-      " #yWill-o-Wisp",
-      " #yWill-o-Wisps",
-      " the first time this monster attacks you."]
+      "The first time this monster attacks you on each of their turns, it gives you a buff.",
+      " You don't have a #yShape so you can't #ySoulsteal.",
+      " Something prevents you from #ySoulstealing though..."
+    ]
   },
   "kitsunemod:LightPower": {
     "NAME": "Light",
@@ -94,7 +93,18 @@
       "Currently in the form of a Kitsune. NL Kitsune #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
-      " #yDexterity."
+      " #yDexterity.",
+      " Soulsteal will give you #b",
+      "( #b",
+      " #yWill-o-Wisp per #b",
+      " #yWill-o-Wisps per #b",
+      " stacks of #ySoulsteal",
+      ".",
+      " ).",
+      " In your current #yShape, #b",
+      " #yWill-o-wisp ",
+      " #yWill-o-wisps ",
+      " In your current #yShape, you'll get #yWill-o-wisps, but you need to apply more first!"
     ]
   },
 
@@ -105,8 +115,14 @@
       "Currently in the form of a Fox. NL Fox #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
-      " #yDexterity."
-
+      " #yDexterity.",
+      " Soulsteal will give you #b",
+      "( #b",
+      " stacks of #yDark per stack of #ySoulsteal",
+      ".",
+      " ).",
+      " In your current #yShape, #b",
+      " #yDark "
     ]
   },
 
@@ -117,7 +133,14 @@
       "Currently in the form of a Human. NL Human #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
-      " #yDexterity."
+      " #yDexterity.",
+      " Soulsteal will give you #b",
+      "( #b",
+      " stacks of #yLight per stack of #ySoulsteal",
+      ".",
+      " ).",
+      " In your current #yShape, #b",
+      " #yLight "
     ]
   },
   "kitsunemod:MonsterDefendPlayer": {
@@ -134,7 +157,17 @@
       "Currently in the true form of a foxgirl. NL All #yAspect effects will trigger, and you have ",
       " #yStrength and ",
       " #yStrength.",
-      " #yDexterity."
+      " #yDexterity.",
+      " Soulsteal will give you #b",
+      "( #b",
+      " #yWill-o-Wisp per #b",
+      " #yWill-o-Wisps per #b",
+      " stacks of #ySoulsteal",
+      ".",
+      " ).",
+      " In your current #yShape, #b",
+      " #yWill-o-wisps ",
+      " In your current #yShape, you'll get #yWill-o-wisps, but you need to apply more first!"
     ]
   },
   "kitsunemod:ShadePower": {

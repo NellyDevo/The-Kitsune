@@ -57,7 +57,7 @@ public class ChangeShapeAction extends AbstractGameAction {
             }
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, newShape));
 
-            KitsuneMod.receiveChangeShape(newShapeID);
+            KitsuneMod.receiveChangeShape(newShapeID, newShape);
         }
         tickDuration();
     }

@@ -3,7 +3,9 @@ package kitsunemod.powers;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -64,6 +66,10 @@ public abstract class AbstractShapePower extends AbstractPower {
         return block + (float)amount2;
     }
 
+    public abstract AbstractGameAction getSoulstealActionForAmount(AbstractPlayer player, int amount);
+
+    public abstract String getSoulstealUIString(int amount);
+
     @Override
     public void updateDescription() {
         String strengthColorStr = "";
@@ -94,7 +100,8 @@ public abstract class AbstractShapePower extends AbstractPower {
         }
     }
 
-    //also lifted this, again, same issue as above with the color constants. Frustrating that we have to copy code out of the base game like this
+    //also lifted this, again, same issue as above with the color constants.
+    //Frustrating that we have to copy code out of the base game like this
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
         if (this.amount > 0) {
             if (!isTurnBased) {

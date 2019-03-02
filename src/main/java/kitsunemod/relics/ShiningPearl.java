@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.powers.AbstractShapePower;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
 import kitsunemod.powers.KitsuneShapePower;
@@ -64,7 +65,7 @@ public class ShiningPearl extends KitsuneRelic {
     }
 
     @Override
-    public void onChangeShape(KitsuneMod.KitsuneShapes shape) {
+    public void onChangeShape(KitsuneMod.KitsuneShapes shape, AbstractShapePower shapePower) {
         description = DESCRIPTIONS[0];
 
         //TODO handle ninetailed form; for that matter decide what we want to do with ninetailed form re: str/dex now

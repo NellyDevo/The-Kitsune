@@ -39,9 +39,7 @@ import kitsunemod.cards.special.QuickshapeKitsune;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.orbs.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
-import kitsunemod.powers.CharmMonsterPower;
-import kitsunemod.powers.MasteryOfLightAndDarkPower;
-import kitsunemod.powers.RoaringFirePower;
+import kitsunemod.powers.*;
 import kitsunemod.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -454,15 +452,23 @@ public class KitsuneMod implements
         }
     }
 
-    public static void receiveChangeShape(KitsuneShapes shape) {
+    public static void receiveChangeShape(KitsuneShapes shape, AbstractShapePower shapePower) {
         if (AbstractDungeon.player.relics != null) {
             for (int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
                 AbstractRelic r = AbstractDungeon.player.relics.get(i);
                 if (r instanceof KitsuneRelic) {
-                    ((KitsuneRelic) r).onChangeShape(shape);
+                    ((KitsuneRelic) r).onChangeShape(shape, shapePower);
                 }
             }
         }
+
+        //TODO make an AbstractKitsunePower to collect custom callbacks like this
+        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+            monster.powers.stream()
+                    .filter(power -> power instanceof SoulstealPower)
+                    .forEach(power -> ((SoulstealPower) power).onShapeChange(shape, shapePower));
+        }
+
         if (AbstractDungeon.player instanceof KitsuneCharacter) {
             ((KitsuneCharacter) AbstractDungeon.player).onShapeChange(shape);
         }

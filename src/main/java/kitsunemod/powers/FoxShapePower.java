@@ -1,17 +1,23 @@
 package kitsunemod.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.sun.crypto.provider.DESCipher;
 import kitsunemod.KitsuneMod;
+import kitsunemod.actions.ApplyDarkAction;
 
 public class FoxShapePower extends AbstractShapePower {
 
-    public AbstractCreature source;
+    //set in WornPearl, LuminousPearl, and ShiningPearl if you're looking for the base strength/dex amounts
     public static int BONUS_DEXTERITY = 0;
     public static int BONUS_STRENGTH = 0;
+    public static int STACKS_PER_SOULSTEAL = 2;
 
     public static final String POWER_ID = KitsuneMod.makeID("FoxShapePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -30,5 +36,15 @@ public class FoxShapePower extends AbstractShapePower {
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/FoxShapePower_32.png"), 0, 0, 32, 32);
 
         updateDescription();
+    }
+
+    @Override
+    public AbstractGameAction getSoulstealActionForAmount(AbstractPlayer player, int amount) {
+        return new ApplyDarkAction(player, player, amount * STACKS_PER_SOULSTEAL);
+    }
+
+    @Override
+    public String getSoulstealUIString(int amount) {
+        return DESCRIPTIONS[10] + amount * STACKS_PER_SOULSTEAL + DESCRIPTIONS[11] + DESCRIPTIONS[6] + STACKS_PER_SOULSTEAL + DESCRIPTIONS[7] + DESCRIPTIONS[9];
     }
 }
