@@ -22,7 +22,7 @@ import kitsunemod.KitsuneMod;
 
 import java.lang.reflect.Field;
 
-public class CharmMonsterPower extends AbstractPower {
+public class CharmMonsterPower extends AbstractKitsunePower {
     public static final String POWER_ID = KitsuneMod.makeID("Charmed");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

@@ -16,7 +16,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 
-public class HeightenedReflexesPower extends AbstractPower {
+public class HeightenedReflexesPower extends AbstractKitsunePower {
 
     public boolean shouldUpgrade;
     private CardGroup zeroCosts;

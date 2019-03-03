@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import kitsunemod.KitsuneMod;
 
-public class DelayedStrengthLossPower extends TwoAmountPower {
+public class DelayedStrengthLossPower extends AbstractKitsunePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("DelayedStrengthLossPower");

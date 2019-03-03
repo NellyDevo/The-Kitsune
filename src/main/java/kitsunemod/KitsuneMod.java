@@ -25,7 +25,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.cards.AbstractKitsuneCard;
-import kitsunemod.cards.TestCard;
 import kitsunemod.cards.attacks.*;
 import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
@@ -428,13 +427,9 @@ public class KitsuneMod implements
     }
 
     public static void receiveEnergyChanged(int energyDelta) {
-        if (energyDelta < 0) {
-            for (AbstractPower power : AbstractDungeon.player.powers) {
-                if (power instanceof RoaringFirePower) {
-                    ((RoaringFirePower) power).onEnergyUsed(-energyDelta);
-                }
-            }
-        }
+        AbstractDungeon.player.powers.stream()
+                .filter(power -> power instanceof AbstractKitsunePower)
+                .forEach(power -> ((AbstractKitsunePower) power).onEnergyChanged(energyDelta));
     }
 
     public static void receiveRoomEntered(AbstractRoom room) {
@@ -462,11 +457,14 @@ public class KitsuneMod implements
             }
         }
 
-        //TODO make an AbstractKitsunePower to collect custom callbacks like this
+        AbstractDungeon.player.powers.stream()
+                .filter(power -> power instanceof AbstractKitsunePower)
+                .forEach(power -> ((AbstractKitsunePower) power).onShapeChange(shape, shapePower));
+
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             monster.powers.stream()
-                    .filter(power -> power instanceof SoulstealPower)
-                    .forEach(power -> ((SoulstealPower) power).onShapeChange(shape, shapePower));
+                    .filter(power -> power instanceof AbstractKitsunePower)
+                    .forEach(power -> ((AbstractKitsunePower) power).onShapeChange(shape, shapePower));
         }
 
         if (AbstractDungeon.player instanceof KitsuneCharacter) {

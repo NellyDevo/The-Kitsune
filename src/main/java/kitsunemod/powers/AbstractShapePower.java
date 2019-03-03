@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
-public abstract class AbstractShapePower extends AbstractPower {
+public abstract class AbstractShapePower extends AbstractKitsunePower {
 
     public AbstractCreature source;
 

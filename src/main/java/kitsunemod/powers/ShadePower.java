@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
 
-public class ShadePower extends TwoAmountPower {
+public class ShadePower extends AbstractKitsunePower {
 
     public static final String POWER_ID = KitsuneMod.makeID("ShadePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

@@ -13,7 +13,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.cards.powers.FastShape;
 import kitsunemod.patches.KitsuneTags;
 
-public class FastShapePower extends AbstractPower {
+public class FastShapePower extends AbstractKitsunePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("FastShapePower");

@@ -13,7 +13,7 @@ import kitsunemod.cards.special.QuickshapeFox;
 import kitsunemod.cards.special.QuickshapeHuman;
 import kitsunemod.cards.special.QuickshapeKitsune;
 
-public class UnstableShapePower extends AbstractPower {
+public class UnstableShapePower extends AbstractKitsunePower {
 
     public boolean shouldUpgrade;
     private int lastFormId = 1;

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.skills.MemorizeSpell;
 
-public class MemorizeSpellPower extends AbstractPower implements NonStackablePower {
+public class MemorizeSpellPower extends AbstractKitsunePower implements NonStackablePower {
 
     private AbstractCard card;
     private boolean upgrade;

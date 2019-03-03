@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ApplyLightAction;
 
-public class GatheringLightPower extends AbstractPower implements GatheringPower{
+public class GatheringLightPower extends AbstractKitsunePower {
 
     public static final String POWER_ID = KitsuneMod.makeID("GatheringLightPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import kitsunemod.KitsuneMod;
 
-public class FeedingFrenzyPower extends TwoAmountPower {
+public class FeedingFrenzyPower extends AbstractKitsunePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("FeedingFrenzyPower");

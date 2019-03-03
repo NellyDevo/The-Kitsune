@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
-public class PerfectedShapePower extends AbstractPower {
+public class PerfectedShapePower extends AbstractKitsunePower {
 
     public static final String POWER_ID = KitsuneMod.makeID("PerfectedShapePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

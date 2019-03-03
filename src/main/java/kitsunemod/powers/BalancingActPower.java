@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
-public class BalancingActPower extends AbstractPower {
+public class BalancingActPower extends AbstractKitsunePower {
     public static final String POWER_ID = KitsuneMod.makeID("BalancingActPower");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

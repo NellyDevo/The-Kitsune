@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
-public class SoulstealPower extends AbstractPower {
+public class SoulstealPower extends AbstractKitsunePower {
     public AbstractCreature source;
     private boolean hasSoulstealed = false;
 

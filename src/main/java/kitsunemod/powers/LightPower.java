@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import kitsunemod.KitsuneMod;
 import kitsunemod.relics.KitsuneRelic;
 
-public class LightPower extends AbstractPower {
+public class LightPower extends AbstractKitsunePower {
 
     public AbstractCreature source;
     public static final int TRIGGER_BASE_STACKS = 9;

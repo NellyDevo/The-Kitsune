@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChannelWillOWispAction;
 
-public class RoaringFirePower extends TwoAmountPower {
+public class RoaringFirePower extends AbstractKitsunePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("RoaringFirePower");
@@ -36,19 +36,22 @@ public class RoaringFirePower extends TwoAmountPower {
         updateDescription();
     }
 
-    public void onEnergyUsed(int e) {
-        int wispsToChannel = 0;
-        amount2 += e;
-        if (amount2 >= amount) {
-            float fAmount = (float)this.amount;
-            float fCounter = (float)amount2;
-            wispsToChannel = MathUtils.floor(fCounter / fAmount);
-            amount2 -= (amount * wispsToChannel);
-            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(wispsToChannel));
-        }
-        //sanitizing negative inputs
-        if (amount2 < 0) {
-            amount2 = 0;
+    @Override
+    public void onEnergyChanged(int e) {
+        if (e < 0) {
+            int wispsToChannel = 0;
+            amount2 += -e; //this function receives the the energy delta whenever it changes. therefore energy use will cause e to be negative therefore flip its sign
+            if (amount2 >= amount) {
+                float fAmount = (float)this.amount;
+                float fCounter = (float)amount2;
+                wispsToChannel = MathUtils.floor(fCounter / fAmount);
+                amount2 -= (amount * wispsToChannel);
+                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(wispsToChannel));
+            }
+            //sanitizing negative inputs
+            if (amount2 < 0) {
+                amount2 = 0;
+            }
         }
     }
 

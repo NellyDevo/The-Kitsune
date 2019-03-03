@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
 
-public class CommuneWithSpiritsPower extends TwoAmountPower implements WispAffectingPower{
+public class CommuneWithSpiritsPower extends TwoAmountPower implements WispAffectingPower {
     public static final String POWER_ID = KitsuneMod.makeID("CommuneWithSpirits");
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -24,6 +24,7 @@ public class CommuneWithSpiritsPower extends TwoAmountPower implements WispAffec
         updateDescription();
     }
 
+    @Override
     public int onChannelWisp(int amount) {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, amount2));
         amount += this.amount;

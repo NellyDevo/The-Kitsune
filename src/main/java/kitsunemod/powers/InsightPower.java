@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.patches.KitsuneTags;
 
-public class InsightPower extends AbstractPower {
+public class InsightPower extends AbstractKitsunePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("InsightPower");

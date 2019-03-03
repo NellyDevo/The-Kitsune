@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
-public class MonsterDefendPlayerPower extends AbstractPower implements NonStackablePower {
+public class MonsterDefendPlayerPower extends AbstractKitsunePower implements NonStackablePower {
 
     public static final String POWER_ID = KitsuneMod.makeID("MonsterDefendPlayer");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
