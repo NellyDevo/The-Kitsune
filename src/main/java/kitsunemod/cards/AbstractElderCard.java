@@ -167,6 +167,15 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     }
 
     private AbstractElderCard getMasterDeckEquivalent(AbstractCard card) {
+        if (AbstractDungeon.player == null) {
+            return null;
+        }
+        if (AbstractDungeon.player.masterDeck == null) {
+            return null;
+        }
+        if (AbstractDungeon.player.masterDeck.size() == 0) {
+            return null;
+        }
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (!c.uuid.equals(this.uuid)) {
                 continue;
