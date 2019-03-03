@@ -32,7 +32,7 @@
   },
   "kitsunemod:BareFangs": {
     "NAME": "Bare Fangs",
-    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Strength.",
+    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Dark.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:BladeAndClaw": {
@@ -141,7 +141,7 @@
   },
   "kitsunemod:Flourish": {
     "NAME": "Flourish",
-    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Gain !M! Dexterity.",
+    "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Gain !M! Light.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FoxShape": {
