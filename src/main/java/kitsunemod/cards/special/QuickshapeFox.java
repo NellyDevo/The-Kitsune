@@ -19,8 +19,8 @@ public class QuickshapeFox extends AbstractKitsuneCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
+    
     private static final int COST = 0;
-
     private static final int CARDS = 1;
 
     public QuickshapeFox() {
@@ -48,6 +48,8 @@ public class QuickshapeFox extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
