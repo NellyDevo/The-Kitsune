@@ -191,7 +191,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new PressAdvantage());
         BaseMod.addCard(new DominateWill());
         BaseMod.addCard(new PackKill());
-        BaseMod.addCard(new ResoluteTechnique());
         BaseMod.addCard(new HauntingLights());
         BaseMod.addCard(new RepayInKind());
         BaseMod.addCard(new FleshToStone());
@@ -212,6 +211,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new MasteryOfLightAndDark());
         BaseMod.addCard(new BalancingAct());
         BaseMod.addCard(new HeightenedReflexes());
+        BaseMod.addCard(new WarmUp());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

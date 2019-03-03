@@ -344,11 +344,6 @@
     "DESCRIPTION": "Deal !D! damage. Apply the same amount of Weak you have.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Apply the same amount of Weak and Vulnerable you have."
   },
-  "kitsunemod:ResoluteTechnique": {
-    "NAME": "Resolute Technique",
-    "DESCRIPTION": "Gain !M! Weak, then deal !D! damage. Kitsune kitsunemod:Aspect: Loses !kitsunemod:M2! HP instead.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:RoaringFire": {
     "NAME": "Roaring Fire",
     "DESCRIPTION": "Every !M! Energy you spend, Channel a kitsunemod:Will-o-Wisp.",
@@ -431,6 +426,11 @@
     "NAME": "Waning Existence",
     "DESCRIPTION": "Deal !D! Damage. NL Deals additional damage equal to the target's stacks of kitsunemod:Soulsteal.",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Deals additional damage equal to double the target's stacks of kitsunemod:Soulsteal."
+  },
+  "kitsunemod:WarmUp": {
+    "NAME": "Warm Up",
+    "DESCRIPTION": "Deal !D! damage. Add a Nip at Heels and a matching 0-cost Aspect attack to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a Nip at Heels, a matching 0-cost Aspect attack, and a Flash of Steel to your hand. NL Exhaust."
   },
   "kitsunemod:Wink": {
     "NAME": "Wink",
