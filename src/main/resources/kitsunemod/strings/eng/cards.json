@@ -336,7 +336,7 @@
   },
   "kitsunemod:RendSpirit": {
     "NAME": "Rend Spirit",
-    "DESCRIPTION": "Deal !D! damage. Kitsune kitsunemod:Aspect: Target loses !M! HP.",
+    "DESCRIPTION": "Deal !D! damage. Lose !M! HP, reduced by the stacks of kitsunemod:Soulsteal on the target.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:RepayInKind": {
