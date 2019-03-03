@@ -15,6 +15,7 @@ public class PerfectedShapePower extends AbstractKitsunePower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
+    private boolean shapeshiftedThisTurn = false;
 
     public PerfectedShapePower(final AbstractCreature owner, int amount) {
 
@@ -35,9 +36,19 @@ public class PerfectedShapePower extends AbstractKitsunePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if (KitsuneMod.turnsSpentInSameShape > 0 && isPlayer) {
+        if (!shapeshiftedThisTurn && isPlayer) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, amount));
         }
+    }
+
+    @Override
+    public void atStartOfTurnPostDraw() {
+        shapeshiftedThisTurn = false;
+    }
+
+    @Override
+    public void onShapeChange(KitsuneMod.KitsuneShapes shape, AbstractShapePower power) {
+        shapeshiftedThisTurn = true;
     }
 
     @Override
