@@ -78,7 +78,7 @@
   },
   "kitsunemod:DancingLights": {
     "NAME": "Dancing Lights",
-    "DESCRIPTION": "Deal !D! Damage. Channel !M! kitsunemod:Will-o-Wisps.",
+    "DESCRIPTION": "Deal !D! Damage. NL Channel !M! kitsunemod:Will-o-Wisps.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:DeathStroke": {
@@ -106,7 +106,7 @@
   },
   "kitsunemod:DrownInTheDeep": {
     "NAME": "Drown in the Deep",
-    "DESCRIPTION": "Target loses !M! HP X times, doubling it each time.",
+    "DESCRIPTION": "Target loses !M! HP X times, doubling each time.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:EssenceTheft": {
