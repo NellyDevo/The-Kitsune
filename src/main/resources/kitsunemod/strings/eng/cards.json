@@ -283,11 +283,6 @@
     "DESCRIPTION": "Channel !M! Will-o-Wisp. Draw !kitsunemod:M2! card.",
     "UPGRADE_DESCRIPTION": "Channel !M! Will-o-Wisps. Draw !kitsunemod:M2! cards."
   },
-  "kitsunemod:PressAdvantage": {
-    "NAME": "Press the Advantage",
-    "DESCRIPTION": "Deal !D! damage. NL kitsunemod:Elder: Kill !M! non-minion enemies.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:Puppeteer": {
     "NAME": "Puppeteer",
     "DESCRIPTION": "kitsunemod:Charm an enemy for !M! turn.",
@@ -387,7 +382,7 @@
     "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": ""
   },
-    "kitsunemod:TerrorPhantasm": {
+  "kitsunemod:TerrorPhantasm": {
     "NAME": "Terror Phantasm",
     "DESCRIPTION": "Apply 3 Weak and Vulnerable. NL At the start of each of its turns, target loses !M! HP.",
     "UPGRADE_DESCRIPTION": ""
@@ -400,6 +395,11 @@
   "kitsunemod:ThickFur": {
     "NAME": "Thick Fur",
     "DESCRIPTION": "Gain !M! kitsunemod:Dark and !B! Block. ",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:TimidAppearance": {
+    "NAME": "Timid Appearance",
+    "DESCRIPTION": "Gain !B! Block. If you're Weak, gain !M! Block instead.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TransmuteSelf": {

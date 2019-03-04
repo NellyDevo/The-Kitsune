@@ -175,6 +175,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new Insight());
         BaseMod.addCard(new FastShape());
         BaseMod.addCard(new LureCloser());
+        BaseMod.addCard(new DeceptiveGuise());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
@@ -188,7 +189,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new Puppeteer());
         BaseMod.addCard(new FlashOfLight());
         BaseMod.addCard(new EtherealKnives());
-        BaseMod.addCard(new PressAdvantage());
+        BaseMod.addCard(new TimidAppearance());
         BaseMod.addCard(new DominateWill());
         BaseMod.addCard(new PackKill());
         BaseMod.addCard(new HauntingLights());
@@ -200,7 +201,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new RoaringFire());
         BaseMod.addCard(new PurityOfForm());
         BaseMod.addCard(new PleaForGuidance());
-        BaseMod.addCard(new DeceptiveGuise());
         BaseMod.addCard(new LieInWait());
         BaseMod.addCard(new UnstableShape());
         BaseMod.addCard(new SiphonSoul());
