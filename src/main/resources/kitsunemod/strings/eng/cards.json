@@ -192,6 +192,11 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:Ignite": {
+    "NAME": "Ignite",
+    "DESCRIPTION": "Channel a kitsunemod:Will-o-Wisp for each enemy in combat. NL Draw a card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel a kitsunemod:Will-o-Wisp for each enemy in combat. NL Draw a card."
+  },
   "kitsunemod:IgniteSilhouette": {
     "NAME": "Ignite Silhouette",
     "DESCRIPTION": "Deal !D! damage. Gain kitsunemod:Dark equal to unblocked damage.",
@@ -200,11 +205,6 @@
   "kitsunemod:InflictWounds": {
     "NAME": "Inflict Wounds",
     "DESCRIPTION": "Deal !D! damage. NL Human kitsunemod:Aspect: Apply !M! kitsunemod:Soulsteal.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:Ingenuity": {
-    "NAME": "Ingenuity",
-    "DESCRIPTION": "Gain !B! Block + !M! more for each time you've kitsunemod:Shapeshifted this combat. ",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:Insight": {

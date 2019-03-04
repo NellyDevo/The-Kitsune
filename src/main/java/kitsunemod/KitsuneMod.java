@@ -157,7 +157,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new KitsuneShape());
         BaseMod.addCard(new HumanShape());
         BaseMod.addCard(new ThickFur());
-        BaseMod.addCard(new Ingenuity());
         BaseMod.addCard(new NipAtHeels());
         BaseMod.addCard(new TestTheirTactics());
         BaseMod.addCard(new SplitSoul());
@@ -175,6 +174,7 @@ public class KitsuneMod implements
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
+        BaseMod.addCard(new Ignite());
         BaseMod.addCard(new IgniteSilhouette());
         BaseMod.addCard(new EssenceTheft());
         BaseMod.addCard(new RendSpirit());
