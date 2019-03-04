@@ -35,10 +35,19 @@ public class PurityOfForm extends AbstractKitsuneCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, magicNumber, false), magicNumber));
+        int stacksOfDebuffsRemoved = 0;
         for (AbstractPower power : p.powers) {
             if (power.type == AbstractPower.PowerType.DEBUFF && power.ID != WeakPower.POWER_ID) {
+                if (power.amount <= 0) {
+                    stacksOfDebuffsRemoved++;
+                } else {
+                    stacksOfDebuffsRemoved += power.amount;
+                }
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
             }
+        }
+        if (upgraded && stacksOfDebuffsRemoved > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, stacksOfDebuffsRemoved, false), stacksOfDebuffsRemoved));
         }
     }
 
@@ -52,6 +61,8 @@ public class PurityOfForm extends AbstractKitsuneCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

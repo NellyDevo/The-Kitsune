@@ -309,7 +309,7 @@
   "kitsunemod:PurityOfForm": {
     "NAME": "Purity of Form",
     "DESCRIPTION": "Gain !M! Weak. Remove all other debuffs from yourself.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "Gain !M! Weak. Convert all other debuffs on you to an equivalent amount of Weak."
   },
   "kitsunemod:PurityOfFunction": {
     "NAME": "Purity of Function",
