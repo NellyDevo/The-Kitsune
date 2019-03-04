@@ -429,8 +429,8 @@
   },
   "kitsunemod:WarmUp": {
     "NAME": "Warm Up",
-    "DESCRIPTION": "Deal !D! damage. Add a Nip at Heels and a matching 0-cost Aspect attack to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a Nip at Heels, a matching 0-cost Aspect attack, and a Flash of Steel to your hand. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Add a Nip at Heels and a matching 0-cost Aspect attack to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a Nip at Heels, a matching 0-cost Aspect attack, and a Swift Strike to your hand. NL Exhaust."
   },
   "kitsunemod:Wink": {
     "NAME": "Wink",
