@@ -18,16 +18,18 @@ public class DeathStroke extends AbstractKitsuneCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_attack.png";
+
     private static final int COST = 1;
 
     private static final int DAMAGE_AMT = 12;
     private static final int UPGRADE_DAMAGE_AMT = 4;
-    private static final int HEAL_AMT = 2;
+    private static final int HEAL_AMT = 3;
 
     public DeathStroke() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.RARE, CardTarget.ENEMY);
+
         damage = baseDamage = DAMAGE_AMT;
         magicNumber = baseMagicNumber = HEAL_AMT;
         exhaust = true;
