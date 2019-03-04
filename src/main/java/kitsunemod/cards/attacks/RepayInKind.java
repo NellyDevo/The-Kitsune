@@ -42,7 +42,7 @@ public class RepayInKind extends AbstractKitsuneCard {
             AbstractPower power = p.getPower(WeakPower.POWER_ID);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, power.amount, false),power.amount));
         }
-        if (p.hasPower(VulnerablePower.POWER_ID)) {
+        if (p.hasPower(VulnerablePower.POWER_ID) && upgraded) {
             AbstractPower power = p.getPower(VulnerablePower.POWER_ID);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, power.amount, false),power.amount));
         }
