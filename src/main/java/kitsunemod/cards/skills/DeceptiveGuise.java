@@ -29,7 +29,7 @@ public class DeceptiveGuise extends AbstractKitsuneCard {
     public DeceptiveGuise() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF);
+                CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK;
         tags.add(KitsuneTags.ASPECT_CARD);
     }
