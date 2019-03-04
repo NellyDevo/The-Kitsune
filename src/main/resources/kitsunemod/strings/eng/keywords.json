@@ -4,7 +4,7 @@
       "soulsteal",
       "soulsteals"
     ],
-    "DESCRIPTION": "The first time this monster attacks you on each of their turns, it gives you a buff. NL Human: 2 #yLight. NL Kitsune: 2 #yWill-o-Wisps (static). NL Fox: 2 #yDark."
+    "DESCRIPTION": "The first time this monster attacks you on each of their turns, it gives you a buff based on your #yShape. NL #yFox: 2 Dark per stack. NL #yKitsune: 1 wisp per 5 stacks. NL #yHuman: 2 light per stack. NL #yNinetailed: 1 wisp per 3 stacks."
   },
   "WILL-O-WISP": {
     "NAMES": [
@@ -20,7 +20,7 @@
       "shapeshifts",
       "shapeshifted"
     ],
-    "DESCRIPTION": "Grants minor base Strength/Dexterity changes. #yAspect cards of that #yShape will trigger."
+    "DESCRIPTION": "#yAspect cards of that #yShape will trigger."
   },
   "SHAPE": {
     "NAMES": [
