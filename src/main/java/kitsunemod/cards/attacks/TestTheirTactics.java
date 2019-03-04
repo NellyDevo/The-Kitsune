@@ -25,7 +25,7 @@ public class TestTheirTactics extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/TestTheirTactics.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     private static final int ASPECT_CARDS_DRAWN = 1;
