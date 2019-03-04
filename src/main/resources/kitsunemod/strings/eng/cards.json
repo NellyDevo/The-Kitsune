@@ -35,11 +35,6 @@
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Dark.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:BladeAndClaw": {
-    "NAME": "Blade And Claw",
-    "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Target loses !M! HP.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:BlinkSlash": {
     "NAME": "Blink Slash",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !B! block for each enemy hit.",
@@ -227,6 +222,11 @@
       ".",
       " Conserve your Energy this turn."
     ]
+  },
+  "kitsunemod:LureCloser": {
+    "NAME": "Lure Closer",
+    "DESCRIPTION": "Apply !M! Soulsteal. Increased by your stacks of Weak.",
+    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:MassSuggestion": {
     "NAME": "Mass Suggestion",

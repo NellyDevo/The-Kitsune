@@ -174,7 +174,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new AlluringGlimmer());
         BaseMod.addCard(new Insight());
         BaseMod.addCard(new FastShape());
-        BaseMod.addCard(new BladeAndClaw());
+        BaseMod.addCard(new LureCloser());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
