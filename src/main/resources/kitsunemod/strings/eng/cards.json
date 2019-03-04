@@ -45,6 +45,16 @@
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy and you are below half HP, heal !M! HP. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:ChangeShape": {
+    "NAME": "Change Shape",
+    "DESCRIPTION": "Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Human Shape.",
+      "Kitsune Shape.",
+      "Fox Shape"
+    ]
+  },
   "kitsunemod:CleansingNova": {
     "NAME": "Cleansing Nova",
     "DESCRIPTION": "Gain !B! Block. NL Lose all Block to deal that much to ALL enemies. Exhaust.",
@@ -350,16 +360,6 @@
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " NL (Active!)"
-    ]
-  },
-  "kitsunemod:ShapeMastery": {
-    "NAME": "Shape Mastery",
-    "DESCRIPTION": "Gain !B! block. Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      "Human Shape.",
-      "Kitsune Shape.",
-      "Fox Shape"
     ]
   },
   "kitsunemod:ShiftIntoSpirit": {

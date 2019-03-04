@@ -27,6 +27,7 @@ import kitsunemod.cards.basic.DancingLights;
 import kitsunemod.cards.basic.Defend;
 import kitsunemod.cards.basic.Strike;
 import kitsunemod.cards.basic.Wink;
+import kitsunemod.cards.basic.ChangeShape;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.KitsuneShapePower;
@@ -337,6 +338,7 @@ public class KitsuneCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Wink.ID);
         retVal.add(DancingLights.ID);
+        retVal.add(ChangeShape.ID);
         return retVal;
     }
 
