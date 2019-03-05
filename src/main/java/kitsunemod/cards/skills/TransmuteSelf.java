@@ -34,7 +34,7 @@ public class TransmuteSelf extends AbstractKitsuneCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = SHADE_STACKS;
         secondMagicNumber = baseSecondMagicNumber = HP_LOSS;
-        AlwaysRetainField.alwaysRetain.set(this, true);
+        isEthereal = true;
     }
 
     @Override
