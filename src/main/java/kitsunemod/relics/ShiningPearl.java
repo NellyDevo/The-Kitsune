@@ -1,5 +1,6 @@
 package kitsunemod.relics;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -20,12 +21,12 @@ public class ShiningPearl extends KitsuneRelic {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
-    public static final int FOX_BONUS_STR = 0;
+    public static final int FOX_BONUS_STR = 1;
     public static final int FOX_BONUS_DEX = 2;
     public static final int KITSUNE_BONUS_STR = 1;
     public static final int KITSUNE_BONUS_DEX = 1;
     public static final int HUMAN_BONUS_STR = 2;
-    public static final int HUMAN_BONUS_DEX = 0;
+    public static final int HUMAN_BONUS_DEX = 1;
     public static final int KITSUNE_WILLOWISPS_AMOUNT = 1;
 
     @Override

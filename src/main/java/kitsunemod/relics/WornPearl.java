@@ -1,7 +1,9 @@
 package kitsunemod.relics;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.localization.KeywordStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
 import kitsunemod.powers.AbstractShapePower;
@@ -19,12 +21,12 @@ public class WornPearl extends KitsuneRelic {
     }
 
 
-    public static final int FOX_BONUS_STR = -1;
+    public static final int FOX_BONUS_STR = 0;
     public static final int FOX_BONUS_DEX = 2;
     public static final int KITSUNE_BONUS_STR = 1;
     public static final int KITSUNE_BONUS_DEX = 1;
     public static final int HUMAN_BONUS_STR = 2;
-    public static final int HUMAN_BONUS_DEX = -1;
+    public static final int HUMAN_BONUS_DEX = 0;
 
 
     @Override
