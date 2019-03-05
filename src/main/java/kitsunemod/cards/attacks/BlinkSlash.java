@@ -44,11 +44,13 @@ public class BlinkSlash extends AbstractKitsuneCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1f));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+        int totalBlock = 0;
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+                totalBlock += block;
             }
         }
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, totalBlock));
     }
 
     @Override

@@ -44,10 +44,7 @@ public class HeightenedReflexesPower extends AbstractKitsunePower {
         updateDescription();
         zeroCosts = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.cost == 0 &&
-                    card.type == AbstractCard.CardType.ATTACK &&
-                    (card.color == AbstractCard.CardColor.COLORLESS || card.color == AbstractCardEnum.KITSUNE_COLOR) &&
-                    card.cardID != Shiv.ID) {
+            if (card.cost == 0 && card.type == AbstractCard.CardType.ATTACK && card.color == AbstractCardEnum.KITSUNE_COLOR) {
                 zeroCosts.addToTop(card.makeCopy());
             }
         }
@@ -68,7 +65,8 @@ public class HeightenedReflexesPower extends AbstractKitsunePower {
                     if (shouldUpgrade) {
                         tempCard.upgrade();
                     }
-                    tempCard.current_y = -200.0f * Settings.scale;
+                    tempCard.current_x = AbstractDungeon.player.hb.cX;
+                    tempCard.current_y = AbstractDungeon.player.hb.cY;
                     tempCard.target_x = Settings.WIDTH / 2.0f + 200.0f * Settings.scale;
                     tempCard.target_y = Settings.HEIGHT / 2.0f;
                     tempCard.targetAngle = 0.0f;
