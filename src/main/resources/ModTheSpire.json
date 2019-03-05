@@ -4,7 +4,7 @@
   "author_list": ["Rin Camelia", "Johnny Devo"],
   "description": "Touch fluffy tail?",
   "dependencies": ["basemod", "stslib"],
-  "credits": "Blizzare",
+  "credits": "Blizzare, Skyson, Scavenging Mechanic, Unbeared",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}"
