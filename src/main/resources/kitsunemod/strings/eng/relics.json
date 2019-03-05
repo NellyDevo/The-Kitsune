@@ -3,7 +3,7 @@
     "NAME": "Black and White Stone",
     "FLAVOR": "A symbol of the Eternal Balance. Strange I'd find it here.",
     "DESCRIPTIONS": [
-      "#yDark and #yLight trigger #b",
+      "#ykitsunemod:Dark and #ykitsunemod:Light trigger #b",
       " stacks earlier."
     ]
   },
@@ -12,14 +12,14 @@
     "FLAVOR": "It always seems to refill itself with a strange black liquid when you aren't looking at it...",
     "DESCRIPTIONS": [
       "Taking damage in combat charges the relic up to #b",
-      " charges. Right click to consume the charges and gain that much #yDark."
+      " charges. Right click to consume the charges and gain that much #ykitsunemod:Dark."
     ]
   },
   "kitsunemod:FlameEyeNecklace": {
     "NAME": "Flame-Eye Necklace",
     "FLAVOR": "I feel invigorated, but spirits seem to shy away from me now...",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Reduce your maximum #yWill-o-Wisp count by #b",
+      "Gain [E] at the start of your turn. Reduce your maximum #ykitsunemod:Will-o-Wisp count by #b",
       "."
     ]
   },
@@ -27,7 +27,7 @@
     "NAME": "Glowing Match",
     "FLAVOR": "Came with a note that says \"Never let the fire in you die.\"",
     "DESCRIPTIONS": [
-      "#yWill-o-Wisps deal #b",
+      "#ykitsunemod:Will-o-Wisps deal #b",
       " extra damage."
     ]
   },
@@ -35,10 +35,10 @@
     "NAME": "Worn Pearl",
     "FLAVOR": "As close to me as my heart.",
     "DESCRIPTIONS": [
-      "Gain different #yStrength and #yDexterity in different #yShapes.",
-      " NL Fox #yAspect: ",
-      " NL Kitsune #yAspect: ",
-      " NL Human #yAspect: ",
+      "Gain different #yStrength and #yDexterity in different #ykitsunemod:Shapes.",
+      " NL Fox #ykitsunemod:Aspect: ",
+      " NL Kitsune #ykitsunemod:Aspect: ",
+      " NL Human #ykitsunemod:Aspect: ",
       " Strength, ",
       " Dexterity."
     ]
@@ -47,22 +47,22 @@
     "NAME": "Shining Pearl",
     "FLAVOR": "Just like when I was young!",
     "DESCRIPTIONS": [
-      "Gain increased bonuses in different #yShapes.",
-      " NL Fox #yAspect: ",
-      " NL Kitsune #yAspect: ",
-      " NL Human #yAspect: ",
+      "Gain increased bonuses in different #ykitsunemod:Shapes.",
+      " NL Fox #ykitsunemod:Aspect: ",
+      " NL Kitsune #ykitsunemod:Aspect: ",
+      " NL Human #ykitsunemod:Aspect: ",
       " Strength, ",
       " Dexterity.",
       " Also channel ",
-      " #yWill-o-wisp at the start of your turn.",
-      " @yWill-o-Wisps at the start of your turn."
+      " #ykitsunemod:Will-o-wisp at the start of your turn.",
+      " #ykitsunemod:Will-o-Wisps at the start of your turn."
     ]
   },
   "kitsunemod:LuminousPearl": {
     "NAME": "Luminous Pearl",
     "FLAVOR": "It would seem that with my offering, I have ascended to become an elder spirit.",
     "DESCRIPTIONS": [
-      "Start each fight in Ninetailed #yShape and #yExhaust all #yShapeshift cards in your deck to gain 1 #yStrength and #yDexterity for each."
+      "Start each fight in Ninetailed #ykitsunemod:Shape and #yExhaust all #ykitsunemod:Shapeshift cards in your deck to gain 1 #yStrength and #yDexterity for each."
     ]
   },
   "kitsunemod:MiniatureFountain": {
@@ -71,14 +71,14 @@
     "DESCRIPTIONS": [
       "After #b",
       " turns in combat, gain #b",
-      " #yLight."
+      " #ykitsunemod:Light."
     ]
   },
   "kitsunemod:PendulumOfEternalBalance": {
     "NAME": "Pendulum of Eternal Balance",
     "FLAVOR": "If held, it never stops swinging back and forth.",
     "DESCRIPTIONS": [
-      "When you trigger #yLight or #yDark, reset to #b",
+      "When you trigger #ykitsunemod:Light or #ykitsunemod:Dark, reset to #b",
       " stacks of the opposite."
     ]
   },
@@ -86,7 +86,7 @@
     "NAME": "Precious Amulet",
     "FLAVOR": "But how could this be here? I miss her so much...",
     "DESCRIPTIONS": [
-      "Right click to toggle. When active, start each fight in Human #yShape."
+      "Right click to toggle. When active, start each fight in Human #ykitsunemod:Shape."
     ]
   },
   "kitsunemod:QuicksandPouch": {
@@ -95,21 +95,21 @@
     "DESCRIPTIONS": [
       "If you're below #r",
       "% HP at the start of combat, gain #b",
-      " #yShade."
+      " #ykitsunemod:Shade."
     ]
   },
   "kitsunemod:RunicChoker": {
     "NAME": "Runic Choker",
     "FLAVOR": "Not nearly as velvety-smooth as others but really enhances that punk warlock look.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. You can no longer trigger #ySoulsteal."
+      "Gain [E] at the start of your turn. You can no longer trigger #ykitsunemod:Soulsteal."
     ]
   },
   "kitsunemod:BrokenCollar": {
     "NAME": "Broken Collar",
     "FLAVOR": "A reminder I will never be bound again.",
     "DESCRIPTIONS": [
-      "Right click to toggle. When active, start each fight in Fox #yShape."
+      "Right click to toggle. When active, start each fight in Fox #ykitsunemod:Shape."
     ]
   }
 }
