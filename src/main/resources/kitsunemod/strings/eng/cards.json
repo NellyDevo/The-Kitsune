@@ -394,7 +394,7 @@
   },
   "kitsunemod:ThickFur": {
     "NAME": "Thick Fur",
-    "DESCRIPTION": "Gain !M! kitsunemod:Dark and !B! Block. ",
+    "DESCRIPTION": "Gain !M! kitsunemod:Dark NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TimidAppearance": {
