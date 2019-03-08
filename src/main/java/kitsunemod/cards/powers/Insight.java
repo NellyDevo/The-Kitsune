@@ -30,22 +30,7 @@ public class Insight extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InsightPower(p)));
-        }
-        else {
-            if (p.hasPower(ID)) {
-                InsightPower power = (InsightPower)p.getPower(ID);
-                power.isUpgraded = true;
-                power.flash();
-            }
-            else {
-                InsightPower power = new InsightPower(p);
-                power.isUpgraded = true;
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, power));
-            }
-        }
-
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InsightPower(p)));
     }
 
     @Override

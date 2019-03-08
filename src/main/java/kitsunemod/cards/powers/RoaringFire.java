@@ -33,20 +33,7 @@ public class RoaringFire extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RoaringFirePower(p, magicNumber)));
-        }
-        else {
-            if (p.hasPower(RoaringFirePower.POWER_ID)) {
-                RoaringFirePower power = (RoaringFirePower)p.getPower(ID);
-                power.stackPower(UPGRADE_MINUS_ENERGY_FOR_WILL_O_WISP);
-                power.flash();
-            }
-            else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RoaringFirePower(p, magicNumber)));
-            }
-        }
-
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RoaringFirePower(p, magicNumber)));
     }
 
     @Override

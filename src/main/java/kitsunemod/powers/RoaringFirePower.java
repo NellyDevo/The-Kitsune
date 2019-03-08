@@ -2,6 +2,7 @@ package kitsunemod.powers;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChannelWillOWispAction;
 
-public class RoaringFirePower extends AbstractKitsunePower {
+public class RoaringFirePower extends AbstractKitsunePower implements NonStackablePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("RoaringFirePower");

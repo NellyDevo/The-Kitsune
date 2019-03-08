@@ -1,5 +1,6 @@
 package kitsunemod.powers;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -16,7 +17,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 
-public class HeightenedReflexesPower extends AbstractKitsunePower {
+public class HeightenedReflexesPower extends AbstractKitsunePower implements NonStackablePower {
 
     public boolean shouldUpgrade;
     private CardGroup zeroCosts;

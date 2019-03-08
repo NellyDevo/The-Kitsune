@@ -29,14 +29,7 @@ public class HeightenedReflexes extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(HeightenedReflexesPower.POWER_ID)) {
-            HeightenedReflexesPower power = (HeightenedReflexesPower)p.getPower(HeightenedReflexesPower.POWER_ID);
-            power.shouldUpgrade = upgraded;
-            power.stackPower(1);
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HeightenedReflexesPower(p, upgraded, 1), 1));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HeightenedReflexesPower(p, upgraded, 1), 1));
     }
 
     @Override

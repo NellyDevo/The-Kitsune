@@ -36,16 +36,7 @@ public class FastShape extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(FastShapePower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FastShapePower(p, upgraded)));
-
-        } else if (this.upgraded && !((FastShapePower)p.getPower(FastShapePower.POWER_ID)).alsoReduceCost) {
-            FastShapePower existingPower = (FastShapePower)p.getPower(FastShapePower.POWER_ID);
-            existingPower.amount += UPGRADED_COST_REDUCE_AMOUNT;
-            existingPower.alsoReduceCost = true;
-            existingPower.onInitialApplication();
-            existingPower.flash();
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FastShapePower(p, upgraded)));
     }
 
     @Override

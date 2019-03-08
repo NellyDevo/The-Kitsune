@@ -1,5 +1,6 @@
 package kitsunemod.powers;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,7 +14,7 @@ import kitsunemod.cards.special.QuickshapeFox;
 import kitsunemod.cards.special.QuickshapeHuman;
 import kitsunemod.cards.special.QuickshapeKitsune;
 
-public class UnstableShapePower extends AbstractKitsunePower {
+public class UnstableShapePower extends AbstractKitsunePower implements NonStackablePower {
 
     public boolean shouldUpgrade;
     private int lastFormId = 1;
@@ -43,17 +44,14 @@ public class UnstableShapePower extends AbstractKitsunePower {
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        updateDescription();
-    }
-
-    @Override
     public void atStartOfTurn() {
+        flash();
+
         int cardType = 3;
         do {
             cardType = AbstractDungeon.cardRandomRng.random(2);
         } while (cardType == 3 || cardType == lastFormId);
+
         lastFormId = cardType;
         String cardKey = "";
         switch (cardType) {
@@ -67,12 +65,13 @@ public class UnstableShapePower extends AbstractKitsunePower {
                 cardKey = QuickshapeHuman.ID;
             default:
                 KitsuneMod.logger.warn("UnstableShapePower: Shouldn't have picked a random number other than 0-2?");
-
         }
+
         AbstractCard newCard = CardLibrary.getCard(cardKey).makeCopy();
         if (shouldUpgrade) {
             newCard.upgrade();
         }
+
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(newCard, amount));
     }
 

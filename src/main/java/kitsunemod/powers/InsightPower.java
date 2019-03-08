@@ -1,6 +1,7 @@
 package kitsunemod.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.patches.KitsuneTags;
 
-public class InsightPower extends AbstractKitsunePower {
+public class InsightPower extends AbstractKitsunePower implements NonStackablePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("InsightPower");
@@ -40,13 +41,17 @@ public class InsightPower extends AbstractKitsunePower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.hasTag(KitsuneTags.ASPECT_CARD) || isUpgraded) {
-            flash();
-            AbstractDungeon.actionManager.addToBottom(
-                    new MoveCardsAction(
-                            AbstractDungeon.player.hand,
-                            AbstractDungeon.player.drawPile,
-                            (c) -> c.tags.contains(KitsuneTags.ASPECT_CARD),
-                            1));
+            if (AbstractDungeon.player.hand.group.stream()
+                            .filter(c -> c.tags.contains(KitsuneTags.ASPECT_CARD))
+                            .count() > 0) {
+                flash();
+                AbstractDungeon.actionManager.addToBottom(
+                        new MoveCardsAction(
+                                AbstractDungeon.player.hand,
+                                AbstractDungeon.player.drawPile,
+                                (c) -> c.tags.contains(KitsuneTags.ASPECT_CARD),
+                                1));
+            }
         }
     }
 
