@@ -414,8 +414,8 @@
   },
   "kitsunemod:UnstableShape": {
     "NAME": "Unstable Shape",
-    "DESCRIPTION": "At the start of your turn, add a random kitsunemod:Quickshape card to your hand.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random upgraded kitsunemod:Quickshape card to your hand."
+    "DESCRIPTION": "At the start of your turn, add a different random kitsunemod:Quickshape card to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add a different random upgraded kitsunemod:Quickshape card to your hand."
   },
   "kitsunemod:VanishIntoShadows": {
     "NAME": "Vanish Into Shadows",
