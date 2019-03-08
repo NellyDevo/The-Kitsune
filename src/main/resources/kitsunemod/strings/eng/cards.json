@@ -404,7 +404,7 @@
   },
   "kitsunemod:TransmuteSelf": {
     "NAME": "Transmute Self",
-    "DESCRIPTION": "Ethereal. NL Lose !kitsunemod:M2! HP. Gain !M! kitsunemod:Shade.",
+    "DESCRIPTION": "Ethereal. NL Lose !kitsunemod:M2! HP. NL Gain !M! kitsunemod:Shade.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:TricksterFlame": {
