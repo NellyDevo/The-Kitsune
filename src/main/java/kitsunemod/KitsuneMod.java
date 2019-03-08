@@ -163,7 +163,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new Radiance());
         BaseMod.addCard(new GrowingShadow());
         BaseMod.addCard(new TricksterFlame());
-        BaseMod.addCard(new PerfectedShape());
         BaseMod.addCard(new FeralInstinct());
         BaseMod.addCard(new InflictWounds());
         BaseMod.addCard(new AlluringGlimmer());
