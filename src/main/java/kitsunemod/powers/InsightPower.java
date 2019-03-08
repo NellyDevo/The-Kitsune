@@ -1,11 +1,13 @@
 package kitsunemod.powers;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -32,9 +34,9 @@ public class InsightPower extends AbstractKitsunePower implements NonStackablePo
         ID = POWER_ID;
         type = PowerType.BUFF;
 
-        //temporary until I start making power art too
-        //img = ImageMaster.loadImage(IMG);
-        loadRegion("curiosity");
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/InsightPower_84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/InsightPower_32.png"), 0, 0, 32, 32);
+
         updateDescription();
     }
 
