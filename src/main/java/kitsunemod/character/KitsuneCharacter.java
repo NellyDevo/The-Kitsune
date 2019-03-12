@@ -249,7 +249,7 @@ public class KitsuneCharacter extends CustomPlayer {
     }
 
     @Override
-    public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
+    public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() { //TODO
         return new AbstractGameAction.AttackEffect[]{
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
                 AbstractGameAction.AttackEffect.FIRE,
@@ -287,7 +287,7 @@ public class KitsuneCharacter extends CustomPlayer {
     }
 
     @Override
-    public int getAscensionMaxHPLoss() {
+    public int getAscensionMaxHPLoss() { //TODO
         return 5;
     }
 
@@ -297,14 +297,14 @@ public class KitsuneCharacter extends CustomPlayer {
     }
 
     @Override
-    public void doCharSelectScreenSelectEffect() {
+    public void doCharSelectScreenSelectEffect() { //TODO
         CardCrawlGame.sound.playA("ATTACK_FIRE", MathUtils.random(-0.2f, 0.2f));
         CardCrawlGame.sound.playA("ATTACK_FAST", MathUtils.random(-0.2f, 0.2f));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
     @Override
-    public String getCustomModeCharacterButtonSoundKey() {
+    public String getCustomModeCharacterButtonSoundKey() { //TODO
         return "ATTACK_FIRE";
     }
 
