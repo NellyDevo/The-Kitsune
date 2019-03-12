@@ -97,6 +97,20 @@ public class WillOWispProjectile extends AbstractGameEffect {
         }
     }
 
+    public void changeTarget(AbstractCreature newTarget) {
+        float oldDistance = (float)Math.sqrt(Math.pow(startX - x, 2) + Math.pow(startY - y, 2));
+        float newDistance = (float)Math.sqrt(Math.pow(newTarget.hb.cX - target.hb.cX, 2) + Math.pow(newTarget.hb.cY - target.hb.cY, 2));
+        endDuration = endDuration * (newDistance / oldDistance);
+        startX = x;
+        startY = y;
+        target = newTarget;
+        endX = target.hb.cX;
+        endY = target.hb.cY;
+        startColor = color;
+        doDamage = false;
+        didDamage = false;
+    }
+
     @Override
     public void render(SpriteBatch sb) {
         if (glowScale > 0) {

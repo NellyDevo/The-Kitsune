@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import kitsunemod.orbs.WillOWisp;
@@ -72,17 +73,29 @@ public class WillOWispAction extends AbstractGameAction {
         isDone = true;
         if (isParent) {
             for (WillOWispProjectile projectile : children) {
-                if (projectile.doDamage && !projectile.didDamage) {
-                    projectile.target.damageFlash = true;
-                    projectile.target.damageFlashFrames = 4;
-                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(projectile.target.hb.cX, projectile.target.hb.cY, AttackEffect.FIRE));
-                    projectile.target.tint.color = Color.RED.cpy();
-                    projectile.target.tint.changeColor(Color.WHITE.cpy());
-                    projectile.target.damage(info);
-                    if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-                        AbstractDungeon.actionManager.clearPostCombatActions();
+                if (!projectile.didDamage) {
+                    if (!projectile.target.isDeadOrEscaped()) {
+                        if (projectile.doDamage && !projectile.didDamage) {
+                            projectile.target.damageFlash = true;
+                            projectile.target.damageFlashFrames = 4;
+                            AbstractDungeon.effectList.add(new FlashAtkImgEffect(projectile.target.hb.cX, projectile.target.hb.cY, AttackEffect.FIRE));
+                            projectile.target.tint.color = Color.RED.cpy();
+                            projectile.target.tint.changeColor(Color.WHITE.cpy());
+                            projectile.target.damage(info);
+                            if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
+                                AbstractDungeon.actionManager.clearPostCombatActions();
+                            }
+                            projectile.didDamage = true;
+                        }
+                    } else {
+                        AbstractMonster newTarget = AbstractDungeon.getRandomMonster();
+                        if (newTarget != null) {
+                            projectile.changeTarget(newTarget);
+                        } else {
+                            projectile.doDamage = true;
+                            projectile.didDamage = true;
+                        }
                     }
-                    projectile.didDamage = true;
                 }
             }
             for (WillOWispProjectile projectile : children) {
