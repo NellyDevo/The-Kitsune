@@ -58,7 +58,7 @@
     "NAMES": [
       "elder"
     ],
-    "DESCRIPTION": "Special cards that can't be smithed but upgrade through 9 tiers based on meeting conditions. Upgrades anywhere and can only upgrade once per room."
+    "DESCRIPTION": "Special cards that can't be upgraded normally, but upgrade through 9 tiers based on meeting conditions. Upgrades anywhere and can only upgrade once per room."
   },
   "Charm": {
     "NAMES": [
