@@ -30,6 +30,7 @@ public class NourishingFlame extends AbstractKitsuneCard {
     private static final int UPGRADE_PLUS_DMG = 2;
 
     private static final int WILLOWISPS_CHANNELED = 1;
+    private static final int UPGRADE_WILLOWISPS_CHANNELLED = 1;
 
     public NourishingFlame() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -61,6 +62,7 @@ public class NourishingFlame extends AbstractKitsuneCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_WILLOWISPS_CHANNELLED);
         }
     }
 }
