@@ -391,7 +391,7 @@ public class KitsuneMod implements
         KitsuneMod.turnsSpentInSameShape = 1;
         AbstractDungeon.player.masterDeck.group.stream()
                 .filter(card -> card instanceof AbstractElderCard)
-                .forEach(card -> ((AbstractElderCard) card).onVictory());
+                .forEach(card -> ((AbstractElderCard) card).onPostBattleOrRoomEntered());
     }
 
     public static void receiveOnMonsterDeath(AbstractMonster m) {
@@ -431,7 +431,7 @@ public class KitsuneMod implements
         //technically misnamed now but resets upgradedThisRoom so that upgrades happen on the right cards
         AbstractDungeon.player.masterDeck.group.stream()
                 .filter(card -> card instanceof AbstractElderCard)
-                .forEach(card -> ((AbstractElderCard) card).onVictory());
+                .forEach(card -> ((AbstractElderCard) card).onPostBattleOrRoomEntered());
         //the patch here is before an ? room is potentially rerolled - so i can assume that all ? rooms are instances of EventRoom
         AbstractDungeon.player.masterDeck.group.stream()
                 .filter(card -> card instanceof AbstractElderCard)

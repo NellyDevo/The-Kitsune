@@ -221,7 +221,7 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
 
     }
 
-    public void onVictory() {
+    public void onPostBattleOrRoomEntered() {
         upgradedThisRoom = false;
     }
 
