@@ -3,6 +3,7 @@ package kitsunemod.powers;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,8 +24,8 @@ public abstract class AbstractShapePower extends AbstractKitsunePower {
 
     //yes, this is a duplicate of a private field on AbstractPower
     //why they aren't protected instead is beyond me
-    private Color redColor = Color.RED;
-    private Color greenColor = Color.GREEN;
+    private Color redColor = Color.RED.cpy();
+    private Color greenColor = Color.GREEN.cpy();
 
     public AbstractShapePower(
             final AbstractCreature owner,

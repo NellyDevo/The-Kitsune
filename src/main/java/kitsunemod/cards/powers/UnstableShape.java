@@ -29,14 +29,7 @@ public class UnstableShape extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(UnstableShapePower.POWER_ID)) {
-            UnstableShapePower power = (UnstableShapePower)p.getPower(UnstableShapePower.POWER_ID);
-            power.shouldUpgrade = upgraded;
-            power.stackPower(1);
-        }
-        else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UnstableShapePower(p, upgraded, 1), 1));
-        }
     }
 
     @Override

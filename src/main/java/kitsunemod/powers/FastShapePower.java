@@ -1,5 +1,6 @@
 package kitsunemod.powers;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -13,7 +14,7 @@ import kitsunemod.KitsuneMod;
 import kitsunemod.cards.powers.FastShape;
 import kitsunemod.patches.KitsuneTags;
 
-public class FastShapePower extends AbstractKitsunePower {
+public class FastShapePower extends AbstractKitsunePower implements NonStackablePower {
 
 
     public static final String POWER_ID = KitsuneMod.makeID("FastShapePower");
@@ -42,20 +43,6 @@ public class FastShapePower extends AbstractKitsunePower {
         //img = ImageMaster.loadImage(IMG);
         loadRegion("afterImage");
         updateDescription();
-    }
-
-    @Override
-    public void stackPower(int stackAmount) {
-        flash();
-    }
-
-    @Override
-    public void reducePower(int reduceAmount) {
-        flash();
-    }
-
-    @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
     }
 
     @Override
