@@ -101,6 +101,7 @@ public class WillOWispProjectile extends AbstractGameEffect {
         float oldDistance = (float)Math.sqrt(Math.pow(startX - x, 2) + Math.pow(startY - y, 2));
         float newDistance = (float)Math.sqrt(Math.pow(newTarget.hb.cX - target.hb.cX, 2) + Math.pow(newTarget.hb.cY - target.hb.cY, 2));
         endDuration = endDuration * (newDistance / oldDistance);
+        duration = 0.0f;
         startX = x;
         startY = y;
         target = newTarget;
