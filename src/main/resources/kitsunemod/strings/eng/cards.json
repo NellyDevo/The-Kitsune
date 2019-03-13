@@ -156,12 +156,12 @@
   },
   "kitsunemod:GatheringDark": {
     "NAME": "Gathering Dark",
-    "DESCRIPTION": "Your kitsunemod:Dark no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Dark.",
+    "DESCRIPTION": "At the end of each turn, gain !M! kitsunemod:Dark. NL Whenever you gain kitsunemod:Dark, deal !kitsunemod:M2! damage to ALL enemies.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:GatheringLight": {
     "NAME": "Gathering Light",
-    "DESCRIPTION": "Your kitsunemod:Light no longer dissipates when over 9 stacks. At the end of your turn, gain !M! kitsunemod:Light.",
+    "DESCRIPTION": "At the end of each turn, gain !M! kitsunemod:Light. NL Whenever you gain kitsunemod:Light, gain !kitsunemod:M2! Thorns.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:GrowingHunger": {

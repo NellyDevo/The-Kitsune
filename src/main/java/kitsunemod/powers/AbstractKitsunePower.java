@@ -11,8 +11,7 @@ public abstract class AbstractKitsunePower extends TwoAmountPower implements Gat
     public void onEnergyChanged(int e) {}
 
     @Override
-    public boolean shouldConsume(AbstractPower p) {
-        return true;
+    public void onApplyLightOrDark(boolean isLight) {
     }
 
     @Override

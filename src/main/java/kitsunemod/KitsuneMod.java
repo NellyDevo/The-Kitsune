@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -559,6 +560,12 @@ public class KitsuneMod implements
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onApplyDark(amount);
         }
+
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof GatheringPower) {
+                ((GatheringPower)p).onApplyLightOrDark(false);
+            }
+        }
     }
 
     public static void receiveOnApplyLight(int amount) {
@@ -584,6 +591,12 @@ public class KitsuneMod implements
 
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onApplyLight(amount);
+        }
+
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof GatheringPower) {
+                ((GatheringPower)p).onApplyLightOrDark(true);
+            }
         }
     }
 

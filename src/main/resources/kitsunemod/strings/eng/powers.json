@@ -66,15 +66,17 @@
   "kitsunemod:GatheringDarkPower": {
     "NAME": "Gathering Dark",
     "DESCRIPTIONS": [
-      "Your #yDark no longer dissipates when over 9 stacks. At the end of your turn, gain #b",
-      " #yDark."
+      "At the end of each turn, gain #b",
+      " #yDark. Whenever you gain #yDark, deal #b",
+      " Damage to ALL enemies."
     ]
   },
   "kitsunemod:GatheringLightPower": {
     "NAME": "Gathering Light",
     "DESCRIPTIONS": [
-      "Your #yLight no longer dissipates when over 9 stacks. At the end of your turn, gain #b",
-      " #yLight."
+      "At the end of each turn, gain #b",
+      " #yLight. Whenever you gain #yLight, gain #b",
+      " #yThorns."
     ]
   },
 

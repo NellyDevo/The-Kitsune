@@ -55,17 +55,7 @@ public class LightPower extends AbstractKitsunePower {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, (int)(amount * EFFECT_MULTIPLIER)));
             KitsuneMod.receiveOnTriggerLight();
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-            boolean shouldConsume = true;
-            for (AbstractPower p : AbstractDungeon.player.powers) {
-                if (p instanceof GatheringPower) {
-                    if (!((GatheringPower)p).shouldConsume(this)) {
-                        shouldConsume = false;
-                    }
-                }
-            }
-            if (shouldConsume) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
-            }
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
         }
     }
 

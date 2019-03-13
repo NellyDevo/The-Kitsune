@@ -57,17 +57,7 @@ public class DarkPower extends AbstractKitsunePower {
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(source, (int)(amount * EFFECT_MULTIPLIER), DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
             KitsuneMod.receiveOnTriggerDark();
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-            boolean shouldConsume = true;
-            for (AbstractPower p : AbstractDungeon.player.powers) {
-                if (p instanceof GatheringPower) {
-                    if (!((GatheringPower)p).shouldConsume(this)) {
-                        shouldConsume = false;
-                    }
-                }
-            }
-            if (shouldConsume) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
-            }
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
         }
     }
 
