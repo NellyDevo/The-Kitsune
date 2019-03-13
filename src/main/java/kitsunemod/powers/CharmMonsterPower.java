@@ -5,8 +5,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +12,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -121,27 +118,16 @@ public class CharmMonsterPower extends AbstractKitsunePower {
     }
 
     @Override
-    public void atEndOfRound() {
-        if (amount > 1) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, this, 1));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    try {
-                        intentColorField.set(owner, storedColor);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
-                    isDone = true;
-                }
-            });
-        }
+    public void onInitialApplication() {
+        interceptMove();
     }
 
     @Override
-    public void onInitialApplication() {
+    public void atStartOfTurn() {
+        interceptMove();
+    }
+
+    public void interceptMove() {
         // Dumb action to delay grabbing monster's intent until after it's actually set
         AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
             @Override
@@ -152,9 +138,11 @@ public class CharmMonsterPower extends AbstractKitsunePower {
                     oldMoveIntent = ((AbstractMonster) owner).intent;
                     try {
 
-                        intentColorField = AbstractMonster.class.getDeclaredField("intentColor");
-                        intentColorField.setAccessible(true);
-                        storedColor = (Color) intentColorField.get(owner);
+                        if (storedColor == null) {
+                            intentColorField = AbstractMonster.class.getDeclaredField("intentColor");
+                            intentColorField.setAccessible(true);
+                            storedColor = (Color) intentColorField.get(owner);
+                        }
 
                         Field moveField = AbstractMonster.class.getDeclaredField("move");
                         moveField.setAccessible(true);
@@ -348,11 +336,11 @@ public class CharmMonsterPower extends AbstractKitsunePower {
                                 break;
                         }
                         ((AbstractMonster) owner).createIntent();
+                        ((AbstractMonster) owner).intentAlpha = 1.0F;
                     } catch (IllegalAccessException | NoSuchFieldException e) {
                         e.printStackTrace();
                     }
                 }
-                ;
                 updateDescription();
                 isDone = true;
             }
@@ -361,16 +349,38 @@ public class CharmMonsterPower extends AbstractKitsunePower {
 
     @Override
     public void onRemove() {
-        if (owner instanceof AbstractMonster) {
-            AbstractMonster m = (AbstractMonster)owner;
-            if (charmedMoveInfo != null) {
-                m.setMove(oldMoveByte, oldMoveIntent, charmedMoveInfo.baseDamage, charmedMoveInfo.multiplier, charmedMoveInfo.isMultiDamage);
-            } else {
-                m.setMove(oldMoveByte, oldMoveIntent);
-            }
-            m.createIntent();
-            m.applyPowers();
+        if (storedColor != null) {
+            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    try {
+                        intentColorField.set(owner, storedColor);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                    isDone = true;
+                }
+            });
         }
+    }
+
+    public void restoreMove() {
+        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (owner instanceof AbstractMonster) {
+                    AbstractMonster m = (AbstractMonster)owner;
+                    if (charmedMoveInfo != null) {
+                        m.setMove(oldMoveByte, oldMoveIntent, charmedMoveInfo.baseDamage, charmedMoveInfo.multiplier, charmedMoveInfo.isMultiDamage);
+                    } else {
+                        m.setMove(oldMoveByte, oldMoveIntent);
+                    }
+                    m.createIntent();
+                    m.applyPowers();
+                }
+                isDone = true;
+            }
+        });
     }
 
     public interface Actions {

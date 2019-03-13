@@ -10,6 +10,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,6 +26,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.cards.AbstractKitsuneCard;
+import kitsunemod.cards.TestCard;
 import kitsunemod.cards.attacks.*;
 import kitsunemod.cards.basic.*;
 import kitsunemod.cards.powers.*;
@@ -235,7 +238,7 @@ public class KitsuneMod implements
         UnlockTracker.addCard(DancingLights.ID);
 
         //testing purposes only, comment out for releases
-        //BaseMod.addCard(new TestCard());
+        BaseMod.addCard(new TestCard());
     }
 
     @Override
@@ -378,6 +381,9 @@ public class KitsuneMod implements
                 target = AbstractDungeon.getRandomMonster(m);
             }
             charm.actions.doActions(charm.charmedMoveInfo, target, otherMonstersExist);
+            charm.restoreMove();
+            AbstractDungeon.actionManager.addToBottom(new RollMoveAction(m));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(m, m, charm, 1));
             return false;
         }
         return true;

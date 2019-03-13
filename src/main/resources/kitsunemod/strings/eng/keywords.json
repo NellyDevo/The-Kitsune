@@ -62,11 +62,9 @@
   },
   "Charm": {
     "NAMES": [
-      "charm",
-      "Charm",
-      "Charm:"
+      "charm"
     ],
-    "DESCRIPTION": "Will repeat its last chosen action in a manner beneficial to you."
+    "DESCRIPTION": "A Charmed monster will fight for you."
   },
   "Quickshape": {
     "NAMES": [
