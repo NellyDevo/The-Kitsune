@@ -76,7 +76,7 @@
     "DESCRIPTIONS": [
       "At the end of each turn, gain #b",
       " #yLight. Whenever you gain #yLight, gain #b",
-      " #yThorns."
+      " #yThorns until next turn."
     ]
   },
 

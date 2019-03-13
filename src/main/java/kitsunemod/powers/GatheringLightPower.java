@@ -24,6 +24,8 @@ public class GatheringLightPower extends TwoAmountPower implements GatheringPowe
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     //public static final String IMG = "alternateVerseResources/images/powers/placeholder_power.png";
 
+    private int thornsGained = 0;
+
     public GatheringLightPower(AbstractCreature owner, int lightAmount, int thornsAmount) {
         this.owner = owner;
         isTurnBased = false;
@@ -42,6 +44,15 @@ public class GatheringLightPower extends TwoAmountPower implements GatheringPowe
     public void onApplyLightOrDark(boolean isLight) {
         if (isLight) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ThornsPower(owner, amount2), amount2));
+            thornsGained += amount2;
+        }
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        if (thornsGained > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ThornsPower(owner, -thornsGained), -thornsGained));
+            thornsGained = 0;
         }
     }
 

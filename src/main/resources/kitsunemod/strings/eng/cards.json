@@ -161,7 +161,7 @@
   },
   "kitsunemod:GatheringLight": {
     "NAME": "Gathering Light",
-    "DESCRIPTION": "At the end of each turn, gain !M! kitsunemod:Light. NL Whenever you gain kitsunemod:Light, gain !kitsunemod:M2! Thorns.",
+    "DESCRIPTION": "At the end of each turn, gain !M! kitsunemod:Light. NL Whenever you gain kitsunemod:Light, gain !kitsunemod:M2! Thorns until next turn.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:GrowingHunger": {
