@@ -41,12 +41,15 @@ public class ApplyLightAction extends AbstractGameAction {
 
                 //currently prioritizing semantics of behavior over not repeating a couple lines, can rewrite if needed
                 if (currentDarkPowerStacks == amount) {
+                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
                     AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
                 }
                 else if (currentDarkPowerStacks > amount) {
+                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, amount * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
                     AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, DarkPower.POWER_ID, amount));
                 }
                 else { //if (currentDarkPowerStacks < amount)
+                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
                     AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
                     if (target.hasPower(BalancingActPower.POWER_ID)) {
