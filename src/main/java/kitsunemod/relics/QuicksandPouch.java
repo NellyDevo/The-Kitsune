@@ -9,8 +9,8 @@ import kitsunemod.powers.ShadePower;
 
 public class QuicksandPouch extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("QuicksandPouch");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/quicksandpouch.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/quicksandpouch_p.png");
 
     private static final int SHADE_AMOUNT = 2;
     private static final int HP_THRESHOLD_PERCENTAGE = 50;

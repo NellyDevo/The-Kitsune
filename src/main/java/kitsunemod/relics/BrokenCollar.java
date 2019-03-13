@@ -11,9 +11,9 @@ import kitsunemod.powers.FoxShapePower;
 
 public class BrokenCollar extends KitsuneRelic implements ClickableRelic {
     public static final String ID = KitsuneMod.makeID("BrokenCollar");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
-    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/starterrelic_gray.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/brokencollar.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/brokencollar_p.png");
+    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/brokencollar_gray.png");
 
     public BrokenCollar() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);

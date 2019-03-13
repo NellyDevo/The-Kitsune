@@ -14,8 +14,8 @@ import kitsunemod.powers.KitsuneShapePower;
 
 public class ShiningPearl extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("ShiningPearl");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/shiningpearl.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/shiningpearl_p.png");
 
     public ShiningPearl() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);

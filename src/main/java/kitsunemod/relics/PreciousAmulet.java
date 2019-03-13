@@ -11,9 +11,9 @@ import kitsunemod.powers.HumanShapePower;
 
 public class PreciousAmulet extends KitsuneRelic implements ClickableRelic {
     public static final String ID = KitsuneMod.makeID("PreciousAmulet");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
-    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/starterrelic_gray.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/preciousamulet.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/preciousamulet_p.png");
+    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/preciousamulet_gray.png");
 
     public PreciousAmulet() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);

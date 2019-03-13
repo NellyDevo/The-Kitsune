@@ -6,8 +6,8 @@ import kitsunemod.KitsuneMod;
 
 public class BlackAndWhiteStone extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("BlackAndWhiteStone");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/blackandwhitestone.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/blackandwhitestone_p.png");
 
     private static final int TRIGGER_DECREASE = 3;
 

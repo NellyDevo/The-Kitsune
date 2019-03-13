@@ -10,8 +10,8 @@ import kitsunemod.actions.ApplyDarkAction;
 
 public class CuriousVial extends KitsuneRelic implements ClickableRelic {
     public static final String ID = KitsuneMod.makeID("CuriousVial");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/curiousvial.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/curiousvial_p.png");
 
     private static final int MAX_STACKS = 10;
 

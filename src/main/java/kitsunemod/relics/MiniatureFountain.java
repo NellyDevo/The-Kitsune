@@ -8,9 +8,9 @@ import kitsunemod.actions.ApplyLightAction;
 
 public class MiniatureFountain extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("MiniatureFountain");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
-    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/starterrelic_gray.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/miniaturefountain.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/miniaturefountain_p.png");
+    public static final Texture ALT_IMG = new Texture("kitsunemod/images/relics/miniaturefountain_gray.png");
 
     private static final int TURN_COUNT = 2;
     private static final int LIGHT_AMOUNT = 9;

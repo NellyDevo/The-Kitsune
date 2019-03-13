@@ -13,8 +13,8 @@ import kitsunemod.powers.KitsuneShapePower;
 
 public class WornPearl extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("WornPearl");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/wornpearl.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/wornpearl_p.png");
 
     public WornPearl() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);

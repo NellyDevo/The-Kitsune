@@ -7,8 +7,8 @@ import kitsunemod.KitsuneMod;
 
 public class FlameEyeNecklace extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("FlameEyeNecklace");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/flameeyenecklace.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/flameeyenecklace_p.png");
 
     private static final int MAX_WISP_REDUCE = 4;
 

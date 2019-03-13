@@ -7,8 +7,8 @@ import kitsunemod.KitsuneMod;
 
 public class RunicChoker extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("RunicChoker");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/runicchoker.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/runicchoker_p.png");
 
     public RunicChoker() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);

@@ -14,8 +14,8 @@ import kitsunemod.powers.NinetailedShapePower;
 
 public class LuminousPearl extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("LuminousPearl");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/luminouspearl.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/luminouspearl_p.png");
 
     public LuminousPearl() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);

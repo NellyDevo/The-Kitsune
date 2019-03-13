@@ -12,8 +12,8 @@ import kitsunemod.powers.LightPower;
 
 public class PendulumOfEternalBalance extends KitsuneRelic {
     public static final String ID = KitsuneMod.makeID("PendulumOfEternalBalance");
-    public static final Texture IMG = new Texture("kitsunemod/images/relics/starterrelic.png");
-    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/starterrelic_p.png");
+    public static final Texture IMG = new Texture("kitsunemod/images/relics/pendulumofeternalbalance.png");
+    public static final Texture OUTLINE = new Texture("kitsunemod/images/relics/pendulumofeternalbalance_p.png");
 
     private static final int RESET_AMOUNT = 3;
 
