@@ -41,17 +41,17 @@ public class ApplyLightAction extends AbstractGameAction {
 
                 //currently prioritizing semantics of behavior over not repeating a couple lines, can rewrite if needed
                 if (currentDarkPowerStacks == amount) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
+                    AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(target, source, currentDarkPower));
+                    AbstractDungeon.actionManager.addToTop(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
                 }
                 else if (currentDarkPowerStacks > amount) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, amount * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
-                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, DarkPower.POWER_ID, amount));
+                    AbstractDungeon.actionManager.addToTop(new ReducePowerAction(target, source, DarkPower.POWER_ID, amount));
+                    AbstractDungeon.actionManager.addToTop(new DamageRandomEnemyAction(new DamageInfo(target, amount * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
                 }
                 else { //if (currentDarkPowerStacks < amount)
-                    AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentDarkPower));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
+                    AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(target, source, currentDarkPower));
+                    AbstractDungeon.actionManager.addToTop(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
                     if (target.hasPower(BalancingActPower.POWER_ID)) {
                         pseudoTriggerDark(target.getPower(BalancingActPower.POWER_ID));
                     }
@@ -59,7 +59,7 @@ public class ApplyLightAction extends AbstractGameAction {
 
             }
             else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new LightPower(target, source, amount), amount));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, source, new LightPower(target, source, amount), amount));
             }
         }
 
@@ -68,6 +68,6 @@ public class ApplyLightAction extends AbstractGameAction {
 
     private void pseudoTriggerDark(AbstractPower power) {
         power.flash();
-        AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(target, power.amount, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
+        AbstractDungeon.actionManager.addToTop(new DamageRandomEnemyAction(new DamageInfo(target, power.amount, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
     }
 }

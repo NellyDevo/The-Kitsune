@@ -42,17 +42,17 @@ public class ApplyDarkAction extends AbstractGameAction {
 
                 //currently prioritizing semantics of behavior over not repeating a couple lines, can rewrite if needed
                 if (currentLightPowerStacks == amount) {
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(target, target, currentLightPowerStacks * 2));
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentLightPower));
+                    AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(target, source, currentLightPower));
+                    AbstractDungeon.actionManager.addToTop(new GainBlockAction(target, target, currentLightPowerStacks * 2));
                 }
                 else if (currentLightPowerStacks > amount) {
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(target, target, amount * 2));
-                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, source, LightPower.POWER_ID, amount));
+                    AbstractDungeon.actionManager.addToTop(new ReducePowerAction(target, source, LightPower.POWER_ID, amount));
+                    AbstractDungeon.actionManager.addToTop(new GainBlockAction(target, target, amount * 2));
                 }
                 else { //if (currentDarkPowerStacks < amount)
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(target, target, currentLightPowerStacks * 2));
-                    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(target, source, currentLightPower));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DarkPower(target, source, amount - currentLightPowerStacks), amount - currentLightPowerStacks));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, source, new DarkPower(target, source, amount - currentLightPowerStacks), amount - currentLightPowerStacks));
+                    AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(target, source, currentLightPower));
+                    AbstractDungeon.actionManager.addToTop(new GainBlockAction(target, target, currentLightPowerStacks * 2));
                     if (target.hasPower(BalancingActPower.POWER_ID)) {
                         pseudoTriggerLight(target.getPower(BalancingActPower.POWER_ID));
                     }
@@ -60,7 +60,7 @@ public class ApplyDarkAction extends AbstractGameAction {
 
             }
             else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, source, new DarkPower(target, source, amount), amount));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, source, new DarkPower(target, source, amount), amount));
             }
             isDone = true;
         }
@@ -70,6 +70,6 @@ public class ApplyDarkAction extends AbstractGameAction {
 
     private void pseudoTriggerLight(AbstractPower power) {
         power.flash();
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(target, target, power.amount));
+        AbstractDungeon.actionManager.addToTop(new GainBlockAction(target, target, power.amount));
     }
 }

@@ -164,6 +164,11 @@
     "DESCRIPTION": "At the end of each turn, gain !M! kitsunemod:Light. NL Whenever you gain kitsunemod:Light, gain !kitsunemod:M2! Thorns until next turn.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:GlaresShadow": {
+    "NAME": "Glare's Shadow",
+    "DESCRIPTION": "Gain !M! kitsunemod:Light. NL Gain !M! kitsunemod:Dark.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:GrowingHunger": {
     "NAME": "Growing Hunger",
     "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal for each turn you've remained in the same kitsunemod:Shape.",
