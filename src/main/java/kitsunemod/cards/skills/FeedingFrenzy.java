@@ -7,15 +7,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.patches.KitsuneTags;
-import kitsunemod.powers.DelayedStrengthLossPower;
 import kitsunemod.powers.FeedingFrenzyPower;
-import kitsunemod.powers.FoxShapePower;
-import kitsunemod.powers.NinetailedShapePower;
 
 public class FeedingFrenzy extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("FeedingFrenzy");
@@ -26,44 +21,21 @@ public class FeedingFrenzy extends AbstractKitsuneCard {
     private static final int COST = 2;
 
     private static final int TURNS = 3;
-    private static final int HEAL_AMT = 1;
-    private static final int UPGRADE_PLUS_HEAL_AMT = 1;
-    private static final int STRENGTH_PLUS_AMT = 5;
+    private static final int HEAL_AMT = 3;
+    private static final int UPGRADE_PLUS_HEAL_AMT = 2;
 
     public FeedingFrenzy() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF);
 
-        block = baseBlock = HEAL_AMT;
-        magicNumber = baseMagicNumber = TURNS;
-        secondMagicNumber = baseSecondMagicNumber = STRENGTH_PLUS_AMT;
-
-        tags.add(KitsuneTags.ASPECT_CARD);
+        magicNumber = baseMagicNumber = HEAL_AMT;
+        secondMagicNumber = baseSecondMagicNumber = TURNS;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        //we need to not re-apply the bonus strength from this if it's already there, and since we're just using a collection of powers here this is the most reliable check
-        if (!p.hasPower(DelayedStrengthLossPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, secondMagicNumber),secondMagicNumber));
-        }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DelayedStrengthLossPower(p, magicNumber, secondMagicNumber),magicNumber));
-        if (p.hasPower(FoxShapePower.POWER_ID) || p.hasPower(NinetailedShapePower.POWER_ID)) {
-            if (p.hasPower(FeedingFrenzyPower.POWER_ID) && upgraded) {
-                FeedingFrenzyPower current = (FeedingFrenzyPower)p.getPower(FeedingFrenzyPower.POWER_ID);
-                applyPowers();
-
-                current.flash();
-                current.stackPower(magicNumber);
-                current.amount2 = block;
-            }
-            else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FeedingFrenzyPower(p, block, magicNumber), magicNumber));
-            }
-
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FeedingFrenzyPower(p, magicNumber, secondMagicNumber)));
     }
 
     @Override
@@ -75,7 +47,7 @@ public class FeedingFrenzy extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_PLUS_HEAL_AMT);
+            upgradeMagicNumber(UPGRADE_PLUS_HEAL_AMT);
         }
     }
 }

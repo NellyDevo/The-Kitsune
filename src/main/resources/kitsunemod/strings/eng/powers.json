@@ -79,15 +79,6 @@
       " #yThorns until next turn."
     ]
   },
-
-  "kitsunemod:PerfectedShapePower": {
-    "NAME": "Perfected Shape",
-    "DESCRIPTIONS": [
-      "Gaining ",
-      " Block at the end of your turn if you didn't #yShapeshift this turn."
-    ]
-  },
-
   "kitsunemod:KitsuneShapePower": {
     "NAME": "Kitsune Shape",
     "DESCRIPTIONS": [
@@ -219,18 +210,10 @@
       " HP."
     ]
   },
-  "kitsunemod:DelayedStrengthLossPower": {
-    "NAME": "Delayed Strength Loss",
-    "DESCRIPTIONS": [
-      "In ",
-      " turns, losing #r",
-      " Strength."
-    ]
-  },
   "kitsunemod:FeedingFrenzyPower": {
     "NAME": "Feeding Frenzy",
     "DESCRIPTIONS": [
-      "Cannot block. Dealing damage heals you for #b",
+      "Cannot gain block from cards. Dealing damage heals you for #b",
       " HP"
     ]
   },

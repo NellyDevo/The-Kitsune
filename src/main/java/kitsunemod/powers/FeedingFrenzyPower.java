@@ -1,9 +1,9 @@
 package kitsunemod.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,8 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import kitsunemod.KitsuneMod;
 
-public class FeedingFrenzyPower extends AbstractKitsunePower {
-
+public class FeedingFrenzyPower extends AbstractKitsunePower implements NonStackablePower {
 
     public static final String POWER_ID = KitsuneMod.makeID("FeedingFrenzyPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -32,7 +31,6 @@ public class FeedingFrenzyPower extends AbstractKitsunePower {
         amount = turns;
         amount2 = healAmount;
 
-
         //temporary until I start making power art too
         //img = ImageMaster.loadImage(IMG);
         loadRegion("brutality");
@@ -41,12 +39,7 @@ public class FeedingFrenzyPower extends AbstractKitsunePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        super.atEndOfTurn(isPlayer);
-        this.stackPower(-1);
-        updateDescription();
-        if (this.amount <= 0) {
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, this, 1));
     }
 
     @Override
@@ -65,7 +58,6 @@ public class FeedingFrenzyPower extends AbstractKitsunePower {
 
     @Override
     public void updateDescription() {
-
         description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1];
     }
 }

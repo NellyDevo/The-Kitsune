@@ -131,7 +131,7 @@
   },
   "kitsunemod:FeedingFrenzy": {
     "NAME": "Feeding Frenzy",
-    "DESCRIPTION": "Gain !kitsunemod:M2! Strength for !M! turns. NL Fox kitsunemod:Aspect: Instead of blocking, heal for !B! HP when attacking. Affected by Block modifiers.",
+    "DESCRIPTION": "For !kitsunemod:M2! turns, you cannot gain Block from cards, and you heal !M! HP whenever you deal attack damage.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FeralInstinct": {
