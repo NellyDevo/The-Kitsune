@@ -109,6 +109,11 @@
     "DESCRIPTION": "Target loses !M! HP X times, doubling each time.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:EmpoweredSlice": {
+    "NAME": "Empowered Slice",
+    "DESCRIPTION": "Deal !D! damage. NL Consume all kitsunemod:Will-o-Wisps to deal !M! damage for each.",
+    "UPGRADE_DESCRIPTION": ""
+  },
   "kitsunemod:EssenceTheft": {
     "NAME": "Essence Theft",
     "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal and manually trigger it.",
@@ -282,11 +287,6 @@
     "NAME": "Nourishing Flame",
     "DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! kitsunemod:Will-o-wisp.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Kitsune kitsunemod:Aspect: Channel !M! kitsunemod:Will-o-wisps."
-  },
-  "kitsunemod:PerfectedShape": {
-    "NAME": "Perfected Shape",
-    "DESCRIPTION": "At the end of your turn, if you didn't kitsunemod:Shapeshift, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PackKill": {
     "NAME": "Pack Kill",

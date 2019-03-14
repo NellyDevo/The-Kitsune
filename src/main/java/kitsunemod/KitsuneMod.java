@@ -174,6 +174,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new FastShape());
         BaseMod.addCard(new LureCloser());
         BaseMod.addCard(new DeceptiveGuise());
+        BaseMod.addCard(new EmpoweredSlice());
 
         //Uncommons
         BaseMod.addCard(new MemorizeSpell());
