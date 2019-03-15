@@ -48,12 +48,19 @@
   "kitsunemod:ChangeShape": {
     "NAME": "Change Shape",
     "DESCRIPTION": "Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "Human Shape.",
-      "Kitsune Shape.",
-      "Fox Shape"
-    ]
+    "UPGRADE_DESCRIPTION": "Innate. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust."
+  },
+  "kitsunemod:ChangeShapeOptionFoxShape": {
+    "NAME": "Fox Shape",
+    "DESCRIPTION": "kitsunemod:Shapeshift into a Fox."
+  },
+  "kitsunemod:ChangeShapeOptionKitsuneShape": {
+    "NAME": "Kitsune Shape",
+    "DESCRIPTION": "kitsunemod:Shapeshift into a Kitsune."
+  },
+  "kitsunemod:ChangeShapeOptionHumanShape": {
+    "NAME": "Human Shape",
+    "DESCRIPTION": "kitsunemod:Shapeshift into a Human."
   },
   "kitsunemod:CleansingNova": {
     "NAME": "Cleansing Nova",
