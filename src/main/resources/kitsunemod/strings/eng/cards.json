@@ -297,8 +297,8 @@
   },
   "kitsunemod:PackKill": {
     "NAME": "Pack Kill",
-    "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Then !M! damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Then !M!, then !kitsunemod:M2! damage."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Fox kitsunemod:Aspect: !kitsunemod:M2! times instead.",
+    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PleaForGuidance": {
     "NAME": "Plea for Guidance",
