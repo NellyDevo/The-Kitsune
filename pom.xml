@@ -6,7 +6,7 @@
     <!-- Change These to match your mod -->
     <groupId>kitsunemod</groupId>
     <artifactId>KitsuneMod</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <packaging>jar</packaging>
     <name>TheKitsune</name>
     <description>Slay the Spire mod introducing a custom character: The Kitsune.</description>
