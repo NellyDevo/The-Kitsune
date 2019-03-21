@@ -252,7 +252,7 @@
   },
   "kitsunemod:LureCloser": {
     "NAME": "Lure Closer",
-    "DESCRIPTION": "Apply !M! Soulsteal. Increased by your stacks of Weak.",
+    "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal. Increased by your stacks of Weak.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:MassSuggestion": {
