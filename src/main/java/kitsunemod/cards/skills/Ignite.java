@@ -21,6 +21,7 @@ public class Ignite extends AbstractKitsuneCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/default_skill.png";
     private static final int COST = 0;
 
@@ -52,6 +53,8 @@ public class Ignite extends AbstractKitsuneCard {
         if (!upgraded) {
             upgradeName();
             exhaust = false;
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
