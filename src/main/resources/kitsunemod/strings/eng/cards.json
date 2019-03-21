@@ -368,7 +368,7 @@
   },
   "kitsunemod:Serenity": {
     "NAME": "Serenity",
-    "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor.",
+    "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " NL (Active!)"
