@@ -241,7 +241,7 @@ public class KitsuneMod implements
         UnlockTracker.addCard(DancingLights.ID);
 
         //testing purposes only, comment out for releases
-        BaseMod.addCard(new TestCard());
+        //BaseMod.addCard(new TestCard());
     }
 
     @Override
