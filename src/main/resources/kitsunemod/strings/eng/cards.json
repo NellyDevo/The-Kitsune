@@ -128,7 +128,7 @@
   },
   "kitsunemod:EtherealKnives": {
     "NAME": "Ethereal Knives",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FastShape": {
@@ -386,8 +386,8 @@
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card."
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. Draw a card."
   },
   "kitsunemod:Strike": {
     "NAME": "Strike",
