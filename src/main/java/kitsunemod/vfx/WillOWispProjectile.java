@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import kitsunemod.orbs.WillOWisp;
+import kitsunemod.wisps.WillOWisp;
 
 public class WillOWispProjectile extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion[] img = WillOWisp.img;

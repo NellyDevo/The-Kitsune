@@ -7,13 +7,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.EvokeWillOWispTargetedAction;
+import kitsunemod.actions.TriggerWillOWispTargetedAction;
 import kitsunemod.cards.AbstractKitsuneCard;
-import kitsunemod.orbs.WillOWisp;
+import kitsunemod.wisps.WillOWisp;
 import kitsunemod.patches.AbstractCardEnum;
 
 public class PurifyingBlaze extends AbstractKitsuneCard {
@@ -35,18 +34,16 @@ public class PurifyingBlaze extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int orbsEvoked = 0;
-        for (AbstractOrb orb : p.orbs) {
-            if (orb instanceof WillOWisp) {
-                AbstractDungeon.actionManager.addToBottom(new EvokeWillOWispTargetedAction(p, (WillOWisp)orb));
-                orbsEvoked++;
-            }
+        int wispsTriggered = 0;
+        for (WillOWisp wisp : KitsuneMod.wisps) {
+            AbstractDungeon.actionManager.addToBottom(new TriggerWillOWispTargetedAction(p, wisp));
+            wispsTriggered++;
         }
-        if (orbsEvoked == 0) {
+        if (wispsTriggered == 0) {
             AbstractDungeon.effectsQueue.add(new ThoughtBubble(p.dialogX, p.dialogY, cardStrings.EXTENDED_DESCRIPTION[0], true));
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, 2*orbsEvoked), 2*orbsEvoked));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, 2*wispsTriggered), 2*wispsTriggered));
         }
     }
 

@@ -10,6 +10,10 @@ public abstract class AbstractKitsunePower extends TwoAmountPower implements Gat
 
     public void onEnergyChanged(int e) {}
 
+    public int onCalculateMaxWisps(int amount) {
+        return amount;
+    }
+
     @Override
     public void onApplyLightOrDark(boolean isLight) {
     }

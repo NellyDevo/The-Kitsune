@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import kitsunemod.orbs.WillOWisp;
+import kitsunemod.KitsuneMod;
+import kitsunemod.wisps.WillOWisp;
 
 public class EmpoweredSliceAction extends AbstractGameAction {
     private DamageInfo primaryDamage;
@@ -23,22 +23,11 @@ public class EmpoweredSliceAction extends AbstractGameAction {
 
     public void update() {
         int wispCount = 0;
-        int replaceCount = 0;
         AbstractPlayer p = AbstractDungeon.player;
-        for (AbstractOrb orb : p.orbs) {
-            if (orb instanceof WillOWisp) {
-                ++wispCount;
-                if (((WillOWisp)orb).tookSlot) {
-                    ++replaceCount;
-                }
-            }
+        for (WillOWisp wisp : KitsuneMod.wisps) {
+            ++wispCount;
         }
-        p.orbs.removeIf(orb -> orb instanceof WillOWisp);
-        p.maxOrbs -= wispCount;
-        p.increaseMaxOrbSlots(replaceCount,false);
-        for (int i = 0; i < p.orbs.size(); ++i) {
-            p.orbs.get(i).setSlot(i, p.maxOrbs);
-        }
+        KitsuneMod.wisps.clear();
         if (wispCount > 0) {
             for (int i = 0; i < wispCount; ++i) {
                 AbstractDungeon.actionManager.addToTop(new DamageAction(target, secondaryDamage, AttackEffect.FIRE));

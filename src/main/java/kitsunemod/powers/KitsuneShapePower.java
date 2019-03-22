@@ -9,8 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ApplyLightAction;
-import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.actions.CreateWillOWispAction;
 
 public class KitsuneShapePower extends AbstractShapePower {
 
@@ -41,7 +40,7 @@ public class KitsuneShapePower extends AbstractShapePower {
 
     @Override
     public AbstractGameAction getSoulstealActionForAmount(AbstractPlayer player, int amount) {
-        return new ChannelWillOWispAction(calculateWispsForSoulstealAmount(amount));
+        return new CreateWillOWispAction(calculateWispsForSoulstealAmount(amount));
     }
 
     @Override

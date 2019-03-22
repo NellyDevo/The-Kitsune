@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.actions.CreateWillOWispAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
@@ -48,7 +48,7 @@ public class NourishingFlame extends AbstractKitsuneCard {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         if (p.hasPower(KitsuneShapePower.POWER_ID) || p.hasPower(NinetailedShapePower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.4f));
-            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new CreateWillOWispAction(magicNumber));
         }
     }
 

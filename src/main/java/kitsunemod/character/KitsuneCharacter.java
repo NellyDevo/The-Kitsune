@@ -351,7 +351,7 @@ public class KitsuneCharacter extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                77, 77, 0, 99, 5, //starting hp, max hp, max orbs, starting gold, starting hand size
+                77, 77, 0, 99, 5, //starting hp, max hp, max wisps, starting gold, starting hand size
                 this, getStartingRelics(), getStartingDeck(), false);
     }
 

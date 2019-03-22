@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
-import kitsunemod.orbs.WillOWisp;
+import kitsunemod.KitsuneMod;
+import kitsunemod.wisps.WillOWisp;
 import kitsunemod.vfx.WillOWispProjectile;
 
 import java.util.ArrayList;
@@ -21,15 +21,13 @@ public class WillOWispAction extends AbstractGameAction {
     private boolean initialized = false;
     private boolean isParent = false;
     private DamageInfo info;
-    public WillOWisp orb;
-    private boolean restoreSlot;
+    public WillOWisp wisp;
 
-    public WillOWispAction(float x, float y, AbstractCreature target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp orb, int imgIndex, float glowScale, boolean restoreSlot) {
+    public WillOWispAction(float x, float y, AbstractCreature target, DamageInfo info, float duration, Color startColor, Color endColor, WillOWisp wisp, int imgIndex, float glowScale) {
         child = new WillOWispProjectile(x, y, target, duration, startColor, endColor, imgIndex, glowScale);
         AbstractDungeon.effectList.add(child);
         this.info = info;
-        this.orb = orb;
-        this.restoreSlot = restoreSlot;
+        this.wisp = wisp;
     }
 
     @Override
@@ -39,14 +37,7 @@ public class WillOWispAction extends AbstractGameAction {
             AbstractPlayer p = AbstractDungeon.player;
             children = new ArrayList<>();
             children.add(child);
-            AbstractDungeon.player.orbs.remove(orb);
-            if (restoreSlot) {
-                if (orb.tookSlot) {
-                    p.orbs.add(new EmptyOrbSlot());
-                } else {
-                    --p.maxOrbs;
-                }
-            }
+            KitsuneMod.wisps.remove(wisp);
             float frameExtender = 0.0f;
             for (AbstractGameAction action : AbstractDungeon.actionManager.actions) {
                 if (action instanceof WillOWispAction) {
@@ -54,19 +45,9 @@ public class WillOWispAction extends AbstractGameAction {
                     frameExtender += Gdx.graphics.getDeltaTime();
                     ((WillOWispAction)action).child.endDuration += frameExtender;
                     children.add(((WillOWispAction)action).child);
-                    WillOWisp otherOrb = ((WillOWispAction)action).orb;
-                    AbstractDungeon.player.orbs.remove(otherOrb);
-                    if (restoreSlot) {
-                        if (otherOrb.tookSlot) {
-                            p.orbs.add(new EmptyOrbSlot());
-                        } else {
-                            --p.maxOrbs;
-                        }
-                    }
+                    WillOWisp otherWisp = ((WillOWispAction)action).wisp;
+                    KitsuneMod.wisps.remove(otherWisp);
                 }
-            }
-            for (int i = 0; i < p.orbs.size(); ++i) {
-                p.orbs.get(i).setSlot(i, p.maxOrbs);
             }
             initialized = true;
         }
