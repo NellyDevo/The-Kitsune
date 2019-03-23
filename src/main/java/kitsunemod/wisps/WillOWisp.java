@@ -4,7 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,6 +31,8 @@ public class WillOWisp {
     public boolean renderBehind = true;
     public float cX;
     public float cY;
+    private float tX;
+    private float tY;
     private int baseDamage;
     public int damage;
     private float fontScale = 1.0f;
@@ -42,6 +46,16 @@ public class WillOWisp {
     private static float ELLIPSIS_HEIGHT = 75.0f * Settings.scale;
     private static float ORBIT_DURATION = 4.0f;
     public static float PROJECTILE_FLIGHT_TIME = 0.5f;
+    private static float NON_ORBITAL_ADJUSTMENT_SPEED = 200.0f * Settings.scale;
+
+    private static final float ELLIPSIS_MIN_WIDTH = 100.0f * Settings.scale;
+    private static final float ELLIPSIS_MAX_WIDTH = 170.0f * Settings.scale;
+    private static final float ELLIPSIS_MIN_HEIGHT = 75.0f * Settings.scale;
+    private static final float ELLIPSIS_MAX_HEIGHT = 127.5f * Settings.scale;
+    private static final float NON_ORBITAL_ADJUSTMENT_MIN_SPEED = 200.0f * Settings.scale;
+    private static final float NON_ORBITAL_ADJUSTMENT_MAX_SPEED = 300.0f * Settings.scale;
+    private static final int TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE = 12;
+    public static final int BASE_MAXIMUM_WISPS = 9;
 
     public WillOWisp() {
         if (img == null) {
@@ -113,22 +127,38 @@ public class WillOWisp {
         //determine if the wisp should render behind the character
         renderBehind = angle < 180.0f;
 
-        //based on Angle, find the X coordinate
+        //based on Angle, find the target X coordinate
         float tmp = angle * ((float)Math.PI / 180.0f);
-        cX = (ELLIPSIS_WIDTH * ELLIPSIS_HEIGHT) / (float)Math.sqrt((ELLIPSIS_HEIGHT * ELLIPSIS_HEIGHT) + ((ELLIPSIS_WIDTH * ELLIPSIS_WIDTH) * (Math.tan(tmp) * Math.tan(tmp))));
+        tX = (ELLIPSIS_WIDTH * ELLIPSIS_HEIGHT) / (float)Math.sqrt((ELLIPSIS_HEIGHT * ELLIPSIS_HEIGHT) + ((ELLIPSIS_WIDTH * ELLIPSIS_WIDTH) * (Math.tan(tmp) * Math.tan(tmp))));
         if (90.0f < angle && angle < 270.0f) {
-            cX *= -1;
+            tX *= -1;
         }
 
-        //based on the X coordinate, find the Y coordinate
-        cY = (float)Math.sqrt(((ELLIPSIS_WIDTH * ELLIPSIS_WIDTH * ELLIPSIS_HEIGHT * ELLIPSIS_HEIGHT) - (cX * cX * ELLIPSIS_HEIGHT * ELLIPSIS_HEIGHT)) / (ELLIPSIS_WIDTH * ELLIPSIS_WIDTH));
+        //based on the target X coordinate, find the target Y coordinate
+        tY = (float)Math.sqrt(((ELLIPSIS_WIDTH * ELLIPSIS_WIDTH * ELLIPSIS_HEIGHT * ELLIPSIS_HEIGHT) - (tX * tX * ELLIPSIS_HEIGHT * ELLIPSIS_HEIGHT)) / (ELLIPSIS_WIDTH * ELLIPSIS_WIDTH));
         if (180.0f < angle && angle < 360.0f) {
-            cY *= -1;
+            tY *= -1;
         }
 
-        //normalize coordinates to player position
-        cX += AbstractDungeon.player.hb.cX;
-        cY += AbstractDungeon.player.hb.cY;
+        //normalize target coordinates to player position
+        tX += AbstractDungeon.player.hb.cX;
+        tY += AbstractDungeon.player.hb.cY;
+
+        //move towards target coordinates
+        float distance = Vector2.dst(cX, cY, tX, tY);
+        if (distance < NON_ORBITAL_ADJUSTMENT_SPEED * Gdx.graphics.getDeltaTime()) {
+            cX = tX;
+            cY = tY;
+        } else {
+            Vector2 startPoint = new Vector2(cX, cY);
+            Vector2 endPoint = new Vector2(tX, tY);
+            float direction = endPoint.sub(startPoint).angle();
+            Vector2 movement = new Vector2(MathUtils.cosDeg(direction), MathUtils.sinDeg(direction));
+            movement.x *= NON_ORBITAL_ADJUSTMENT_SPEED * Gdx.graphics.getDeltaTime();
+            movement.y *= NON_ORBITAL_ADJUSTMENT_SPEED * Gdx.graphics.getDeltaTime();
+            cX += movement.x;
+            cY += movement.y;
+        }
 
         //tick duration
         orbitalInterval += Gdx.graphics.getDeltaTime();
@@ -147,5 +177,11 @@ public class WillOWisp {
 
     private void renderText(final SpriteBatch sb) {
         FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.damage), this.cX + NUM_X_OFFSET, this.cY + NUM_Y_OFFSET - 4.0f * Settings.scale, new Color(0.2f, 1.0f, 1.0f, 1.0f), fontScale);
+    }
+
+    public static void calculateEllipseSize() {
+        ELLIPSIS_WIDTH = Interpolation.linear.apply(ELLIPSIS_MIN_WIDTH, ELLIPSIS_MAX_WIDTH, (float)(Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float)TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+        ELLIPSIS_HEIGHT = Interpolation.linear.apply(ELLIPSIS_MIN_HEIGHT, ELLIPSIS_MAX_HEIGHT, (float)(Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float)TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+        NON_ORBITAL_ADJUSTMENT_SPEED = Interpolation.linear.apply(NON_ORBITAL_ADJUSTMENT_MIN_SPEED, NON_ORBITAL_ADJUSTMENT_MAX_SPEED, (float)(Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float)TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
     }
 }

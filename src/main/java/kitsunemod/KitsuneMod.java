@@ -62,7 +62,6 @@ public class KitsuneMod implements
         PostDrawSubscriber,
         PreMonsterTurnSubscriber,
         PreRoomRenderSubscriber,
-        RenderSubscriber,
         PostUpdateSubscriber {
 
     //                                      //
@@ -407,7 +406,6 @@ public class KitsuneMod implements
         AbstractDungeon.player.masterDeck.group.stream()
                 .filter(card -> card instanceof AbstractElderCard)
                 .forEach(card -> ((AbstractElderCard) card).onPostBattleOrRoomEntered());
-        wisps.clear();
     }
 
     public static void receiveOnMonsterDeath(AbstractMonster m) {
@@ -689,19 +687,8 @@ public class KitsuneMod implements
     }
 
     @Override
-    public void receiveRender(SpriteBatch sb) {
-        if (!wisps.isEmpty()) {
-            for (WillOWisp wisp : wisps) {
-                if (!wisp.renderBehind) {
-                    wisp.render(sb);
-                }
-            }
-        }
-    }
-
-    @Override
     public void receivePostUpdate() {
-        if (!wisps.isEmpty()) {
+        if (!wisps.isEmpty() && AbstractDungeon.player != null) {
             for (WillOWisp wisp : wisps) {
                 wisp.update();
             }
@@ -710,11 +697,13 @@ public class KitsuneMod implements
 
     public static void calculateWispPositions() {
         if (!wisps.isEmpty()) {
+            WillOWisp.calculateEllipseSize();
+
+            //assign angles
             for (int i = 0; i < wisps.size(); ++i) {
                 WillOWisp wisp = wisps.get(i);
                 wisp.initialAngle = i * (360.0f / wisps.size());
-                wisp.angle = wisp.initialAngle;
-                wisp.orbitalInterval = 0.0f;
+                wisp.orbitalInterval = wisps.get(0).orbitalInterval;
             }
         }
     }

@@ -15,13 +15,12 @@ import kitsunemod.powers.WispAffectingPower;
 import kitsunemod.relics.KitsuneRelic;
 
 public class CreateWillOWispAction extends AbstractGameAction {
-    private static final int BASE_MAX_WISPS = 9;
     private static int MAX_WISPS;
 
     public CreateWillOWispAction(int amount) {
         this.amount = amount;
         duration = Settings.ACTION_DUR_FAST;
-        MAX_WISPS = calculateMaxWisps(BASE_MAX_WISPS);
+        MAX_WISPS = calculateMaxWisps(WillOWisp.BASE_MAXIMUM_WISPS);
     }
 
     @Override
