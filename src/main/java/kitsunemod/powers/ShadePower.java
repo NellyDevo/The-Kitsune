@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
 public class ShadePower extends AbstractKitsunePower {
@@ -25,18 +26,14 @@ public class ShadePower extends AbstractKitsunePower {
 
     public ShadePower(
             final AbstractCreature owner,
-            final int stacks,
-            final int healAmount) {
+            final int amount) {
 
         this.owner = owner;
-        amount2 = healAmount;
-
         isTurnBased = false;
         name = NAME;
         ID = POWER_ID;
         type = PowerType.BUFF;
-        amount = stacks;
-
+        this.amount = amount;
 
         region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/ShadePower_84.png"), 0, 0, 84, 84);
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("kitsunemod/images/powers/ShadePower_32.png"), 0, 0, 32, 32);
@@ -44,16 +41,19 @@ public class ShadePower extends AbstractKitsunePower {
         updateDescription();
 
     }
-    public ShadePower(final AbstractCreature owner, final int stacks) {
-        this(owner, stacks, DEFAULT_HEAL_AMOUNT);
-    }
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (damageAmount > 0 && !info.owner.isPlayer) {
             flash();
+            int tmp = DEFAULT_HEAL_AMOUNT;
+            if (owner.hasPower(ShadeExtraHealPower.POWER_ID)) {
+                AbstractPower p = owner.getPower(ShadeExtraHealPower.POWER_ID);
+                tmp = p.amount;
+                p.flash();
+            }
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
-            AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, amount2));
+            AbstractDungeon.actionManager.addToTop(new HealAction(owner, owner, tmp));
             return 0;
         }
         return damageAmount;
@@ -72,11 +72,15 @@ public class ShadePower extends AbstractKitsunePower {
 
     @Override
     public void updateDescription() {
+        int tmp = DEFAULT_HEAL_AMOUNT;
+        if (owner.hasPower(ShadeExtraHealPower.POWER_ID)) {
+            tmp = owner.getPower(ShadeExtraHealPower.POWER_ID).amount;
+        }
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + tmp + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
 
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + tmp + DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
         }
     }
 }

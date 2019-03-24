@@ -23,7 +23,7 @@ public class QuicksandPouch extends KitsuneRelic {
     public void atBattleStart() {
         if ((AbstractDungeon.player.currentHealth / AbstractDungeon.player.maxHealth * 100) < HP_THRESHOLD_PERCENTAGE) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ShadePower(AbstractDungeon.player, SHADE_AMOUNT, ShadePower.DEFAULT_HEAL_AMOUNT), SHADE_AMOUNT));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ShadePower(AbstractDungeon.player, SHADE_AMOUNT), SHADE_AMOUNT));
         }
     }
 

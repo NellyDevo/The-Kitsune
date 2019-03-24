@@ -180,6 +180,13 @@
       " more times when taking unblocked damage."
     ]
   },
+  "kitsunemod:ShadeExtraHealPower": {
+    "NAME": "Shadows",
+    "DESCRIPTIONS": [
+      "Blending further into the shadows. During this turn, Shade heals you for #g",
+      " HP instead."
+    ]
+  },
   "kitsunemod:InsightPower": {
     "NAME": "Insight",
     "DESCRIPTIONS": [
