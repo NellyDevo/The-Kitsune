@@ -13,5 +13,6 @@ public class AncientWisdomAction extends AbstractGameAction {
         int tmp = p.currentBlock;
         p.loseBlock();
         AbstractDungeon.actionManager.addToTop(new AddTemporaryHPAction(p, p, tmp));
+        isDone = true;
     }
 }
