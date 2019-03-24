@@ -14,11 +14,7 @@
   },
   "kitsunemod:AncientWisdom": {
     "NAME": "Ancient Wisdom",
-    "DESCRIPTION": "Gain kitsunemod:Light equal to !M! random card's cost in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light",
-    "UPGRADE_DESCRIPTION": "Gain kitsunemod:Light equal to !M! random cards' cost in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first.",
-    "EXTENDED_DESCRIPTION": [
-      "Gain kitsunemod:Light equal to !M! random cards' cost in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light"
-    ]
+    "DESCRIPTION": "Convert all your Block to Temporary_HP. NL Become Entangled for this turn. NL Exhaust."
   },
   "kitsunemod:AnsweredPrayers": {
     "NAME": "Answered Prayers",
