@@ -2,7 +2,6 @@ package kitsunemod.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.actions.CreateWillOWispAction;
 
 public class RoaringFirePower extends AbstractKitsunePower implements NonStackablePower {
 
@@ -49,7 +48,7 @@ public class RoaringFirePower extends AbstractKitsunePower implements NonStackab
                 float fCounter = (float)amount2;
                 wispsToChannel = MathUtils.floor(fCounter / fAmount);
                 amount2 -= (amount * wispsToChannel);
-                AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(wispsToChannel));
+                AbstractDungeon.actionManager.addToBottom(new CreateWillOWispAction(wispsToChannel));
             }
             //sanitizing negative inputs
             if (amount2 < 0) {

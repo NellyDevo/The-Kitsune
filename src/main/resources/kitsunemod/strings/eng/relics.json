@@ -35,24 +35,24 @@
     "NAME": "Worn Pearl",
     "FLAVOR": "As close to me as my heart.",
     "DESCRIPTIONS": [
-      "Gain different #yStrength and #yDexterity in different #ykitsunemod:Shapes.",
+      "Your cards deal more damage and gain more #yBlock depending on your #ykitsunemod:Shape.",
       " NL Fox #ykitsunemod:Aspect: ",
       " NL Kitsune #ykitsunemod:Aspect: ",
       " NL Human #ykitsunemod:Aspect: ",
-      " Strength, ",
-      " Dexterity."
+      " extra damage, ",
+      " extra #yBlock."
     ]
   },
   "kitsunemod:ShiningPearl": {
     "NAME": "Shining Pearl",
     "FLAVOR": "Just like when I was young!",
     "DESCRIPTIONS": [
-      "Gain increased bonuses in different #ykitsunemod:Shapes.",
+      "Your cards deal more damage and gain more #yBlock depending on your #ykitsunemod:Shape.",
       " NL Fox #ykitsunemod:Aspect: ",
       " NL Kitsune #ykitsunemod:Aspect: ",
       " NL Human #ykitsunemod:Aspect: ",
-      " Strength, ",
-      " Dexterity.",
+      " extra damage, ",
+      " extra #yBlock.",
       " Also channel ",
       " #ykitsunemod:Will-o-wisp at the start of your turn.",
       " #ykitsunemod:Will-o-Wisps at the start of your turn."
@@ -62,7 +62,7 @@
     "NAME": "Luminous Pearl",
     "FLAVOR": "It would seem that with my offering, I have ascended to become an elder spirit.",
     "DESCRIPTIONS": [
-      "Start each fight in Ninetailed #ykitsunemod:Shape and #yExhaust all #ykitsunemod:Shapeshift cards in your deck to gain 1 #yStrength and #yDexterity for each."
+      "Start each fight in Ninetailed #ykitsunemod:Shape and #yExhaust all #ykitsunemod:Shapeshift cards in your deck. For each card #yExhausted this way, your cards deal 1 more damage and gain 1 more #yBlock."
     ]
   },
   "kitsunemod:MiniatureFountain": {

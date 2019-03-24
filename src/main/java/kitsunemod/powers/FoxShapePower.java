@@ -45,6 +45,6 @@ public class FoxShapePower extends AbstractShapePower {
 
     @Override
     public String getSoulstealUIString(int amount) {
-        return DESCRIPTIONS[10] + amount * STACKS_PER_SOULSTEAL + DESCRIPTIONS[11] + DESCRIPTIONS[6] + STACKS_PER_SOULSTEAL + DESCRIPTIONS[7] + DESCRIPTIONS[9];
+        return DESCRIPTIONS[12] + amount * STACKS_PER_SOULSTEAL + DESCRIPTIONS[13] + DESCRIPTIONS[8] + STACKS_PER_SOULSTEAL + DESCRIPTIONS[9] + DESCRIPTIONS[11];
     }
 }

@@ -18,7 +18,6 @@ public abstract class AbstractShapePower extends AbstractKitsunePower {
 
     public AbstractCreature source;
 
-    public int amount2 = 0;
     private KitsuneMod.KitsuneShapes shape;
     private String[] descriptions;
 
@@ -36,12 +35,13 @@ public abstract class AbstractShapePower extends AbstractKitsunePower {
             final int bonusDexterity) {
         this.owner = owner;
         this.source = source;
-        this.amount = bonusStrength;
-        this.amount2 = bonusDexterity;
+        //I elected to put not!strength as the top number rather than shuffling around the description
+        this.amount = bonusDexterity;
+        this.amount2 = bonusStrength;
         this.shape = shape;
         this.descriptions = descriptions;
 
-        isTurnBased = false;
+        isTurnBased = true;
         canGoNegative = true;
         type = PowerType.BUFF;
         priority = -300;
@@ -51,20 +51,20 @@ public abstract class AbstractShapePower extends AbstractKitsunePower {
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType damageType) {
         if (damageType == DamageInfo.DamageType.NORMAL) {
-            if (damage + amount < 0.0f) {
+            if (damage + amount2 < 0.0f) {
                 return 0.0f;
             }
-            return damage + (float)amount;
+            return damage + amount2;
         }
         return damage;
     }
 
     @Override
     public float modifyBlock(float block) {
-        if (block + amount2 < 0.0f) {
+        if (block + amount < 0.0f) {
             return 0.0f;
         }
-        return block + (float)amount2;
+        return block + amount;
     }
 
     public abstract AbstractGameAction getSoulstealActionForAmount(AbstractPlayer player, int amount);
@@ -73,60 +73,30 @@ public abstract class AbstractShapePower extends AbstractKitsunePower {
 
     @Override
     public void updateDescription() {
-        String strengthColorStr = "";
-        String dexterityColorStr = "";
-        if (amount > 0) {
-            strengthColorStr = "#g";
-        }
-        else if (amount < 0) {
-            strengthColorStr= "#r";
-        }
-        if (amount2 > 0) {
-            dexterityColorStr = "#g";
-        }
-        else if (amount2 < 0) {
-            dexterityColorStr = "#r";
-        }
         if (amount == 0 && amount2 == 0) {
             description = descriptions[0];
         }
         else if (amount != 0 && amount2 == 0) {
-            description = descriptions[1] + strengthColorStr + amount + descriptions[3];
+            description = descriptions[1] + descriptions[3] + amount + descriptions[6];
         }
         else if (amount == 0 && amount2 != 0) {
-            description = descriptions[1] + dexterityColorStr + amount2 + descriptions[4];
+            description = descriptions[1] + descriptions[2] + amount2 + descriptions[5];
         }
         else {
-            description = descriptions[1] + strengthColorStr + amount + descriptions[2] + dexterityColorStr + amount2 + descriptions[4];
+            description = descriptions[1] + descriptions[2] + amount2 + descriptions[4] + amount + descriptions[6];
         }
     }
 
-    //also lifted this, again, same issue as above with the color constants.
-    //Frustrating that we have to copy code out of the base game like this
+    @Override
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
-        if (this.amount > 0) {
-            if (!isTurnBased) {
-                greenColor.a = c.a;
-                c = greenColor;
-            }
-
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount), x, y, fontScale, c);
-        } else if (this.amount < 0 && this.canGoNegative) {
+        //because TwoAmountPower calls Super and nothing actually modifies the color object we are passing, we can manipulate the render colors without copy paste
+        if (amount2 < 0) {
             redColor.a = c.a;
             c = redColor;
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount), x, y, fontScale, c);
+        } else {
+            greenColor.a = c.a;
+            c = greenColor;
         }
-        if (amount2 > 0) {
-            if (!isTurnBased) {
-                greenColor.a = c.a;
-                c = greenColor;
-            }
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale, c);
-        }
-        else if (amount2 < 0 && canGoNegative) {
-            redColor.a = c.a;
-            c = redColor;
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale, c);
-        }
+        super.renderAmount(sb, x, y, c);
     }
 }

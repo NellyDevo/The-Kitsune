@@ -33,7 +33,7 @@ public class SplitSoul extends AbstractElderCard {
     public SplitSoul() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.COMMON, CardTarget.ALL);
+                CardRarity.COMMON, CardTarget.ALL_ENEMY);
         damage = baseDamage = ATTACK_DMG;
         isMultiDamage = true;
         elderNumber = baseElderNumber = ELDER_TIER_CARDS_DRAWN_REQUIREMENT;

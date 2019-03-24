@@ -35,6 +35,7 @@ public class Serenity extends AbstractKitsuneCard {
         magicNumber = baseMagicNumber = PLATED_ARMOR_AMT;
         secondMagicNumber = baseSecondMagicNumber = TURN_LIMIT;
         block = baseBlock = BLOCK_AMT;
+        exhaust = true;
     }
 
     @Override

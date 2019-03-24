@@ -1,12 +1,11 @@
 package kitsunemod.relics;
 
-import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.actions.CreateWillOWispAction;
 import kitsunemod.powers.AbstractShapePower;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
@@ -61,7 +60,7 @@ public class ShiningPearl extends KitsuneRelic {
     public void atTurnStartPostDraw() {
         if (AbstractDungeon.player.hasPower(KitsuneShapePower.POWER_ID)) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(KITSUNE_WILLOWISPS_AMOUNT));
+            AbstractDungeon.actionManager.addToBottom(new CreateWillOWispAction(KITSUNE_WILLOWISPS_AMOUNT));
         }
     }
 

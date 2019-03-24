@@ -6,19 +6,11 @@
   },
   "kitsunemod:AncientMalice": {
     "NAME": "Ancient Malice",
-    "DESCRIPTION": "Discard !M! card to gain 2 kitsunemod:Dark per card. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark",
-    "UPGRADE_DESCRIPTION": "Discard !M! cards to gain 2 kitsunemod:Dark per card. NL Human kitsunemod:Aspect: Draw that many cards.",
-    "EXTENDED_DESCRIPTION": [
-      "Discard !M! cards to gain 2 kitsunemod:Dark per card. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark"
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL Gains double the effect of Strength and Vulnerable."
   },
   "kitsunemod:AncientWisdom": {
     "NAME": "Ancient Wisdom",
-    "DESCRIPTION": "Gain kitsunemod:Light equal to !M! random card's cost in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light",
-    "UPGRADE_DESCRIPTION": "Gain kitsunemod:Light equal to !M! random cards' cost in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first.",
-    "EXTENDED_DESCRIPTION": [
-      "Gain kitsunemod:Light equal to !M! random cards' cost in your hand. NL Fox kitsunemod:Aspect: Draw cards until your hand is full first. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Light"
-    ]
+    "DESCRIPTION": "Convert all your Block to Temporary_HP. NL Become Entangled for this turn. NL Exhaust."
   },
   "kitsunemod:AnsweredPrayers": {
     "NAME": "Answered Prayers",
@@ -128,7 +120,7 @@
   },
   "kitsunemod:EtherealKnives": {
     "NAME": "Ethereal Knives",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FastShape": {
@@ -252,7 +244,7 @@
   },
   "kitsunemod:LureCloser": {
     "NAME": "Lure Closer",
-    "DESCRIPTION": "Apply !M! Soulsteal. Increased by your stacks of Weak.",
+    "DESCRIPTION": "Apply !M! kitsunemod:Soulsteal. Increased by your stacks of Weak.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:MassSuggestion": {
@@ -302,8 +294,8 @@
   },
   "kitsunemod:PleaForGuidance": {
     "NAME": "Plea for Guidance",
-    "DESCRIPTION": "Channel !M! Will-o-Wisp. Draw !kitsunemod:M2! card.",
-    "UPGRADE_DESCRIPTION": "Channel !M! Will-o-Wisps. Draw !kitsunemod:M2! cards."
+    "DESCRIPTION": "Channel !M! kitsunemod:Will-o-Wisp. NL Draw !kitsunemod:M2! card.",
+    "UPGRADE_DESCRIPTION": "Channel !M! kitsunemod:Will-o-Wisps. NL Draw !kitsunemod:M2! cards."
   },
   "kitsunemod:Puppeteer": {
     "NAME": "Puppeteer",
@@ -368,7 +360,7 @@
   },
   "kitsunemod:Serenity": {
     "NAME": "Serenity",
-    "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor.",
+    "DESCRIPTION": "Gain !B! Block. NL If you've been in the same kitsunemod:Shape for more than !kitsunemod:M2! turns, gain !M! Plated Armor. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " NL (Active!)"
@@ -386,8 +378,8 @@
   },
   "kitsunemod:SplitSoul": {
     "NAME": "Split Soul",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to all enemies. Draw a card."
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL Draw a card. NL kitsunemod:Elder: Draw !kitsunemod:Elder! extra cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. Draw a card."
   },
   "kitsunemod:Strike": {
     "NAME": "Strike",

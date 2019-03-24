@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.actions.CreateWillOWispAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 
@@ -34,7 +34,7 @@ public class AnsweredPrayers extends AbstractKitsuneCard {
         if (p.hasPower(WeakPower.POWER_ID)) {
             tmp = p.getPower(WeakPower.POWER_ID).amount;
         }
-        AbstractDungeon.actionManager.addToBottom(new ChannelWillOWispAction(tmp));
+        AbstractDungeon.actionManager.addToBottom(new CreateWillOWispAction(tmp));
     }
 
     @Override

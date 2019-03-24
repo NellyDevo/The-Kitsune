@@ -9,8 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import kitsunemod.KitsuneMod;
-import kitsunemod.actions.ApplyLightAction;
-import kitsunemod.actions.ChannelWillOWispAction;
+import kitsunemod.actions.CreateWillOWispAction;
 
 public class KitsuneShapePower extends AbstractShapePower {
 
@@ -41,7 +40,7 @@ public class KitsuneShapePower extends AbstractShapePower {
 
     @Override
     public AbstractGameAction getSoulstealActionForAmount(AbstractPlayer player, int amount) {
-        return new ChannelWillOWispAction(calculateWispsForSoulstealAmount(amount));
+        return new CreateWillOWispAction(calculateWispsForSoulstealAmount(amount));
     }
 
     @Override
@@ -49,17 +48,17 @@ public class KitsuneShapePower extends AbstractShapePower {
         String result = "";
         int wispsForAmount = calculateWispsForSoulstealAmount(amount);
         if (wispsForAmount == 1) {
-            result += DESCRIPTIONS[12] + wispsForAmount + DESCRIPTIONS[13];
+            result += DESCRIPTIONS[14] + wispsForAmount + DESCRIPTIONS[15];
         } else if (wispsForAmount > 1) {
-            result += DESCRIPTIONS[12] + wispsForAmount + DESCRIPTIONS[14];
+            result += DESCRIPTIONS[14] + wispsForAmount + DESCRIPTIONS[15];
         } else {
-            result += DESCRIPTIONS[15];
+            result += DESCRIPTIONS[17];
         }
 
         if (WISPS_PER_INCREMENT == 1) {
-            return result + DESCRIPTIONS[6] + WISPS_PER_INCREMENT + DESCRIPTIONS[7] + SOULSTEAL_STACKS_PER_WISP + DESCRIPTIONS[9] + DESCRIPTIONS[11];
+            return result + DESCRIPTIONS[8] + WISPS_PER_INCREMENT + DESCRIPTIONS[9] + SOULSTEAL_STACKS_PER_WISP + DESCRIPTIONS[11] + DESCRIPTIONS[13];
         } else {
-            return result + DESCRIPTIONS[6] + WISPS_PER_INCREMENT + DESCRIPTIONS[8] + SOULSTEAL_STACKS_PER_WISP + DESCRIPTIONS[9] + DESCRIPTIONS[11];
+            return result + DESCRIPTIONS[8] + WISPS_PER_INCREMENT + DESCRIPTIONS[10] + SOULSTEAL_STACKS_PER_WISP + DESCRIPTIONS[11] + DESCRIPTIONS[13];
         }
     }
 

@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -27,7 +28,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.cards.AbstractKitsuneCard;
-import kitsunemod.cards.TestCard;
 import kitsunemod.cards.attacks.*;
 import kitsunemod.cards.basic.*;
 import kitsunemod.cards.powers.*;
@@ -36,7 +36,7 @@ import kitsunemod.cards.special.QuickshapeFox;
 import kitsunemod.cards.special.QuickshapeHuman;
 import kitsunemod.cards.special.QuickshapeKitsune;
 import kitsunemod.character.KitsuneCharacter;
-import kitsunemod.orbs.WillOWisp;
+import kitsunemod.wisps.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.*;
 import kitsunemod.relics.*;
@@ -45,6 +45,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Map;
 
 import static kitsunemod.patches.AbstractCardEnum.KITSUNE_COLOR;
@@ -59,7 +60,9 @@ public class KitsuneMod implements
         PostInitializeSubscriber,
         PostBattleSubscriber,
         PostDrawSubscriber,
-        PreMonsterTurnSubscriber {
+        PreMonsterTurnSubscriber,
+        PreRoomRenderSubscriber,
+        PostUpdateSubscriber {
 
     //                                      //
     // --- CONSTANTS AND REFERENCE DATA --- //
@@ -88,6 +91,8 @@ public class KitsuneMod implements
 
     public static int cardDrawsThisCombat = 0;
     public static int cardDrawsThisTurn = 0;
+
+    public static ArrayList<WillOWisp> wisps = new ArrayList<>();
 
     public static String makeID(String id) {
         return MOD_ID_PREFIX + id;
@@ -241,7 +246,7 @@ public class KitsuneMod implements
         UnlockTracker.addCard(DancingLights.ID);
 
         //testing purposes only, comment out for releases
-        BaseMod.addCard(new TestCard());
+        //BaseMod.addCard(new TestCard());
     }
 
     @Override
@@ -666,6 +671,47 @@ public class KitsuneMod implements
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
             if (relic instanceof KitsuneRelic) {
                 ((KitsuneRelic)relic).onTriggeredDark();
+            }
+        }
+    }
+
+    @Override
+    public void receivePreRoomRender(SpriteBatch sb) {
+        if (!wisps.isEmpty()) {
+            for (WillOWisp wisp : wisps) {
+                if (wisp.renderBehind) {
+                    wisp.render(sb);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        if (!wisps.isEmpty() && AbstractDungeon.player != null) {
+            for (WillOWisp wisp : wisps) {
+                wisp.update();
+            }
+        }
+    }
+
+    public static void calculateWispPositions() {
+        if (!wisps.isEmpty()) {
+            WillOWisp.calculateEllipseSize();
+
+            //assign angles
+            for (int i = 0; i < wisps.size(); ++i) {
+                WillOWisp wisp = wisps.get(i);
+                wisp.initialAngle = i * (360.0f / wisps.size());
+                wisp.orbitalInterval = wisps.get(0).orbitalInterval;
+            }
+        }
+    }
+
+    public static void onTriggerEndOfPlayerTurnActions() {
+        if (!wisps.isEmpty()) {
+            for (WillOWisp wisp : wisps) {
+                wisp.onEndOfTurn();
             }
         }
     }
