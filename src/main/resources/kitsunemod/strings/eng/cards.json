@@ -6,11 +6,7 @@
   },
   "kitsunemod:AncientMalice": {
     "NAME": "Ancient Malice",
-    "DESCRIPTION": "Discard !M! card to gain 2 kitsunemod:Dark per card. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark",
-    "UPGRADE_DESCRIPTION": "Discard !M! cards to gain 2 kitsunemod:Dark per card. NL Human kitsunemod:Aspect: Draw that many cards.",
-    "EXTENDED_DESCRIPTION": [
-      "Discard !M! cards to gain 2 kitsunemod:Dark per card. NL Human kitsunemod:Aspect: Draw that many cards. NL kitsunemod:Elder: Gain !kitsunemod:Elder! kitsunemod:Dark"
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL Gains double the effect of Strength and Vulnerable."
   },
   "kitsunemod:AncientWisdom": {
     "NAME": "Ancient Wisdom",
