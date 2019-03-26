@@ -192,7 +192,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new Flourish());
         BaseMod.addCard(new Cornered());
         BaseMod.addCard(new Puppeteer());
-        BaseMod.addCard(new FlashOfLight());
         BaseMod.addCard(new EtherealKnives());
         BaseMod.addCard(new TimidAppearance());
         BaseMod.addCard(new DominateWill());
@@ -217,6 +216,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new WarmUp());
         BaseMod.addCard(new FaeProtection());
         BaseMod.addCard(new DivineSpirit());
+        BaseMod.addCard(new PettyTheft());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

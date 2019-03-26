@@ -143,11 +143,6 @@
     "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage in one hit.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block twice."
   },
-  "kitsunemod:FlashOfLight": {
-    "NAME": "Flash of Light",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! kitsunemod:Light.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:FleshToStone": {
     "NAME": "Flesh to Stone",
     "DESCRIPTION": "Lose !M! HP. Gain !kitsunemod:M2! Weak. Gain !B! Block.",
@@ -296,6 +291,11 @@
     "NAME": "Pack Kill",
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Then !M! damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Then !M!, then !kitsunemod:M2! damage."
+  },
+  "kitsunemod:PettyTheft": {
+    "NAME": "Petty Theft",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has kitsunemod:Soulsteal, NL gain [E] and NL draw !M! card.",
+    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PleaForGuidance": {
     "NAME": "Plea for Guidance",
