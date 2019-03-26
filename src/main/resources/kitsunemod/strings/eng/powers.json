@@ -86,6 +86,20 @@
       " #yThorns until next turn."
     ]
   },
+  "kitsunemod:HungryStrikesPower": {
+    "NAME": "Hungry Strikes",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked attack damage, apply #b",
+      " #ySoulsteal."
+    ]
+  },
+  "kitsunemod:HungryStrikesUpgradedPower": {
+    "NAME": "Starving Strikes",
+    "DESCRIPTIONS": [
+      "Whenever you deal attack damage, apply #b",
+      " #ySoulsteal."
+    ]
+  },
   "kitsunemod:KitsuneShapePower": {
     "NAME": "Kitsune Shape",
     "DESCRIPTIONS": [
@@ -198,14 +212,6 @@
     "NAME": "Insight",
     "DESCRIPTIONS": [
       "When you play an #yAspect card, draw another #yAspect card from your deck."
-    ]
-  },
-  "kitsunemod:MasteryOfLightAndDarkPower": {
-    "NAME": "Mastery of Light and Dark",
-    "DESCRIPTIONS": [
-      "Increase the trigger requirement of #yLight and #yDark by #b",
-      ", and Gain #b",
-      " #yLight or #yDark when it triggers."
     ]
   },
   "kitsunemod:MemorizeSpellPower": {

@@ -201,6 +201,11 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:HungryStrikes": {
+    "NAME": "Hungry Strikes",
+    "DESCRIPTION": "Whenever you deal unblocked attack damage, apply !M! kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": "Whenever you deal attack damage, apply !M! kitsunemod:Soulsteal."
+  },
   "kitsunemod:Ignite": {
     "NAME": "Ignite",
     "DESCRIPTION": "Channel a kitsunemod:Will-o-Wisp for each enemy in combat. NL Draw a card. NL Exhaust.",
@@ -253,14 +258,6 @@
     "UPGRADE_DESCRIPTION": "kitsunemod:Charm up to X+1 different random non-boss enemies for 1 round and apply 1 Vulnerable to them.",
     "EXTENDED_DESCRIPTION": [
       "It didn't have any effect!"
-    ]
-  },
-  "kitsunemod:MasteryOfLightAndDark": {
-    "NAME": "Mastery of Light and Dark",
-    "DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times.",
-    "UPGRADE_DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers.",
-    "EXTENDED_DESCRIPTION": [
-      "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times."
     ]
   },
   "kitsunemod:MemorizeSpell": {

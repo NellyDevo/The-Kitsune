@@ -67,9 +67,6 @@ public class DarkPower extends AbstractKitsunePower {
     }
 
     private int calculateThreshold(int amount) {
-        if (owner.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
-            amount = ((MasteryOfLightAndDarkPower)owner.getPower(MasteryOfLightAndDarkPower.POWER_ID)).affectThreshold(amount);
-        }
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
             if (relic instanceof KitsuneRelic) {
                 amount = ((KitsuneRelic)relic).onCalculateDarkTriggerThreshold(amount);
