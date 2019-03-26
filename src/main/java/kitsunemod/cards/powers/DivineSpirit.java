@@ -36,8 +36,8 @@ public class DivineSpirit extends AbstractKitsuneCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new CreateWillOWispAction(magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DivineSpiritPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new CreateWillOWispAction(magicNumber));
     }
 
     @Override
