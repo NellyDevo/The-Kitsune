@@ -19,6 +19,35 @@ import kitsunemod.actions.WillOWispAction;
 import kitsunemod.relics.KitsuneRelic;
 
 public class WillOWisp {
+    private static final float ELLIPSIS_MIN_WIDTH = 100.0f * Settings.scale;
+    private static final float ELLIPSIS_MAX_WIDTH = 170.0f * Settings.scale;
+    private static final float ELLIPSIS_MIN_HEIGHT = 75.0f * Settings.scale;
+    private static final float ELLIPSIS_MAX_HEIGHT = 127.5f * Settings.scale;
+    private static final float NON_ORBITAL_ADJUSTMENT_MIN_SPEED = 200.0f * Settings.scale;
+    private static final float NON_ORBITAL_ADJUSTMENT_MAX_SPEED = 300.0f * Settings.scale;
+    private static final int TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE = 12;
+    public static final int BASE_MAXIMUM_WISPS = 9;
+    private static final float ELLIPSIS_SHIELD_MIN_WIDTH = 75.0f * Settings.scale;
+    private static final float ELLIPSIS_SHIELD_MAX_WIDTH = 127.5f * Settings.scale;
+    private static final float ELLIPSIS_SHIELD_MIN_HEIGHT = 150.0f * Settings.scale;
+    private static final float ELLIPSIS_SHIELD_MAX_HEIGHT = 255.0f * Settings.scale;
+    private static final float SHIELD_FORMATION_OFFSET_X = 400.0f * Settings.scale;
+    private static final float SHIELD_FORMATION_OFFSET_Y = 0.0f;
+    private static final float DEFAULT_ORBIT_DURATION = 4.0f;
+    private static final float SHIELD_ORBIT_DURATION = 2.0f;
+
+    private static float NUM_X_OFFSET = 20.0f * Settings.scale;
+    private static float NUM_Y_OFFSET = -12.0f * Settings.scale;
+    private static float ELLIPSIS_WIDTH = 100.0f * Settings.scale;
+    private static float ELLIPSIS_HEIGHT = 75.0f * Settings.scale;
+    private static float ORBIT_DURATION = DEFAULT_ORBIT_DURATION;
+    public static float PROJECTILE_FLIGHT_TIME = 0.5f;
+    private static float NON_ORBITAL_ADJUSTMENT_SPEED = 200.0f * Settings.scale;
+    private static Formation currentFormation = Formation.DEFAULT;
+    private static float ELLIPSIS_X = AbstractDungeon.player.hb.cX;
+    private static float ELLIPSIS_Y = AbstractDungeon.player.hb.cY;
+    private static boolean orbitClockwise = false;
+
     public Color color;
     public static TextureAtlas.AtlasRegion[] img;
     public int imgIndex;
@@ -39,23 +68,6 @@ public class WillOWisp {
     public float initialAngle;
     public float angle;
     public float orbitalInterval;
-
-    private static float NUM_X_OFFSET = 20.0f * Settings.scale;
-    private static float NUM_Y_OFFSET = -12.0f * Settings.scale;
-    private static float ELLIPSIS_WIDTH = 100.0f * Settings.scale;
-    private static float ELLIPSIS_HEIGHT = 75.0f * Settings.scale;
-    private static float ORBIT_DURATION = 4.0f;
-    public static float PROJECTILE_FLIGHT_TIME = 0.5f;
-    private static float NON_ORBITAL_ADJUSTMENT_SPEED = 200.0f * Settings.scale;
-
-    private static final float ELLIPSIS_MIN_WIDTH = 100.0f * Settings.scale;
-    private static final float ELLIPSIS_MAX_WIDTH = 170.0f * Settings.scale;
-    private static final float ELLIPSIS_MIN_HEIGHT = 75.0f * Settings.scale;
-    private static final float ELLIPSIS_MAX_HEIGHT = 127.5f * Settings.scale;
-    private static final float NON_ORBITAL_ADJUSTMENT_MIN_SPEED = 200.0f * Settings.scale;
-    private static final float NON_ORBITAL_ADJUSTMENT_MAX_SPEED = 300.0f * Settings.scale;
-    private static final int TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE = 12;
-    public static final int BASE_MAXIMUM_WISPS = 9;
 
     public WillOWisp() {
         if (img == null) {
@@ -123,6 +135,9 @@ public class WillOWisp {
         if (angle > 360.0f) {
             angle -= 360.0f;
         }
+        if (orbitClockwise) {
+            angle = 360.0f - angle;
+        }
 
         //determine if the wisp should render behind the character
         renderBehind = angle < 180.0f;
@@ -140,9 +155,9 @@ public class WillOWisp {
             tY *= -1;
         }
 
-        //normalize target coordinates to player position
-        tX += AbstractDungeon.player.hb.cX;
-        tY += AbstractDungeon.player.hb.cY;
+        //normalize target coordinates to ellipse position
+        tX += ELLIPSIS_X;
+        tY += ELLIPSIS_Y;
 
         //move towards target coordinates
         float distance = Vector2.dst(cX, cY, tX, tY);
@@ -180,8 +195,46 @@ public class WillOWisp {
     }
 
     public static void calculateEllipseSize() {
-        ELLIPSIS_WIDTH = Interpolation.linear.apply(ELLIPSIS_MIN_WIDTH, ELLIPSIS_MAX_WIDTH, (float)(Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float)TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
-        ELLIPSIS_HEIGHT = Interpolation.linear.apply(ELLIPSIS_MIN_HEIGHT, ELLIPSIS_MAX_HEIGHT, (float)(Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float)TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
-        NON_ORBITAL_ADJUSTMENT_SPEED = Interpolation.linear.apply(NON_ORBITAL_ADJUSTMENT_MIN_SPEED, NON_ORBITAL_ADJUSTMENT_MAX_SPEED, (float)(Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float)TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+        switch (currentFormation) {
+            case SHIELD:
+                ELLIPSIS_WIDTH = Interpolation.linear.apply(ELLIPSIS_SHIELD_MIN_WIDTH, ELLIPSIS_SHIELD_MAX_WIDTH, (float) (Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float) TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+                ELLIPSIS_HEIGHT = Interpolation.linear.apply(ELLIPSIS_SHIELD_MIN_HEIGHT, ELLIPSIS_SHIELD_MAX_HEIGHT, (float) (Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float) TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+                break;
+            default:
+                ELLIPSIS_WIDTH = Interpolation.linear.apply(ELLIPSIS_MIN_WIDTH, ELLIPSIS_MAX_WIDTH, (float) (Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float) TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+                ELLIPSIS_HEIGHT = Interpolation.linear.apply(ELLIPSIS_MIN_HEIGHT, ELLIPSIS_MAX_HEIGHT, (float) (Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float) TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+                break;
+        }
+        NON_ORBITAL_ADJUSTMENT_SPEED = Interpolation.linear.apply(NON_ORBITAL_ADJUSTMENT_MIN_SPEED, NON_ORBITAL_ADJUSTMENT_MAX_SPEED, (float) (Math.min(TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE, KitsuneMod.wisps.size())) / (float) TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE);
+    }
+
+    private static void convertOrbitalDuration(float newDuration) {
+        for (WillOWisp wisp : KitsuneMod.wisps) {
+            wisp.orbitalInterval *= newDuration / ORBIT_DURATION;
+        }
+        ORBIT_DURATION = newDuration;
+    }
+
+    public static void enterShieldFormation() {
+        currentFormation = Formation.SHIELD;
+        ELLIPSIS_X = AbstractDungeon.player.hb.cX + SHIELD_FORMATION_OFFSET_X;
+        ELLIPSIS_Y = AbstractDungeon.player.hb.cY + SHIELD_FORMATION_OFFSET_Y;
+        orbitClockwise = true;
+        calculateEllipseSize();
+        convertOrbitalDuration(SHIELD_ORBIT_DURATION);
+    }
+
+    public static void resetFormation() {
+        currentFormation = Formation.DEFAULT;
+        ELLIPSIS_X = AbstractDungeon.player.hb.cX;
+        ELLIPSIS_Y = AbstractDungeon.player.hb.cY;
+        orbitClockwise = false;
+        calculateEllipseSize();
+        convertOrbitalDuration(DEFAULT_ORBIT_DURATION);
+    }
+
+    private enum Formation {
+        DEFAULT,
+        SHIELD
     }
 }
