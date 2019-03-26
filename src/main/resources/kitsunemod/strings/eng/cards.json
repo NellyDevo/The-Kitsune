@@ -17,11 +17,6 @@
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:BalancingAct": {
-    "NAME": "Balancing Act",
-    "DESCRIPTION": "Whenever you switch from kitsunemod:Dark to kitsunemod:Light, deal !M! damage to a random enemy. NL Whenever you switch from kitsunemod:Light to kitsunemod:Dark, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:BareFangs": {
     "NAME": "Bare Fangs",
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Dark.",
@@ -94,6 +89,11 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:DivineSpirit": {
+    "NAME": "Divine Spirit",
+    "DESCRIPTION": "Channel !M! kitsunemod:Will-o-Wisp. NL Increase your maximum kitsunemod:Will-o-Wisps by !M!.",
+    "UPGRADE_DESCRIPTION": "Channel !M! kitsunemod:Will-o-Wisps. NL Increase your maximum kitsunemod:Will-o-Wisps by !M!."
   },
   "kitsunemod:DominateWill": {
     "NAME": "Dominate Will",

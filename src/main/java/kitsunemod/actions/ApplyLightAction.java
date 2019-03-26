@@ -9,9 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
-import kitsunemod.powers.BalancingActPower;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
 
@@ -52,9 +50,6 @@ public class ApplyLightAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, source, new LightPower(target, source, amount - currentDarkPowerStacks), amount - currentDarkPowerStacks));
                     AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(target, source, currentDarkPower));
                     AbstractDungeon.actionManager.addToTop(new DamageRandomEnemyAction(new DamageInfo(target, currentDarkPowerStacks * 2, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
-                    if (target.hasPower(BalancingActPower.POWER_ID)) {
-                        pseudoTriggerDark(target.getPower(BalancingActPower.POWER_ID));
-                    }
                 }
 
             }
@@ -64,10 +59,5 @@ public class ApplyLightAction extends AbstractGameAction {
         }
 
         tickDuration();
-    }
-
-    private void pseudoTriggerDark(AbstractPower power) {
-        power.flash();
-        AbstractDungeon.actionManager.addToTop(new DamageRandomEnemyAction(new DamageInfo(target, power.amount, DarkPower.DARK_DAMAGE_TYPE), AbstractGameAction.AttackEffect.POISON));
     }
 }
