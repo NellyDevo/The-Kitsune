@@ -192,13 +192,11 @@ public class KitsuneMod implements
         BaseMod.addCard(new Flourish());
         BaseMod.addCard(new Cornered());
         BaseMod.addCard(new Puppeteer());
-        BaseMod.addCard(new FlashOfLight());
         BaseMod.addCard(new EtherealKnives());
         BaseMod.addCard(new TimidAppearance());
         BaseMod.addCard(new DominateWill());
         BaseMod.addCard(new PackKill());
         BaseMod.addCard(new HauntingLights());
-        BaseMod.addCard(new RepayInKind());
         BaseMod.addCard(new FleshToStone());
         BaseMod.addCard(new FeedingFrenzy());
         BaseMod.addCard(new TransmuteSelf());
@@ -213,10 +211,12 @@ public class KitsuneMod implements
         BaseMod.addCard(new AncientWisdom());
         BaseMod.addCard(new ShiftIntoSpirit());
         BaseMod.addCard(new Serenity());
-        BaseMod.addCard(new MasteryOfLightAndDark());
-        BaseMod.addCard(new BalancingAct());
         BaseMod.addCard(new HeightenedReflexes());
         BaseMod.addCard(new WarmUp());
+        BaseMod.addCard(new FaeProtection());
+        BaseMod.addCard(new DivineSpirit());
+        BaseMod.addCard(new PettyTheft());
+        BaseMod.addCard(new HungryStrikes());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
@@ -628,9 +628,6 @@ public class KitsuneMod implements
                 .filter(card -> card instanceof AbstractElderCard)
                 .forEach(card -> ((AbstractElderCard) card).onTriggerLight());
 
-        if (AbstractDungeon.player.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
-            ((MasteryOfLightAndDarkPower)AbstractDungeon.player.getPower(MasteryOfLightAndDarkPower.POWER_ID)).onTriggerLight();
-        }
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onTriggerLight();
         }
@@ -662,9 +659,6 @@ public class KitsuneMod implements
                 .filter(card -> card instanceof AbstractElderCard)
                 .forEach(card -> ((AbstractElderCard) card).onTriggerDark());
 
-        if (AbstractDungeon.player.hasPower(MasteryOfLightAndDarkPower.POWER_ID)) {
-            ((MasteryOfLightAndDarkPower)AbstractDungeon.player.getPower(MasteryOfLightAndDarkPower.POWER_ID)).onTriggerDark();
-        }
         if (AbstractDungeon.player.cardInUse instanceof AbstractElderCard) {
             ((AbstractElderCard)AbstractDungeon.player.cardInUse).onTriggerDark();
         }
@@ -710,8 +704,19 @@ public class KitsuneMod implements
 
     public static void onTriggerEndOfPlayerTurnActions() {
         if (!wisps.isEmpty()) {
-            for (WillOWisp wisp : wisps) {
-                wisp.onEndOfTurn();
+            boolean holdFire = false;
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractKitsunePower) {
+                    if (((AbstractKitsunePower)p).shouldHoldFire()) {
+                        holdFire = true;
+                        break;
+                    }
+                }
+            }
+            if (!holdFire) {
+                for (WillOWisp wisp : wisps) {
+                    wisp.onEndOfTurn();
+                }
             }
         }
     }

@@ -8,9 +8,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
-import kitsunemod.powers.BalancingActPower;
 import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.LightPower;
 
@@ -53,9 +51,6 @@ public class ApplyDarkAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(target, source, new DarkPower(target, source, amount - currentLightPowerStacks), amount - currentLightPowerStacks));
                     AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(target, source, currentLightPower));
                     AbstractDungeon.actionManager.addToTop(new GainBlockAction(target, target, currentLightPowerStacks * 2));
-                    if (target.hasPower(BalancingActPower.POWER_ID)) {
-                        pseudoTriggerLight(target.getPower(BalancingActPower.POWER_ID));
-                    }
                 }
 
             }
@@ -66,10 +61,5 @@ public class ApplyDarkAction extends AbstractGameAction {
         }
 
         tickDuration();
-    }
-
-    private void pseudoTriggerLight(AbstractPower power) {
-        power.flash();
-        AbstractDungeon.actionManager.addToTop(new GainBlockAction(target, target, power.amount));
     }
 }

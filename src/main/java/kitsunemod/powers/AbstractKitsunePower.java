@@ -14,6 +14,10 @@ public abstract class AbstractKitsunePower extends TwoAmountPower implements Gat
         return amount;
     }
 
+    public boolean shouldHoldFire() {
+        return false;
+    }
+
     @Override
     public void onApplyLightOrDark(boolean isLight) {
     }

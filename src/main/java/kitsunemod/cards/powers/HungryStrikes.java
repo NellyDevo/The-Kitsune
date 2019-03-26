@@ -10,42 +10,47 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.powers.BalancingActPower;
+import kitsunemod.powers.HungryStrikesPower;
+import kitsunemod.powers.StarvingStrikesPower;
 
-public class BalancingAct extends AbstractKitsuneCard {
-    public static final String ID = KitsuneMod.makeID("BalancingAct");
+public class HungryStrikes extends AbstractKitsuneCard {
+    public static final String ID = KitsuneMod.makeID("HungryStrikes");
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "kitsunemod/images/cards/BalancingAct.png";
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String IMG_PATH = "kitsunemod/images/cards/default_power.png";
 
     private static final int COST = 1;
-    private static final int BASE_AMOUNT = 18;
-    private static final int UPGRADE_AMOUNT = 8;
+    private static final int POWER_AMOUNT = 1;
 
-    public BalancingAct() {
+    public HungryStrikes() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.UNCOMMON, CardTarget.NONE);
-        magicNumber = baseMagicNumber = BASE_AMOUNT;
+        magicNumber = baseMagicNumber = POWER_AMOUNT;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BalancingActPower(p, magicNumber), magicNumber));
+        if (!upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HungryStrikesPower(p, magicNumber), magicNumber));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StarvingStrikesPower(p, magicNumber), magicNumber));
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new BalancingAct();
+        return new HungryStrikes();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_AMOUNT);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

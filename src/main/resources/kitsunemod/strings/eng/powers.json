@@ -14,14 +14,6 @@
       "x your #yLight in #yBlock if you're over ",
       " stacks."]
   },
-  "kitsunemod:BalancingActPower": {
-    "NAME": "Balancing Act",
-    "DESCRIPTIONS": [
-      "Whenever you switch from #yDark to #yLight, deal #b",
-      " damage to a random enemy. Whenever you switch from #yLight to #yDark, gain #b",
-      " Block."
-    ]
-  },
   "kitsunemod:Charmed": {
     "NAME": "Charmed",
     "DESCRIPTIONS": [
@@ -63,6 +55,21 @@
       "x your #yDark in damage to a random enemy if you're over ",
       " stacks."]
   },
+  "kitsunemod:DivineSpiritPower": {
+    "NAME": "Divine Spirit",
+    "DESCRIPTIONS": [
+      "Your maximum #yWill-o-Wisp capacity is increased by #b",
+      "."
+    ]
+  },
+  "kitsunemod:FaeProtectionPower": {
+    "NAME": "Fae Protection",
+    "DESCRIPTIONS": [
+      "This turn, your #yWill-o-Wisps will not attack. Until next turn, any time you block damage, lose #b",
+      " #yWill-o-Wisp.",
+      " #yWill-o-Wisps."
+    ]
+  },
   "kitsunemod:GatheringDarkPower": {
     "NAME": "Gathering Dark",
     "DESCRIPTIONS": [
@@ -77,6 +84,20 @@
       "At the end of each turn, gain #b",
       " #yLight. Whenever you gain #yLight, gain #b",
       " #yThorns until next turn."
+    ]
+  },
+  "kitsunemod:HungryStrikesPower": {
+    "NAME": "Hungry Strikes",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked attack damage, apply #b",
+      " #ySoulsteal."
+    ]
+  },
+  "kitsunemod:HungryStrikesUpgradedPower": {
+    "NAME": "Starving Strikes",
+    "DESCRIPTIONS": [
+      "Whenever you deal attack damage, apply #b",
+      " #ySoulsteal."
     ]
   },
   "kitsunemod:KitsuneShapePower": {
@@ -191,14 +212,6 @@
     "NAME": "Insight",
     "DESCRIPTIONS": [
       "When you play an #yAspect card, draw another #yAspect card from your deck."
-    ]
-  },
-  "kitsunemod:MasteryOfLightAndDarkPower": {
-    "NAME": "Mastery of Light and Dark",
-    "DESCRIPTIONS": [
-      "Increase the trigger requirement of #yLight and #yDark by #b",
-      ", and Gain #b",
-      " #yLight or #yDark when it triggers."
     ]
   },
   "kitsunemod:MemorizeSpellPower": {

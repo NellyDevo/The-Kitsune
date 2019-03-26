@@ -17,11 +17,6 @@
     "DESCRIPTION": "Channel 1 kitsunemod:Will-o-Wisp for each stack of Weak on you.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "kitsunemod:BalancingAct": {
-    "NAME": "Balancing Act",
-    "DESCRIPTION": "Whenever you switch from kitsunemod:Dark to kitsunemod:Light, deal !M! damage to a random enemy. NL Whenever you switch from kitsunemod:Light to kitsunemod:Dark, gain !M! Block.",
-    "UPGRADE_DESCRIPTION": ""
-  },
   "kitsunemod:BareFangs": {
     "NAME": "Bare Fangs",
     "DESCRIPTION": "Deal !D! damage. NL Fox kitsunemod:Aspect: Gain !M! Dark.",
@@ -95,6 +90,11 @@
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:DivineSpirit": {
+    "NAME": "Divine Spirit",
+    "DESCRIPTION": "Channel !M! kitsunemod:Will-o-Wisp. NL Increase your maximum kitsunemod:Will-o-Wisps by !M!.",
+    "UPGRADE_DESCRIPTION": "Channel !M! kitsunemod:Will-o-Wisps. NL Increase your maximum kitsunemod:Will-o-Wisps by !M!."
+  },
   "kitsunemod:DominateWill": {
     "NAME": "Dominate Will",
     "DESCRIPTION": "If an enemy is a Minion or is below !kitsunemod:M2! HP, kitsunemod:Charm it for !M! turns. NL Exhaust.",
@@ -123,10 +123,15 @@
     "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL Human kitsunemod:Aspect: Apply !M! Vulnerable as well.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:FaeProtection": {
+    "NAME": "Fae Protection",
+    "DESCRIPTION": "Your kitsunemod:Will-o-Wisps do not attack this turn, and you gain !B! block for each. NL Each time you block damage, lose !M! kitsunemod:Will-o-wisps.",
+    "UPGRADE_DESCRIPTION": "Your kitsunemod:Will-o-Wisps do not attack this turn and you gain !B! block for each. NL Each time you block damage, lose !M! kitsunemod:Will-o-wisp."
+  },
   "kitsunemod:FastShape": {
     "NAME": "Fast Shape",
     "DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played.",
-    "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less. "
+    "UPGRADE_DESCRIPTION": "Your kitsunemod:Shapeshift cards no longer Exhaust when played and cost !M! less."
   },
   "kitsunemod:FeedingFrenzy": {
     "NAME": "Feeding Frenzy",
@@ -137,11 +142,6 @@
     "NAME": "Feral Instinct",
     "DESCRIPTION": "Gain !B! Block twice. NL kitsunemod:Elder: Block !kitsunemod:Elder! damage in one hit.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block twice."
-  },
-  "kitsunemod:FlashOfLight": {
-    "NAME": "Flash of Light",
-    "DESCRIPTION": "Deal !D! Damage. NL Gain !M! kitsunemod:Light.",
-    "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:FleshToStone": {
     "NAME": "Flesh to Stone",
@@ -201,6 +201,11 @@
     "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "kitsunemod:HungryStrikes": {
+    "NAME": "Hungry Strikes",
+    "DESCRIPTION": "Whenever you deal unblocked attack damage, apply !M! kitsunemod:Soulsteal.",
+    "UPGRADE_DESCRIPTION": "Whenever you deal attack damage, apply !M! kitsunemod:Soulsteal."
+  },
   "kitsunemod:Ignite": {
     "NAME": "Ignite",
     "DESCRIPTION": "Channel a kitsunemod:Will-o-Wisp for each enemy in combat. NL Draw a card. NL Exhaust.",
@@ -255,14 +260,6 @@
       "It didn't have any effect!"
     ]
   },
-  "kitsunemod:MasteryOfLightAndDark": {
-    "NAME": "Mastery of Light and Dark",
-    "DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stack to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times.",
-    "UPGRADE_DESCRIPTION": "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers.",
-    "EXTENDED_DESCRIPTION": [
-      "kitsunemod:Light and kitsunemod:Dark need !M! more stacks to trigger. NL Gain that much kitsunemod:Light or kitsunemod:Dark when it triggers. NL kitsunemod:Elder: trigger kitsunemod:Light or kitsunemod:Dark !kitsunemod:Elder! times."
-    ]
-  },
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
     "DESCRIPTION": "Choose an Attack or Skill in your hand. Add a kitsunemod:Echo of that card to your hand for your next !M! turns.",
@@ -290,6 +287,11 @@
   "kitsunemod:PackKill": {
     "NAME": "Pack Kill",
     "DESCRIPTION": "Deal !D! damage !M! times. NL Fox kitsunemod:Aspect: !kitsunemod:M2! times instead.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "kitsunemod:PettyTheft": {
+    "NAME": "Petty Theft",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has kitsunemod:Soulsteal, NL gain [E] and NL draw !M! card.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:PleaForGuidance": {
@@ -347,11 +349,6 @@
     "NAME": "Rend Spirit",
     "DESCRIPTION": "Deal !D! damage. Lose !M! HP, reduced by the stacks of kitsunemod:Soulsteal on the target.",
     "UPGRADE_DESCRIPTION": ""
-  },
-  "kitsunemod:RepayInKind": {
-    "NAME": "Repay in Kind",
-    "DESCRIPTION": "Deal !D! damage. Apply the same amount of Weak you have.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Apply the same amount of Weak and Vulnerable you have."
   },
   "kitsunemod:RoaringFire": {
     "NAME": "Roaring Fire",
