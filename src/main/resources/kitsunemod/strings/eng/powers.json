@@ -63,6 +63,14 @@
       "x your #yDark in damage to a random enemy if you're over ",
       " stacks."]
   },
+  "kitsunemod:FaeProtectionPower": {
+    "NAME": "Fae Protection",
+    "DESCRIPTIONS": [
+      "This turn, your #yWill-o-Wisps will not attack. Until next turn, any time you block damage, lose #b",
+      " #yWill-o-Wisp.",
+      " #yWill-o-Wisps."
+    ]
+  },
   "kitsunemod:GatheringDarkPower": {
     "NAME": "Gathering Dark",
     "DESCRIPTIONS": [

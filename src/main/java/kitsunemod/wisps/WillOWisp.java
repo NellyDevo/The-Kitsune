@@ -23,15 +23,15 @@ public class WillOWisp {
     private static final float ELLIPSIS_MAX_WIDTH = 170.0f * Settings.scale;
     private static final float ELLIPSIS_MIN_HEIGHT = 75.0f * Settings.scale;
     private static final float ELLIPSIS_MAX_HEIGHT = 127.5f * Settings.scale;
-    private static final float NON_ORBITAL_ADJUSTMENT_MIN_SPEED = 200.0f * Settings.scale;
-    private static final float NON_ORBITAL_ADJUSTMENT_MAX_SPEED = 300.0f * Settings.scale;
+    private static final float NON_ORBITAL_ADJUSTMENT_MIN_SPEED = 400.0f * Settings.scale;
+    private static final float NON_ORBITAL_ADJUSTMENT_MAX_SPEED = 600.0f * Settings.scale;
     private static final int TARGET_WISP_COUNT_MAX_SIZE_ELLIPSE = 12;
     public static final int BASE_MAXIMUM_WISPS = 9;
     private static final float ELLIPSIS_SHIELD_MIN_WIDTH = 75.0f * Settings.scale;
     private static final float ELLIPSIS_SHIELD_MAX_WIDTH = 127.5f * Settings.scale;
     private static final float ELLIPSIS_SHIELD_MIN_HEIGHT = 150.0f * Settings.scale;
     private static final float ELLIPSIS_SHIELD_MAX_HEIGHT = 255.0f * Settings.scale;
-    private static final float SHIELD_FORMATION_OFFSET_X = 400.0f * Settings.scale;
+    private static final float SHIELD_FORMATION_OFFSET_X = 200.0f * Settings.scale;
     private static final float SHIELD_FORMATION_OFFSET_Y = 0.0f;
     private static final float DEFAULT_ORBIT_DURATION = 4.0f;
     private static final float SHIELD_ORBIT_DURATION = 2.0f;
@@ -44,8 +44,8 @@ public class WillOWisp {
     public static float PROJECTILE_FLIGHT_TIME = 0.5f;
     private static float NON_ORBITAL_ADJUSTMENT_SPEED = 200.0f * Settings.scale;
     private static Formation currentFormation = Formation.DEFAULT;
-    private static float ELLIPSIS_X = AbstractDungeon.player.hb.cX;
-    private static float ELLIPSIS_Y = AbstractDungeon.player.hb.cY;
+    private static float ELLIPSIS_X = 0.0f;
+    private static float ELLIPSIS_Y = 0.0f;
     private static boolean orbitClockwise = false;
 
     public Color color;
@@ -86,6 +86,12 @@ public class WillOWisp {
         color = new Color(0.0f, 1.0f, MathUtils.random(0.5f, 1.0f), 1.0f);
         cX = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_x;
         cY = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_y + AbstractDungeon.player.hb_h / 2.0f;
+        if (ELLIPSIS_X == 0.0f) {
+            ELLIPSIS_X = AbstractDungeon.player.hb.cX;
+        }
+        if (ELLIPSIS_Y == 0.0f) {
+            ELLIPSIS_Y = AbstractDungeon.player.hb.cY;
+        }
     }
 
     public void calculateDamage() {

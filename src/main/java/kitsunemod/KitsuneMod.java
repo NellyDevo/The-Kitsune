@@ -198,7 +198,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new DominateWill());
         BaseMod.addCard(new PackKill());
         BaseMod.addCard(new HauntingLights());
-        BaseMod.addCard(new RepayInKind());
         BaseMod.addCard(new FleshToStone());
         BaseMod.addCard(new FeedingFrenzy());
         BaseMod.addCard(new TransmuteSelf());
@@ -217,6 +216,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new BalancingAct());
         BaseMod.addCard(new HeightenedReflexes());
         BaseMod.addCard(new WarmUp());
+        BaseMod.addCard(new FaeProtection());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());
@@ -710,8 +710,19 @@ public class KitsuneMod implements
 
     public static void onTriggerEndOfPlayerTurnActions() {
         if (!wisps.isEmpty()) {
-            for (WillOWisp wisp : wisps) {
-                wisp.onEndOfTurn();
+            boolean holdFire = false;
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractKitsunePower) {
+                    if (((AbstractKitsunePower)p).shouldHoldFire()) {
+                        holdFire = true;
+                        break;
+                    }
+                }
+            }
+            if (!holdFire) {
+                for (WillOWisp wisp : wisps) {
+                    wisp.onEndOfTurn();
+                }
             }
         }
     }
