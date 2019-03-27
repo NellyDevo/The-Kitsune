@@ -39,7 +39,15 @@ public class VanishIntoShadows extends AbstractKitsuneCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadePower(p, secondMagicNumber), secondMagicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadeExtraHealPower(p, magicNumber), magicNumber));
+
+        //extra heal doesn't stack, will increase if appropriate, but will never decrease
+        int tmp = magicNumber;
+        if (p.hasPower(ShadeExtraHealPower.POWER_ID)) {
+            tmp -= p.getPower(ShadeExtraHealPower.POWER_ID).amount;
+        }
+        if (tmp > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadeExtraHealPower(p, tmp), tmp));
+        }
     }
 
     @Override
