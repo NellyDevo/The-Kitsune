@@ -59,9 +59,6 @@ public class AncientMalice extends AbstractKitsuneCard {
             baseDamage += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
         }
         super.calculateCardDamage(mo);
-        if (mo.hasPower(VulnerablePower.POWER_ID)) {
-            damage = (int)mo.getPower(VulnerablePower.POWER_ID).atDamageReceive(damage, DamageInfo.DamageType.NORMAL);
-        }
         baseDamage = tmp;
     }
 
