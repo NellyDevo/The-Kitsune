@@ -76,14 +76,14 @@ fox form/tail
   index: -1
 Import/sword_hand
   rotate: false
-  xy: 1, 1
+  xy: 721, 605
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Import/sword_arm
   rotate: false
-  xy: 721, 1
+  xy: 361, 1209
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
@@ -97,49 +97,49 @@ Import/Human
   index: -1
 Import/Red_hair
   rotate: false
-  xy: 361, 1209
+  xy: 721, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Orange Hair
   rotate: false
-  xy: 721, 605
+  xy: 721, 1209
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Import/left_ear
   rotate: false
-  xy: 1081, 1
+  xy: 361, 605
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Import/right_ear
   rotate: false
-  xy: 721, 1209
+  xy: 1, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Import/Tail
   rotate: false
-  xy: 361, 605
+  xy: 1, 1209
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Import/sword
   rotate: false
-  xy: 361, 1
+  xy: 1081, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
   index: -1
 Import/Arm
   rotate: false
-  xy: 1, 1209
+  xy: 361, 1
   size: 358, 602
   orig: 358, 602
   offset: 0, 0
