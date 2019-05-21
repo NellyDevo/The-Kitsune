@@ -20,7 +20,7 @@ public class WaningExistence extends AbstractKitsuneCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "kitsunemod/images/cards/default_attack.png";
+    public static final String IMG_PATH = "kitsunemod/images/cards/WaningExistence.png";
     private static final int COST = 1;
 
     private static final int DAMAGE_AMT = 6;

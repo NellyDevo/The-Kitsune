@@ -21,7 +21,7 @@ public class Cornered extends AbstractElderCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "kitsunemod/images/cards/default_attack.png";
+    public static final String IMG_PATH = "kitsunemod/images/cards/Cornered.png";
 
 
     private static final int COST = 1;
