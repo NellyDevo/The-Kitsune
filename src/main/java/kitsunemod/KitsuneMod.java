@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kitsunemod.cards.AbstractElderCard;
 import kitsunemod.cards.AbstractKitsuneCard;
@@ -671,7 +672,7 @@ public class KitsuneMod implements
 
     @Override
     public void receivePreRoomRender(SpriteBatch sb) {
-        if (!wisps.isEmpty()) {
+        if (!wisps.isEmpty() && AbstractDungeon.player != null && (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !AbstractDungeon.player.isDead) {
             for (WillOWisp wisp : wisps) {
                 if (wisp.renderBehind) {
                     wisp.render(sb);

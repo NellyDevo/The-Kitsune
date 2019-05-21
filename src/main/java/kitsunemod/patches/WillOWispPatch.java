@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import kitsunemod.KitsuneMod;
@@ -68,7 +69,7 @@ public class WillOWispPatch {
                 locator = Locator.class
         )
         public static void Insert(AbstractRoom __instance, SpriteBatch sb) {
-            if (!KitsuneMod.wisps.isEmpty() && AbstractDungeon.player != null) {
+            if (!KitsuneMod.wisps.isEmpty() && AbstractDungeon.player != null && (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !AbstractDungeon.player.isDead) {
                 for (WillOWisp wisp : KitsuneMod.wisps) {
                     if (!wisp.renderBehind) { //other wisps are rendered in BaseMod PreRoomRenderSubscriber
                         wisp.render(sb);
