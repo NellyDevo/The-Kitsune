@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -37,7 +38,7 @@ public class WillOWisp {
     private static final float SHIELD_ORBIT_DURATION = 2.0f;
 
     private static float NUM_X_OFFSET = 20.0f * Settings.scale;
-    private static float NUM_Y_OFFSET = -12.0f * Settings.scale;
+    private static float NUM_Y_OFFSET = -16.0f * Settings.scale;
     private static float ELLIPSIS_WIDTH = 100.0f * Settings.scale;
     private static float ELLIPSIS_HEIGHT = 75.0f * Settings.scale;
     private static float ORBIT_DURATION = DEFAULT_ORBIT_DURATION;
@@ -69,6 +70,8 @@ public class WillOWisp {
     public float angle;
     public float orbitalInterval;
 
+    private Hitbox hb;
+
     public WillOWisp() {
         if (img == null) {
             img = new TextureAtlas.AtlasRegion[72];
@@ -86,12 +89,9 @@ public class WillOWisp {
         color = new Color(0.0f, 1.0f, MathUtils.random(0.5f, 1.0f), 1.0f);
         cX = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_x;
         cY = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_y + AbstractDungeon.player.hb_h / 2.0f;
-        if (ELLIPSIS_X == 0.0f) {
-            ELLIPSIS_X = AbstractDungeon.player.hb.cX;
-        }
-        if (ELLIPSIS_Y == 0.0f) {
-            ELLIPSIS_Y = AbstractDungeon.player.hb.cY;
-        }
+        ELLIPSIS_X = AbstractDungeon.player.hb.cX;
+        ELLIPSIS_Y = AbstractDungeon.player.hb.cY;
+        hb = new Hitbox(img[0].packedWidth, img[0].packedHeight);
     }
 
     public void calculateDamage() {
@@ -193,11 +193,13 @@ public class WillOWisp {
         sb.draw(img[imgIndex], cX - img[imgIndex].packedWidth / 2.0f, cY, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale * glowScale, 2.0f * Settings.scale * glowScale, 0.0f);
         sb.setColor(color);
         sb.draw(img[imgIndex], cX - img[imgIndex].packedWidth / 2.0f, cY, img[imgIndex].packedWidth / 2.0f, img[imgIndex].packedHeight / 2.0f, img[imgIndex].packedWidth, img[imgIndex].packedHeight, 2.0f * Settings.scale, 2.0f * Settings.scale, 0.0f);
-        this.renderText(sb);
+        renderText(sb);
+        hb.move(cX, cY);
+        hb.render(sb);
     }
 
     private void renderText(final SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.damage), this.cX + NUM_X_OFFSET, this.cY + NUM_Y_OFFSET - 4.0f * Settings.scale, new Color(0.2f, 1.0f, 1.0f, 1.0f), fontScale);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.damage), this.cX + NUM_X_OFFSET, this.cY + NUM_Y_OFFSET, new Color(0.2f, 1.0f, 1.0f, 1.0f), fontScale);
     }
 
     public static void calculateEllipseSize() {
