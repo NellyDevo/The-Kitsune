@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -37,6 +38,7 @@ import kitsunemod.cards.special.QuickshapeFox;
 import kitsunemod.cards.special.QuickshapeHuman;
 import kitsunemod.cards.special.QuickshapeKitsune;
 import kitsunemod.character.KitsuneCharacter;
+import kitsunemod.events.ShrineOfBodyMindAndSoul;
 import kitsunemod.wisps.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.*;
@@ -137,6 +139,9 @@ public class KitsuneMod implements
                 }
             }
         }
+
+        //add events
+        BaseMod.addEvent(ShrineOfBodyMindAndSoul.ID, ShrineOfBodyMindAndSoul.class, TheBeyond.ID);
 
         //add sounds
 //        HashMap<String, Sfx> reflectedMap = (HashMap<String, Sfx>)ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");

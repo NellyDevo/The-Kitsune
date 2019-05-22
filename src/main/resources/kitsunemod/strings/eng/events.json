@@ -6,5 +6,24 @@
       "#pPAIN. NL NL \"For the crime of consorting with a malevolent spirit, you are to be #r~burned~ #r~at~ #r~the~ #r~stake.~ Do you have any last words?\" NL \"Kasumi, #pI #plove #pyou... I'll never leave you...\" NL I turned and fled, hearing the sound of burning and then screams behind me. NL I cannot stay, I #ycannot #ystay, they ~killed~ ~her,~ they'd #r@kill@ #r@me@ -- NL NL Not knowing what to do, I took a #bdeep #bbreath, picked a black spot on the horizon, and #gevened #gmy #gpace."
     ],
     "OPTIONS": []
+  },
+  "kitsunemod:ShrineOfBodyMindAndSoul": {
+    "NAME": "Shrine of Body, Mind, and Soul",
+    "DESCRIPTIONS": [
+      "You come upon a shrine hidden in an alcove. It has a familiar symbol, with three altars below it. As you walk close, you hear a faint voice echoing in your head: NL NL Those who sacrifice of NL #r~body,~ NL #y~mind,~ NL and #b~soul~ NL will be granted a #greward.",
+      "You place your most precious trinkets upon the altars. As you sit at the shrine, a blinding glow envelops you. After a short time, it recedes, leaving you alone with a leather-wrapped case. You open it and find a brilliantly shining translucent pearl, and as you pick it up to inspect it, you feel power rush through you.",
+      "You kneel respectfully to pray, stating that you cannot give what you no longer have. The voice responds \"I understand. Then accept this blessing.\" NL NL You awake some time later, feeling starving but healthy.",
+      "You leave, hoping the voice didn't feel ignored."
+    ],
+    "OPTIONS": [
+      "[Locked] Requires: Worn Pearl, Broken Collar, and Precious Amulet.",
+      "[Locked] Requires: Shining Pearl, Broken Collar, and Precious Amulet.",
+      "[Offer Worn Pearl, Broken Collar, Precious Amulet] #gGain #ga #gSpecial #gRelic.",
+      "[Offer Shining Pearl, Broken Collar, Precious Amulet] #gGain #ga #gSpecial #gRelic.",
+      "[Pray] #rLose #r",
+      " #rHP, #gGain #g",
+      " #gMax #gHP.",
+      "[Leave]"
+    ]
   }
 }
