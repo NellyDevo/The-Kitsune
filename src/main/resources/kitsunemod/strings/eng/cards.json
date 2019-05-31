@@ -262,7 +262,7 @@
   },
   "kitsunemod:MemorizeSpell": {
     "NAME": "Memorize Spell",
-    "DESCRIPTION": "Choose an Attack or Skill in your hand. Add a kitsunemod:Echo of that card to your hand for your next !M! turns.",
+    "DESCRIPTION": "Choose an Attack or Skill in your hand. Add an kitsunemod:Echo of that card to your hand for your next !M! turns.",
     "UPGRADE_DESCRIPTION": "Choose an Attack or Skill in your hand. Add an upgraded kitsunemod:Echo of that card to your hand for your next !M! turns.",
     "EXTENDED_DESCRIPTION": [
       "Memorize",
