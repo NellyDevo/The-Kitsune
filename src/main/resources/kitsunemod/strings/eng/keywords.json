@@ -40,13 +40,13 @@
     "NAMES": [
       "light"
     ],
-    "DESCRIPTION": "Persistent buff. Converted to Block at the start of your turn when over 9 stacks. Opposed to #yDark and will trigger it before applying."
+    "DESCRIPTION": "Persistent buff. Converted to twice as much Block at the start of your turn when over 9 stacks. Opposed to #yDark and will trigger it instead of applying."
   },
   "DARK": {
     "NAMES": [
       "dark"
     ],
-    "DESCRIPTION": "Persistent buff. Converted into damaging a random enemy at the start of your turn when over 9 stacks. Opposed to #yLight and will trigger it before applying."
+    "DESCRIPTION": "Persistent buff. Converted to twice as much damage to a random enemy at the start of your turn when over 9 stacks. Opposed to #yLight and will trigger it instead of applying."
   },
   "SHADE": {
     "NAMES": [
