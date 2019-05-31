@@ -49,7 +49,7 @@ public class FeralInstinct extends AbstractElderCard {
 
     @Override
     public void onBlockedDamage(int amount) {
-        if (amount > ELDER_TIER_BLOCKED_REQUIREMENT && !upgradedThisRoom) {
+        if (amount >= ELDER_TIER_BLOCKED_REQUIREMENT && !upgradedThisRoom) {
             misc++;
             int tempTimesUpgraded = this.timesUpgraded;
             upgrade();
