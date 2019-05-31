@@ -4,6 +4,7 @@ import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.esotericsoftware.spine.Slot;
@@ -33,6 +34,7 @@ import kitsunemod.patches.KitsuneEnum;
 import kitsunemod.powers.KitsuneShapePower;
 import kitsunemod.relics.KitsuneRelic;
 import kitsunemod.relics.WornPearl;
+import kitsunemod.ui.EnergyOrbKitsune;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,22 +55,9 @@ public class KitsuneCharacter extends CustomPlayer {
     private AnimationState.TrackEntry animationTrackEntry;
     private HashMap<String, Slot> animationSlots = new HashMap<>();
     private HashMap<String, Attachment> storedAssets = new HashMap<>();
-    public static final String[] orbTextures = {
-            "kitsunemod/images/char/orb/layer1.png",
-            "kitsunemod/images/char/orb/layer2.png",
-            "kitsunemod/images/char/orb/layer3.png",
-            "kitsunemod/images/char/orb/layer4.png",
-            "kitsunemod/images/char/orb/layer5.png",
-            "kitsunemod/images/char/orb/layer6.png",
-            "kitsunemod/images/char/orb/layer1d.png",
-            "kitsunemod/images/char/orb/layer2d.png",
-            "kitsunemod/images/char/orb/layer3d.png",
-            "kitsunemod/images/char/orb/layer4d.png",
-            "kitsunemod/images/char/orb/layer5d.png"
-    };
 
     public KitsuneCharacter(String name) {
-        super(name, KitsuneEnum.KITSUNE_CLASS, orbTextures, "kitsunemod/images/char/orb/vfx.png", null, null, null);
+        super(name, KitsuneEnum.KITSUNE_CLASS, new EnergyOrbKitsune(), null, null);
 
         dialogX = drawX + DIALOG_X_ADJUSTMENT * Settings.scale;
         dialogY = drawY + DIALOG_Y_ADJUSTMENT * Settings.scale;
