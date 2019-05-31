@@ -301,12 +301,12 @@ public abstract class AbstractElderCard extends AbstractKitsuneCard {
     //or rewrite this to suppress playing the vfx during initialization, either way is vaguely ugly imo
     protected void playUpgradeVfx() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToTop(new VFXAction(new UpgradeShineEffect(Settings.WIDTH / 2, Settings.HEIGHT / 2)));
-            AbstractDungeon.actionManager.addToTop(new VFXAction(new ShowCardBrieflyEffect(this.makeStatEquivalentCopy())));
+            AbstractDungeon.actionManager.addToTop(new VFXAction(new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F)));
+            AbstractDungeon.actionManager.addToTop(new VFXAction(new ShowCardBrieflyEffect(makeStatEquivalentCopy())));
         }
         else {
-            AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(this));
-            AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2, Settings.HEIGHT / 2));
+            AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(makeStatEquivalentCopy()));
+            AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
         }
     }
 
