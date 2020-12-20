@@ -20,8 +20,8 @@ public class RoomTransitionHookPatch {
     @SpireInsertPatch(
             locator = RoomTransitionHookPatch.LocatorPost.class
     )
-    public static void InsertPost(AbstractDungeon __instance, @ByRef SaveFile saveFile) {
-        if (__instance.nextRoom != null && __instance.nextRoom.room != null) {
+    public static void InsertPost(AbstractDungeon __instance, SaveFile saveFile) {
+        if (AbstractDungeon.nextRoom != null && AbstractDungeon.nextRoom.room != null) {
             KitsuneMod.receiveRoomEntered(nextRoom.room);
         }
     }
