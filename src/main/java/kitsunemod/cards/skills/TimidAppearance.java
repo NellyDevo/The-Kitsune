@@ -1,17 +1,12 @@
 package kitsunemod.cards.skills;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
-import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
@@ -49,16 +44,27 @@ public class TimidAppearance extends AbstractKitsuneCard {
 
     @Override
     public void applyPowers() {
+        applyPowersOnBlockHelper(null);
         super.applyPowers();
-        magicNumber = applyPowerOnBlockHelper(baseMagicNumber);
-        isMagicNumberModified = baseMagicNumber != magicNumber;
     }
 
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
+        applyPowersOnBlockHelper(mo);
         super.calculateCardDamage(mo);
-        magicNumber = applyPowerOnBlockHelper(baseMagicNumber);
+    }
+
+    private void applyPowersOnBlockHelper(AbstractMonster mo) {
+        int t = baseBlock;
+        baseBlock = baseMagicNumber;
+        if (mo != null) {
+            super.calculateCardDamage(mo);
+        } else {
+            super.applyPowers();
+        }
+        magicNumber = block;
+        baseBlock = t;
         isMagicNumberModified = baseMagicNumber != magicNumber;
     }
 
