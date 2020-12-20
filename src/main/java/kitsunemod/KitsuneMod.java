@@ -39,10 +39,13 @@ import kitsunemod.cards.special.QuickshapeHuman;
 import kitsunemod.cards.special.QuickshapeKitsune;
 import kitsunemod.character.KitsuneCharacter;
 import kitsunemod.events.ShrineOfBodyMindAndSoul;
-import kitsunemod.wisps.WillOWisp;
 import kitsunemod.patches.KitsuneEnum;
-import kitsunemod.powers.*;
+import kitsunemod.powers.AbstractKitsunePower;
+import kitsunemod.powers.AbstractShapePower;
+import kitsunemod.powers.CharmMonsterPower;
+import kitsunemod.powers.GatheringPower;
 import kitsunemod.relics.*;
+import kitsunemod.wisps.WillOWisp;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

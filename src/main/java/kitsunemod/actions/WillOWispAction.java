@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import kitsunemod.KitsuneMod;
-import kitsunemod.wisps.WillOWisp;
 import kitsunemod.vfx.WillOWispProjectile;
+import kitsunemod.wisps.WillOWisp;
 
 import java.util.ArrayList;
 

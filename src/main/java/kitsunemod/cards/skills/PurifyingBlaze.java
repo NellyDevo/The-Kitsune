@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.TriggerWillOWispTargetedAction;
 import kitsunemod.cards.AbstractKitsuneCard;
-import kitsunemod.wisps.WillOWisp;
 import kitsunemod.patches.AbstractCardEnum;
+import kitsunemod.wisps.WillOWisp;
 
 public class PurifyingBlaze extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("PurifyingBlaze");

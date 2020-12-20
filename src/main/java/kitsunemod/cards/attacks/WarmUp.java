@@ -3,10 +3,8 @@ package kitsunemod.cards.attacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.colorless.FlashOfSteel;
 import com.megacrit.cardcrawl.cards.colorless.SwiftStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,10 +15,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kitsunemod.KitsuneMod;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
-import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
-import kitsunemod.powers.NinetailedShapePower;
 
 public class WarmUp extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("WarmUp");

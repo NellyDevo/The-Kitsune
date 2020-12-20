@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import kitsunemod.KitsuneMod;
-import kitsunemod.wisps.WillOWisp;
 import kitsunemod.powers.AbstractKitsunePower;
 import kitsunemod.powers.WispAffectingPower;
 import kitsunemod.relics.KitsuneRelic;
+import kitsunemod.wisps.WillOWisp;
 
 public class CreateWillOWispAction extends AbstractGameAction {
     private static int MAX_WISPS;

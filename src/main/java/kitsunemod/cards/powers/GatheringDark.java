@@ -1,6 +1,5 @@
 package kitsunemod.cards.powers;
 
-import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.PotionGetHooks;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

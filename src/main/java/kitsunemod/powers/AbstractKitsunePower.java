@@ -1,7 +1,6 @@
 package kitsunemod.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import kitsunemod.KitsuneMod;
 
 public abstract class AbstractKitsunePower extends TwoAmountPower implements GatheringPower, WispAffectingPower {
