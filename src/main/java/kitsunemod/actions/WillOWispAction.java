@@ -57,8 +57,6 @@ public class WillOWispAction extends AbstractGameAction {
                 if (!projectile.didDamage) {
                     if (!projectile.target.isDeadOrEscaped()) {
                         if (projectile.doDamage && !projectile.didDamage) {
-                            projectile.target.damageFlash = true;
-                            projectile.target.damageFlashFrames = 4;
                             AbstractDungeon.effectList.add(new FlashAtkImgEffect(projectile.target.hb.cX, projectile.target.hb.cY, AttackEffect.FIRE));
                             projectile.target.tint.color = Color.RED.cpy();
                             projectile.target.tint.changeColor(Color.WHITE.cpy());

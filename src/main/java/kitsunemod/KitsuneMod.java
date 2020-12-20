@@ -71,7 +71,7 @@ public class KitsuneMod implements
     // --- CONSTANTS AND REFERENCE DATA --- //
     //                                      //
 
-    public static final Color kitsuneColor = CardHelper.getColor(245.0f, 145.0f, 65.0f); //change this to our class's decided color; currently leftover from mystic purple
+    public static final Color kitsuneColor = CardHelper.getColor(245, 145, 65); //change this to our class's decided color; currently leftover from mystic purple
 
     private static final String MOD_ID_PREFIX = "kitsunemod:";
 
