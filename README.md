@@ -23,6 +23,8 @@ Hi! This is a Kitsune character for Slay The Spire. Wow, who could have guessed?
    * Cards that upgrade up to 9 times based on various conditions instead of in rest sites.
  * Charm
    * Make an enemy assist you with their action instead of target you with it.
+ * Missing HP
+   * Some cards give effects based on missing HP, and there are healing cards to make missing HP sustainable.
 
 # Upcoming Todo
 
@@ -34,3 +36,6 @@ Hi! This is a Kitsune character for Slay The Spire. Wow, who could have guessed?
  * Nerf Death Stroke
  * Maybe make Dark do damage to the closest enemy?
  * Write more here - add lore
+ * Bring damage/block amounts down and amp form bonuses
+ * 
+ * Change upgrade type for Trickster Flame - have to be really careful about handing out large amounts of will o wisps

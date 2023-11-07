@@ -1,4 +1,4 @@
-package kitsunemod.cards.basic;
+package kitsunemod.cards.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -23,16 +23,16 @@ public class DancingLights extends AbstractKitsuneCard {
 
     private static final int COST = 2;
 
-    private static final int ATTACK_DMG = 10;
+    private static final int ATTACK_DMG = 4;
 
-    private static final int WILLOWISPS_CHANNEL = 2;
+    private static final int WILLOWISPS_CHANNEL = 3;
     private static final int WILLOWISPS_PLUS_CHANNEL = 1;
 
 
     public DancingLights() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
-                CardRarity.BASIC, CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.ENEMY);
 
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = WILLOWISPS_CHANNEL;

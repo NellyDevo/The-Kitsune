@@ -1,7 +1,7 @@
 {
   "modid": "KitsuneMod",
   "name": "The Kitsune",
-  "author_list": ["Rin Camelia", "Johnny Devo"],
+  "author_list": ["RCIX", "NoelleDevo"],
   "description": "Touch fluffy tail?",
   "dependencies": ["basemod", "stslib"],
   "credits": "Blizzare, Skyson, Scavenging Mechanic, Unbeared",
