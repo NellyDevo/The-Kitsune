@@ -23,6 +23,8 @@ Hi! This is a Kitsune character for Slay The Spire. Wow, who could have guessed?
    * Cards that upgrade up to 9 times based on various conditions instead of in rest sites.
  * Charm
    * Make an enemy assist you with their action instead of target you with it.
+ * Missing HP
+   * Some cards give effects based on missing HP, and there are healing cards to make missing HP sustainable.
 
 # Upcoming Todo
 
