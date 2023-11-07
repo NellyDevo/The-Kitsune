@@ -36,3 +36,6 @@ Hi! This is a Kitsune character for Slay The Spire. Wow, who could have guessed?
  * Nerf Death Stroke
  * Maybe make Dark do damage to the closest enemy?
  * Write more here - add lore
+ * Bring damage/block amounts down and amp form bonuses
+ * 
+ * Change upgrade type for Trickster Flame - have to be really careful about handing out large amounts of will o wisps
