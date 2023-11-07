@@ -44,22 +44,9 @@ public class LashOut extends AbstractKitsuneCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         //todo: move this to a LashOutAction so its easier to add fx and stuff
-        boolean isFox = false;
-        boolean isKitsune = false;
-        boolean isHuman = false;
-
-        if (p.hasPower(NinetailedShapePower.POWER_ID)) {
-            isFox = isKitsune = isHuman = true;
-        }
-        else if (p.hasPower(FoxShapePower.POWER_ID)) {
-            isFox = true;
-        }
-        else if (p.hasPower(KitsuneShapePower.POWER_ID)) {
-            isKitsune = true;
-        }
-        else if (p.hasPower(HumanShapePower.POWER_ID)){
-            isHuman = true;
-        }
+        boolean isFox = p.hasPower(NinetailedShapePower.POWER_ID) || p.hasPower(FoxShapePower.POWER_ID);
+        boolean isKitsune = p.hasPower(NinetailedShapePower.POWER_ID) || p.hasPower(KitsuneShapePower.POWER_ID);
+        boolean isHuman = p.hasPower(NinetailedShapePower.POWER_ID) || p.hasPower(HumanShapePower.POWER_ID);
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
 
