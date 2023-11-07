@@ -163,7 +163,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Wink());
-        BaseMod.addCard(new DancingLights());
 
         //Special
         BaseMod.addCard(new QuickshapeFox());
@@ -226,6 +225,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new DivineSpirit());
         BaseMod.addCard(new PettyTheft());
         BaseMod.addCard(new HungryStrikes());
+        BaseMod.addCard(new DancingLights());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

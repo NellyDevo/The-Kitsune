@@ -16,7 +16,7 @@ import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.NinetailedShapePower;
-import org.omg.CORBA.PRIVATE_MEMBER;
+
 
 public class PackKill extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("PackKill");
