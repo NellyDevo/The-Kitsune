@@ -2,14 +2,18 @@
   "SOULSTEAL": {
     "NAMES": [
       "soulsteal",
-      "soulsteals"
+      "soulsteals",
+      "soulsteal:",
+      "soulsteals:"
     ],
     "DESCRIPTION": "The first time this monster attacks you on each of their turns, it gives you a buff based on your #yShape. NL #yFox: 2 Dark per stack. NL #yKitsune: 1 wisp per 5 stacks. NL #yHuman: 2 light per stack. NL #yNinetailed: 1 wisp per 3 stacks."
   },
   "WILL-O-WISP": {
     "NAMES": [
       "will-o-wisp",
-      "will-o-wisps"
+      "will-o-wisps",
+      "will-o-wisp:",
+      "will-o-wisps:"
     ],
     "DESCRIPTION": "Consumes itself at the end of your turn to deal damage to a random enemy equal to the number of wisps channeled."
   },
@@ -18,63 +22,77 @@
     "NAMES": [
       "shapeshift",
       "shapeshifts",
-      "shapeshifted"
+      "shapeshifted",
+      "shapeshift:",
+      "shapeshifts:",
+      "shapeshifted:"
     ],
     "DESCRIPTION": "#yAspect cards of that #yShape will trigger."
   },
   "SHAPE": {
     "NAMES": [
       "shape",
-      "shapes"
+      "shapes",
+      "shape:",
+      "shapes:"
     ],
     "DESCRIPTION": "Aspect effects of that #yShape will trigger. Some relics and powers make your #yShape grant persistent buffs."
   },
   "ASPECT": {
     "NAMES": [
       "aspect",
-      "aspects"
+      "aspects",
+      "aspect:",
+      "aspects:"
     ],
     "DESCRIPTION": "Aspect effects only trigger when you are in the listed Shape."
   },
   "LIGHT": {
     "NAMES": [
-      "light"
+      "light",
+      "light:"
     ],
     "DESCRIPTION": "Persistent buff. Converted to twice as much Block at the start of your turn when over 9 stacks. Opposed to #yDark and will trigger it instead of applying."
   },
   "DARK": {
     "NAMES": [
-      "dark"
+      "dark",
+      "dark:"
     ],
     "DESCRIPTION": "Persistent buff. Converted to twice as much damage to a random enemy at the start of your turn when over 9 stacks. Opposed to #yLight and will trigger it instead of applying."
   },
   "SHADE": {
     "NAMES": [
-      "shade"
+      "shade",
+      "shade:"
     ],
     "DESCRIPTION": "Negates up to that many instances of unblocked damage until next turn and heals you for 2 instead."
   },
   "Elder": {
     "NAMES": [
-      "elder"
+      "elder",
+      "elder:"
     ],
     "DESCRIPTION": "Special cards that can't be upgraded normally, but upgrade through 9 tiers based on meeting conditions. Upgrades anywhere and can only upgrade once per room."
   },
   "Charm": {
     "NAMES": [
-      "charm"
+      "charm",
+      "charm:"
     ],
     "DESCRIPTION": "A Charmed monster will fight for you."
   },
   "Quickshape": {
     "NAMES": [
-      "quickshape"
+      "quickshape",
+      "quickshape:"
     ],
     "DESCRIPTION": "Uncollectable zero-cost cards with Ethereal and Exhaust that change your shape."
   },
   "Echo": {
     "NAMES": [
-      "echo"
+      "echo",
+      "echo:"
     ],
     "DESCRIPTION": "Echoes are copies of cards with Ethereal and Exhaust."
   }

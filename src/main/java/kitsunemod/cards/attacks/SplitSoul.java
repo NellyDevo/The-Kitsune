@@ -28,8 +28,7 @@ public class SplitSoul extends AbstractElderCard {
     private static final int ATTACK_DMG = 4;
     private static final int UPGRADE_PLUS_DMG_PER_TIER = 3;
 
-    private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 5;
-    private static Logger logger = LogManager.getLogger(KitsuneMod.class.getName());
+    private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 9;
 
     public SplitSoul() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

@@ -24,10 +24,11 @@ public class InsightPower extends AbstractKitsunePower implements NonStackablePo
 
     public boolean isUpgraded = false;
 
-    public InsightPower(final AbstractCreature owner) {
+    public InsightPower(final AbstractCreature owner, boolean isUpgraded) {
 
         this.owner = owner;
 
+        this.isUpgraded = isUpgraded;
         isTurnBased = false;
         name = NAME;
         ID = POWER_ID;
