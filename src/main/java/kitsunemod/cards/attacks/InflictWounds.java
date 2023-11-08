@@ -26,8 +26,8 @@ public class InflictWounds extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/InflictWounds.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 9;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int ATTACK_DMG = 5;
+    private static final int UPGRADE_PLUS_DMG = 3;
     private static final int SOULSTEAL_AMT = 2;
     private static final int UPGRADE_PLUS_SOULSTEAL_AMT = 1;
 

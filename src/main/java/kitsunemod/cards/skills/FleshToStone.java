@@ -22,7 +22,7 @@ public class FleshToStone extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/FleshToStone.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_AMT = 15;
+    private static final int BLOCK_AMT = 12;
     private static final int UPGRADE_PLUS_BLOCK_AMT = 5;
     private static final int HP_LOSS = 3;
     private static final int UPGRADE_MINUS_HP_LOSS = -1;

@@ -28,8 +28,8 @@ public class EtherealKnives extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/EtherealKnives.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 7;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int ATTACK_DMG = 4;
+    private static final int UPGRADE_PLUS_DMG = 2;
     private static final int VULN_AMT = 1;
     private static final int UPGRADE_PLUS_VULN_AMT = 1;
 

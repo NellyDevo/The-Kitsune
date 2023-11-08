@@ -23,10 +23,10 @@ public class NipAtHeels extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/NipAtHeels.png";
     private static final int COST = 0;
 
-    private static final int ATTACK_DMG = 3;
+    private static final int ATTACK_DMG = 1;
     private static final int UPGRADE_PLUS_DMG = 2;
 
-    private static final int BLOCK_AMT = 3;
+    private static final int BLOCK_AMT = 2;
     private static final int UPGRADE_PLUS_BLOCK_AMOUNT = 2;
 
     public NipAtHeels() {

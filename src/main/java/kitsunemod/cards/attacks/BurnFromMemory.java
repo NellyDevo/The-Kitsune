@@ -20,8 +20,8 @@ public class BurnFromMemory extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/BurnFromMemory.png";
     private static final int COST = 3;
 
-    private static final int DAMAGE_AMT = 28;
-    private static final int UPGRADE_DAMAGE_AMT = 7;
+    private static final int DAMAGE_AMT = 25;
+    private static final int UPGRADE_DAMAGE_AMT = 10;
     private static final int HEAL_AMT = 12;
 
     public BurnFromMemory() {

@@ -22,7 +22,7 @@ public class TricksterFlame extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/TricksterFlame.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 6;
+    private static final int ATTACK_DMG = 2;
 
     private static final int WISPS_CHANNELED = 1;
     private static final int UPGRADE_PLUS_WISPS_CHANNELED = 1;

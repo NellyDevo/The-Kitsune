@@ -16,7 +16,6 @@ import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.NinetailedShapePower;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 public class PackKill extends AbstractKitsuneCard {
     public static final String ID = KitsuneMod.makeID("PackKill");
@@ -26,8 +25,7 @@ public class PackKill extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/PackKill.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 2;
-
+    private static final int ATTACK_DMG = 1;
     private static final int NORMAL_TIMES = 3;
     private static final int UPGRADE_PLUS_NORMAL_TIMES = 1;
 
@@ -72,7 +70,7 @@ public class PackKill extends AbstractKitsuneCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_NORMAL_TIMES);
-            upgradeMagicNumber(UPGRADE_PLUS_ASPECT_TIMES);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_ASPECT_TIMES);
             initializeDescription();
         }
     }

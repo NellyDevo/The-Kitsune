@@ -19,7 +19,7 @@ public class FaeProtection extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/FaeProtection.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_GAIN = 4;
+    private static final int BLOCK_GAIN = 2;
     private static final int WISP_SACRIFICE = 2;
     private static final int UPGRADE_WISP_SACRIFICE = -1;
 
