@@ -21,10 +21,10 @@ public class ShiningPearl extends KitsuneRelic {
     }
 
     public static final int FOX_BONUS_STR = 1;
-    public static final int FOX_BONUS_DEX = 2;
-    public static final int KITSUNE_BONUS_STR = 1;
-    public static final int KITSUNE_BONUS_DEX = 1;
-    public static final int HUMAN_BONUS_STR = 2;
+    public static final int FOX_BONUS_DEX = 4;
+    public static final int KITSUNE_BONUS_STR = 2;
+    public static final int KITSUNE_BONUS_DEX = 2;
+    public static final int HUMAN_BONUS_STR = 4;
     public static final int HUMAN_BONUS_DEX = 1;
     public static final int KITSUNE_WILLOWISPS_AMOUNT = 1;
 

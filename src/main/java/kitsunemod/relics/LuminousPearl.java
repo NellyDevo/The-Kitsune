@@ -26,8 +26,8 @@ public class LuminousPearl extends KitsuneRelic {
     //starter relics never get onEquip called
     //for [curse word]ing no reason
     //this is a workaround while preserving /some/ readability, change the base values in the respective shapes please
-    public static final int STR_PER_SHAPESHIFT_CARD = 1;
-    public static final int DEX_PER_SHAPESHIFT_CARD = 1;
+    public static final int STR_PER_SHAPESHIFT_CARD = 2;
+    public static final int DEX_PER_SHAPESHIFT_CARD = 2;
 
     @Override
     public boolean shouldAutoChangeShape() {
