@@ -24,9 +24,9 @@ public class ShiftIntoSpirit extends AbstractElderCard {
 
     private static final int COST = 1;
 
-    private static final int BASE_BLOCK = 7;
-    private static final int ELDER_TIER_UPGRADE_BLOCK = 1;
-    private static final int ELDER_TIER_QUESTION_ROOM_REQUIREMENT = 2;
+    private static final int BASE_BLOCK = 6;
+    private static final int ELDER_TIER_UPGRADE_BLOCK = 2;
+    private static final int ELDER_TIER_QUESTION_ROOM_REQUIREMENT = 1;
     private static final int HEAL_AMOUNT = 10;
 
     public ShiftIntoSpirit() {

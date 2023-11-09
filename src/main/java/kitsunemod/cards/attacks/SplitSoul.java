@@ -28,7 +28,7 @@ public class SplitSoul extends AbstractElderCard {
     private static final int ATTACK_DMG = 2;
     private static final int UPGRADE_PLUS_DMG_PER_TIER = 2;
 
-    private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 9;
+    private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 7;
 
     public SplitSoul() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
