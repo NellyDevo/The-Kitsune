@@ -65,8 +65,13 @@ Feedback 11/23
  * dominate will: falls off pretty hard as an effect. upgrade should probably raise HP threshhold. Or make it scale via a buff. weak? light? dark? something?
  * maybe make fox and human forms have 1 off-stat to make them not turbo dead in the other type
  * not enough self-weaken, light, or dark cards
- * maybe make change shape part of relic trigger instead of on the thingy?
+ * maybe make change shape part of relic trigger instead of on the thingy? and make it have retain
  * slightly buff blink slash. 
- * "elder is neat but the common elder card is better than the uncommon despite being harder to upgrade because it scales better"
+ * "elder is neat but the common elder card is better than the uncommon despite being harder to upgrade because it scales better" - swap 2 elder block card rarities?
  * "i'd enjoy the cards just do more incidental other stuff"
+ * growing hunger is worse than a common
+ * flourish and bare fangs - maybe should not be collectible and there to trigger off heightened reflexes/
+ * "mechanics are fun in theory, in practice they are mostly too weak"
+ * form option: 3-1/2-2/1-3
+ * maybe make memorize spell reduce cost on upgrade
 
