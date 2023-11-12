@@ -129,7 +129,7 @@ public class KitsuneMod implements
     public void receivePostInitialize() {
         Texture badgeImg = new Texture("kitsunemod/images/badge.png");
         ModPanel settingsPanel = new ModPanel(); //we can add UI elements to this settings panel as desired
-        BaseMod.registerModBadge(badgeImg, "The Kitsune Mod", "Jin the Fox, Johnny Devo", "Adds a new character to the game: The Kitsune.", settingsPanel);
+        BaseMod.registerModBadge(badgeImg, "The Kitsune Mod", "RCIX, NoelleDevo", "Adds a new character to the game: The Kitsune.", settingsPanel);
 
         //load large sprite sheet for Will-O-Wisp
         if (WillOWisp.img == null) {
@@ -163,7 +163,6 @@ public class KitsuneMod implements
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Wink());
-        BaseMod.addCard(new DancingLights());
 
         //Special
         BaseMod.addCard(new QuickshapeFox());
@@ -226,6 +225,7 @@ public class KitsuneMod implements
         BaseMod.addCard(new DivineSpirit());
         BaseMod.addCard(new PettyTheft());
         BaseMod.addCard(new HungryStrikes());
+        BaseMod.addCard(new DancingLights());
 
         //Rares
         BaseMod.addCard(new NinetailedForm());

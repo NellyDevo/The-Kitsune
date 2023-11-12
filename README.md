@@ -23,6 +23,8 @@ Hi! This is a Kitsune character for Slay The Spire. Wow, who could have guessed?
    * Cards that upgrade up to 9 times based on various conditions instead of in rest sites.
  * Charm
    * Make an enemy assist you with their action instead of target you with it.
+ * Missing HP
+   * Some cards give effects based on missing HP, and there are healing cards to make missing HP sustainable.
 
 # Upcoming Todo
 
@@ -37,6 +39,8 @@ Hi! This is a Kitsune character for Slay The Spire. Wow, who could have guessed?
  * Change Cleansing Nova to be based on the block you gained this turn and not block you currently have for Ancient synergy
  * Make Feeding Frenzy a power
  * Make contextual buff cards yellow outline
+ * Bring damage/block amounts down and amp form bonuses
+ * Change upgrade type for Trickster Flame - have to be really careful about handing out large amounts of will o wisps
 
 Feedback 11/23
 
@@ -65,3 +69,4 @@ Feedback 11/23
  * slightly buff blink slash. 
  * "elder is neat but the common elder card is better than the uncommon despite being harder to upgrade because it scales better"
  * "i'd enjoy the cards just do more incidental other stuff"
+
