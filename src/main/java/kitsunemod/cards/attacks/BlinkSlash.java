@@ -25,9 +25,9 @@ public class BlinkSlash extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/BlinkSlash.png";
     private static final int COST = 0;
 
-    private static final int DAMAGE_AMT = 4;
+    private static final int DAMAGE_AMT = 2;
     private static final int UPGRADE_DAMAGE_AMT = 2;
-    private static final int BLOCK_AMT = 2;
+    private static final int BLOCK_AMT = 1;
     private static final int UPGRADE_BLOCK_AMT = 2;
 
     public BlinkSlash() {

@@ -26,7 +26,7 @@ public class Flourish extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/Flourish.png";
     private static final int COST = 0;
 
-    private static final int ATTACK_DMG = 2;
+    private static final int ATTACK_DMG = 1;
     private static final int UPGRADE_PLUS_DMG = 2;
 
     private static final int LIGHT_GAINED = 2;

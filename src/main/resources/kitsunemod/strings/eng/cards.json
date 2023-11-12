@@ -365,7 +365,7 @@
   },
   "kitsunemod:ShiftIntoSpirit": {
     "NAME": "Shift into Spirit",
-    "DESCRIPTION": "Gain !B! Block. NL kitsunemod:Elder: visit !kitsunemod:Elder! ? rooms.",
+    "DESCRIPTION": "Gain !B! Block. NL kitsunemod:Elder: visit !kitsunemod:Elder! ? room.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Heal !M! HP."
   },
   "kitsunemod:SiphonSoul": {

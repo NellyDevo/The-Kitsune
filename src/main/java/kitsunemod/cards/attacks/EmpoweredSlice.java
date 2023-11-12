@@ -21,7 +21,7 @@ public class EmpoweredSlice extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/EmpoweredSlice.png";
 
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 5;
     private static final int SECONDARY_DMG = 4;
     private static final int UPGRADE_SECONDARY_DMG = 2;
 

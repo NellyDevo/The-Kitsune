@@ -22,7 +22,7 @@ public class SiphonSoul extends AbstractKitsuneCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/SiphonSoul.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 12;
+    private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_PLUS_DMG = 5;
 
     private static final int SOULSTEAL_AMT = 5;

@@ -25,10 +25,10 @@ public class SplitSoul extends AbstractElderCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/SplitSoul.png";
     private static final int COST = 1;
 
-    private static final int ATTACK_DMG = 4;
-    private static final int UPGRADE_PLUS_DMG_PER_TIER = 3;
+    private static final int ATTACK_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG_PER_TIER = 2;
 
-    private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 9;
+    private static final int ELDER_TIER_CARDS_DRAWN_REQUIREMENT = 7;
 
     public SplitSoul() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

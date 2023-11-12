@@ -22,7 +22,7 @@ public class FeralInstinct extends AbstractElderCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/FeralInstinct.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_AMT = 3;
+    private static final int BLOCK_AMT = 2;
     private static final int UPGRADE_BLOCK_AMT_PER_ELDER_TIER = 1;
     private static final int ELDER_TIER_BLOCKED_REQUIREMENT = 15;
 

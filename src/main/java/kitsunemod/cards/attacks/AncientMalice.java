@@ -26,8 +26,8 @@ public class AncientMalice extends AbstractKitsuneCard {
 
     private static final int COST = 2;
 
-    private static final int DAMAGE_AMT = 13;
-    private static final int UPGRADE_DAMAGE_AMT = 5;
+    private static final int DAMAGE_AMT = 10;
+    private static final int UPGRADE_DAMAGE_AMT = 4;
 
     public AncientMalice() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

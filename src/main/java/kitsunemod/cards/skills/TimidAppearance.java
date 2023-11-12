@@ -20,7 +20,7 @@ public class TimidAppearance extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/TimidAppearance.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_AMT = 7;
+    private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_PLUS_BLOCK_AMT = 3;
     private static final int EMPOWERED_BLOCK_AMT = 12;
     private static final int UPGRADE_PLUS_EMPOWERED_BLOCK_AMT = 4;

@@ -24,7 +24,7 @@ public class RendSpirit extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/RendSpirit.png";
     private static final int COST = 3;
 
-    private static final int ATTACK_DMG = 35;
+    private static final int ATTACK_DMG = 30;
     private static final int UPGRADE_PLUS_DMG = 10;
 
     private static final int BASE_HP_LOSS = 10;

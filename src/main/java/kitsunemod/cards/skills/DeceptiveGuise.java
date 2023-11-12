@@ -22,7 +22,7 @@ public class DeceptiveGuise extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/DeceptiveGuise.png";
     private static final int COST = 1;
 
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
 

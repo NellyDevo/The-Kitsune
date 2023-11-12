@@ -20,7 +20,7 @@ public class ThickFur extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/ThickFur.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_AMT = 8;
+    private static final int BLOCK_AMT = 6;
     private static final int UPGRADE_PLUS_BLOCK_AMT = 3;
     private static final int DARK_AMT = 3;
     private static final int UPGRADE_PLUS_DARK_AMT = 1;

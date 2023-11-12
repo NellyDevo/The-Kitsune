@@ -21,7 +21,7 @@ public class DeathStroke extends AbstractKitsuneCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE_AMT = 6;
+    private static final int DAMAGE_AMT = 8;
     private static final int UPGRADE_DAMAGE_AMT = 3;
     private static final int HEAL_AMT = 3;
 

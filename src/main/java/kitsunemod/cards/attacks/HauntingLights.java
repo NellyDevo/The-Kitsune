@@ -29,7 +29,7 @@ public class HauntingLights extends AbstractKitsuneCard {
     private static final int WEAK_AMT = 2;
     private static final int UPGRADE_PLUS_WEAK_AMT = 1;
 
-    private static final int ATTACK_DMG = 11;
+    private static final int ATTACK_DMG = 5;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     public HauntingLights() {

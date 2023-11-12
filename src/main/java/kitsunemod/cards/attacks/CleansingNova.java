@@ -29,8 +29,8 @@ public class CleansingNova extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/CleansingNova.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_AMT = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int BLOCK_AMT = 3;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
     private boolean doDamage = false;
 
     public CleansingNova() {

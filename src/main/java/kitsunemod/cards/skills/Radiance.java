@@ -23,7 +23,7 @@ public class Radiance extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/Radiance.png";
     private static final int COST = 1;
 
-    private static final int BLOCK_AMT = 7;
+    private static final int BLOCK_AMT = 4;
     private static final int UPGRADE_PLUS_BLOCK_AMT = 3;
     private static final int LIGHT_AMT_TARGET = 4;
     private static final int UPGRADE_PLUS_LIGHT_AMT_TARGET = 2;

@@ -26,11 +26,11 @@ public class Cornered extends AbstractElderCard {
 
     private static final int COST = 1;
 
-    private static final int BASE_DAMAGE = 8;
+    private static final int BASE_DAMAGE = 4;
     private static final int BASE_MISSING_HP_MULT = 10;
     private static final int ELDER_TIER_MISSING_HP_MULT = 10;
     private static final int ELDER_TIER_UNBLOCKED_DAMAGE_REQUIREMENT = 15;
-    private static final int SWITCH_EFFECT_DAMAGE_THRESHHOLD = 25;
+    private static final int SWITCH_EFFECT_DAMAGE_THRESHHOLD = 20;
 
     private String currentDescription;
 
