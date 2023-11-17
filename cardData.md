@@ -22,7 +22,7 @@ By mechanic:
  * Shapeshift: 7
  * Will-o-Wisp: 11
  * Soulsteal: 12
- * Shade: 3
+ * Shade: 4
  * Light: 5
  * Dark: 5
  * Charm: 3

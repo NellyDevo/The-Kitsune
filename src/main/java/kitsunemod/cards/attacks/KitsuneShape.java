@@ -13,9 +13,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import kitsunemod.KitsuneMod;
 import kitsunemod.actions.ChangeShapeAction;
+import kitsunemod.actions.KitsuneShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
+import kitsunemod.powers.CharmMonsterPower;
 import kitsunemod.powers.KitsuneShapePower;
 
 public class KitsuneShape extends AbstractKitsuneCard {
@@ -26,25 +28,24 @@ public class KitsuneShape extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/KitsuneShape.png";
 
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 12;
+    private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 4;
-    private static final int WEAK_AMT = 1;
-    private static final int UPGRADE_PLUS_WEAK_AMT = 1;
+    private static final int CHARM_TURNS = 1;
+    private static final int UPGRADE_NEW_COST = 1;
 
     public KitsuneShape() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        magicNumber = baseMagicNumber = WEAK_AMT;
+        magicNumber = baseMagicNumber = CHARM_TURNS;
         exhaust = true;
         tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
+        AbstractDungeon.actionManager.addToBottom(new KitsuneShapeAction(m, p, magicNumber, new DamageInfo(p, damage, damageTypeForTurn)));
         AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, new KitsuneShapePower(p, p)));
     }
 
@@ -58,7 +59,7 @@ public class KitsuneShape extends AbstractKitsuneCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_WEAK_AMT);
+            upgradeBaseCost(UPGRADE_NEW_COST);
         }
     }
 }

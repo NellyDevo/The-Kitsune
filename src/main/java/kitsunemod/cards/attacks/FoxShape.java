@@ -10,12 +10,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import kitsunemod.KitsuneMod;
+import kitsunemod.actions.ApplyDarkAction;
 import kitsunemod.actions.ChangeShapeAction;
 import kitsunemod.cards.AbstractKitsuneCard;
 import kitsunemod.patches.AbstractCardEnum;
 import kitsunemod.patches.KitsuneTags;
+import kitsunemod.powers.DarkPower;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.ShadePower;
 
@@ -27,27 +30,28 @@ public class FoxShape extends AbstractKitsuneCard {
     public static final String IMG_PATH = "kitsunemod/images/cards/FoxShape.png";
 
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 12;
-    private static final int SHADE_AMT = 1;
-    private static final int WEAK_AMT = 1;
-    private static final int UPGRADE_PLUS_SHADE = 1;
+    private static final int ATTACK_DMG = 2;
+    private static final int DARK_AMOUNT = 9;
+    private static final int WEAK_AMOUNT = 1;
+    private static final int UPGRADE_PLUS_DARK_AMOUNT = 6;
+    private static final int UPGRADE_PLUS_WEAK_AMOUNT = 1;
 
     public FoxShape() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.KITSUNE_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        magicNumber = baseMagicNumber = SHADE_AMT;
-        secondMagicNumber = baseSecondMagicNumber = WEAK_AMT;
+        magicNumber = baseMagicNumber = WEAK_AMOUNT;
+        secondMagicNumber = baseSecondMagicNumber = DARK_AMOUNT;
         exhaust = true;
         tags.add(KitsuneTags.SHAPESHIFT_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadePower(AbstractDungeon.player, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyDarkAction(p, p, secondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ChangeShapeAction(p, p, new FoxShapePower(p, p)));
     }
 
@@ -60,7 +64,9 @@ public class FoxShape extends AbstractKitsuneCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_SHADE);
+            upgradeMagicNumber(UPGRADE_PLUS_WEAK_AMOUNT);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_DARK_AMOUNT);
+            initializeDescription();
         }
     }
 }
