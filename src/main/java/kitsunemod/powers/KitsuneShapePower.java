@@ -14,8 +14,8 @@ import kitsunemod.actions.CreateWillOWispAction;
 public class KitsuneShapePower extends AbstractShapePower {
 
     //set in WornPearl, LuminousPearl, and ShiningPearl if you're looking for the base strength/dex amounts
-    public static int BONUS_DEXTERITY = 0;
-    public static int BONUS_STRENGTH = 0;
+    public static int BONUS_DEXTERITY = 2;
+    public static int BONUS_STRENGTH = 2;
     public static int SOULSTEAL_STACKS_PER_WISP = 5;
     public static int WISPS_PER_INCREMENT = 1;
 

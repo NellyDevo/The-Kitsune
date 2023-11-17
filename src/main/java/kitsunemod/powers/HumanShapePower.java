@@ -13,8 +13,8 @@ import kitsunemod.actions.ApplyLightAction;
 public class HumanShapePower extends AbstractShapePower {
 
     //set in WornPearl, LuminousPearl, and ShiningPearl if you're looking for the base strength/dex amounts
-    public static int BONUS_DEXTERITY = 0;
-    public static int BONUS_STRENGTH = 0;
+    public static int BONUS_DEXTERITY = 1;
+    public static int BONUS_STRENGTH = 3;
     public static int STACKS_PER_SOULSTEAL = 2;
 
     public static final String POWER_ID = KitsuneMod.makeID("HumanShapePower");

@@ -34,7 +34,7 @@
   },
   "kitsunemod:ChangeShape": {
     "NAME": "Change Shape",
-    "DESCRIPTION": "Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust.",
+    "DESCRIPTION": "Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.",
     "UPGRADE_DESCRIPTION": "Innate. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust."
   },
   "kitsunemod:ChangeShapeOptionFoxShape": {

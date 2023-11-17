@@ -35,19 +35,14 @@
     "NAME": "Worn Pearl",
     "FLAVOR": "As close to me as my heart.",
     "DESCRIPTIONS": [
-      "Your cards deal more damage and gain more #yBlock depending on your #ykitsunemod:Shape.",
-      " NL Fox #ykitsunemod:Aspect: ",
-      " NL Kitsune #ykitsunemod:Aspect: ",
-      " NL Human #ykitsunemod:Aspect: ",
-      " extra damage, ",
-      " extra #yBlock."
+      "At the start of combat, add a #yChange #yShape to your hand. "
     ]
   },
   "kitsunemod:ShiningPearl": {
     "NAME": "Shining Pearl",
     "FLAVOR": "Just like when I was young!",
     "DESCRIPTIONS": [
-      "Your cards deal more damage and gain more #yBlock depending on your #ykitsunemod:Shape.",
+      "At the start of combat, add a #yChange #yShape to your hand. Your cards deal more damage and gain more #yBlock depending on your #ykitsunemod:Shape.",
       " NL Fox #ykitsunemod:Aspect: ",
       " NL Kitsune #ykitsunemod:Aspect: ",
       " NL Human #ykitsunemod:Aspect: ",
@@ -60,9 +55,9 @@
   },
   "kitsunemod:LuminousPearl": {
     "NAME": "Luminous Pearl",
-    "FLAVOR": "It would seem that with my offering, I have ascended to become an elder spirit.",
+    "FLAVOR": "With my offering, I have ascended to become an elder spirit.",
     "DESCRIPTIONS": [
-      "Start each fight in Ninetailed #ykitsunemod:Shape and #yExhaust all #ykitsunemod:Shapeshift cards in your deck. For each card #yExhausted this way, your cards deal 1 more damage and gain 1 more #yBlock."
+      "Start each combat in Ninetailed #ykitsunemod:Shape and #yExhaust all #ykitsunemod:Shapeshift cards in your deck. For each card #yExhausted this way, your cards deal 1 more damage and gain 1 more #yBlock."
     ]
   },
   "kitsunemod:MiniatureFountain": {
