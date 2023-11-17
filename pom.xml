@@ -7,7 +7,7 @@
 
         <!-- Change the path for your system to match your Steam installation. -->
         <!-- rin's version - <steam.windows>G:/SteamLibrary/steamapps</steam.windows> -->
-        <steam.windows>C:/Program Files (x86)/Steam/steamapps</steam.windows>
+        <steam.windows>G:/SteamLibrary/steamapps</steam.windows>
         <steam.mac>${user.home}/Library/Application Support/Steam/steamapps</steam.mac>
 
         <!-- These don't have to be up to date, it's just nice if they are. -->

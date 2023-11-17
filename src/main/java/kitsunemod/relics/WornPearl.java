@@ -1,9 +1,14 @@
 package kitsunemod.relics;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.RelicAboveCreatureEffect;
 import kitsunemod.KitsuneMod;
+import kitsunemod.cards.basic.ChangeShape;
 import kitsunemod.powers.AbstractShapePower;
 import kitsunemod.powers.FoxShapePower;
 import kitsunemod.powers.HumanShapePower;
@@ -37,6 +42,12 @@ public class WornPearl extends KitsuneRelic {
 
         HumanShapePower.BONUS_STRENGTH = HUMAN_BONUS_STR;
         HumanShapePower.BONUS_DEXTERITY = HUMAN_BONUS_DEX;
+    }
+
+    @Override
+    public void atBattleStart() {
+        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToBot(new MakeTempCardInHandAction(new ChangeShape()));
     }
 
     @Override

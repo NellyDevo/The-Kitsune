@@ -319,7 +319,7 @@ public class KitsuneCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Wink.ID);
-        retVal.add(ChangeShape.ID);
+        //retVal.add(ChangeShape.ID);
         return retVal;
     }
 
