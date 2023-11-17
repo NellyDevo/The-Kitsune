@@ -2,6 +2,7 @@ package kitsunemod.cards.basic;
 
 import basemod.helpers.ModalChoice;
 import basemod.helpers.ModalChoiceBuilder;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,7 +23,7 @@ public class ChangeShape extends AbstractKitsuneCard implements ModalChoice.Call
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/ChangeShape.png";
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private ModalChoice modal;
 
@@ -38,6 +39,7 @@ public class ChangeShape extends AbstractKitsuneCard implements ModalChoice.Call
                 .addOption(new HumanShapeOption())
                 .create();
         exhaust = true;
+        AlwaysRetainField.alwaysRetain.set(this, true);
     }
 
     @Override

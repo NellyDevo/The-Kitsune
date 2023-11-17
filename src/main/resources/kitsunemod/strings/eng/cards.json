@@ -34,8 +34,8 @@
   },
   "kitsunemod:ChangeShape": {
     "NAME": "Change Shape",
-    "DESCRIPTION": "Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into.NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Innate. NL Choose a kitsunemod:Shape to kitsunemod:Shapeshift into. NL Exhaust."
   },
   "kitsunemod:ChangeShapeOptionFoxShape": {
     "NAME": "Fox Shape",
@@ -155,7 +155,7 @@
   },
   "kitsunemod:FoxShape": {
     "NAME": "Fox Shape",
-    "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! Damage. Gain !kitsunemod:M2! kitsunemod:Dark. Apply !M! Weak. NL kitsunemod:Shapeshift into a Fox. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:GatheringDark": {
@@ -198,7 +198,7 @@
   },
   "kitsunemod:HumanShape": {
     "NAME": "Human Shape",
-    "DESCRIPTION": "Deal !D! Damage. Gain !B! Block. kitsunemod:Shapeshift into a Human. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! Damage. Gain !kitsunemod:M2! kitsunemod:Light. Apply !M! Vulnerable. NL kitsunemod:Shapeshift into a Fox. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:HungryStrikes": {
@@ -228,7 +228,7 @@
   },
   "kitsunemod:KitsuneShape": {
     "NAME": "Kitsune Shape",
-    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak. kitsunemod:Shapeshift into a Kitsune. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! Damage. If this deals unblocked damage, kitsunemod:Charm for !M! turn. NL kitsunemod:Shapeshift into a Kitsune. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:LashOut": {
