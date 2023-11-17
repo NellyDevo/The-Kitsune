@@ -22,7 +22,7 @@ public class ChangeShape extends AbstractKitsuneCard implements ModalChoice.Call
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "kitsunemod/images/cards/ChangeShape.png";
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private ModalChoice modal;
 
@@ -38,6 +38,7 @@ public class ChangeShape extends AbstractKitsuneCard implements ModalChoice.Call
                 .addOption(new HumanShapeOption())
                 .create();
         exhaust = true;
+        retain = true;
     }
 
     @Override
