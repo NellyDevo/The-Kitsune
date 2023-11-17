@@ -155,7 +155,7 @@
   },
   "kitsunemod:FoxShape": {
     "NAME": "Fox Shape",
-    "DESCRIPTION": "Deal !D! Damage. kitsunemod:Shapeshift into a Fox. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! Damage. Gain !M! kitsunemod:Shade. Apply !kitsunemod:M2! Weak. NL kitsunemod:Shapeshift into a Fox. NL Exhaust.",
     "UPGRADE_DESCRIPTION": ""
   },
   "kitsunemod:GatheringDark": {
